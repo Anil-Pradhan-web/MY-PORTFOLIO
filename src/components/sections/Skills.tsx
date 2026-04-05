@@ -104,7 +104,7 @@ export default function Skills() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {skillCategories.map((category, idx) => (
           <div key={idx} className="flex flex-col">
-            <h3 className="font-mono text-cyan-400 font-semibold mb-4 tracking-wide text-sm">{category.title}</h3>
+            <h3 className="font-mono text-fuchsia-400 font-semibold mb-4 tracking-wide text-sm">{category.title}</h3>
             
             <motion.div
               variants={containerVariants}
@@ -120,7 +120,7 @@ export default function Skills() {
                   <motion.span
                     key={skill}
                     variants={itemVariants}
-                    className="flex items-center gap-2.5 px-5 py-2.5 bg-zinc-900 border border-zinc-800 text-zinc-300 text-base font-medium rounded-xl hover:border-cyan-400 hover:text-white transition-colors cursor-default shadow-sm"
+                    className="flex items-center gap-2.5 px-5 py-2.5 bg-zinc-900 border border-zinc-800 text-zinc-300 text-base font-medium rounded-xl hover:border-fuchsia-400 hover:text-white hover:bg-fuchsia-500/5 hover:shadow-[0_0_12px_rgba(232,121,249,0.15)] transition-all cursor-default shadow-sm"
                   >
                     {Icon && <Icon className="w-5 h-5 drop-shadow-md" color={config?.color} />}
                     {skill}

@@ -5,10 +5,10 @@
   --font-syne: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   
-  --color-brand-primary: #22d3ee;
-  --color-brand-hover: #0891b2;
-  --color-brand-glow: rgba(34, 211, 238, 0.15);
-  --color-brand-teal: #14B8A6;
+  --color-brand-primary: #e879f9;
+  --color-brand-hover: #d946ef;
+  --color-brand-glow: rgba(232, 121, 249, 0.15);
+  --color-brand-pink: #f0abfc;
   
   --color-bg-main: #0a0a0a;
 }
@@ -26,7 +26,7 @@
   background: #0a0a0a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #22d3ee;
+  background: linear-gradient(180deg, #e879f9, #d946ef);
   border-radius: 2px;
 }
 
@@ -37,7 +37,7 @@ html {
 
 /* Selection color */
 ::selection {
-  background: rgba(34, 211, 238, 0.3);
+  background: rgba(232, 121, 249, 0.3);
   color: #ffffff;
 }
 
@@ -49,6 +49,9 @@ html {
 /* Utilities */
 @layer utilities {
   .neon-glow {
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+    box-shadow: 0 0 20px rgba(232, 121, 249, 0.25);
+  }
+  .pink-glow {
+    box-shadow: 0 0 40px rgba(232, 121, 249, 0.2), 0 0 80px rgba(217, 70, 239, 0.1);
   }
 }

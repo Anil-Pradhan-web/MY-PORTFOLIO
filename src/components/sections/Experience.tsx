@@ -23,7 +23,7 @@ export default function Experience() {
     <section id="experience" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
       <SectionHeading>Experience & Activities</SectionHeading>
 
-      <div className="mt-12 ml-4 md:ml-8 border-l border-cyan-400/50">
+      <div className="mt-12 ml-4 md:ml-8 border-l border-fuchsia-400/50">
         {experiences.map((exp, idx) => (
           <motion.div
             key={idx}
@@ -34,11 +34,11 @@ export default function Experience() {
             className="mb-12 relative pl-8"
           >
             {/* Timeline Dot */}
-            <span className="absolute -left-2 top-2 h-4 w-4 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] border-4 border-[#0a0a0a]" />
+            <span className="absolute -left-2 top-2 h-4 w-4 rounded-full bg-fuchsia-400 shadow-[0_0_10px_rgba(232,121,249,0.7)] border-4 border-[#0a0a0a]" />
 
             <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
               <h3 className="text-2xl font-bold font-syne text-white">{exp.role}</h3>
-              <span className="text-cyan-400 font-mono text-sm mt-1 md:mt-0 font-medium whitespace-nowrap">
+              <span className="text-fuchsia-400 font-mono text-sm mt-1 md:mt-0 font-medium whitespace-nowrap">
                 {exp.period}
               </span>
             </div>

@@ -29,11 +29,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-black/60 border-b border-cyan-400/20 py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-black/60 border-b border-fuchsia-400/20 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center">
           
-          <a href="#" className="font-mono text-xl text-cyan-400 font-bold tracking-tight">
+          <a href="#" className="font-mono text-xl text-fuchsia-400 font-bold tracking-tight">
             &gt; AP_
           </a>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-zinc-400 hover:text-cyan-400 transition-colors pointer-events-auto"
+                className="text-zinc-400 hover:text-fuchsia-400 transition-colors pointer-events-auto"
               >
                 {link.name}
               </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
             </a>
             <a
               href="#contact"
-              className="bg-[#00e5ff] text-black font-bold hover:bg-cyan-300 px-5 py-2.5 rounded-md transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)] ml-2"
+              className="bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white font-bold hover:from-fuchsia-400 hover:to-pink-400 px-5 py-2.5 rounded-md transition-all shadow-[0_0_15px_rgba(232,121,249,0.4)] hover:shadow-[0_0_25px_rgba(232,121,249,0.6)] ml-2"
             >
               Hire Me
             </a>
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-zinc-400 hover:text-cyan-400 focus:outline-none"
+              className="text-zinc-400 hover:text-fuchsia-400 focus:outline-none"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -82,7 +82,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-zinc-400 font-medium hover:text-cyan-400"
+              className="text-zinc-400 font-medium hover:text-fuchsia-400"
             >
               {link.name}
             </a>
@@ -97,7 +97,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="bg-[#00e5ff] text-black text-center py-2.5 rounded-md font-bold mt-2 shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+            className="bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white text-center py-2.5 rounded-md font-bold mt-2 shadow-[0_0_15px_rgba(232,121,249,0.4)]"
           >
             Hire Me
           </a>

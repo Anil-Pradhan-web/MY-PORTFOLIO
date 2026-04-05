@@ -30,8 +30,8 @@ export default function Hero() {
     <section id="hero" className="relative min-h-[90vh] w-full flex flex-col justify-center items-center px-6 sm:px-12 md:px-24 xl:px-32 lg:flex-row lg:justify-between mx-auto max-w-7xl pt-32 pb-16">
       
       {/* Background Gradients and Noise */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-400/10 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-fuchsia-500/10 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-pink-400/10 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
       <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiMwYTBhMGEiPjwvcmVjdD48cGF0aCBkPSJNMCAwdjRoNHYtNEgwbTIgMmgydjJoLTJ2LTJtLTIgMmgydjJoLTJ2LTIiIGZpbGw9IiMxMTEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+PC9zdmc+')] opacity-20 pointer-events-none z-0" />
       
       {/* Left Content */}
@@ -43,8 +43,8 @@ export default function Hero() {
           className="flex items-center gap-3 bg-[#0a0a0a]/80 backdrop-blur-md border border-zinc-800 rounded-full px-5 py-2 mb-10 w-fit shadow-lg shadow-black/50"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
           </span>
           <span className="text-zinc-400 text-xs sm:text-sm tracking-wide">
             Currently building: <span className="text-zinc-200 font-medium">VolunteerIQ</span> <span className="text-zinc-600">-</span> Google Solution Challenge 2026
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="font-mono text-[#00e5ff] text-xl mb-4 tracking-wide"
+          className="font-mono text-fuchsia-400 text-xl mb-4 tracking-wide"
         >
           &gt; Hello, I'm
         </motion.p>
@@ -95,7 +95,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="flex items-center justify-center bg-[#00e5ff] text-black font-bold px-8 py-3.5 rounded-lg hover:bg-cyan-300 w-full sm:w-auto text-center transition-all font-sans shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)]"
+            className="flex items-center justify-center bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white font-bold px-8 py-3.5 rounded-lg hover:from-fuchsia-400 hover:to-pink-400 w-full sm:w-auto text-center transition-all font-sans shadow-[0_0_20px_rgba(232,121,249,0.4)] hover:shadow-[0_0_30px_rgba(232,121,249,0.6)]"
           >
             View My Work
           </a>
@@ -117,8 +117,8 @@ export default function Hero() {
         className="hidden lg:flex w-full lg:w-[500px] z-10 relative mt-16 lg:mt-0"
       >
         {/* Massive outer glow */}
-        <div className="absolute -inset-1 bg-gradient-to-tr from-cyan-500/60 via-transparent to-transparent rounded-2xl blur-2xl opacity-70 translate-y-4 -translate-x-4" />
-        <div className="absolute inset-x-10 -bottom-8 h-20 bg-[#00e5ff]/30 blur-3xl opacity-80" />
+        <div className="absolute -inset-1 bg-gradient-to-tr from-fuchsia-500/60 via-transparent to-transparent rounded-2xl blur-2xl opacity-70 translate-y-4 -translate-x-4" />
+        <div className="absolute inset-x-10 -bottom-8 h-20 bg-fuchsia-400/30 blur-3xl opacity-80" />
         
         <div className="relative w-full rounded-xl border border-zinc-700/50 bg-[#0d0d0d]/80 backdrop-blur-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]">
           {/* Header */}
@@ -129,18 +129,18 @@ export default function Hero() {
               <div className="w-3 h-3 rounded-full bg-green-500/90 shadow-[0_0_5px_rgba(34,197,94,0.5)]"></div>
             </div>
             <span className="text-xs font-mono text-zinc-400">terminal - bash</span>
-            <div className="w-4 h-4 rounded-full border border-cyan-400/40 flex items-center justify-center p-0.5 shadow-[0_0_10px_rgba(34,211,238,0.3)]">
-              <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
+            <div className="w-4 h-4 rounded-full border border-fuchsia-400/40 flex items-center justify-center p-0.5 shadow-[0_0_10px_rgba(232,121,249,0.3)]">
+              <div className="w-2 h-2 rounded-full bg-fuchsia-400"></div>
             </div>
           </div>
           
           {/* Body */}
-          <div className="p-8 font-mono text-[15px] leading-8 text-cyan-400/90 whitespace-pre w-full overflow-hidden min-h-[300px] shadow-[inset_0_-40px_40px_rgba(0,229,255,0.05)] border-b-2 border-r-2 border-[#00e5ff]/20">
+          <div className="p-8 font-mono text-[15px] leading-8 text-fuchsia-300/90 whitespace-pre w-full overflow-hidden min-h-[300px] shadow-[inset_0_-40px_40px_rgba(232,121,249,0.05)] border-b-2 border-r-2 border-fuchsia-400/20">
             <span>{terminalText}</span>
             <motion.span
               animate={{ opacity: [1, 0, 1] }}
               transition={{ repeat: Infinity, duration: 0.8 }}
-              className="inline-block w-2 bg-cyan-400 h-[1em] translate-y-0.5 ml-1"
+              className="inline-block w-2 bg-fuchsia-400 h-[1em] translate-y-0.5 ml-1"
             ></motion.span>
           </div>
         </div>

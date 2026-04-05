@@ -7,7 +7,7 @@ const skillsBioData = [
   {
     cmd: "$ whoami",
     content: "Anil Pradhan\nRole: Backend & AI Systems Developer\nBase: Bhubaneswar, Odisha",
-    contentColor: "text-cyan-400"
+    contentColor: "text-fuchsia-400"
   },
   {
     cmd: "$ cat about.txt",
@@ -44,18 +44,18 @@ export default function About() {
           className="relative lg:col-span-2 w-full h-full"
         >
           {/* Outer glow */}
-          <div className="absolute -inset-1 bg-[#00e5ff]/20 rounded-xl blur-2xl opacity-60 translate-y-4 shadow-[0_30px_60px_rgba(0,229,255,0.4)]" />
-          <div className="absolute inset-x-5 -bottom-8 h-20 bg-cyan-400/30 blur-3xl opacity-70" />
+          <div className="absolute -inset-1 bg-fuchsia-500/20 rounded-xl blur-2xl opacity-60 translate-y-4 shadow-[0_30px_60px_rgba(232,121,249,0.4)]" />
+          <div className="absolute inset-x-5 -bottom-8 h-20 bg-fuchsia-400/30 blur-3xl opacity-70" />
 
           <div className="relative h-full rounded-2xl border border-zinc-700/60 bg-[#0a0a0a]/90 backdrop-blur-md p-5 sm:p-7 min-h-[280px] sm:min-h-[340px] shadow-[0_0_40px_rgba(0,0,0,0.8)] overflow-x-auto">
             <div className="font-mono text-[14px] leading-7">
               {skillsBioData.map((item, idx) => (
                 <div key={idx} className="mb-7 last:mb-0 relative z-10 w-full overflow-hidden">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#00e5ff] font-bold">&gt;</span>
+                    <span className="text-fuchsia-400 font-bold">&gt;</span>
                     <span className="text-zinc-100 font-semibold">{item.cmd}</span>
                   </div>
-                  <div className={`pl-4 ${item.contentColor} whitespace-pre-line border-l-2 border-[#00e5ff]/10 ml-[5px]`}>
+                  <div className={`pl-4 ${item.contentColor} whitespace-pre-line border-l-2 border-fuchsia-400/20 ml-[5px]`}>
                     {item.content}
                   </div>
                 </div>
@@ -78,9 +78,9 @@ export default function About() {
               className="bg-[#050505]/90 backdrop-blur-xl border border-zinc-800/80 rounded-2xl p-8 flex flex-col justify-center shadow-[inset_0_1px_5px_rgba(255,255,255,0.02)] relative overflow-hidden group min-h-[160px]"
             >
               {/* Highlight line on top */}
-              <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-[#00e5ff]/20 to-transparent group-hover:via-[#00e5ff]/60 transition-opacity duration-500" />
+              <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-fuchsia-500/20 to-transparent group-hover:via-fuchsia-400/60 transition-opacity duration-500" />
               
-              <h4 className="font-syne text-[45px] sm:text-[55px] leading-none font-extrabold text-[#00e5ff] mb-2 sm:mb-3 tracking-tight">
+              <h4 className="font-syne text-[45px] sm:text-[55px] leading-none font-extrabold text-fuchsia-400 mb-2 sm:mb-3 tracking-tight">
                 {card.value}
               </h4>
               <p className="text-zinc-500 font-sans text-[13px] uppercase tracking-widest font-medium">

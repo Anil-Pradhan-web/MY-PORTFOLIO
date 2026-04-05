@@ -42,7 +42,7 @@ export default function AnimatedCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-cyan-400 rounded-full pointer-events-none z-[100] hidden md:block"
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-fuchsia-400 rounded-full pointer-events-none z-[100] hidden md:block"
         animate={{
           x: mousePosition.x - 5,
           y: mousePosition.y - 5,
@@ -53,8 +53,8 @@ export default function AnimatedCursor() {
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[99] hidden md:block"
         style={{
-          border: '1px solid rgba(34, 211, 238, 0.4)',
-          backgroundColor: isHovering ? 'rgba(34, 211, 238, 0.1)' : 'transparent',
+          border: '1px solid rgba(232, 121, 249, 0.4)',
+          backgroundColor: isHovering ? 'rgba(232, 121, 249, 0.1)' : 'transparent',
         }}
         animate={{
           x: mousePosition.x - 16,

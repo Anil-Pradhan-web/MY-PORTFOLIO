@@ -29,11 +29,11 @@ export default function Contact() {
             const Icon = info.icon;
             return (
               <div key={idx} className="flex items-center gap-4 text-zinc-300 group">
-                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-lg group-hover:border-cyan-400/50 group-hover:bg-cyan-400/10 transition-colors">
-                  <Icon className="text-zinc-500 group-hover:text-cyan-400 transition-colors" size={20} />
+                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-lg group-hover:border-fuchsia-400/50 group-hover:bg-fuchsia-400/10 transition-colors">
+                  <Icon className="text-zinc-500 group-hover:text-fuchsia-400 transition-colors" size={20} />
                 </div>
                 {info.href ? (
-                  <a href={info.href} target="_blank" rel="noreferrer" className="text-lg hover:text-cyan-400 transition-colors font-sans">
+                  <a href={info.href} target="_blank" rel="noreferrer" className="text-lg hover:text-fuchsia-400 transition-colors font-sans">
                     {info.text}
                   </a>
                 ) : (
@@ -66,7 +66,7 @@ export default function Contact() {
                 name="name"
                 type="text"
                 placeholder="John Doe"
-                className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all placeholder:text-zinc-600"
+                className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-fuchsia-400 focus:ring-1 focus:ring-fuchsia-400/50 transition-all placeholder:text-zinc-600"
                 required
               />
             </div>
@@ -79,7 +79,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 placeholder="john@example.com"
-                className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all placeholder:text-zinc-600"
+                className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-fuchsia-400 focus:ring-1 focus:ring-fuchsia-400/50 transition-all placeholder:text-zinc-600"
                 required
               />
             </div>
@@ -100,7 +100,7 @@ export default function Contact() {
             <button
               suppressHydrationWarning
               type="submit"
-              className="mt-2 w-full bg-cyan-400 text-black font-bold text-lg py-4 rounded-lg hover:bg-cyan-300 transition-colors neon-glow"
+              className="mt-2 w-full bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white font-bold text-lg py-4 rounded-lg hover:from-fuchsia-400 hover:to-pink-400 transition-all neon-glow shadow-[0_0_20px_rgba(232,121,249,0.3)] hover:shadow-[0_0_30px_rgba(232,121,249,0.5)]"
             >
               Send Message
             </button>
@@ -111,8 +111,8 @@ export default function Contact() {
       <footer className="mt-32 pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between text-zinc-600 text-sm gap-4">
         <span>Built by Anil Pradhan · 2026 · ITER, SOA University, Bhubaneswar, Odisha</span>
         <div className="flex gap-4">
-          <a href="https://github.com/Anil-Pradhan-web" className="hover:text-cyan-400 transition-colors">GitHub</a>
-          <a href="https://linkedin.com/in/anil-pradhan543" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
+          <a href="https://github.com/Anil-Pradhan-web" className="hover:text-fuchsia-400 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/anil-pradhan543" className="hover:text-fuchsia-400 transition-colors">LinkedIn</a>
         </div>
       </footer>
     </section>

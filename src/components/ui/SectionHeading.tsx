@@ -18,8 +18,8 @@ export default function SectionHeading({ children, align = 'left' }: SectionHead
         {children}
       </h2>
       <div className={`relative w-full mt-6 ${align === 'center' ? 'max-w-md mx-auto' : ''}`}>
-        <div className={`absolute inset-y-0 ${align === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0'} w-1/3 bg-[#00e5ff] blur-md opacity-20`} />
-        <div className={`h-[1px] w-full ${align === 'center' ? 'bg-gradient-to-r from-transparent via-[#00e5ff] to-transparent' : 'bg-gradient-to-r from-[#00e5ff] via-[#00e5ff]/50 to-transparent'} relative z-10`} />
+        <div className={`absolute inset-y-0 ${align === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0'} w-1/3 bg-fuchsia-500 blur-md opacity-20`} />
+        <div className={`h-[1px] w-full ${align === 'center' ? 'bg-gradient-to-r from-transparent via-fuchsia-400 to-transparent' : 'bg-gradient-to-r from-fuchsia-400 via-fuchsia-400/50 to-transparent'} relative z-10`} />
       </div>
     </motion.div>
   );

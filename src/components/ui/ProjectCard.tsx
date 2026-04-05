@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Zap } from 'lucide-react';
 import TechBadge from './TechBadge';
 
 interface ProjectCardProps {
@@ -27,64 +27,110 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative w-full rounded-xl overflow-hidden bg-[#0d0d0d] p-1"
+      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative w-full"
     >
-      {/* Animated gradient border pseudo-element effect using a background standard */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-900 group-hover:from-cyan-400/30 group-hover:to-rose-500/30 transition-colors duration-500" />
-      
-      <div className="relative h-full w-full bg-[#0a0a0a] rounded-lg p-6 flex flex-col justify-between z-10 transition-transform duration-500">
-        <div>
-          <div className="flex flex-wrap gap-2 mb-6">
+      {/* Outer ambient pink glow — subtle bloom behind the card */}
+      <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-fuchsia-500/40 via-pink-500/20 to-purple-600/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700 -z-10" />
+
+      {/* Animated gradient border */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-fuchsia-500/60 via-pink-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 p-[1px]" />
+
+      {/* Card body */}
+      <div className="relative w-full rounded-2xl border border-zinc-800/80 group-hover:border-fuchsia-500/40 bg-[#080808] overflow-hidden transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(232,121,249,0.12),0_0_120px_rgba(217,70,239,0.06)]">
+
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-fuchsia-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+        {/* Subtle corner grid / scanline texture */}
+        <div className="absolute top-0 right-0 w-48 h-48 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-700"
+          style={{
+            backgroundImage: 'repeating-linear-gradient(0deg, #e879f9 0px, #e879f9 1px, transparent 1px, transparent 24px), repeating-linear-gradient(90deg, #e879f9 0px, #e879f9 1px, transparent 1px, transparent 24px)',
+          }}
+        />
+
+        {/* Pink radial spotlight in corner */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-fuchsia-500/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+
+        <div className="relative p-7 md:p-9 flex flex-col gap-6 z-10">
+
+          {/* ── Header row ── */}
+          <div className="flex flex-col gap-3">
+            {/* Number pill + title */}
+            <div className="flex items-center gap-4">
+              <span className="text-[11px] font-mono font-bold text-fuchsia-400/70 bg-fuchsia-500/10 border border-fuchsia-500/20 px-2.5 py-1 rounded-full tracking-widest">
+                /{String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="font-syne text-xl md:text-2xl font-bold text-white group-hover:text-fuchsia-100 transition-colors duration-300 leading-tight">
+                {title}
+              </h3>
+            </div>
+
+            <p className="text-[13px] font-mono text-fuchsia-300/60 tracking-wide leading-relaxed">
+              {tagline}
+            </p>
+          </div>
+
+          {/* ── Highlight chip ── */}
+          <div className="inline-flex items-center gap-2 self-start bg-gradient-to-r from-fuchsia-500/15 to-pink-500/10 border border-fuchsia-400/25 text-fuchsia-300 rounded-lg px-4 py-2.5 text-xs font-semibold shadow-[0_0_15px_rgba(232,121,249,0.08)]">
+            <Zap size={13} className="shrink-0 text-fuchsia-400" />
+            {highlight}
+          </div>
+
+          {/* ── Description ── */}
+          <p className="text-zinc-400 leading-relaxed text-sm">
+            {description}
+          </p>
+
+          {/* ── Feature list ── */}
+          {features && (
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {features.map((feat, i) => (
+                <li key={i} className="flex items-start gap-2.5 text-[13px] text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                  <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-fuchsia-500 shrink-0 shadow-[0_0_6px_rgba(232,121,249,0.8)]" />
+                  {feat}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* ── Tech stack badges ── */}
+          <div className="flex flex-wrap gap-2">
             {stack.map((tech) => (
               <TechBadge key={tech} name={tech} />
             ))}
           </div>
-          
-          <h3 className="font-syne text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-            {title}
-          </h3>
-          <p className="text-zinc-400 font-mono text-sm mb-4">{tagline}</p>
-          
-          <p className="text-zinc-300 leading-relaxed text-sm mb-4">
-            {description}
-          </p>
-          
-          <div className="bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 rounded p-3 text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
-            ✨ {highlight}
-          </div>
 
-          {features && (
-            <ul className="list-disc list-inside text-zinc-400 text-sm mb-6 space-y-1">
-              {features.map((feature, i) => (
-                <li key={i}>{feature}</li>
-              ))}
-            </ul>
-          )}
-        </div>
+          {/* ── Divider ── */}
+          <div className="h-[1px] bg-gradient-to-r from-fuchsia-500/30 via-pink-400/10 to-transparent" />
 
-        <div className="flex items-center gap-4 mt-auto pt-6 border-t border-zinc-800">
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-sm font-medium text-white bg-zinc-900 hover:bg-zinc-800 px-4 py-2 rounded-lg transition-colors border border-zinc-800 hover:border-zinc-700"
-          >
-            <Github size={16} /> Source Code
-          </a>
-          {liveUrl && !liveUrl.includes('desktop') && (
+          {/* ── Action buttons ── */}
+          <div className="flex items-center gap-3 flex-wrap">
             <a
-              href={liveUrl}
+              href={githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-cyan-400 bg-cyan-400/10 hover:bg-cyan-400/20 border border-cyan-400/20 px-4 py-2 rounded-lg transition-all"
+              className="flex items-center gap-2 text-sm font-medium text-white bg-zinc-900 hover:bg-zinc-800 px-5 py-2.5 rounded-lg transition-all duration-300 border border-zinc-700/60 hover:border-fuchsia-400/40 hover:shadow-[0_0_16px_rgba(232,121,249,0.15)]"
             >
-              <ExternalLink size={16} /> Live Demo
+              <Github size={15} />
+              Source Code
             </a>
-          )}
+            {liveUrl && !liveUrl.includes('desktop') && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-fuchsia-300 bg-gradient-to-r from-fuchsia-500/15 to-pink-500/10 hover:from-fuchsia-500/25 hover:to-pink-500/20 border border-fuchsia-400/30 hover:border-fuchsia-400/60 px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(232,121,249,0.2)]"
+              >
+                <ExternalLink size={15} />
+                Live Demo
+              </a>
+            )}
+          </div>
+
         </div>
       </div>
     </motion.div>
