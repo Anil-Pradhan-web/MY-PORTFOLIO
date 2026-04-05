@@ -8,7 +8,7 @@ export default function Hero() {
   const fullTerminalText = `$ anil --status
 
   Role:   Full-Stack Dev                       |
-  CGPA:   9.55 / 10.0                          |
+  CGPA:   9.11 / 10.0                          |
   Year:   B.Tech CSE, Sem 4                    |
   Uni:    ITER, SOA Univ, Bhubaneswar, Odisha  |
   Focus:  AI + Backend                         |
@@ -100,7 +100,7 @@ export default function Hero() {
             View My Work
           </a>
           <a
-            href="/ANIL_RESUME.pdf"
+            href="/my_resume.pdf"
             target="_blank"
             className="flex items-center justify-center bg-zinc-900/50 backdrop-blur-md border border-zinc-700 text-zinc-300 font-medium px-8 py-3.5 rounded-lg w-full sm:w-auto text-center hover:bg-zinc-800 hover:text-white transition-all font-sans"
           >

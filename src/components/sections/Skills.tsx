@@ -10,35 +10,31 @@ import { BrainCircuit, Network, Mic, BarChart, Users, Cpu } from 'lucide-react';
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["Java", "Python", "TypeScript", "JavaScript", "SQL"]
+    skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL"]
   },
   {
     title: "Backend & APIs",
-    skills: ["FastAPI", "Django", "Django REST", "Spring Boot", "REST API", "JWT", "Gunicorn"]
+    skills: ["FastAPI", "Django REST Framework", "Spring Boot", "REST API", "JWT", "Firebase", "Gunicorn"]
   },
   {
     title: "Frontend",
-    skills: ["Next.js", "React", "React Native", "Tailwind CSS", "HTML5", "CSS3", "Vite"]
+    skills: ["Next.js", "React", "HTML5", "CSS3", "Tailwind CSS"]
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "SQLite", "Firebase"]
+    skills: ["PostgreSQL", "MySQL", "SQLite", "Firebase Firestore"]
   },
   {
-    title: "AI & Agents",
-    skills: ["Groq", "Gemini", "Amazon Bedrock", "AutoGen", "Multi-Agent Systems", "LLM Integration", "Sarvam AI"]
+    title: "Cloud & Deploy",
+    skills: ["Vercel", "Render", "Netlify", "Google Cloud", "Docker"]
   },
   {
-    title: "Cloud & DevOps",
-    skills: ["Google Cloud", "Docker", "Vercel", "Render", "Nginx", "GitHub Actions"]
+    title: "AI / LLM",
+    skills: ["Microsoft AutoGen", "Groq", "Gemini 1.5 Pro", "Ollama", "LangChain"]
   },
   {
     title: "Tools",
-    skills: ["Git", "GitHub", "Postman", "Selenium", "Playwright", "Linux"]
-  },
-  {
-    title: "Data",
-    skills: ["NumPy", "Pandas", "Matplotlib"]
+    skills: ["Git", "GitHub", "GitHub Actions", "Playwright"]
   }
 ];
 
@@ -50,28 +46,26 @@ const techConfig: Record<string, { icon: any; color?: string }> = {
   "SQL": { icon: FaDatabase, color: "#336791" },
   "FastAPI": { icon: SiFastapi, color: "#009688" },
   "Django": { icon: SiDjango, color: "#4ade80" }, // Lighter green for dark mode
-  "Django REST": { icon: SiDjango, color: "#4ade80" },
+  "Django REST Framework": { icon: SiDjango, color: "#4ade80" },
   "Spring Boot": { icon: SiSpringboot, color: "#6DB33F" },
   "REST API": { icon: TbApi, color: "#0ea5e9" },
   "JWT": { icon: SiJsonwebtokens, color: "#FB015B" },
   "Gunicorn": { icon: SiGunicorn, color: "#499848" },
   "Next.js": { icon: SiNextdotjs, color: "#ffffff" },
   "React": { icon: FaReact, color: "#61DAFB" },
-  "React Native": { icon: FaReact, color: "#61DAFB" },
   "Tailwind CSS": { icon: SiTailwindcss, color: "#06B6D4" },
   "HTML5": { icon: FaHtml5, color: "#E34F26" },
   "CSS3": { icon: FaCss3Alt, color: "#1572B6" },
-  "Vite": { icon: SiVite, color: "#646CFF" },
   "PostgreSQL": { icon: SiPostgresql, color: "#336791" },
   "MySQL": { icon: SiMysql, color: "#4479A1" },
   "SQLite": { icon: SiSqlite, color: "#3b82f6" }, // Bright blue
+  "Firebase Firestore": { icon: SiFirebase, color: "#FFCA28" },
   "Firebase": { icon: SiFirebase, color: "#FFCA28" },
   "Groq": { icon: Cpu, color: "#f97316" }, // Orange
-  "Gemini": { icon: BrainCircuit, color: "#8b5cf6" }, // Purple
-  "Amazon Bedrock": { icon: TbRobot, color: "#FF9900" }, // generic robotic for bedrock/aws missing icon
-  "AutoGen": { icon: TbRobot, color: "#0078D4" },
-  "Multi-Agent Systems": { icon: Users, color: "#10b981" },
-  "LLM Integration": { icon: Network, color: "#8b5cf6" },
+  "Gemini 1.5 Pro": { icon: BrainCircuit, color: "#8b5cf6" }, // Purple
+  "Microsoft AutoGen": { icon: TbRobot, color: "#0078D4" },
+  "Ollama": { icon: BrainCircuit, color: "#10b981" },
+  "LangChain": { icon: Network, color: "#8b5cf6" },
   "Sarvam AI": { icon: Mic, color: "#f43f5e" },
   "Google Cloud": { icon: SiGooglecloud, color: "#4285F4" },
   "Docker": { icon: FaDocker, color: "#2496ED" },

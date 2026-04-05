@@ -15,7 +15,7 @@ const contactInfo = [
 export default function Contact() {
   return (
     <section id="contact" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
-      <SectionHeading>Let's Build Something</SectionHeading>
+      <SectionHeading>Let's Build Together</SectionHeading>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mt-12 w-full">
         <motion.div

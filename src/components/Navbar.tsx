@@ -48,7 +48,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/ANIL_RESUME.pdf"
+              href="/my_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
@@ -88,7 +88,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/ANIL_RESUME.pdf"
+            href="/my_resume.pdf"
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-zinc-300 text-center py-2 font-medium"
           >

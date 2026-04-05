@@ -5,22 +5,16 @@ import SectionHeading from '../ui/SectionHeading';
 
 const experiences = [
   {
-    role: "Hackathon Participant — AI Career Mentor",
-    org: "Microsoft AI Dev Days Hackathon",
+    role: "Solo Developer",
+    org: "AI Career Mentor – Multi-Agent AI Career Platform",
     period: "Feb – Mar 2026",
-    desc: "Built and submitted a 4-agent AI career coaching platform. Stack: AutoGen + Azure OpenAI + Next.js. Solo submission."
+    desc: "Submitted to Microsoft AI Dev Days Hackathon & Amazon Nova AI Hackathon. Built a production-grade 4-agent AI system using Microsoft AutoGen, FastAPI backend with JWT auth, PostgreSQL, PDF parsing, and real-time WebSocket mock interviews."
   },
   {
-    role: "Hackathon Participant — AI Career Mentor",
-    org: "Amazon Nova AI Hackathon",
-    period: "Mar 2026",
-    desc: "Adapted the same platform for Amazon Nova 2 Lite + Sonic via Bedrock. Targeting Agentic AI and Voice AI categories."
-  },
-  {
-    role: "Participant",
-    org: "Build with AI Bootcamp — Hack2skill (Kolkata)",
-    period: "Mar 2026",
-    desc: "Attended the Kolkata session of the Build with AI Bootcamp. Focused on practical AI application development and agent-based systems."
+    role: "Team: ClutchCode",
+    org: "VolunteerIQ – Google Solution Challenge 2026",
+    period: "Mar – Apr 2026",
+    desc: "AI-driven volunteer coordination platform for local NGOs. Developed full-stack volunteer platform with Next.js 14, FastAPI, Firebase (auth + Firestore), and Gemini 1.5 Pro for smart volunteer matching and impact analytics."
   }
 ];
 

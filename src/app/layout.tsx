@@ -24,7 +24,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Anil Pradhan — Full-Stack & AI Developer',
-  description: 'B.Tech CSE student at SOA University. Building production-grade AI + Full-Stack systems. CGPA 9.55. Open to internships in Bangalore, Hyderabad, Bhubaneswar.',
+  description: 'B.Tech CSE student at SOA University. Building production-grade AI + Full-Stack systems. CGPA 9.11. Open to internships in Bangalore, Hyderabad, Bhubaneswar.',
   keywords: ['Anil Pradhan', 'Full Stack Developer', 'AI Developer', 'SOA University', 'Next.js', 'FastAPI', 'Python', 'Java'],
   openGraph: {
     title: 'Anil Pradhan — Full-Stack & AI Developer',

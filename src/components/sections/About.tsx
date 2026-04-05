@@ -5,25 +5,25 @@ import SectionHeading from '../ui/SectionHeading';
 
 const skillsBioData = [
   {
-    cmd: "whoami",
-    content: "Anil Pradhan — Backend & Full-Stack Developer",
-    contentColor: "text-zinc-400"
+    cmd: "$ whoami",
+    content: "Anil Pradhan\nRole: Backend & AI Systems Developer\nBase: Bhubaneswar, Odisha",
+    contentColor: "text-cyan-400"
   },
   {
-    cmd: "$cat about.txt",
-    content: "2nd-year B.Tech CSE student at ITER,\nSOA University, Bhubaneswar, Odisha. Passionate\nabout building scalable AI-powered systems.\nCurrently in Sem 4, graduating 2028.",
-    contentColor: "text-zinc-400"
+    cmd: "$ cat about.txt",
+    content: "I am a 2nd-year B.Tech CSE student at SOA University (Sem 4, Batch of '28). I specialize in architecting production-grade backend servers, multi-agent AI systems, and fluid full-stack applications. Always eager to solve complex problems through code.",
+    contentColor: "text-zinc-300"
   },
   {
-    cmd: "$cat mission.txt",
-    content: "9.55",
+    cmd: "$ cat mission.txt",
+    content: "Bridging the gap between human intuition and machine execution by building scalable, low-latency AI orchestration platforms.",
     contentColor: "text-zinc-400"
   }
 ];
 
 const stardCards = [
-  { label: "CGPA", value: "9.55" },
-  { label: "Major Projects", value: "3+" },
+  { label: "CGPA", value: "9.11" },
+  { label: "Major Projects", value: "2" },
   { label: "Hackathon Submissions", value: "2" },
   { label: "Days Java Coding", value: "80+" }
 ];

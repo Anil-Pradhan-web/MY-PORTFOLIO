@@ -23,33 +23,19 @@ const projectsList = [
   },
   {
     title: "S.I.A — Super Intelligent Assistant",
-    tagline: "Voice-activated AI assistant capable of automation and local device control.",
-    description: "A fully functional AI assistant built with FastAPI and React. Uses a Groq Llama 3.3 70B model with a Gemini 2.0 Flash fallback to execute desktop automation, browse responsibly dynamically, and write code automatically inside VS Code via Voice.",
-    highlight: "Arc Reactor Cyberpunk UI · System Automation · Edge-TTS Voice",
+    tagline: "The Ultimate Frontier of Autonomous Multi-Agent Swarm Intelligence.",
+    description: "A Cognitive Orchestration Platform bridging human intuition and machine execution. Powered by a specialized Swarm Architecture with three distinct neural nodes, handling everything from deep conversational memory to hardware-level system automation.",
+    highlight: "Neural Agent Swarm · Zero-Latency WebSockets · System Execution Kernel",
     features: [
-      "Voice Recognition: Wake word detection with smart intent",
-      "Social Automation: Auto-scrolls YouTube/Instagram with Smart Duration",
-      "IDE Coding Agent: Auto-types code inside VS Code with language detection",
-      "DSA Expert: Solves LeetCode/GFG problems with complete context"
+      "Deep Conversation Node: Groq Llama 3.3 70B + Gemini 2.0 routing with zero-latency Edge-TTS",
+      "Autonomous Coding Node: Direct VS Code interfacing for real-time refactoring & DSA solving",
+      "System Execution Node: Native OS manipulation and Selenium-driven browser automation",
+      "Temporal Memory Engine: Persistent SQLite vector-based recall for long-term user context"
     ],
-    stack: ["FastAPI", "React", "Groq Llama 3", "Gemini 2.0", "Selenium", "Edge-TTS", "SQLite"],
+    stack: ["Next.js 15", "FastAPI", "Groq 70B", "Gemini 2.0", "WebSockets", "Selenium", "Edge-TTS"],
     githubUrl: "https://github.com/Anil-Pradhan-web",
     liveUrl: "desktop"
   },
-  {
-    title: "City-Bus Live",
-    tagline: "Real-time bus tracking, smart trip planner, and distance-based fares.",
-    description: "Comprehensive full-stack monorepo designed to provide real-time bus tracking and smart routing for city commuters. Provides live updates on an interactive 3D map with geographic fare scaling logic powered by Haversine equations.",
-    highlight: "Live 3D Map Tracking · Haversine Fare Logic · Django API",
-    features: [
-      "Real-Time Tracking: Live position updates with smooth map interpolation",
-      "Smart Trip Planner: Intelligent routing solving direct paths or 1-hop transfers",
-      "Dynamic Fares: Accurate distance calculations scaling ₹5/KM via backend",
-      "Live Metrics: Bus speed, crowding status, and accurate upcoming stop ETAs"
-    ],
-    stack: ["React 18", "Django 4.2+", "Vite", "Mapbox GL", "SQLite3", "JWT"],
-    githubUrl: "https://github.com/Anil-Pradhan-web",
-  }
 ];
 
 export default function Projects() {
