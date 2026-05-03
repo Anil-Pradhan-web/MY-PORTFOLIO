@@ -1,15 +1,16 @@
+--- src/app/globals.css (原始)
 @import 'tailwindcss';
 
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-syne: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  
+
   --color-brand-primary: #e879f9;
   --color-brand-hover: #d946ef;
   --color-brand-glow: rgba(232, 121, 249, 0.15);
   --color-brand-pink: #f0abfc;
-  
+
   --color-bg-main: #0a0a0a;
 }
 
@@ -53,5 +54,142 @@ html {
   }
   .pink-glow {
     box-shadow: 0 0 40px rgba(232, 121, 249, 0.2), 0 0 80px rgba(217, 70, 239, 0.1);
+  }
+}
+
++++ src/app/globals.css (修改后)
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-syne: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  /* Brand Colors - Modern Gradient Palette */
+  --color-brand-primary: #8b5cf6;
+  --color-brand-secondary: #06b6d4;
+  --color-brand-accent: #f472b6;
+  --color-brand-glow: rgba(139, 92, 246, 0.15);
+
+  /* Background Colors */
+  --color-bg-main: #030014;
+  --color-bg-card: rgba(15, 10, 30, 0.6);
+}
+
+:root {
+  --background: #030014;
+  --foreground: #fafafa;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #06b6d4);
+  border-radius: 3px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+  color: #ffffff;
+}
+
+/* Hide default cursor for custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Utilities */
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #8b5cf6, #06b6d4, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #8b5cf6, #06b6d4, #f472b6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glass-card {
+    background: rgba(15, 10, 30, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
+  }
+
+  .pink-glow {
+    box-shadow: 0 0 40px rgba(244, 114, 182, 0.2), 0 0 80px rgba(139, 92, 246, 0.1);
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s infinite;
   }
 }
