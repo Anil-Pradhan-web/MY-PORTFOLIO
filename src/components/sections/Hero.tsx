@@ -143,55 +143,112 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="flex items-center justify-center glass-card backdrop-blur-md border border-zinc-700 text-zinc-300 font-medium px-8 py-4 rounded-xl w-full sm:w-auto text-center hover:bg-zinc-800/50 hover:text-white hover:border-violet-400/50 transition-all font-sans"
           >
-            Download CV
+            Download Resume
           </a>
         </motion.div>
       </motion.div>
 
-      {/* Terminal Block - Right Side */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
-        animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="hidden lg:block w-full lg:w-[450px] xl:w-[500px] z-10 relative mt-16 lg:mt-0 perspective-1000"
-      >
-        {/* Glow Effects */}
-        <div className="absolute -inset-1 bg-gradient-to-tr from-violet-500/40 via-cyan-500/20 to-transparent rounded-2xl blur-2xl opacity-60 translate-y-4 -translate-x-4" />
-        <div className="absolute inset-x-10 -bottom-8 h-24 bg-violet-400/20 blur-3xl opacity-60" />
-
-        {/* Terminal Window */}
-        <div className="relative w-full rounded-2xl border border-white/10 bg-[#050508]/60 backdrop-blur-2xl overflow-hidden shadow-[0_0_100px_rgba(139,92,246,0.15)]">
-          {/* Scanlines Effect */}
-          <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,33,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_2px,3px_100%]" />
-
-          {/* Header */}
-          <div className="flex px-5 py-4 w-full items-center justify-between border-b border-white/5 bg-white/5">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-            </div>
-            <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">
-              <Rocket size={10} className="text-violet-400" />
-              <span>system_core.sh</span>
-            </div>
-            <div className="w-4 h-4 rounded-full border border-violet-500/20 flex items-center justify-center">
-              <div className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></div>
-            </div>
+      {/* Right Side - Image and Terminal Container */}
+      <div className="flex flex-col gap-12 z-10 w-full lg:w-auto items-center lg:items-end">
+        
+        {/* User Photo Frame */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative group hidden lg:block"
+        >
+          {/* Outer Glows */}
+          <div className="absolute -inset-4 bg-gradient-to-tr from-violet-600/30 via-cyan-400/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+          <div className="absolute -inset-0.5 bg-gradient-to-tr from-violet-500 to-cyan-400 rounded-full opacity-20 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+          
+          {/* Main Image Container */}
+          <div className="relative w-56 h-56 xl:w-64 xl:h-64 rounded-full border-2 border-white/10 overflow-hidden backdrop-blur-sm shadow-[0_0_50px_rgba(139,92,246,0.1)]">
+            <img 
+              src="/anil.png" 
+              alt="Anil Pradhan" 
+              className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+            />
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            
+            {/* Animated Ring */}
+            <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none opacity-40">
+              <circle 
+                cx="50%" cy="50%" r="48%" 
+                fill="none" 
+                stroke="url(#grad1)" 
+                strokeWidth="2" 
+                strokeDasharray="10 20"
+                className="animate-[spin_20s_linear_infinite]"
+              />
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#8b5cf6" />
+                  <stop offset="100%" stopColor="#06b6d4" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
 
-          {/* Body */}
-          <div className="p-8 font-mono text-[14px] leading-7 text-violet-200/90 whitespace-pre w-full overflow-hidden min-h-[340px] relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent pointer-events-none" />
-            <span className="relative z-10">{terminalText}</span>
-            <motion.span
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ repeat: Infinity, duration: 0.8 }}
-              className="inline-block w-2 bg-violet-400 h-[1.2em] translate-y-1 ml-1 shadow-[0_0_15px_rgba(139,92,246,1)]"
-            ></motion.span>
+          {/* Floating Badge */}
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-lg border border-white/10 shadow-xl"
+          >
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[10px] font-mono text-zinc-300 uppercase tracking-widest">Available</span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Terminal Block */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
+          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="w-full lg:w-[450px] xl:w-[500px] relative perspective-1000"
+        >
+          {/* Glow Effects */}
+          <div className="absolute -inset-1 bg-gradient-to-tr from-violet-500/40 via-cyan-500/20 to-transparent rounded-2xl blur-2xl opacity-60 translate-y-4 -translate-x-4" />
+          <div className="absolute inset-x-10 -bottom-8 h-24 bg-violet-400/20 blur-3xl opacity-60" />
+
+          {/* Terminal Window */}
+          <div className="relative w-full rounded-2xl border border-white/10 bg-[#050508]/60 backdrop-blur-2xl overflow-hidden shadow-[0_0_100px_rgba(139,92,246,0.15)]">
+            {/* Scanlines Effect */}
+            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,33,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_2px,3px_100%]" />
+
+            {/* Header */}
+            <div className="flex px-5 py-4 w-full items-center justify-between border-b border-white/5 bg-white/5">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+              </div>
+              <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">
+                <Rocket size={10} className="text-violet-400" />
+                <span>system_core.sh</span>
+              </div>
+              <div className="w-4 h-4 rounded-full border border-violet-500/20 flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></div>
+              </div>
+            </div>
+
+            {/* Body */}
+            <div className="p-8 font-mono text-[14px] leading-7 text-violet-200/90 whitespace-pre w-full overflow-hidden min-h-[340px] relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent pointer-events-none" />
+              <span className="relative z-10">{terminalText}</span>
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ repeat: Infinity, duration: 0.8 }}
+                className="inline-block w-2 bg-violet-400 h-[1.2em] translate-y-1 ml-1 shadow-[0_0_15px_rgba(139,92,246,1)]"
+              ></motion.span>
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
 
       {/* Scroll Indicator */}
       <motion.div

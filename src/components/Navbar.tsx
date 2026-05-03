@@ -59,7 +59,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="text-zinc-300 hover:text-white px-5 py-2 text-sm font-medium transition-colors border border-zinc-700 rounded-lg hover:bg-zinc-800"
             >
-              Download CV
+              Download Resume
             </a>
             <a
               href="#contact"
@@ -107,7 +107,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-zinc-300 text-center py-2 font-medium"
           >
-            Download CV
+            Download Resume
           </a>
           <a
             href="#contact"
