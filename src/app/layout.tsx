@@ -1,12 +1,24 @@
 import type { Metadata } from 'next';
-import { Syne, JetBrains_Mono, Inter } from 'next/font/google';
+import { Syne, JetBrains_Mono, Inter, Outfit, Calistoga } from 'next/font/google';
 import './globals.css';
-import AnimatedCursor from '@/components/ui/AnimatedCursor';
 import Navbar from '@/components/Navbar';
 
 const syne = Syne({
   subsets: ['latin'],
   variable: '--font-syne',
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+const calistoga = Calistoga({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-calistoga',
   display: 'swap',
 });
 
@@ -46,9 +58,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${syne.variable} ${jetbrainsMono.variable} ${inter.variable} font-sans bg-[#0a0a0a] text-zinc-300 antialiased overflow-x-hidden`}
+        className={`${syne.variable} ${jetbrainsMono.variable} ${inter.variable} ${outfit.variable} ${calistoga.variable} font-outfit bg-[#030014] text-zinc-300 antialiased overflow-x-hidden`}
       >
-        <AnimatedCursor />
         <Navbar />
         {children}
       </body>

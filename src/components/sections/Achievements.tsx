@@ -41,20 +41,20 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="flex flex-col bg-[#0d0d0d] p-8 rounded-2xl border border-zinc-800 hover:border-fuchsia-400/50 transition-colors shadow-lg group relative overflow-hidden"
+            className="flex flex-col bg-[#0d0d0d] p-8 rounded-2xl border border-zinc-800 hover:border-violet-400/50 transition-colors shadow-lg group relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-fuchsia-400/10 transition-colors" />
-            <div className="w-14 h-14 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center mb-6 group-hover:border-fuchsia-400/30 transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-violet-400/10 transition-colors" />
+            <div className="w-14 h-14 bg-zinc-900 border border-zinc-800 rounded-full flex items-center justify-center mb-6 group-hover:border-violet-400/30 transition-colors">
               <span className="text-2xl">{item.icon}</span>
             </div>
-            <h3 className="font-syne text-2xl font-bold text-white mb-3 group-hover:text-fuchsia-300 transition-colors">{item.title}</h3>
+            <h3 className="font-syne text-2xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors">{item.title}</h3>
             <p className="text-zinc-400 leading-relaxed mb-4">{item.desc}</p>
             {item.link ? (
               <a
                 href={item.linkUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="text-fuchsia-400 text-xs tracking-widest font-bold uppercase mt-auto flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer"
+                className="text-violet-400 text-xs tracking-widest font-bold uppercase mt-auto flex items-center gap-2 group-hover:translate-x-1 transition-transform cursor-pointer"
               >
                 {item.link}
               </a>
@@ -77,7 +77,7 @@ export default function Achievements() {
           href="https://www.linkedin.com/in/anil-pradhan543/details/certifications/"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-3 bg-zinc-900/50 backdrop-blur-md border border-zinc-800 hover:border-fuchsia-400 text-zinc-300 hover:text-fuchsia-400 font-syne tracking-wide font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-[0_0_20px_rgba(232,121,249,0.2)] group"
+          className="flex items-center gap-3 bg-zinc-900/50 backdrop-blur-md border border-zinc-800 hover:border-violet-400 text-zinc-300 hover:text-violet-400 font-syne tracking-wide font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] group"
         >
           View All Certificates
           <span className="group-hover:translate-x-1 transition-transform">→</span>

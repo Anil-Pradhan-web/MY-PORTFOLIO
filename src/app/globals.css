@@ -1,67 +1,9 @@
---- src/app/globals.css (原始)
 @import 'tailwindcss';
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-syne: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-
-  --color-brand-primary: #e879f9;
-  --color-brand-hover: #d946ef;
-  --color-brand-glow: rgba(232, 121, 249, 0.15);
-  --color-brand-pink: #f0abfc;
-
-  --color-bg-main: #0a0a0a;
-}
-
-:root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #e879f9, #d946ef);
-  border-radius: 2px;
-}
-
-/* Smooth scroll handling through Tailwind html class, but also globally */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection color */
-::selection {
-  background: rgba(232, 121, 249, 0.3);
-  color: #ffffff;
-}
-
-/* Hide cursor on body when custom cursor is active (except for small screens if needed, we'll hide it globally) */
-@media (hover: hover) and (pointer: fine) {
-  * { cursor: none !important; }
-}
-
-/* Utilities */
-@layer utilities {
-  .neon-glow {
-    box-shadow: 0 0 20px rgba(232, 121, 249, 0.25);
-  }
-  .pink-glow {
-    box-shadow: 0 0 40px rgba(232, 121, 249, 0.2), 0 0 80px rgba(217, 70, 239, 0.1);
-  }
-}
-
-+++ src/app/globals.css (修改后)
-@import 'tailwindcss';
-
-@theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
+  --font-title: var(--font-calistoga), serif;
   --font-syne: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
@@ -104,10 +46,7 @@ html {
   color: #ffffff;
 }
 
-/* Hide default cursor for custom cursor */
-@media (hover: hover) and (pointer: fine) {
-  * { cursor: none !important; }
-}
+
 
 /* Animated gradient background */
 @keyframes gradient-shift {
@@ -134,7 +73,7 @@ html {
 /* Utilities */
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #8b5cf6, #06b6d4, #f472b6);
+    background: linear-gradient(135deg, #8b5cf6, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -152,7 +91,7 @@ html {
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, #8b5cf6, #06b6d4, #f472b6);
+    background: linear-gradient(135deg, #8b5cf6, #06b6d4);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -169,8 +108,8 @@ html {
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
   }
 
-  .pink-glow {
-    box-shadow: 0 0 40px rgba(244, 114, 182, 0.2), 0 0 80px rgba(139, 92, 246, 0.1);
+  .cyan-glow {
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.2), 0 0 80px rgba(139, 92, 246, 0.1);
   }
 
   .floating {

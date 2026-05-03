@@ -6,50 +6,52 @@ import ProjectCard from '../ui/ProjectCard';
 const projectsList = [
   {
     title: "AI Career Mentor",
-    tagline: "Your personal AI career coach — available 24/7",
-    description: "Production-grade multi-agent AI platform that analyzes resumes, generates personalized learning roadmaps, fetches live job market data, and conducts mock interviews — all in under 60 seconds. Built solo for two major hackathons.",
-    highlight: "4-agent AutoGen system · Multi-hackathon submission",
+    tagline: "🌟 Your Personal AI Career Coach — 5 Intelligent Agents Working 24/7",
+    description: "Production-grade, agentic career coaching platform that uses a 5-agent system to deliver personalized career acceleration plans in under 60 seconds. Features a decoupled microservices architecture with a dedicated Multi-Agent Orchestration layer and real-time WebSocket communication.",
+    highlight: "5-Agent AutoGen Engine · Production-Ready CI/CD · Google OAuth 2.0",
     features: [
-      "Resume PDF analysis with ATS scoring",
-      "Real-time market intelligence via DuckDuckGo Search",
-      "Live mock interview with WebSocket streaming",
-      "Voice interview via Amazon Nova 2 Sonic",
-      "Multi-provider AI: Groq / Azure OpenAI / Amazon Bedrock (switchable via .env)",
-      "Submitted to: Microsoft AI Dev Days + Amazon Nova AI hackathons"
+      "📄 Resume Analysis: Score sections, calculate ATS score, and flag skill gaps using pdfplumber",
+      "🗺️ Personalized Roadmaps: Generates 8-week learning plans with resources and tracking",
+      "📈 Market Intelligence: Real-time salary ranges and hiring trends via DuckDuckGo tool calling",
+      "🎤 AI Mock Interviews: Live voice-interviews via WebSocket + edge-tts for natural feedback",
+      "🔐 Security: Google OAuth 2.0 login with JWT auth and Upstash Redis rate limiting (SlowAPI)",
+      "🏗️ DevOps: Full CI/CD pipeline with GitHub Actions, testing suite, and security audits"
     ],
-    stack: ["Next.js", "FastAPI", "Python", "AutoGen", "Groq", "Bedrock", "Azure", "PostgreSQL"],
-    githubUrl: "https://github.com/Anil-Pradhan/ai-career-mentor",
+    stack: ["Next.js 14", "FastAPI", "AutoGen", "Python", "Google Gemini", "Groq", "Neon Postgres", "Upstash Redis"],
+    githubUrl: "https://github.com/Anil-Pradhan-web/ai-career-mentor",
     liveUrl: "https://ai-career-mentor-anil.vercel.app"
   },
   {
     title: "VolunteerIQ",
-    tagline: "AI-Powered Humanitarian Intelligence for NGOs · Google Solution Challenge 2026",
-    description: "End-to-end AI coordination platform that transforms how NGOs respond to community crises. Upload raw field surveys → Gemini 1.5 Pro extracts urgent problems → auto-generates actionable tasks → matches the right volunteers with the right skills to the right locations — all within minutes, not days.",
+    tagline: "🌍 AI-Powered Humanitarian Intelligence for NGOs · Google Solution Challenge 2026",
+    description: "An end-to-end AI coordination platform that transforms how NGOs respond to community crises. VolunteerIQ bridges the gap by converting raw field surveys into coordinated field operations — matching the right skills to the right locations in minutes, not days.",
     highlight: "Google Solution Challenge 2026 · Team ClutchCode · Live Ops Map + AI Chat",
     features: [
-      "AI Survey Analysis: Upload CSV/PDF/DOCX — Gemini extracts top 3 urgent problems with urgency scores",
-      "Auto Task Generation: Each survey auto-produces 3 ready-to-launch field tasks with skill tags",
-      "Smart Volunteer Matching: AI ranks volunteers by skill match, proximity & availability (0–100 score)",
-      "Live Operations Map: Mapbox-powered geospatial map with colored task pins and geocoding cache",
-      "Floating AI Chat Widget: Plain-English Q&A pulled from live NGO database context",
-      "Dual AI Provider: Gemini 1.5 Pro (primary) + Groq Llama 3 (fallback) with rate-limit-aware switching"
+      "🤖 Survey Intelligence: Gemini 1.5 Pro analyzes PDF/CSV/DOCX reports to extract top 3 urgent problems & urgency scores",
+      "📊 Live Ops Map: Mapbox-powered geospatial visualization of tasks with colored status pins & click popups",
+      "🧩 Smart Matching: AI ranks available volunteers by skill match, proximity, and availability with 0–100 scores",
+      "💬 Contextual AI Chat: Floating assistant answers plain-English questions using live NGO database as context",
+      "🛠️ Dual AI Provider: Seamless switching between Gemini 1.5 Pro (Primary) and Groq Llama 3.3 (Fallback)",
+      "🔐 Security: Firebase-backed Google Authentication with secure server-side token verification on every request"
     ],
-    stack: ["Next.js 14", "FastAPI", "Gemini 1.5 Pro", "Groq", "Firebase Auth", "Mapbox GL", "SQLAlchemy", "Python"],
-    githubUrl: "https://github.com/Anil-Pradhan-web/SPORTLEX-AI",
-    liveUrl: "desktop"
+    stack: ["Next.js 14", "FastAPI", "Gemini 1.5 Pro", "Groq", "Firebase Auth", "Mapbox GL", "PostgreSQL", "Docker"],
+    githubUrl: "https://github.com/Anil-Pradhan-web/VolunteerIQ",
+    liveUrl: "https://volunteer-iq-clutchcode.vercel.app"
   },
   {
     title: "S.I.A — Super Intelligent Assistant",
-    tagline: "The Ultimate Frontier of Autonomous Multi-Agent Swarm Intelligence.",
-    description: "A Cognitive Orchestration Platform bridging human intuition and machine execution. Powered by a specialized Swarm Architecture with three distinct neural nodes, handling everything from deep conversational memory to hardware-level system automation.",
-    highlight: "Neural Agent Swarm · Zero-Latency WebSockets · System Execution Kernel",
+    tagline: "🤖 Agentic AI Desktop Companion with LangGraph, RAG Memory & Voice Intelligence",
+    description: "A fully local, agentic AI desktop companion v5.0 built for Windows. Unlike standard chatbots, S.I.A uses a LangGraph-powered ReAct agent to autonomously decide which tools to invoke, chain multiple actions, and remember personal context across sessions using ChromaDB.",
+    highlight: "LangGraph ReAct Agent · ChromaDB RAG · 28+ Native OS Tools",
     features: [
-      "Deep Conversation Node: Groq Llama 3.3 70B + Gemini 2.0 routing with zero-latency Edge-TTS",
-      "Autonomous Coding Node: Direct VS Code interfacing for real-time refactoring & DSA solving",
-      "System Execution Node: Native OS manipulation and Selenium-driven browser automation",
-      "Temporal Memory Engine: Persistent SQLite vector-based recall for long-term user context"
+      "🧠 LangGraph Brain: Native tool calling with Groq Llama 3.3 70B & Gemini 1.5 Flash reasoning",
+      "💾 Hybrid Memory: ChromaDB vector store for RAG + SQLite for permanent user preferences",
+      "🖥️ OS Control: Deep automation for volume, brightness, screenshots, and file system via Win32 API",
+      "⌨️ Hacker Typing: Character-by-character realistic code typing engine with auto-indent for VS Code",
+      "🎙️ Voice Intelligence: Multi-engine TTS (Sarvam Bulbul v3 / Gemini / Edge) with intelligent fallback",
+      "🌐 Web Autonomy: Selenium-driven browser automation with persistent Chrome profiles and auto-scrolling"
     ],
-    stack: ["Next.js 15", "FastAPI", "Groq 70B", "Gemini 2.0", "WebSockets", "Selenium", "Edge-TTS"],
+    stack: ["Next.js 16", "FastAPI", "LangGraph", "ChromaDB", "Python", "Groq", "Gemini", "Selenium", "SQLite"],
     githubUrl: "https://github.com/Anil-Pradhan-web",
     liveUrl: "desktop"
   },
