@@ -2,100 +2,112 @@
 
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import { FaJava, FaPython, FaReact, FaHtml5, FaCss3Alt, FaDocker, FaGitAlt, FaGithub, FaLinux, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiFastapi, SiDjango, SiJsonwebtokens, SiNextdotjs, SiTailwindcss, SiVite, SiPostgresql, SiMysql, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiSelenium, SiMongodb, SiRedis, SiSwagger, SiIntellijidea, SiHuggingface, SiGnubash } from 'react-icons/si';
-import { TbApi, TbRobot, TbCircleDot } from 'react-icons/tb';
+import { FaJava, FaPython, FaReact, FaCss3Alt, FaDocker, FaGitAlt } from 'react-icons/fa';
+import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiAxios, SiMapbox, SiGoogle, SiJsonwebtokens } from 'react-icons/si';
+import { TbApi, TbRobot } from 'react-icons/tb';
 import { VscCode } from 'react-icons/vsc';
-import { BrainCircuit, Network, Mic, Users, Cpu, Database, Search } from 'lucide-react';
+import { BrainCircuit, Cpu, Database, BarChart3, Zap, Lock, Workflow, FileText, Volume2, Code2, ShieldCheck } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: "☕ Languages",
-    skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "Bash"]
+    title: "🌐 Frontend",
+    skills: ["Next.js 14", "React", "Vanilla CSS", "Recharts", "Lucide React", "Axios", "react-map-gl"]
   },
   {
-    title: "🔩 Backend & APIs",
-    skills: ["FastAPI", "Django", "Django REST", "JWT", "REST API"]
+    title: "⚙️ Backend",
+    skills: ["FastAPI", "Microsoft AutoGen v0.2", "OpenAI SDK", "SlowAPI", "SQLAlchemy", "Alembic", "Pydantic", "Uvicorn", "Loguru", "pdfplumber", "edge-tts"]
   },
   {
-    title: "🤖 AI / GenAI / RAG Stack (Specialization)",
-    skills: ["LangGraph", "RAG", "Vector DB", "ChromaDB", "Multi-Agent", "AutoGen", "Gemini", "Groq", "Sarvam AI", "HuggingFace", "Ollama"]
+    title: "🧠 AI / LLM",
+    skills: ["Google Gemini 1.5 Flash", "Groq (Llama 3.3 70B)", "Microsoft AutoGen"]
   },
   {
-    title: "🎨 Frontend & UI",
-    skills: ["Next.js", "React", "TailwindCSS", "Shadcn UI", "Vite", "HTML5", "CSS3"]
+    title: "🗄️ Databases",
+    skills: ["Neon Postgres", "SQLite", "Upstash Redis"]
   },
   {
-    title: "🗄️ Databases & Storage",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase", "SQLite", "ChromaDB"]
+    title: "🔐 Auth & Security",
+    skills: ["Google OAuth 2.0", "Firebase Authentication", "JWT", "bcrypt"]
   },
   {
-    title: "☁️ DevOps & CI/CD",
-    skills: ["Docker", "Docker Compose", "GitHub Actions", "Vercel", "Render"]
+    title: "🚀 DevOps & Infra",
+    skills: ["Docker", "GitHub Actions", "Vercel", "Render.com", "CI/CD"]
   },
   {
     title: "🛠️ Tools",
-    skills: ["Git", "GitHub", "Postman", "Selenium", "Playwright", "Linux", "VS Code", "IntelliJ IDEA", "Swagger"]
+    skills: ["VS Code", "Git", "Swagger UI", "Postman", "Mapbox GL"]
+  },
+  {
+    title: "☕ Languages",
+    skills: ["Python", "TypeScript", "JavaScript", "Java"]
   }
 ];
 
-const techConfig: Record<string, { icon: any; color?: string }> = {
-  "Java": { icon: FaJava, color: "#f89820" },
+const techConfig: Record<string, { icon: React.ElementType; color?: string }> = {
+  // Languages
   "Python": { icon: FaPython, color: "#3776AB" },
   "TypeScript": { icon: SiTypescript, color: "#3178C6" },
   "JavaScript": { icon: SiJavascript, color: "#F7DF1E" },
-  "SQL": { icon: FaDatabase, color: "#336791" },
-  "Bash": { icon: SiGnubash, color: "#4EAA25" },
-  "FastAPI": { icon: SiFastapi, color: "#009688" },
-  "Django": { icon: SiDjango, color: "#092E20" },
-  "Django REST": { icon: SiDjango, color: "#092E20" },
-  "JWT": { icon: SiJsonwebtokens, color: "#FB015B" },
-  "REST API": { icon: TbApi, color: "#0ea5e9" },
-  "LangGraph": { icon: TbCircleDot, color: "#8b5cf6" },
-  "RAG": { icon: Search, color: "#06b6d4" },
-  "Vector DB": { icon: Database, color: "#8b5cf6" },
-  "ChromaDB": { icon: Database, color: "#8b5cf6" },
-  "Multi-Agent": { icon: Users, color: "#06b6d4" },
-  "AutoGen": { icon: TbRobot, color: "#0078D4" },
-  "Gemini": { icon: BrainCircuit, color: "#8b5cf6" },
-  "Groq": { icon: Cpu, color: "#f97316" },
-  "Sarvam AI": { icon: Mic, color: "#f43f5e" },
-  "HuggingFace": { icon: SiHuggingface, color: "#FFD21E" },
-  "Ollama": { icon: BrainCircuit, color: "#10b981" },
-  "Next.js": { icon: SiNextdotjs, color: "#ffffff" },
+  "Java": { icon: FaJava, color: "#f89820" },
+
+  // Frontend
+  "Next.js 14": { icon: SiNextdotjs, color: "#ffffff" },
   "React": { icon: FaReact, color: "#61DAFB" },
-  "TailwindCSS": { icon: SiTailwindcss, color: "#06B6D4" },
-  "Shadcn UI": { icon: SiTailwindcss, color: "#ffffff" },
-  "Vite": { icon: SiVite, color: "#646CFF" },
-  "HTML5": { icon: FaHtml5, color: "#E34F26" },
-  "CSS3": { icon: FaCss3Alt, color: "#1572B6" },
-  "PostgreSQL": { icon: SiPostgresql, color: "#336791" },
-  "MySQL": { icon: SiMysql, color: "#4479A1" },
-  "MongoDB": { icon: SiMongodb, color: "#47A248" },
-  "Redis": { icon: SiRedis, color: "#DC382D" },
-  "Firebase": { icon: SiFirebase, color: "#FFCA28" },
+  "Vanilla CSS": { icon: FaCss3Alt, color: "#1572B6" },
+  "Recharts": { icon: BarChart3, color: "#3b82f6" },
+  "Lucide React": { icon: Code2, color: "#f43f5e" },
+  "Axios": { icon: SiAxios, color: "#5A29E4" },
+  "react-map-gl": { icon: SiMapbox, color: "#3387FF" },
+
+  // Backend
+  "FastAPI": { icon: SiFastapi, color: "#009688" },
+  "Microsoft AutoGen v0.2": { icon: TbRobot, color: "#0078D4" },
+  "OpenAI SDK": { icon: SiOpenai, color: "#412991" },
+  "SlowAPI": { icon: TbApi, color: "#0ea5e9" },
+  "SQLAlchemy": { icon: Database, color: "#D71F00" },
+  "Alembic": { icon: Database, color: "#8b5cf6" },
+  "Pydantic": { icon: ShieldCheck, color: "#E92063" },
+  "Uvicorn": { icon: Zap, color: "#24292E" },
+  "Loguru": { icon: FileText, color: "#10b981" },
+  "pdfplumber": { icon: FileText, color: "#ef4444" },
+  "edge-tts": { icon: Volume2, color: "#6366f1" },
+
+  // AI / LLM
+  "Google Gemini 1.5 Flash": { icon: BrainCircuit, color: "#8b5cf6" },
+  "Groq (Llama 3.3 70B)": { icon: Cpu, color: "#f97316" },
+  "Microsoft AutoGen": { icon: TbRobot, color: "#0078D4" },
+
+  // Databases
+  "Neon Postgres": { icon: Database, color: "#00E599" },
   "SQLite": { icon: SiSqlite, color: "#003B57" },
+  "Upstash Redis": { icon: SiRedis, color: "#DC382D" },
+
+  // Auth & Security
+  "Google OAuth 2.0": { icon: SiGoogle, color: "#4285F4" },
+  "Firebase Authentication": { icon: SiFirebase, color: "#FFCA28" },
+  "JWT": { icon: SiJsonwebtokens, color: "#FB015B" },
+  "bcrypt": { icon: Lock, color: "#94a3b8" },
+
+  // DevOps & Infra
   "Docker": { icon: FaDocker, color: "#2496ED" },
-  "Docker Compose": { icon: FaDocker, color: "#2496ED" },
   "GitHub Actions": { icon: SiGithubactions, color: "#2088FF" },
   "Vercel": { icon: SiVercel, color: "#ffffff" },
-  "Render": { icon: SiRender, color: "#46E3B7" },
-  "Git": { icon: FaGitAlt, color: "#F05032" },
-  "GitHub": { icon: FaGithub, color: "#ffffff" },
-  "Postman": { icon: SiPostman, color: "#FF6C37" },
-  "Selenium": { icon: SiSelenium, color: "#43B02A" },
-  "Playwright": { icon: SiSelenium, color: "#2EAD33" },
-  "Linux": { icon: FaLinux, color: "#FCC624" },
+  "Render.com": { icon: SiRender, color: "#46E3B7" },
+  "CI/CD": { icon: Workflow, color: "#10b981" },
+
+  // Tools
   "VS Code": { icon: VscCode, color: "#007ACC" },
-  "IntelliJ IDEA": { icon: SiIntellijidea, color: "#FE315D" },
-  "Swagger": { icon: SiSwagger, color: "#85EA2D" }
+  "Git": { icon: FaGitAlt, color: "#F05032" },
+  "Swagger UI": { icon: SiSwagger, color: "#85EA2D" },
+  "Postman": { icon: SiPostman, color: "#FF6C37" },
+  "Mapbox GL": { icon: SiMapbox, color: "#3387FF" }
 };
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { 
+  visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.05 } 
+    transition: { staggerChildren: 0.05 }
   }
 };
 
@@ -113,7 +125,7 @@ export default function Skills() {
         {skillCategories.map((category, idx) => (
           <div key={idx} className="flex flex-col">
             <h3 className="font-mono text-violet-400 font-semibold mb-4 tracking-wide text-sm">{category.title}</h3>
-            
+
             <motion.div
               variants={containerVariants}
               initial="hidden"
