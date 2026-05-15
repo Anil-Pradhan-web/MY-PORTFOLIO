@@ -138,7 +138,7 @@ export default function Hero() {
             <span className="relative z-10">Explore My Work</span>
           </a>
           <a
-            href="/my_resume.pdf"
+            href="/my_resume.pdf?v=1.1"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center glass-card backdrop-blur-md border border-zinc-700 text-zinc-300 font-medium px-8 py-4 rounded-xl w-full sm:w-auto text-center hover:bg-zinc-800/50 hover:text-white hover:border-violet-400/50 transition-all font-sans"
