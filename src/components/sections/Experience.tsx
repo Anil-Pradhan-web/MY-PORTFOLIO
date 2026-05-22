@@ -7,8 +7,8 @@ const experiences = [
   {
     role: "Solo Developer",
     org: "AI Career Mentor – Multi-Agent AI Career Platform",
-    period: "Feb – Mar 2026",
-    desc: "Submitted to Microsoft AI Dev Days Hackathon & Amazon Nova AI Hackathon. Built a production-grade 4-agent AI system using Microsoft AutoGen, FastAPI backend with JWT auth, PostgreSQL, PDF parsing, and real-time WebSocket mock interviews."
+    period: "Feb – June 2026",
+    desc: "Submitted to Microsoft AI Dev Days Hackathon & Amazon Nova AI Hackathon on 15th April 2026. Built a production-grade 4-agent AI system using LangGraph, FastAPI backend with JWT auth, PostgreSQL, PDF parsing, and real-time WebSocket mock interviews."
   },
   {
     role: "Team: ClutchCode",
@@ -42,7 +42,7 @@ export default function Experience() {
                 {exp.period}
               </span>
             </div>
-            
+
             <h4 className="text-lg font-semibold text-zinc-300 mb-4">{exp.org}</h4>
             <p className="text-zinc-400 leading-relaxed text-sm md:text-base max-w-3xl">
               {exp.desc}
