@@ -3,19 +3,19 @@
 import { motion, Variants } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia } from 'react-icons/si';
+import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { VscCode } from 'react-icons/vsc';
-import { BrainCircuit, Cpu, Database, Code2, Zap, Lock, Workflow, FileText, Volume2, ShieldCheck, GitBranch, Search, Box } from 'lucide-react';
+import { BrainCircuit, Cpu, Database, Code2, Zap, Lock, Workflow, FileText, Volume2, ShieldCheck, GitBranch, Search, Box, LayoutGrid } from 'lucide-react';
 
 const skillCategories = [
   {
     title: "☕ Languages",
-    skills: ["Python", "TypeScript", "JavaScript", "Java"]
+    skills: ["Python", "Java", "JavaScript", "TypeScript", "SQL"]
   },
   {
     title: "🌐 Frontend",
-    skills: ["Next.js 14", "React", "Lucide React", "react-map-gl"]
+    skills: ["Next.js 14", "React", "Tailwind CSS", "shadcn/ui", "Lucide React", "react-map-gl"]
   },
   {
     title: "⚙️ Backend",
@@ -42,20 +42,23 @@ const skillCategories = [
     skills: ["VS Code", "Git", "Swagger UI", "Postman", "Mapbox GL", "Cline", "GitHub Copilot", "Gemini Code Assist", "OpenAI Codex", "AntiGravity"]
   }
 ];
-
+ 
 const techConfig: Record<string, { icon: React.ElementType; color?: string }> = {
   // Languages
-  "Python":        { icon: FaPython,     color: "#3776AB" },
-  "TypeScript":    { icon: SiTypescript, color: "#3178C6" },
-  "JavaScript":    { icon: SiJavascript, color: "#F7DF1E" },
-  "Java":          { icon: FaJava,       color: "#f89820" },
-
+  "Python":     { icon: FaPython,     color: "#3776AB" },
+  "Java":       { icon: FaJava,       color: "#f89820" },
+  "JavaScript": { icon: SiJavascript, color: "#F7DF1E" },
+  "TypeScript": { icon: SiTypescript, color: "#3178C6" },
+  "SQL":        { icon: SiPostgresql, color: "#336791" },
+ 
   // Frontend
-  "Next.js 14":   { icon: SiNextdotjs, color: "#ffffff" },
-  "React":         { icon: FaReact,     color: "#61DAFB" },
-  "Lucide React":  { icon: Code2,       color: "#f43f5e" },
-  "react-map-gl":  { icon: SiMapbox,    color: "#3387FF" },
-
+  "Next.js 14":  { icon: SiNextdotjs,   color: "#ffffff" },
+  "React":       { icon: FaReact,       color: "#61DAFB" },
+  "Tailwind CSS":{ icon: SiTailwindcss, color: "#38BDF8" },
+  "shadcn/ui":   { icon: LayoutGrid,    color: "#ffffff" },
+  "Lucide React":{ icon: Code2,         color: "#f43f5e" },
+  "react-map-gl":{ icon: SiMapbox,      color: "#3387FF" },
+ 
   // Backend
   "FastAPI":    { icon: SiFastapi,   color: "#009688" },
   "LangGraph":  { icon: GitBranch,   color: "#4ade80" },
@@ -68,26 +71,26 @@ const techConfig: Record<string, { icon: React.ElementType; color?: string }> = 
   "pdfplumber": { icon: FileText,    color: "#ef4444" },
   "edge-tts":   { icon: Volume2,     color: "#6366f1" },
   "WebSocket":  { icon: Zap,         color: "#f59e0b" },
-
+ 
   // AI / LLM & RAG
-  "Groq (Llama 3.3 70B)":    { icon: Cpu,          color: "#f97316" },
-  "NVIDIA NIM":               { icon: SiNvidia,     color: "#76B900" },
-  "Google Gemini 2.5 Flash":  { icon: BrainCircuit, color: "#a78bfa" },
-  "ChromaDB":                 { icon: Box,           color: "#FF6B35" },
-  "Serper.dev":               { icon: Search,        color: "#4285F4" },
-  "Tavily AI":                { icon: Search,        color: "#818cf8" },
-
+  "Groq (Llama 3.3 70B)":   { icon: Cpu,          color: "#f97316" },
+  "NVIDIA NIM":              { icon: SiNvidia,     color: "#76B900" },
+  "Google Gemini 2.5 Flash": { icon: BrainCircuit, color: "#a78bfa" },
+  "ChromaDB":                { icon: Box,           color: "#FF6B35" },
+  "Serper.dev":              { icon: Search,        color: "#4285F4" },
+  "Tavily AI":               { icon: Search,        color: "#818cf8" },
+ 
   // Databases
   "Neon Postgres": { icon: Database, color: "#00E599" },
   "SQLite":        { icon: SiSqlite, color: "#64b5f6" },
   "Upstash Redis": { icon: SiRedis,  color: "#DC382D" },
-
+ 
   // Auth & Security
   "Google OAuth 2.0":        { icon: SiGoogle,        color: "#4285F4" },
   "Firebase Authentication": { icon: SiFirebase,      color: "#FFCA28" },
   "JWT":                     { icon: SiJsonwebtokens, color: "#FB015B" },
   "bcrypt":                  { icon: Lock,             color: "#94a3b8" },
-
+ 
   // DevOps & Infra
   "Docker":         { icon: FaDocker,        color: "#2496ED" },
   "GitHub Actions": { icon: SiGithubactions, color: "#2088FF" },
@@ -95,7 +98,7 @@ const techConfig: Record<string, { icon: React.ElementType; color?: string }> = 
   "Render.com":     { icon: SiRender,         color: "#46E3B7" },
   "GHCR":           { icon: Box,              color: "#6e40c9" },
   "CI/CD":          { icon: Workflow,          color: "#10b981" },
-
+ 
   // Tools
   "VS Code":            { icon: VscCode,      color: "#007ACC" },
   "Git":                { icon: FaGitAlt,     color: "#F05032" },
