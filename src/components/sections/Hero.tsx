@@ -203,7 +203,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative group hidden lg:block"
+          className="relative group"
         >
           {/* Outer Glows */}
           <div className="absolute -inset-4 bg-gradient-to-tr from-violet-600/30 via-cyan-400/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
