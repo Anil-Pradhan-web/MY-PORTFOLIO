@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github, MapPin, Briefcase } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
@@ -13,6 +14,40 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
       <SectionHeading>Let's Build Together</SectionHeading>
@@ -55,9 +90,7 @@ export default function Contact() {
         >
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
           
-          <form suppressHydrationWarning className="flex flex-col gap-6" action="https://formsubmit.co/anilpradhan9644@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://anilpradhan-web.vercel.app/" />
+          <form suppressHydrationWarning className="flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-sm font-semibold text-zinc-400 font-mono tracking-wide">Name</label>
               <input
@@ -65,9 +98,12 @@ export default function Contact() {
                 id="name"
                 name="name"
                 type="text"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="John Doe"
                 className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400/50 transition-all placeholder:text-zinc-600"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -78,9 +114,12 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="john@example.com"
                 className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400/50 transition-all placeholder:text-zinc-600"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -91,18 +130,29 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={4}
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="How can we help?"
                 className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all placeholder:text-zinc-600 resize-none"
                 required
+                disabled={isSubmitting}
               ></textarea>
             </div>
+
+            {submitStatus === 'success' && (
+              <p className="text-green-400 text-sm font-mono">Message sent successfully! I'll get back to you soon.</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="text-red-400 text-sm font-mono">Failed to send message. Please try again or email directly.</p>
+            )}
 
             <button
               suppressHydrationWarning
               type="submit"
-              className="mt-2 w-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-bold text-lg py-4 rounded-lg hover:from-violet-400 hover:to-cyan-400 transition-all neon-glow shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]"
+              disabled={isSubmitting}
+              className="mt-2 w-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-bold text-lg py-4 rounded-lg hover:from-violet-400 hover:to-cyan-400 transition-all neon-glow shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </motion.div>

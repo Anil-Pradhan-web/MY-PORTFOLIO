@@ -5,23 +5,23 @@ import SectionHeading from '../ui/SectionHeading';
 
 const achievements = [
   {
-    title: "Top Tech Hackathons",
-    desc: "Participated and successfully shipped projects in 3 major tech company hackathons: Microsoft AI Dev Days, Amazon Nova AI Hackathon, and Google Solution Challenge. Consistently building and competing.",
-    icon: "🏆"
-  },
-  {
-    title: "Active Tech Community",
-    desc: "Attending multiple offline tech events, actively building my professional network, and continuously connecting with like-minded developers.",
-    icon: "👥"
-  },
-  {
-    title: "Java DSA – GeeksForGeeks",
-    desc: "Maintained 80+ day continuous coding streak; completed all foundational Java DSA problems and patterns, earning GFG rewards.",
+    title: "GeeksForGeeks 80 Days Challenge",
+    desc: "200+ problems solved across GFG and LeetCode (Arrays, Strings, Recursion, DP, Graphs). Certificate + T-shirt awarded.",
     icon: "☕"
   },
   {
-    title: "Google Cloud Arcade Program",
-    desc: "Completed program; earned multiple skill badges and rewards.",
+    title: "Active Developer Communities",
+    desc: "Active in developer communities including GDG and Google tech events, continuously exploring AI systems, cloud infrastructure, backend engineering, and networking with developers through offline meetups and bootcamps.",
+    icon: "👥"
+  },
+  {
+    title: "IIT/NIT Coding Competitions",
+    desc: "Participated in multiple IIT/NIT coding competitions, hackathons, and developer events focused on AI systems, backend engineering, and problem solving.",
+    icon: "💻"
+  },
+  {
+    title: "Google Cloud Arcade Program (2024–25)",
+    desc: "Completed with 75 Arcade Points across hands-on GCP labs and challenges.",
     link: "View Badges →",
     linkUrl: "https://www.credly.com/users/anil-pradhan324",
     icon: "☁️"

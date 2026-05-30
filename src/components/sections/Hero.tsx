@@ -2,19 +2,25 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown, Sparkles, Code2, Brain, Cpu, Rocket, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowDown, Code2, Brain, Cpu, Rocket, Globe, Phone, Mail, Linkedin, Github, Code } from 'lucide-react';
 
 export default function Hero() {
   const [terminalText, setTerminalText] = useState("");
-  const fullTerminalText = `$ anil --status
-
-  Role:   Full-Stack Dev                       |
-  CGPA:   9.11 / 10.0                          |
-  Year:   B.Tech CSE, Sem 4                    |
-  Uni:    ITER, SOA Univ, Bhubaneswar, Odisha  |
-  Focus:  AI + Backend                         |
-  Open:   Internships ✓                        |`;
+  const fullTerminalText = `$ anil --education
+ 
+  [B.Tech - CSE] (2024 - 2028)
+  Institution: ITER, SOA University, Bhubaneswar
+  CGPA:        9.11 / 10.0
+ 
+  [Class XII - PCM + IT] (2022 - 2024)
+  Institution: Odisha Board of Secondary Ed.
+  Score:       85%
+ 
+  [Skills Status]
+  Role:   Full-Stack / AI Agent Dev
+  Focus:  Scalable Systems & Agentic AI
+  Status: Internships Open ✓`;
 
   useEffect(() => {
     let i = 0;
@@ -28,10 +34,7 @@ export default function Hero() {
     return () => clearInterval(typingInterval);
   }, [fullTerminalText]);
 
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-  const opacity = useTransform(scrollY, [0, 500], [1, 0.3]);
+
 
   return (
     <section id="hero" className="relative min-h-screen w-full flex flex-col lg:flex-row items-center justify-between gap-8 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 mx-auto max-w-7xl pt-32 pb-16 overflow-hidden">
@@ -80,7 +83,7 @@ export default function Hero() {
           transition={{ delay: 0.2 }}
           className="font-mono text-violet-400 text-lg sm:text-xl mb-4 tracking-wide"
         >
-          &gt; Hello, I'm
+          &gt; Hello, I&apos;m
         </motion.p>
 
         {/* Name with Gradient */}
@@ -107,21 +110,65 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-2xl sm:text-4xl lg:text-[40px] text-zinc-300 font-syne font-medium tracking-wide mb-8 leading-tight"
+          className="text-2xl sm:text-3xl lg:text-[36px] text-zinc-300 font-syne font-medium tracking-wide mb-8 leading-tight flex flex-wrap gap-x-3 gap-y-1 justify-center lg:justify-start"
         >
-          Backend Developer with AI  <br className="hidden lg:block" /> Implementer
+          <span>Full Stack Developer</span>
+          <span className="text-violet-500/50 hidden sm:inline">·</span>
+          <span>AI/Agent Systems</span>
+          <span className="text-violet-500/50 hidden sm:inline">·</span>
+          <span>Backend Engineering</span>
         </motion.h2>
-
+ 
         {/* Description */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-zinc-400 text-base sm:text-lg max-w-xl mb-10 leading-relaxed font-sans lg:text-left text-center"
+          transition={{ delay: 0.45 }}
+          className="text-zinc-400 text-base sm:text-lg max-w-xl mb-6 leading-relaxed font-sans lg:text-left text-center"
         >
           Architecting <span className="text-violet-300 font-medium">production-grade</span> AI systems and scalable backend architectures.
           Turning complex codebases into <span className="text-cyan-300 font-medium">high-performance</span> digital reality.
         </motion.p>
+
+        {/* Contact Links */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-400 text-xs sm:text-sm font-mono mb-4 justify-center lg:justify-start"
+        >
+          <a href="tel:+918917476908" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
+            <Phone size={13} className="text-violet-400" /> +91 8917476908
+          </a>
+          <span className="text-zinc-700">·</span>
+          <a href="mailto:anilpradhan9644@gmail.com" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
+            <Mail size={13} className="text-violet-400" /> anilpradhan9644@gmail.com
+          </a>
+          <span className="text-zinc-700">·</span>
+          <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
+            <Linkedin size={13} className="text-violet-400" /> linkedin.com/in/anil-pradhan543
+          </a>
+          <span className="text-zinc-700">·</span>
+          <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
+            <Github size={13} className="text-violet-400" /> github.com/Anil-Pradhan-web
+          </a>
+        </motion.div>
+
+        {/* Profiles */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.55 }}
+          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-400 text-xs sm:text-sm font-mono mb-8 justify-center lg:justify-start"
+        >
+          <a href="https://leetcode.com/u/Anil_Pradhan/" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
+            <Code size={13} className="text-violet-400" /> LeetCode
+          </a>
+          <span className="text-zinc-700">·</span>
+          <a href="https://www.geeksforgeeks.org/profile/anilpradhan543" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
+            <Code size={13} className="text-violet-400" /> GeeksForGeeks
+          </a>
+        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div
