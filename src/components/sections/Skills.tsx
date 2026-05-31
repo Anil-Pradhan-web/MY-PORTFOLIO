@@ -3,7 +3,7 @@
 import { motion, Variants } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss, SiMarkdown, SiAxios, SiLangchain, SiDuckduckgo } from 'react-icons/si';
+import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss, SiMarkdown, SiAxios, SiLangchain, SiDuckduckgo, SiSentry, SiPrometheus } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { VscCode } from 'react-icons/vsc';
 import { BrainCircuit, Cpu, Database, Code2, Zap, Lock, Workflow, FileText, Volume2, ShieldCheck, GitBranch, Search, Box, LayoutGrid, LineChart, Upload, Bell, Bot, Mic, Beaker } from 'lucide-react';
@@ -42,7 +42,9 @@ const skillCategories = [
       "pdfplumber",
       "edge-tts",
       "SlowAPI",
-      "WebSocket"
+      "WebSocket",
+      "Sentry",
+      "Prometheus"
     ]
   },
   {
@@ -84,7 +86,7 @@ const skillCategories = [
       "Vercel",
       "Render.com",
       "GHCR",
-      "pytest (102 tests)"
+      "pytest (104 tests)"
     ]
   },
   {
@@ -164,7 +166,9 @@ const techConfig: Record<string, { icon: React.ElementType; color?: string }> = 
   "Vercel":                  { icon: SiVercel,         color: "#ffffff" },
   "Render.com":              { icon: SiRender,         color: "#46E3B7" },
   "GHCR":                    { icon: Box,              color: "#6e40c9" },
-  "pytest (102 tests)":      { icon: Beaker,           color: "#0ea5e9" },
+  "pytest (104 tests)":      { icon: Beaker,           color: "#0ea5e9" },
+  "Sentry":                  { icon: SiSentry,         color: "#362D59" },
+  "Prometheus":              { icon: SiPrometheus,     color: "#E6522C" },
 
   // Tools
   "VS Code":            { icon: VscCode,      color: "#007ACC" },
