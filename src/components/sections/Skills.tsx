@@ -3,7 +3,7 @@
 import { motion, Variants } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss, SiMarkdown, SiAxios, SiLangchain, SiDuckduckgo, SiSentry, SiPrometheus } from 'react-icons/si';
+import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss, SiMarkdown, SiAxios, SiLangchain, SiDuckduckgo, SiSentry, SiPrometheus, SiHtml5, SiCss3 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { VscCode } from 'react-icons/vsc';
 import { BrainCircuit, Cpu, Database, Code2, Zap, Lock, Workflow, FileText, Volume2, ShieldCheck, GitBranch, Search, Box, LayoutGrid, LineChart, Upload, Bell, Bot, Mic, Beaker } from 'lucide-react';
@@ -16,35 +16,31 @@ const skillCategories = [
   {
     title: "🌐 Frontend",
     skills: [
-      "Next.js 14",
-      "React 18",
+      "HTML5",
+      "CSS3",
       "Tailwind CSS",
       "shadcn/ui",
-      "Lucide React",
-      "Recharts",
-      "react-dropzone",
-      "react-markdown",
-      "Axios",
-      "react-hot-toast"
+      "React 18",
+      "Next.js 14",
+      "Recharts"
     ]
   },
   {
     title: "⚙️ Backend",
     skills: [
       "FastAPI",
+      "Uvicorn",
       "LangGraph",
-      "AutoGen/ag2",
-      "LangChain Core",
       "SQLAlchemy 2.0",
       "Alembic",
       "Pydantic",
-      "Uvicorn",
       "pdfplumber",
+      "Pytest",
       "edge-tts",
       "SlowAPI",
       "WebSocket",
-      "Sentry",
-      "Prometheus"
+      "sentry-sdk",
+      "prometheus-fastapi-instrumentator"
     ]
   },
   {
@@ -85,8 +81,7 @@ const skillCategories = [
       "GitHub Actions (CI/CD)",
       "Vercel",
       "Render.com",
-      "GHCR",
-      "pytest (104 tests)"
+      "GHCR"
     ]
   },
   {
@@ -95,6 +90,7 @@ const skillCategories = [
       "VS Code",
       "Git",
       "Swagger UI",
+      "Postman",
       "Cline",
       "GitHub Copilot",
       "Gemini Code Assist",
@@ -113,30 +109,28 @@ const techConfig: Record<string, { icon: React.ElementType; color?: string }> = 
   "TypeScript": { icon: SiTypescript, color: "#3178C6" },
 
   // Frontend
-  "Next.js 14":   { icon: SiNextdotjs,   color: "#ffffff" },
-  "React 18":     { icon: FaReact,       color: "#61DAFB" },
+  "HTML5":        { icon: SiHtml5,       color: "#E34F26" },
+  "CSS3":         { icon: SiCss3,        color: "#1572B6" },
   "Tailwind CSS": { icon: SiTailwindcss, color: "#38BDF8" },
   "shadcn/ui":    { icon: LayoutGrid,    color: "#ffffff" },
-  "Lucide React": { icon: Code2,         color: "#f43f5e" },
+  "React 18":     { icon: FaReact,       color: "#61DAFB" },
+  "Next.js 14":   { icon: SiNextdotjs,   color: "#ffffff" },
   "Recharts":     { icon: LineChart,     color: "#3b82f6" },
-  "react-dropzone":{ icon: Upload,        color: "#a855f7" },
-  "react-markdown":{ icon: SiMarkdown,      color: "#ff8c00" },
-  "Axios":        { icon: SiAxios,       color: "#5a29e4" },
-  "react-hot-toast":{ icon: Bell,        color: "#f97316" },
 
   // Backend
-  "FastAPI":       { icon: SiFastapi,   color: "#009688" },
-  "LangGraph":     { icon: GitBranch,   color: "#4ade80" },
-  "AutoGen/ag2":   { icon: Bot,         color: "#f43f5e" },
-  "LangChain Core":{ icon: SiLangchain, color: "#15c213" },
-  "SQLAlchemy 2.0":{ icon: Database,    color: "#D71F00" },
-  "Alembic":       { icon: Database,    color: "#8b5cf6" },
-  "Pydantic":      { icon: ShieldCheck, color: "#E92063" },
-  "Uvicorn":       { icon: Zap,         color: "#facc15" },
-  "pdfplumber":    { icon: FileText,    color: "#ef4444" },
-  "edge-tts":      { icon: Volume2,     color: "#6366f1" },
-  "SlowAPI":       { icon: TbApi,       color: "#0ea5e9" },
-  "WebSocket":     { icon: Zap,         color: "#f59e0b" },
+  "FastAPI":                           { icon: SiFastapi,   color: "#009688" },
+  "Uvicorn":                           { icon: Zap,         color: "#facc15" },
+  "LangGraph":                         { icon: GitBranch,   color: "#4ade80" },
+  "SQLAlchemy 2.0":                    { icon: Database,    color: "#D71F00" },
+  "Alembic":                           { icon: Database,    color: "#8b5cf6" },
+  "Pydantic":                          { icon: ShieldCheck, color: "#E92063" },
+  "pdfplumber":                        { icon: FileText,    color: "#ef4444" },
+  "Pytest":                            { icon: Beaker,      color: "#0ea5e9" },
+  "edge-tts":                          { icon: Volume2,     color: "#6366f1" },
+  "SlowAPI":                           { icon: TbApi,       color: "#0ea5e9" },
+  "WebSocket":                         { icon: Zap,         color: "#f59e0b" },
+  "sentry-sdk":                        { icon: SiSentry,     color: "#362D59" },
+  "prometheus-fastapi-instrumentator": { icon: SiPrometheus, color: "#E6522C" },
 
   // AI / LLM & RAG
   "Groq (Llama 3.3 70B)":   { icon: Cpu,          color: "#f97316" },
@@ -166,14 +160,12 @@ const techConfig: Record<string, { icon: React.ElementType; color?: string }> = 
   "Vercel":                  { icon: SiVercel,         color: "#ffffff" },
   "Render.com":              { icon: SiRender,         color: "#46E3B7" },
   "GHCR":                    { icon: Box,              color: "#6e40c9" },
-  "pytest (104 tests)":      { icon: Beaker,           color: "#0ea5e9" },
-  "Sentry":                  { icon: SiSentry,         color: "#362D59" },
-  "Prometheus":              { icon: SiPrometheus,     color: "#E6522C" },
 
   // Tools
   "VS Code":            { icon: VscCode,      color: "#007ACC" },
   "Git":                { icon: FaGitAlt,     color: "#F05032" },
   "Swagger UI":         { icon: SiSwagger,    color: "#85EA2D" },
+  "Postman":            { icon: SiPostman,    color: "#EF5B25" },
   "Cline":              { icon: BrainCircuit, color: "#a78bfa" },
   "GitHub Copilot":     { icon: Code2,        color: "#ffffff" },
   "Gemini Code Assist": { icon: BrainCircuit, color: "#8b5cf6" },
