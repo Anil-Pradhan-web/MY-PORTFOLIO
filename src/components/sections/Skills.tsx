@@ -3,7 +3,7 @@
 import { motion, Variants } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss, SiMarkdown, SiAxios, SiLangchain, SiDuckduckgo, SiSentry, SiPrometheus, SiHtml5, SiCss3 } from 'react-icons/si';
+import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss, SiMarkdown, SiAxios, SiLangchain, SiDuckduckgo, SiSentry, SiPrometheus, SiHtml5, SiCss } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { VscCode } from 'react-icons/vsc';
 import { BrainCircuit, Cpu, Database, Code2, Zap, Lock, Workflow, FileText, Volume2, ShieldCheck, GitBranch, Search, Box, LayoutGrid, LineChart, Upload, Bell, Bot, Mic, Beaker } from 'lucide-react';
@@ -110,7 +110,7 @@ const techConfig: Record<string, { icon: React.ElementType; color?: string }> = 
 
   // Frontend
   "HTML5":        { icon: SiHtml5,       color: "#E34F26" },
-  "CSS3":         { icon: SiCss3,        color: "#1572B6" },
+  "CSS3":         { icon: SiCss,        color: "#1572B6" },
   "Tailwind CSS": { icon: SiTailwindcss, color: "#38BDF8" },
   "shadcn/ui":    { icon: LayoutGrid,    color: "#ffffff" },
   "React 18":     { icon: FaReact,       color: "#61DAFB" },
