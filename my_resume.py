@@ -199,22 +199,22 @@ def generate_resume(output_path):
         "March 2026 – Present"
     ))
     story.append(add_bullet(
-        "Architected a decoupled microservices system with a Next.js 14 SPA on Vercel and a FastAPI gateway on Render, utilizing Neon Serverless Postgres and Upstash Redis for high-performance data operations."
+        "Architected a decoupled microservices system with a Next.js 14 SPA on Vercel and a FastAPI gateway on Render, utilizing Neon Serverless Postgres (with PgBouncer connection pooling) and Upstash Redis."
     ))
     story.append(add_bullet(
-        "Designed a parallel LangGraph DAG for multi-agent reasoning, with multi-provider routing (Groq Llama 3.3, NVIDIA NIM, Gemini) and fallback circuit-breakers to ensure 100% platform availability."
+        "Designed a parallel LangGraph DAG to orchestrate 7 specialized AI workflows, achieving a ~60% processing latency reduction via asynchronous fan-out/fan-in pipelines streaming results through Server-Sent Events (SSE)."
     ))
     story.append(add_bullet(
-        "Optimized memory footprint by engineering a Hybrid Semantic RAG system (ChromaDB + in-memory SequenceMatcher fallback) to prevent OOM crashes on resource-constrained 512MB RAM Render containers."
+        "Optimized memory footprint by engineering a Hybrid Semantic RAG system (ChromaDB + in-memory SequenceMatcher fallback) to prevent container crash failures on resource-constrained 512MB RAM allocations."
     ))
     story.append(add_bullet(
-        "Developed a real-time full-duplex Hinglish Voice Coach using Gemini Live WebSocket API (16/24kHz audio) and an interactive 7-phase mock interview FSM with Monaco Editor code execution."
+        "Developed a real-time full-duplex Hinglish Voice Coach using Gemini Live WebSocket API (16/24kHz audio) and an interactive 7-phase mock interview FSM with Monaco Editor integration and Edge-TTS audio synthesis."
     ))
     story.append(add_bullet(
-        "Built a secure Google OAuth 2.0 system with JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active WebSocket connections."
+        "Built a secure Google OAuth 2.0 system with JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active WebSocket connections and DailyAnalytics costs."
     ))
     story.append(add_bullet(
-        "Established a robust CI/CD pipeline using GitHub Actions, executing frontend builds and backend pytest (106 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
+        "Established a robust CI/CD pipeline using GitHub Actions, executing frontend builds and backend pytest (114 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
     ))
 
     # Project 2: VolunteerIQ
