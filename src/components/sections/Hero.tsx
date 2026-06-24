@@ -103,7 +103,7 @@ export default function Hero() {
               className="absolute -bottom-2 left-0 h-[4px] bg-gradient-to-r from-violet-600 to-transparent rounded-full"
             />
           </span>
-          <span className="lg:ml-12 gradient-text font-extrabold tracking-widest mt-2">Pradhan</span>
+          <span className="lg:ml-12 gradient-text font-extrabold tracking-tight mt-2">Pradhan</span>
         </motion.h1>
 
         {/* Title */}
@@ -285,7 +285,7 @@ export default function Hero() {
             </div>
 
             {/* Body */}
-            <div className="p-8 font-mono text-[14px] leading-7 text-violet-200/90 whitespace-pre-wrap w-full overflow-hidden min-h-[340px] relative">
+            <div className="p-5 sm:p-6 lg:p-8 font-mono text-[14px] leading-7 text-violet-200/90 whitespace-pre-wrap w-full overflow-hidden min-h-[340px] relative">
               <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent pointer-events-none" />
               <span className="relative z-10">{terminalText}</span>
               <motion.span
