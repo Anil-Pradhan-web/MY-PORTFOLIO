@@ -123,7 +123,7 @@ def generate_resume(output_path):
             ('TOPPADDING', (0,0), (-1,-1), 3),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('LINEBELOW', (0,0), (-1,-1), 1, colors.HexColor("#94a3b8")),  # Gray separator line
+            ('LINEBELOW', (0,0), (-1,-1), 1.25, colors.HexColor("#1e3a8a")),  # Premium dark blue separator line
         ]))
         return header_table
 
@@ -187,16 +187,16 @@ def generate_resume(output_path):
         "Jun 2026 – Present"
     ))
     story.append(add_bullet(
-        "Selected as a College Ambassador for Techfest IIT Bombay, contributing to web development, marketing, event management, and creative initiatives."
+        "<b>Selected as a College Ambassador</b> for Techfest IIT Bombay, contributing to web development, marketing, event management, and creative initiatives."
     ))
     story.append(add_bullet(
-        "Conducted sponsorship, SEO, and competitor research to identify partnership and outreach opportunities."
+        "<b>Conducted sponsorship, SEO, and competitor research</b> to identify key partnership and digital outreach opportunities."
     ))
     story.append(add_bullet(
-        "Created professional reports, presentations, and campaign concepts for national-level project submissions."
+        "<b>Created professional reports and campaign concepts</b> for national-level project submissions."
     ))
     story.append(add_bullet(
-        "Executed community engagement and digital outreach strategies targeting student audiences and technical communities."
+        "<b>Executed community engagement and digital outreach strategies</b> targeting student audiences and technical communities."
     ))
 
     # 4. Technical Projects (Only AI Career Mentor and VolunteerIQ)
@@ -208,22 +208,22 @@ def generate_resume(output_path):
         "March 2026 – Present"
     ))
     story.append(add_bullet(
-        "Architected a decoupled microservices system with a Next.js 14 SPA on Vercel and a FastAPI gateway on Render, utilizing Neon Serverless Postgres (with PgBouncer connection pooling) and Upstash Redis."
+        "<b>Architected a decoupled microservices system</b> with a Next.js 14 SPA on Vercel and a FastAPI gateway on Render, utilizing Neon Serverless Postgres (with PgBouncer connection pooling) and Upstash Redis."
     ))
     story.append(add_bullet(
-        "Designed a parallel LangGraph DAG to orchestrate 7 specialized AI workflows, achieving a ~60% processing latency reduction via asynchronous fan-out/fan-in pipelines streaming results through Server-Sent Events (SSE)."
+        "<b>Designed a parallel LangGraph DAG</b> to orchestrate 7 specialized AI workflows, achieving a ~60% processing latency reduction via asynchronous fan-out/fan-in pipelines streaming results through Server-Sent Events (SSE)."
     ))
     story.append(add_bullet(
-        "Optimized memory footprint by engineering a Hybrid Semantic RAG system (ChromaDB + in-memory SequenceMatcher fallback) to prevent container crash failures on resource-constrained 512MB RAM allocations."
+        "<b>Optimized memory footprint</b> by engineering a Hybrid Semantic RAG system (ChromaDB + in-memory SequenceMatcher fallback) to prevent container crash failures on resource-constrained 512MB RAM allocations."
     ))
     story.append(add_bullet(
-        "Developed a real-time full-duplex Hinglish Voice Coach using Gemini Live WebSocket API (16/24kHz audio) and an interactive 7-phase mock interview FSM with Monaco Editor integration and Edge-TTS audio synthesis."
+        "<b>Developed a real-time full-duplex Hinglish Voice Coach</b> using Gemini Live WebSocket API (16/24kHz audio) and an interactive 7-phase mock interview FSM with Monaco Editor integration and Edge-TTS audio synthesis."
     ))
     story.append(add_bullet(
-        "Built a secure Google OAuth 2.0 system with JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active WebSocket connections and DailyAnalytics costs."
+        "<b>Built a secure Google OAuth 2.0 system</b> with JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active WebSocket connections and DailyAnalytics costs."
     ))
     story.append(add_bullet(
-        "Established a robust CI/CD pipeline using GitHub Actions, executing frontend builds and backend pytest (114 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
+        "<b>Established a robust CI/CD pipeline</b> using GitHub Actions, executing frontend builds and backend pytest (114 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
     ))
 
     # Project 2: VolunteerIQ
@@ -232,13 +232,13 @@ def generate_resume(output_path):
         "Mar 16, 2026 – Apr 13, 2026"
     ))
     story.append(add_bullet(
-        "Developed an AI-driven crisis-response coordination platform for NGOs (submitted to Google Solution Challenge 2026) converting survey uploads into geospatially-mapped tasks on Mapbox GL."
+        "<b>Developed an AI-driven crisis-response coordination platform</b> for NGOs (submitted to Google Solution Challenge 2026) converting survey uploads into geospatially-mapped tasks on Mapbox GL."
     ))
     story.append(add_bullet(
-        "Engineered backend matching algorithms using Gemini 1.5 Pro to analyze field data and map tasks, ranking volunteers based on skills, availability, and geographic proximity."
+        "<b>Engineered backend matching algorithms</b> using Gemini 1.5 Pro to analyze field data and map tasks, ranking volunteers based on skills, availability, and geographic proximity."
     ))
     story.append(add_bullet(
-        "Built secure FastAPI REST endpoints and Firestore integrations with server-side verified Firebase Google Authentication."
+        "<b>Built secure FastAPI REST endpoints</b> and Firestore integrations with server-side verified Firebase Google Authentication."
     ))
 
     # 5. Technical Skills (Exact Copy from Portfolio)
