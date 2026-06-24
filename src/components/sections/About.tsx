@@ -26,8 +26,8 @@ const aboutData = [
 const stats = [
   { label: "CGPA", value: "9.11", suffix: "/10" },
   { label: "Major Projects", value: "3", suffix: "" },
-  { label: "Hackathons", value: "3", suffix: "+" },
-  { label: "Coding Problems", value: "200", suffix: "+" }
+  { label: "Hackathons", value: "4", suffix: "" },
+  { label: "Coding Problems", value: "150", suffix: "+" }
 ];
 
 export default function About() {
