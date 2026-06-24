@@ -54,7 +54,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/my_resume.pdf?v=1.1"
+              href="/Anil_Pradhan_resume.pdf?v=1.1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-300 hover:text-white px-5 py-2 text-sm font-medium transition-colors border border-zinc-700 rounded-lg hover:bg-zinc-800"
@@ -103,7 +103,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/my_resume.pdf?v=1.1"
+            href="/Anil_Pradhan_resume.pdf?v=1.1"
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-zinc-300 text-center py-2 font-medium"
           >

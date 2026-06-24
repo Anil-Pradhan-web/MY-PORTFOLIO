@@ -298,5 +298,5 @@ def generate_resume(output_path):
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    target_path = os.path.join(current_dir, "public", "my_resume.pdf")
+    target_path = os.path.join(current_dir, "public", "Anil_Pradhan_resume.pdf")
     generate_resume(target_path)
