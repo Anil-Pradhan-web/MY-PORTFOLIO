@@ -19,11 +19,5 @@ A production-grade, highly optimized personal portfolio built with a modern tech
 - Backend-less working contact form using FormSubmit
 - Interactive unified project cards and skills display
 
-### 💻 Getting Started
-1. Clone the repository: \`git clone https://github.com/Anil-Pradhan-web/MY-PORTFOLIO.git\`
-2. Install dependencies: \`npm install\`
-3. Run the development server: \`npm run dev\`
-4. Open [http://localhost:3000](http://localhost:3000)
 
----
 *Built from ground up with scalability and modern UI logic in mind by Anil Pradhan.*
