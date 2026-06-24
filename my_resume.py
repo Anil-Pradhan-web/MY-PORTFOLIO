@@ -7,14 +7,14 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 
 def generate_resume(output_path):
-    # Setup document geometry: 0.45 in margins top/bottom, 0.5 in left/right
+    # Setup document geometry: 0.4 in margins top/bottom, 0.45 in left/right
     doc = SimpleDocTemplate(
         output_path,
         pagesize=letter,
-        leftMargin=0.5 * inch,
-        rightMargin=0.5 * inch,
-        topMargin=0.45 * inch,
-        bottomMargin=0.45 * inch
+        leftMargin=0.45 * inch,
+        rightMargin=0.45 * inch,
+        topMargin=0.4 * inch,
+        bottomMargin=0.4 * inch
     )
     
     story = []
@@ -42,7 +42,7 @@ def generate_resume(output_path):
     section_header_style = ParagraphStyle(
         name='SectionHeaderStyle',
         fontName='Helvetica-Bold',
-        fontSize=10,
+        fontSize=9.5,
         leading=12,
         textColor=colors.HexColor("#1e3a8a"),  # Deep blue
         spaceAfter=0
@@ -52,7 +52,7 @@ def generate_resume(output_path):
         name='EntryTitleStyle',
         fontName='Helvetica-Bold',
         fontSize=9,
-        leading=11,
+        leading=11.5,
         textColor=colors.HexColor("#0f172a")
     )
     
@@ -60,7 +60,7 @@ def generate_resume(output_path):
         name='EntryRightStyle',
         fontName='Helvetica',
         fontSize=8.5,
-        leading=11,
+        leading=11.5,
         alignment=TA_RIGHT,
         textColor=colors.HexColor("#334155")
     )
@@ -68,8 +68,8 @@ def generate_resume(output_path):
     bullet_marker_style = ParagraphStyle(
         name='BulletMarkerStyle',
         fontName='Helvetica',
-        fontSize=9,
-        leading=11.5,
+        fontSize=8.5,
+        leading=11,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#0f172a")
     )
@@ -78,7 +78,7 @@ def generate_resume(output_path):
         name='BulletTextStyle',
         fontName='Helvetica',
         fontSize=8.5,
-        leading=11.5,
+        leading=11,
         textColor=colors.HexColor("#334155")
     )
     
@@ -100,7 +100,7 @@ def generate_resume(output_path):
 
     # 1. Header Section
     story.append(Paragraph("ANIL PRADHAN", name_style))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
     
     contact_info = (
         "anilpradhan9644@gmail.com &nbsp;|&nbsp; +91-8917476908 &nbsp;|&nbsp; Bhubaneswar, Odisha, India<br/>"
@@ -110,20 +110,20 @@ def generate_resume(output_path):
         "HackerRank: <a href='https://www.hackerrank.com/profile/anilpradhan9644' color='#1e3a8a'>hackerrank.com/profile/anilpradhan9644</a>"
     )
     story.append(Paragraph(contact_info, contact_style))
-    story.append(Spacer(1, 8))
+    story.append(Spacer(1, 5))
 
     # Helper function for Section Headers with borders
     def create_section_header(title):
         header_table = Table(
             [[Paragraph(f"<b>{title.upper()}</b>", section_header_style)]],
-            colWidths=[7.5 * inch]
+            colWidths=[7.6 * inch]
         )
         header_table.setStyle(TableStyle([
             ('BOTTOMPADDING', (0,0), (-1,-1), 1),
-            ('TOPPADDING', (0,0), (-1,-1), 4),
+            ('TOPPADDING', (0,0), (-1,-1), 3),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('LINEBELOW', (0,0), (-1,-1), 1, colors.HexColor("#94a3b8")),  # Light gray separator line
+            ('LINEBELOW', (0,0), (-1,-1), 1, colors.HexColor("#94a3b8")),  # Gray separator line
         ]))
         return header_table
 
@@ -131,7 +131,7 @@ def generate_resume(output_path):
     def add_bullet(text):
         bullet_table = Table(
             [[Paragraph("&bull;", bullet_marker_style), Paragraph(text, bullet_text_style)]],
-            colWidths=[0.15 * inch, 7.35 * inch]
+            colWidths=[0.12 * inch, 7.48 * inch]
         )
         bullet_table.setStyle(TableStyle([
             ('VALIGN', (0,0), (-1,-1), 'TOP'),
@@ -146,7 +146,7 @@ def generate_resume(output_path):
     def create_entry_header(left_title, right_subtitle):
         entry_table = Table(
             [[Paragraph(left_title, entry_title_style), Paragraph(right_subtitle, entry_right_style)]],
-            colWidths=[5.5 * inch, 2.0 * inch]
+            colWidths=[5.6 * inch, 2.0 * inch]
         )
         entry_table.setStyle(TableStyle([
             ('VALIGN', (0,0), (-1,-1), 'BOTTOM'),
@@ -159,61 +159,44 @@ def generate_resume(output_path):
 
     # 2. Education Section
     story.append(create_section_header("Education"))
-    story.append(create_entry_header(
-        "Siksha 'O' Anusandhan University (ITER) &nbsp;|&nbsp; B.Tech in Computer Science & Engineering",
-        "Bhubaneswar, Odisha | 2024 – 2028"
-    ))
-    story.append(Table(
-        [[
-            Paragraph("&bull; &nbsp;<b>CGPA: 9.11 / 10.0</b> (Current Status)", bullet_text_style),
-            Paragraph("Coursework: Data Structures, Algorithms, Systems Design, DBMS", entry_right_style)
-        ]],
-        colWidths=[4.0 * inch, 3.5 * inch],
-        style=TableStyle([
-            ('VALIGN', (0,0), (-1,-1), 'TOP'),
-            ('LEFTPADDING', (0,0), (-1,-1), 0),
-            ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('TOPPADDING', (0,0), (-1,-1), 1),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 2),
-        ])
-    ))
-
-    # 3. Technical Skills
-    story.append(create_section_header("Technical Skills"))
-    story.append(Spacer(1, 2))
     
-    skills_data = [
-        ["Languages", "Python, Java, JavaScript (ES6+), SQL"],
-        ["AI & RAG", "LangGraph, LangChain Core, Gemini Live API, ChromaDB (Vector Store), Groq, NVIDIA NIM, OpenAI API"],
-        ["Backend & APIs", "FastAPI, WebSockets (Full-Duplex), RESTful APIs, Pydantic, SQLAlchemy 2.0, Uvicorn, SlowAPI, Axios"],
-        ["Databases & Infra", "PostgreSQL (Neon Serverless), Upstash Redis, SQLite, Docker, GitHub Actions (CI/CD), Vercel, Render.com"],
-        ["Developer Tools", "Git, GitHub, Linux, Swagger UI, Postman Test Suite, VS Code, AntiGravity IDE"]
+    edu_data = [
+        [
+            Paragraph("<b>B.Tech in Computer Science & Engineering</b> &bull; ITER, SOA University, Bhubaneswar", entry_title_style),
+            Paragraph("<b>CGPA: 9.11/10</b> &nbsp;|&nbsp; 2024 – 2028", entry_right_style)
+        ],
+        [
+            Paragraph("<b>Class XII (PCM with IT)</b> &bull; Odisha Board of Secondary Education", entry_title_style),
+            Paragraph("<b>85%</b> &nbsp;|&nbsp; 2022 – 2024", entry_right_style)
+        ]
     ]
-    
-    skills_table_data = []
-    for cat, items in skills_data:
-        skills_table_data.append([
-            Paragraph(f"&bull; &nbsp;<b>{cat}:</b>", skill_category_style),
-            Paragraph(items, skill_list_style)
-        ])
-    
-    skills_table = Table(skills_table_data, colWidths=[1.5 * inch, 6.0 * inch])
-    skills_table.setStyle(TableStyle([
+    edu_table = Table(edu_data, colWidths=[5.6 * inch, 2.0 * inch])
+    edu_table.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
         ('LEFTPADDING', (0,0), (-1,-1), 0),
         ('RIGHTPADDING', (0,0), (-1,-1), 0),
-        ('TOPPADDING', (0,0), (-1,-1), 1),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+        ('TOPPADDING', (0,0), (-1,-1), 1.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 1.5),
     ]))
-    story.append(skills_table)
+    story.append(edu_table)
 
-    # 4. Technical Projects / Experience
-    story.append(create_section_header("Technical Projects & Experience"))
+    # 3. Experience Section
+    story.append(create_section_header("Experience"))
+    story.append(create_entry_header(
+        "Campus Ambassador &nbsp;|&nbsp; <b>E-Cell, IIT Kanpur</b> &bull; <i>Remote</i>",
+        "Dec 2025 – Jan 2026"
+    ))
+    story.append(add_bullet(
+        "Promoted IIT Kanpur's E-Summit events at ITER, SOA University through active social media campaigns, campus networking, and community-building initiatives."
+    ))
+
+    # 4. Technical Projects (Only AI Career Mentor and VolunteerIQ)
+    story.append(create_section_header("Technical Projects"))
     
     # Project 1: AI Career Mentor
     story.append(create_entry_header(
         "AI Career Mentor &nbsp;|&nbsp; <i>Solo Full-Stack Developer</i>",
-        "Feb 2026 – June 2026"
+        "March 2026 – Present"
     ))
     story.append(add_bullet(
         "Orchestrated 6 specialized AI workflows (Resume Intelligence, Roadmaps, Market Explorer, LinkedIn Optimizer, WebSocket Mock Interview Engine, and Gemini Live Voice Coach) on a Next.js 14 SPA and FastAPI gateway."
@@ -234,7 +217,7 @@ def generate_resume(output_path):
     # Project 2: VolunteerIQ
     story.append(create_entry_header(
         "VolunteerIQ &nbsp;|&nbsp; <i>Lead Backend Developer &bull; Team ClutchCode</i>",
-        "Mar 2026 – Apr 2026"
+        "Mar 16, 2026 – Apr 13, 2026"
     ))
     story.append(add_bullet(
         "Developed an AI-driven crisis-response coordination platform for NGOs (submitted to Google Solution Challenge 2026) converting survey uploads into geospatially-mapped tasks on Mapbox GL."
@@ -246,32 +229,55 @@ def generate_resume(output_path):
         "Built secure FastAPI REST endpoints and Firestore integrations with server-side verified Firebase Google Authentication."
     ))
 
-    # Project 3: S.I.A
-    story.append(create_entry_header(
-        "S.I.A — Super Intelligent Assistant &nbsp;|&nbsp; <i>Solo Developer</i>",
-        "Jan 2026 – Feb 2026"
-    ))
-    story.append(add_bullet(
-        "Engineered a local Windows desktop assistant v5.0 using a LangGraph ReAct agent that autonomously decides tool execution, controlling native OS volume, brightness, and screenshots via Win32 APIs."
-    ))
-    story.append(add_bullet(
-        "Integrated Selenium for browser automation with persistent Chrome profiles, coupled with SQLite for settings and ChromaDB for local session memory. Leveraged Edge-TTS voice fallbacks."
-    ))
+    # 5. Technical Skills (Exact Copy from Portfolio)
+    story.append(create_section_header("Technical Skills"))
+    story.append(Spacer(1, 2))
+    
+    skills_data = [
+        ["Languages", "Python, Java, JavaScript, SQL"],
+        ["Frontend", "Next.js, React, Tailwind CSS, Axios"],
+        ["Backend", "FastAPI, LangGraph, LangChain Core, Pydantic, SQLAlchemy 2.0, HTTPX, Loguru, WebSocket, Uvicorn, Prometheus, Sentry, SlowAPI, pdfplumber, edge-tts, Postman Test Suite, Pytest"],
+        ["AI / LLM & RAG", "Groq (Llama 3.3 70B), NVIDIA NIM, Gemini Live API, Tavily, Serper.dev, DuckDuckGo"],
+        ["Databases", "Neon Postgres, SQLite, Upstash Redis, ChromaDB (Vector Store)"],
+        ["Auth & Security", "JWT (python-jose), Google OAuth 2.0, Firebase Authentication, bcrypt, CORS Middleware, Rate Limiting, HTTPS TLS, .env Secrets"],
+        ["DevOps & Infra", "Docker, GitHub Actions (CI/CD), Vercel, Render.com, GHCR"],
+        ["Tools", "VS Code, Git, Swagger UI, Cline, GitHub Copilot, Gemini Code Assist, OpenAI Codex, AntiGravity IDE"]
+    ]
+    
+    skills_table_data = []
+    for cat, items in skills_data:
+        skills_table_data.append([
+            Paragraph(f"&bull; &nbsp;<b>{cat}:</b>", skill_category_style),
+            Paragraph(items, skill_list_style)
+        ])
+    
+    skills_table = Table(skills_table_data, colWidths=[1.5 * inch, 6.1 * inch])
+    skills_table.setStyle(TableStyle([
+        ('VALIGN', (0,0), (-1,-1), 'TOP'),
+        ('LEFTPADDING', (0,0), (-1,-1), 0),
+        ('RIGHTPADDING', (0,0), (-1,-1), 0),
+        ('TOPPADDING', (0,0), (-1,-1), 1),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+    ]))
+    story.append(skills_table)
 
-    # 5. Achievements & Certifications
-    story.append(create_section_header("Achievements & Coding Profile"))
+    # 6. Achievements & Certifications (Grammar corrected)
+    story.append(create_section_header("Achievements & Certifications"))
     story.append(Spacer(1, 2))
     story.append(add_bullet(
-        "<b>Coding Achievements:</b> Solved 200+ DSA problems across LeetCode & GeeksForGeeks; completed the GFG 80 Days Challenge (Arrays, Recursion, DP, Graphs) and awarded GFG Certificate + T-shirt."
+        "<b>Google Cloud Arcade Program (2024–25):</b> Completed GCP challenges, earning 75 Arcade Points across hands-on cloud labs."
     ))
     story.append(add_bullet(
-        "<b>Google Cloud Arcade (2024-25):</b> Completed labs and GCP challenges, earning 75 Arcade Points."
+        "<b>GeeksForGeeks 80 Days Challenge:</b> Solved 200+ problems across GFG and LeetCode (Arrays, Strings, Recursion, DP, Graphs); awarded GFG Certificate and T-shirt."
     ))
     story.append(add_bullet(
-        "<b>Hackathons:</b> Built and submitted functional microservices MVPs for Microsoft AI DevDays ($480K prize pool) and Amazon Nova AI Hackathon ($495K prize pool)."
+        "<b>Community Engagement:</b> Active participant in Developer Communities (GDG Bhubaneswar) and college tech events, exploring AI systems, cloud infrastructure, and backend engineering."
     ))
     story.append(add_bullet(
-        "<b>Community:</b> Active in Developer Communities (GDG Bhubaneswar) and local university tech events."
+        "<b>Competitions:</b> Participated in multiple IIT/NIT coding contests and hackathons focused on AI systems, backend engineering, and algorithmic problem solving."
+    ))
+    story.append(add_bullet(
+        "<b>Hackathons:</b> Built production-grade MVP solutions for Microsoft AI DevDays ($80K+ prize pools), Amazon Nova AI ($95K+ prize pools), and Google Solution Challenge 2026, delivering deployable full-stack systems under strict constraints."
     ))
 
     # Build the document
