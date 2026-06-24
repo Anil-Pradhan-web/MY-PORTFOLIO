@@ -5,23 +5,36 @@ import SectionHeading from '../ui/SectionHeading';
 
 const achievements = [
   {
-    title: "GeeksForGeeks 80 Days Challenge",
-    desc: "200+ problems solved across GFG and LeetCode (Arrays, Strings, Recursion, DP, Graphs). Certificate + T-shirt awarded.",
+    title: "Coding Platforms",
+    desc: [
+      "Solved 100+ problems in GFG's 160 days challenge, earning a certificate and t-shirt.",
+      "Solved 50+ questions on LeetCode and actively continuing.",
+      "Continuously solving problems on HackerRank across Java, Algorithms, DSA, and SQL."
+    ],
     icon: "☕"
   },
   {
-    title: "Active Developer Communities",
-    desc: "Active in developer communities including GDG and Google tech events, continuously exploring AI systems, cloud infrastructure, backend engineering, and networking with developers through offline meetups and bootcamps.",
+    title: "Community & Event Participation",
+    desc: [
+      "Participated in in-person events such as GDG ITER, GDG KIIT, GDG Bhubaneswar, GDG Cloud Kolkata, and ML Kolkata.",
+      "Attended online events and workshops by Google, Microsoft, and other top tech companies, including Google I/O and Microsoft Build."
+    ],
     icon: "👥"
   },
   {
-    title: "IIT/NIT Coding Competitions",
-    desc: "Participated in multiple IIT/NIT coding competitions, hackathons, and developer events focused on AI systems, backend engineering, and problem solving.",
+    title: "Competitive Programming",
+    desc: [
+      "Participated in the preliminary round of Algo Utsav 2026, a competitive coding competition by NIT Rourkela.",
+      "Competed in Reverse Coding-X, a competitive coding event by IIT Madras."
+    ],
     icon: "💻"
   },
   {
-    title: "Google Cloud Arcade Program (2024–25)",
-    desc: "Completed with 75 Arcade Points across hands-on GCP labs and challenges.",
+    title: "Courses & Certifications",
+    desc: [
+      "Completed the Google Cloud Arcade Program (2024–25) with 75 Arcade Points.",
+      "Earned certificates in Python, AI, and other fields from IBM, Cisco, Google, Anthropic, and Microsoft."
+    ],
     link: "View Badges →",
     linkUrl: "https://www.credly.com/users/anil-pradhan324",
     icon: "☁️"
@@ -48,7 +61,9 @@ export default function Achievements() {
               <span className="text-2xl">{item.icon}</span>
             </div>
             <h3 className="font-syne text-2xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors">{item.title}</h3>
-            <p className="text-zinc-400 leading-relaxed mb-4">{item.desc}</p>
+            <ul className="text-zinc-400 leading-relaxed mb-4 list-disc list-inside space-y-2">
+              {item.desc.map((d, i) => <li key={i}>{d}</li>)}
+            </ul>
             {item.link ? (
               <a
                 href={item.linkUrl}
