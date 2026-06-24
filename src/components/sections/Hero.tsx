@@ -169,6 +169,10 @@ export default function Hero() {
           <a href="https://www.geeksforgeeks.org/profile/anilpradhan543" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
             <Code size={13} className="text-violet-400" /> GeeksForGeeks
           </a>
+          <span className="text-zinc-700">·</span>
+          <a href="https://www.hackerrank.com/profile/anilpradhan9644" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
+            <Code size={13} className="text-violet-400" /> HackerRank
+          </a>
         </motion.div>
 
         {/* CTA Buttons */}
