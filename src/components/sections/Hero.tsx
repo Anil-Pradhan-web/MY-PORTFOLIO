@@ -7,20 +7,20 @@ import { ArrowDown, Code2, Brain, Cpu, Rocket, Globe, Phone, Mail, Linkedin, Git
 
 export default function Hero() {
   const [terminalText, setTerminalText] = useState("");
-  const fullTerminalText = `$ anil --education
+  const fullTerminalText = `$ anil --status
  
-  [B.Tech - CSE] (2024 - 2028)
-  Institution: ITER, SOA University, Bhubaneswar
-  CGPA:        9.11 / 10.0
+  [Focus]
+  🚀 Building Production-Grade AI Systems
+  🧠 FastAPI | LangGraph | RAG Pipelines
+  🛡️ Backend Engineering | System Design | Distributed Systems
  
-  [Class XII - PCM + IT] (2022 - 2024)
-  Institution: Odisha Board of Secondary Ed.
-  Score:       85%
+  [Education]
+  🎓 B.Tech CSE @ ITER, SOA University
+  📈 CGPA: 9.11 / 10.0 (2024 - 2028)
  
-  [Skills Status]
-  Role:   Full-Stack / AI Agent Dev
-  Focus:  Scalable Systems & Agentic AI
-  Status: Internships Open ✓`;
+  [Status]
+  💻 Active in Developer Communities (GDG)
+  ✨ Code. Learn. Build. Repeat.`;
 
   useEffect(() => {
     let i = 0;
@@ -93,7 +93,7 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-title text-7xl sm:text-9xl lg:text-[110px] font-normal mb-6 tracking-tight leading-[0.9] flex flex-col items-center lg:items-start"
         >
-          <span className="relative gradient-text">
+          <span className="relative gradient-text font-extrabold">
             Anil
             <motion.span
               initial={{ width: 0 }}
@@ -102,7 +102,7 @@ export default function Hero() {
               className="absolute -bottom-2 left-0 h-[4px] bg-gradient-to-r from-violet-600 to-transparent rounded-full"
             />
           </span>
-          <span className="lg:ml-12 text-zinc-100/20 [text-shadow:0_0_30px_rgba(139,92,246,0.2)] [-webkit-text-stroke:1px_rgba(255,255,255,0.2)] tracking-widest">Pradhan</span>
+          <span className="lg:ml-12 text-zinc-800/80 [text-shadow:0_0_40px_rgba(139,92,246,0.4)] [-webkit-text-stroke:1px_rgba(139,92,246,0.3)] tracking-widest mt-2">Pradhan</span>
         </motion.h1>
 
         {/* Title */}
@@ -110,13 +110,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-2xl sm:text-3xl lg:text-[36px] text-zinc-300 font-syne font-medium tracking-wide mb-8 leading-tight flex flex-wrap gap-x-3 gap-y-1 justify-center lg:justify-start"
+          className="text-xl sm:text-2xl lg:text-[32px] text-zinc-300 font-syne font-medium tracking-wide mb-8 leading-relaxed lg:leading-tight flex flex-col lg:flex-row lg:items-center gap-y-2.5 lg:gap-x-4 lg:gap-y-0 text-center lg:text-left"
         >
-          <span>Full Stack Developer</span>
-          <span className="text-violet-500/50 hidden sm:inline">·</span>
-          <span>AI/Agent Systems</span>
-          <span className="text-violet-500/50 hidden sm:inline">·</span>
-          <span>Backend Engineering</span>
+          <span className="px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300 text-sm sm:text-base lg:text-[15px] font-mono tracking-wider w-fit mx-auto lg:mx-0 shadow-[0_0_15px_rgba(139,92,246,0.05)]">Full Stack Developer</span>
+          <span className="text-zinc-800 hidden lg:inline">|</span>
+          <span className="px-3.5 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-300 text-sm sm:text-base lg:text-[15px] font-mono tracking-wider w-fit mx-auto lg:mx-0 shadow-[0_0_15px_rgba(6,182,212,0.05)]">AI Systems Engineer</span>
+          <span className="text-zinc-800 hidden lg:inline">|</span>
+          <span className="px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300 text-sm sm:text-base lg:text-[15px] font-mono tracking-wider w-fit mx-auto lg:mx-0 shadow-[0_0_15px_rgba(139,92,246,0.05)]">Backend Builder</span>
         </motion.h2>
  
         {/* Description */}
@@ -126,8 +126,8 @@ export default function Hero() {
           transition={{ delay: 0.45 }}
           className="text-zinc-400 text-base sm:text-lg max-w-xl mb-6 leading-relaxed font-sans lg:text-left text-center"
         >
-          Architecting <span className="text-violet-300 font-medium">production-grade</span> AI systems and scalable backend architectures.
-          Turning complex codebases into <span className="text-cyan-300 font-medium">high-performance</span> digital reality.
+          Building scalable backend systems and production-grade AI applications.
+          Turning ideas into scalable systems, one commit at a time.
         </motion.p>
 
         {/* Contact Links */}

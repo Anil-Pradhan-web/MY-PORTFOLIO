@@ -3,23 +3,23 @@
 
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import { User, Target, Code2 } from 'lucide-react';
+import { User, Target, Code2, Activity, Sparkles } from 'lucide-react';
 
 const aboutData = [
   {
     icon: User,
     title: "Who I Am",
-    content: "Anil Pradhan — Backend & AI Systems Developer based in Bhubaneswar, Odisha. Passionate about building scalable systems that bridge human intuition with machine precision."
+    content: "Anil Pradhan — Full Stack Developer & AI Systems Engineer based in Bhubaneswar, Odisha. Currently pursuing B.Tech CSE (2024 - 2028) at ITER, SOA University, Bhubaneswar (CGPA: 9.11)."
   },
   {
-    icon: Code2,
-    title: "What I Do",
-    content: "Architecting production-grade backend servers, multi-agent AI systems, and full-stack applications. Specializing in FastAPI, Next.js, and AI orchestration platforms."
+    icon: Activity,
+    title: "What I'm Up To",
+    content: "🔨 Building production-grade AI applications, 📚 learning System Design & Distributed Systems, ⚡ exploring scalable backend architectures, and 💪 solving DSA problems daily."
   },
   {
-    icon: Target,
-    title: "My Mission",
-    content: "Building scalable, low-latency AI orchestration platforms that solve real-world problems and empower developers to create impactful solutions."
+    icon: Sparkles,
+    title: "My Philosophy",
+    content: "\"Build real products. Solve real problems. Keep shipping.\" — Committed to building scalable systems that bridge human intuition with machine precision."
   }
 ];
 
@@ -102,6 +102,36 @@ export default function About() {
           ))}
         </motion.div>
       </div>
+
+      {/* Focus Areas & Open To Sections */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 pt-8 border-t border-zinc-900/60"
+      >
+        <div>
+          <h3 className="font-mono text-xs text-violet-400 font-semibold tracking-widest uppercase mb-4">🎯 Focus Areas</h3>
+          <div className="flex flex-wrap gap-2">
+            {["Backend Engineering", "AI Agent Systems", "RAG Pipelines", "API Design", "Cloud Deployment"].map((area) => (
+              <span key={area} className="px-3 py-1.5 bg-zinc-950/60 border border-zinc-800/80 hover:border-violet-500/30 text-zinc-300 text-xs font-mono rounded-lg transition-colors">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="font-mono text-xs text-violet-400 font-semibold tracking-widest uppercase mb-4">💼 Open To</h3>
+          <div className="flex flex-wrap gap-2">
+            {["Software Engineering Internships", "Backend Developer Roles", "AI Engineering Opportunities", "Remote & On-site Positions"].map((role) => (
+              <span key={role} className="px-3 py-1.5 bg-zinc-950/60 border border-zinc-800/80 hover:border-violet-500/30 text-zinc-300 text-xs font-mono rounded-lg transition-colors">
+                {role}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
