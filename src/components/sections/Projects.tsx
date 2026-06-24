@@ -147,6 +147,7 @@ const projectsList = [
   solo: true,
   duration: "5–6 months",
   commits: "254+",
+  isPrivate: true,
 },
   {
     title: "VolunteerIQ",

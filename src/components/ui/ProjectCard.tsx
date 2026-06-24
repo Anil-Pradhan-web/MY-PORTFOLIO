@@ -12,6 +12,7 @@ interface ProjectCardProps {
   githubUrl: string;
   liveUrl?: string;
   index: number;
+  isPrivate?: boolean;
 }
 
 export default function ProjectCard({
@@ -24,6 +25,7 @@ export default function ProjectCard({
   githubUrl,
   liveUrl,
   index,
+  isPrivate,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -48,53 +50,54 @@ export default function ProjectCard({
         {/* Subtle corner grid / scanline texture */}
         <div className="absolute top-0 right-0 w-48 h-48 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-700"
           style={{
-            backgroundImage: 'repeating-linear-gradient(0deg, #8b5cf6 0px, #8b5cf6 1px, transparent 1px, transparent 24px), repeating-linear-gradient(90deg, #8b5cf6 0px, #8b5cf6 1px, transparent 1px, transparent 24px)',
+            backgroundImage: 'radial-gradient(rgba(139, 92, 246, 0.15) 1px, transparent 0)',
+            backgroundSize: '8px 8px'
           }}
         />
 
         {/* Violet radial spotlight in corner */}
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-violet-500/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
-        <div className="relative p-7 md:p-9 flex flex-col gap-6 z-10">
-
-          {/* ── Header row ── */}
-          <div className="flex flex-col gap-3">
-            {/* Number pill + title */}
-            <div className="flex items-center gap-4">
-              <span className="text-[11px] font-mono font-bold text-violet-400/70 bg-violet-500/10 border border-violet-500/20 px-2.5 py-1 rounded-full tracking-widest">
-                /{String(index + 1).padStart(2, '0')}
-              </span>
-              <h3 className="font-syne text-xl md:text-2xl font-bold text-white group-hover:text-violet-100 transition-colors duration-300 leading-tight">
+        <div className="p-8 sm:p-10 flex flex-col gap-6 md:gap-8">
+          
+          {/* ── Title and tagline ── */}
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <h3 className="font-syne text-3xl md:text-4xl font-extrabold text-white tracking-tight group-hover:text-violet-300 transition-colors duration-300">
                 {title}
               </h3>
+              
+              {/* Highlight badge */}
+              <span className="flex items-center gap-1.5 px-3 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300 text-xs font-mono tracking-wider w-fit shadow-[0_0_15px_rgba(139,92,246,0.05)]">
+                <Zap size={11} className="text-violet-400 animate-pulse" />
+                {highlight.split(' · ')[0]}
+              </span>
             </div>
-
-            <p className="text-[13px] font-mono text-violet-300/60 tracking-wide leading-relaxed">
+            <p className="font-mono text-zinc-500 text-sm tracking-wide leading-relaxed">
               {tagline}
             </p>
           </div>
 
-          {/* ── Highlight chip ── */}
-          <div className="inline-flex items-center gap-2 self-start bg-gradient-to-r from-violet-500/15 to-cyan-500/10 border border-violet-400/25 text-violet-300 rounded-lg px-4 py-2.5 text-xs font-semibold shadow-[0_0_15px_rgba(139,92,246,0.08)]">
-            <Zap size={13} className="shrink-0 text-violet-400" />
-            {highlight}
-          </div>
-
           {/* ── Description ── */}
-          <p className="text-zinc-400 leading-relaxed text-sm">
+          <p className="text-zinc-400 text-base leading-relaxed font-sans">
             {description}
           </p>
 
-          {/* ── Feature list ── */}
-          {features && (
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {features.map((feat, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-[13px] text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                  <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0 shadow-[0_0_6px_rgba(139,92,246,0.8)]" />
-                  {feat}
-                </li>
-              ))}
-            </ul>
+          {/* ── Features List ── */}
+          {features && features.length > 0 && (
+            <div className="flex flex-col gap-3">
+              <h4 className="font-mono text-xs text-violet-400 font-bold uppercase tracking-widest">Key Engine Modules</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                {features.map((feature, idx) => (
+                  <div key={idx} className="flex gap-3 text-sm text-zinc-400 leading-relaxed bg-[#0d0d0d]/40 border border-zinc-900/60 p-4 rounded-xl hover:border-zinc-800 transition-colors">
+                    <div className="flex-grow">
+                      <strong className="text-zinc-300 font-semibold">{feature.split(': ')[0]}</strong>
+                      {feature.split(': ')[1] ? `: ${feature.split(': ')[1]}` : ''}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           )}
 
           {/* ── Tech stack badges ── */}
@@ -109,15 +112,25 @@ export default function ProjectCard({
 
           {/* ── Action buttons ── */}
           <div className="flex items-center gap-3 flex-wrap">
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-white bg-zinc-900 hover:bg-zinc-800 px-5 py-2.5 rounded-lg transition-all duration-300 border border-zinc-700/60 hover:border-violet-400/40 hover:shadow-[0_0_16px_rgba(139,92,246,0.15)]"
-            >
-              <Github size={15} />
-              Source Code
-            </a>
+            {isPrivate ? (
+              <div
+                className="flex items-center gap-2 text-sm font-medium text-zinc-500 bg-zinc-950/40 px-5 py-2.5 rounded-lg border border-zinc-800/80 select-none cursor-help hover:border-zinc-700/60 transition-colors"
+                title="This repository is private to protect intellectual property as this is my own commercial application."
+              >
+                <Github size={15} className="opacity-50" />
+                Private Repo
+              </div>
+            ) : (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-white bg-zinc-900 hover:bg-zinc-800 px-5 py-2.5 rounded-lg transition-all duration-300 border border-zinc-700/60 hover:border-violet-400/40 hover:shadow-[0_0_16px_rgba(139,92,246,0.15)]"
+              >
+                <Github size={15} />
+                Source Code
+              </a>
+            )}
             {liveUrl && !liveUrl.includes('desktop') && (
               <a
                 href={liveUrl}
