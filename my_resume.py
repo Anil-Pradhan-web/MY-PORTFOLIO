@@ -204,7 +204,7 @@ def generate_resume(output_path):
     
     # Project 1: AI Career Mentor
     story.append(create_entry_header(
-        "AI Career Mentor &nbsp;|&nbsp; <i>Solo Full-Stack Developer</i>",
+        "AI Career Mentor &nbsp;|&nbsp; <a href='https://ai-career-mentor-anil.vercel.app/' color='#1e3a8a'><b>Live Demo</b></a> &nbsp;|&nbsp; <i>Solo Full-Stack Developer</i>",
         "March 2026 – Present"
     ))
     story.append(add_bullet(
@@ -228,7 +228,7 @@ def generate_resume(output_path):
 
     # Project 2: VolunteerIQ
     story.append(create_entry_header(
-        "VolunteerIQ &nbsp;|&nbsp; <i>Lead Backend Developer &bull; Team ClutchCode</i>",
+        "VolunteerIQ &nbsp;|&nbsp; <a href='https://volunteer-iq-clutchcode.vercel.app/' color='#1e3a8a'><b>Live Demo</b></a> &nbsp;|&nbsp; <i>Lead Backend Developer &bull; Team ClutchCode</i>",
         "Mar 16, 2026 – Apr 13, 2026"
     ))
     story.append(add_bullet(
