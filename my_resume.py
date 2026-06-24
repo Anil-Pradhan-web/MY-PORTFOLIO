@@ -183,11 +183,20 @@ def generate_resume(output_path):
     # 3. Experience Section
     story.append(create_section_header("Experience"))
     story.append(create_entry_header(
-        "Campus Ambassador &nbsp;|&nbsp; <b>E-Cell, IIT Kanpur</b> &bull; <i>Remote</i>",
-        "Dec 2025 – Jan 2026"
+        "College Ambassador &nbsp;|&nbsp; <b>Techfest, IIT Bombay</b>",
+        "Jun 2026 – Present"
     ))
     story.append(add_bullet(
-        "Promoted IIT Kanpur's E-Summit events at ITER, SOA University through active social media campaigns, campus networking, and community-building initiatives."
+        "Selected as a College Ambassador for Techfest IIT Bombay, contributing to web development, marketing, event management, and creative initiatives."
+    ))
+    story.append(add_bullet(
+        "Conducted sponsorship, SEO, and competitor research to identify partnership and outreach opportunities."
+    ))
+    story.append(add_bullet(
+        "Created professional reports, presentations, and campaign concepts for national-level project submissions."
+    ))
+    story.append(add_bullet(
+        "Executed community engagement and digital outreach strategies targeting student audiences and technical communities."
     ))
 
     # 4. Technical Projects (Only AI Career Mentor and VolunteerIQ)

@@ -5,6 +5,12 @@ import SectionHeading from '../ui/SectionHeading';
 
 const experiences = [
   {
+    role: "College Ambassador",
+    org: "Techfest, IIT Bombay",
+    period: "Jun 2026 – Present",
+    desc: "Selected as a College Ambassador for Techfest, IIT Bombay. Contribute to web development, digital marketing, event management, and creative initiatives. Conduct SEO, competitor, and sponsorship research, and execute community engagement strategies targeting student and technical audiences."
+  },
+  {
     role: "Solo Developer",
     org: "AI Career Mentor – Multi-Agent AI Career Platform",
     period: "Feb – June 2026",
