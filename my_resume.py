@@ -280,10 +280,10 @@ def generate_resume(output_path):
         "<b>Google Cloud Arcade Program (2024–25):</b> Completed GCP challenges, earning 75 Arcade Points across hands-on cloud labs."
     ))
     story.append(add_bullet(
-        "<b>GeeksForGeeks 80 Days Challenge:</b> Solved 200+ problems across GFG and LeetCode (Arrays, Strings, Recursion, DP, Graphs); awarded GFG Certificate and T-shirt."
+        "<b>Solved 200+ problems across GFG and LeetCode</b>, awarded GFG Certificate and T-shirt."
     ))
     story.append(add_bullet(
-        "<b>Community Engagement:</b> Active participant in Developer Communities (GDG Bhubaneswar) and college tech events, exploring AI systems, cloud infrastructure, and backend engineering."
+        "<b>Active participant in Developer Communities (GDG Events) and college tech events</b>, exploring AI systems, cloud infrastructure, and backend engineering."
     ))
     story.append(add_bullet(
         "<b>Competitions:</b> Participated in multiple IIT/NIT coding contests and hackathons focused on AI systems, backend engineering, and algorithmic problem solving."
