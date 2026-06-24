@@ -199,19 +199,22 @@ def generate_resume(output_path):
         "March 2026 – Present"
     ))
     story.append(add_bullet(
-        "Orchestrated 6 specialized AI workflows (Resume Intelligence, Roadmaps, Market Explorer, LinkedIn Optimizer, WebSocket Mock Interview Engine, and Gemini Live Voice Coach) on a Next.js 14 SPA and FastAPI gateway."
+        "Architected a decoupled microservices system with a Next.js 14 SPA on Vercel and a FastAPI gateway on Render, utilizing Neon Serverless Postgres and Upstash Redis for high-performance data operations."
     ))
     story.append(add_bullet(
-        "Designed a parallel LangGraph DAG for multi-agent reasoning, with multi-provider routing (Groq, NVIDIA NIM, Gemini) and deterministic fallback chains/circuit-breakers to guarantee 100% platform availability."
+        "Designed a parallel LangGraph DAG for multi-agent reasoning, with multi-provider routing (Groq Llama 3.3, NVIDIA NIM, Gemini) and fallback circuit-breakers to ensure 100% platform availability."
     ))
     story.append(add_bullet(
-        "Built a real-time Hinglish Voice Coach powered by the Gemini Live Multimodal WebSocket API with 16/24kHz full-duplex audio and implemented a 7-phase mock interview FSM with code execution via WebSockets."
+        "Optimized memory footprint by engineering a Hybrid Semantic RAG system (ChromaDB + in-memory SequenceMatcher fallback) to prevent OOM crashes on resource-constrained 512MB RAM Render containers."
     ))
     story.append(add_bullet(
-        "Implemented a hybrid RAG system utilizing ChromaDB paired with an in-memory SequenceMatcher fallback to prevent OOM errors on Render's 512MB RAM containers. Achieved 106 passing pytest unit tests."
+        "Developed a real-time full-duplex Hinglish Voice Coach using Gemini Live WebSocket API (16/24kHz audio) and an interactive 7-phase mock interview FSM with Monaco Editor code execution."
     ))
     story.append(add_bullet(
-        "Developed a secure OAuth 2.0 system with JWT rotation and a Whitelisted Admin Telemetry & Observability Console backed by Upstash Redis to track active user and WebSocket connections in real-time."
+        "Built a secure Google OAuth 2.0 system with JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active WebSocket connections."
+    ))
+    story.append(add_bullet(
+        "Established a robust CI/CD pipeline using GitHub Actions, executing frontend builds and backend pytest (106 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
     ))
 
     # Project 2: VolunteerIQ
