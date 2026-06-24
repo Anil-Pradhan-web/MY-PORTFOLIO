@@ -12,14 +12,15 @@ export default function Hero() {
   [Focus]
   🚀 Building Production-Grade AI Systems
   🧠 FastAPI | LangGraph | RAG Pipelines
-  🛡️ Backend Engineering | System Design | Distributed Systems
+  🛡️ Backend & System Design
+  ⚙️ Distributed Systems
  
   [Education]
   🎓 B.Tech CSE @ ITER, SOA University
   📈 CGPA: 9.11 / 10.0 (2024 - 2028)
  
   [Status]
-  💻 Active in Developer Communities (GDG)
+  💻 Active in GDG Tech Community
   ✨ Code. Learn. Build. Repeat.`;
 
   useEffect(() => {
@@ -102,7 +103,7 @@ export default function Hero() {
               className="absolute -bottom-2 left-0 h-[4px] bg-gradient-to-r from-violet-600 to-transparent rounded-full"
             />
           </span>
-          <span className="lg:ml-12 text-zinc-800/80 [text-shadow:0_0_40px_rgba(139,92,246,0.4)] [-webkit-text-stroke:1px_rgba(139,92,246,0.3)] tracking-widest mt-2">Pradhan</span>
+          <span className="lg:ml-12 gradient-text font-extrabold tracking-widest mt-2">Pradhan</span>
         </motion.h1>
 
         {/* Title */}
@@ -284,7 +285,7 @@ export default function Hero() {
             </div>
 
             {/* Body */}
-            <div className="p-8 font-mono text-[14px] leading-7 text-violet-200/90 whitespace-pre w-full overflow-hidden min-h-[340px] relative">
+            <div className="p-8 font-mono text-[14px] leading-7 text-violet-200/90 whitespace-pre-wrap w-full overflow-hidden min-h-[340px] relative">
               <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent pointer-events-none" />
               <span className="relative z-10">{terminalText}</span>
               <motion.span
