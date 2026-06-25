@@ -16,7 +16,7 @@ const achievements = [
   {
     title: "Community & Event Participation",
     desc: [
-      "Participated in in-person events such as GDG ITER, GDG KIIT, GDG Bhubaneswar, GDG Cloud Kolkata, and ML Kolkata.",
+      "Participated in in-person events  of GDG ITER, GDG KIIT, GDG Bhubaneswar, GDG Cloud Kolkata, and ML Kolkata.",
       "Attended online events and workshops by Google, Microsoft, and other top tech companies, including Google I/O and Microsoft Build."
     ],
     icon: "👥"
