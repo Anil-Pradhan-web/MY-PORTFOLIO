@@ -210,22 +210,22 @@ def generate_resume(output_path):
         "March 2026 – Present"
     ))
     story.append(add_bullet(
-        "<b>Architected a decoupled microservices architecture</b> using Next.js 14, FastAPI, Neon Serverless Postgres (with PgBouncer connection pooling), and Upstash Redis to manage dynamic user data and scalable server operations."
+        "<b>Architected a production-grade multi-agent AI platform</b> using LangGraph, orchestrating 7 specialized AI workflows for resume intelligence, career planning, interview preparation, voice coaching, and market analysis."
     ))
     story.append(add_bullet(
-        "<b>Designed a parallel multi-agent orchestrator in LangGraph</b> executing Resume & Market nodes concurrently with dynamic LLM routing, reducing processing latency by 75% (~4 minutes to under 60 seconds) using Server-Sent Events (SSE)."
+        "<b>Designed a parallel DAG orchestration pipeline</b> executing independent AI agents concurrently, reducing end-to-end workflow latency by ~60% while maintaining structured state management and deterministic result aggregation."
     ))
     story.append(add_bullet(
-        "<b>Engineered a Hybrid Semantic RAG Engine</b> (ChromaDB + in-memory SequenceMatcher fallback) with strict multi-source deduplication, preventing container Out-Of-Memory (OOM) crashes on resource-constrained 512MB RAM instances."
+        "<b>Implemented a hybrid Retrieval-Augmented Generation (RAG) pipeline</b> combining semantic vector search (ChromaDB) with metadata-aware retrieval to improve response grounding, reduce token consumption, and optimize context retrieval efficiency."
     ))
     story.append(add_bullet(
-        "<b>Developed a real-time full-duplex Hinglish Voice Coach</b> (Gemini Live Audio API) and an adaptive 7-Phase FSM Mock Interview system over WebSockets, featuring a live Monaco Code Editor, Edge-TTS audio synthesis, and interruption-handling."
+        "<b>Built scalable backend services</b> using FastAPI, PostgreSQL, Redis, and WebSockets/SSE, enabling real-time AI streaming, persistent session management, caching, authentication, and high-concurrency communication."
     ))
     story.append(add_bullet(
-        "<b>Built a multi-provider LLM registry with automatic circuit breakers</b> and provider failovers (Groq to Gemini/NVIDIA NIM), paired with a whitelisted Admin Observability Console tracking active WebSocket connections, latencies, and error logs."
+        "<b>Integrated multiple LLM providers</b> (Groq, NVIDIA NIM, Gemini Live) with provider failover, validation pipelines, and structured output enforcement to improve reliability and production resilience."
     ))
     story.append(add_bullet(
-        "<b>Established a robust CI/CD pipeline</b> with GitHub Actions executing frontend builds and backend Pytest (116 unit tests), integrating pip-audit security vulnerability scanning and automated multi-stage Docker container builds."
+        "<b>Engineered enterprise-grade software practices</b> including Dockerized deployment, CI/CD automation, comprehensive testing, observability, and API validation, resulting in a maintainable and production-ready AI application."
     ))
 
     # Project 2: VolunteerIQ
