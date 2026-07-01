@@ -105,7 +105,7 @@ def generate_resume(output_path):
     contact_info = (
         "anilpradhan9644@gmail.com &nbsp;|&nbsp; +91-8917476908 &nbsp;|&nbsp; Bhubaneswar, Odisha, India<br/>"
         "Portfolio: <a href='https://my-portfolio-anil.vercel.app/' color='#1e3a8a'>my-portfolio-anil.vercel.app</a> &nbsp;|&nbsp; "
-        "GitHub: <a href='https://github.com/Anil-Pradhan-web' color='#1e3a8a'>Anil-Pradhan-web</a> &nbsp;|&nbsp; "
+        "GitHub: <a href='https://github.com/Anil-Pradhan-web' color='#1e3a8a'>github.com/Anil-Pradhan-web</a> &nbsp;|&nbsp; "
         "LinkedIn: <a href='https://linkedin.com/in/anil-pradhan543' color='#1e3a8a'>anil-pradhan543</a><br/>"
         "LeetCode: <a href='https://leetcode.com/u/Anil_Pradhan/' color='#1e3a8a'>Anil_Pradhan</a> &nbsp;|&nbsp; "
         "GeeksForGeeks: <a href='https://www.geeksforgeeks.org/profile/anilpradhan543' color='#1e3a8a'>anilpradhan543</a> &nbsp;|&nbsp; "
