@@ -210,22 +210,22 @@ def generate_resume(output_path):
         "March 2026 – Present"
     ))
     story.append(add_bullet(
-        "<b>Architected a decoupled microservices system</b> with a Next.js 14 SPA on Vercel and a FastAPI gateway on Render, utilizing Neon Serverless Postgres (with PgBouncer connection pooling) and Upstash Redis."
+        "<b>Architected a decoupled microservices architecture</b> using Next.js 14, FastAPI, Neon Serverless Postgres (with PgBouncer connection pooling), and Upstash Redis to manage dynamic user data and scalable server operations."
     ))
     story.append(add_bullet(
-        "<b>Designed a parallel LangGraph DAG</b> to orchestrate 7 specialized AI workflows, achieving a ~60% processing latency reduction via asynchronous fan-out/fan-in pipelines streaming results through Server-Sent Events (SSE)."
+        "<b>Designed a parallel multi-agent orchestrator in LangGraph</b> executing Resume & Market nodes concurrently with dynamic LLM routing, reducing processing latency by 75% (~4 minutes to under 60 seconds) using Server-Sent Events (SSE)."
     ))
     story.append(add_bullet(
-        "<b>Optimized memory footprint</b> by engineering a Hybrid Semantic RAG system (ChromaDB + in-memory SequenceMatcher fallback) to prevent container crash failures on resource-constrained 512MB RAM allocations."
+        "<b>Engineered a Hybrid Semantic RAG Engine</b> (ChromaDB + in-memory SequenceMatcher fallback) with strict multi-source deduplication, preventing container Out-Of-Memory (OOM) crashes on resource-constrained 512MB RAM instances."
     ))
     story.append(add_bullet(
-        "<b>Developed a real-time full-duplex Hinglish Voice Coach</b> using Gemini Live WebSocket API (16/24kHz audio) and an interactive 7-phase mock interview FSM with Monaco Editor integration and Edge-TTS audio synthesis."
+        "<b>Developed a real-time full-duplex Hinglish Voice Coach</b> (Gemini Live Audio API) and an adaptive 7-Phase FSM Mock Interview system over WebSockets, featuring a live Monaco Code Editor, Edge-TTS audio synthesis, and interruption-handling."
     ))
     story.append(add_bullet(
-        "<b>Built a secure Google OAuth 2.0 system</b> with JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active WebSocket connections and DailyAnalytics costs."
+        "<b>Built a multi-provider LLM registry with automatic circuit breakers</b> and provider failovers (Groq to Gemini/NVIDIA NIM), paired with a whitelisted Admin Observability Console tracking active WebSocket connections, latencies, and error logs."
     ))
     story.append(add_bullet(
-        "<b>Established a robust CI/CD pipeline</b> using GitHub Actions, executing frontend builds and backend pytest (116 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
+        "<b>Established a robust CI/CD pipeline</b> with GitHub Actions executing frontend builds and backend Pytest (116 unit tests), integrating pip-audit security vulnerability scanning and automated multi-stage Docker container builds."
     ))
 
     # Project 2: VolunteerIQ
