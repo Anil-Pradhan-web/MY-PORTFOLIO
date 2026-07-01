@@ -7,25 +7,25 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 
 def generate_resume(output_path):
-    # Setup document geometry: 0.4 in margins top/bottom, 0.45 in left/right
+    # Setup document geometry: 0.32 in margins top/bottom, 0.45 in left/right
     doc = SimpleDocTemplate(
         output_path,
         pagesize=letter,
         leftMargin=0.45 * inch,
         rightMargin=0.45 * inch,
-        topMargin=0.4 * inch,
-        bottomMargin=0.4 * inch
+        topMargin=0.32 * inch,
+        bottomMargin=0.32 * inch
     )
     
     story = []
     styles = getSampleStyleSheet()
     
-    # Custom Paragraph Styles
+    # Custom Paragraph Styles (Optimized for density)
     name_style = ParagraphStyle(
         name='NameStyle',
         fontName='Helvetica-Bold',
-        fontSize=18,
-        leading=21,
+        fontSize=17,
+        leading=19,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#0f172a")  # Dark slate
     )
@@ -33,8 +33,8 @@ def generate_resume(output_path):
     contact_style = ParagraphStyle(
         name='ContactStyle',
         fontName='Helvetica',
-        fontSize=8.5,
-        leading=11,
+        fontSize=8.0,
+        leading=10,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#334155")  # Muted slate
     )
@@ -42,8 +42,8 @@ def generate_resume(output_path):
     section_header_style = ParagraphStyle(
         name='SectionHeaderStyle',
         fontName='Helvetica-Bold',
-        fontSize=9.5,
-        leading=12,
+        fontSize=9.0,
+        leading=11,
         textColor=colors.HexColor("#1e3a8a"),  # Deep blue
         spaceAfter=0
     )
@@ -51,16 +51,16 @@ def generate_resume(output_path):
     entry_title_style = ParagraphStyle(
         name='EntryTitleStyle',
         fontName='Helvetica-Bold',
-        fontSize=9,
-        leading=11.5,
+        fontSize=8.2,
+        leading=10.5,
         textColor=colors.HexColor("#0f172a")
     )
     
     entry_right_style = ParagraphStyle(
         name='EntryRightStyle',
         fontName='Helvetica',
-        fontSize=8.5,
-        leading=11.5,
+        fontSize=8.0,
+        leading=10.5,
         alignment=TA_RIGHT,
         textColor=colors.HexColor("#334155")
     )
@@ -68,8 +68,8 @@ def generate_resume(output_path):
     bullet_marker_style = ParagraphStyle(
         name='BulletMarkerStyle',
         fontName='Helvetica',
-        fontSize=8.5,
-        leading=11,
+        fontSize=8.0,
+        leading=10,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#0f172a")
     )
@@ -77,30 +77,30 @@ def generate_resume(output_path):
     bullet_text_style = ParagraphStyle(
         name='BulletTextStyle',
         fontName='Helvetica',
-        fontSize=8.5,
-        leading=11,
+        fontSize=8.0,
+        leading=10.2,
         textColor=colors.HexColor("#334155")
     )
     
     skill_category_style = ParagraphStyle(
         name='SkillCategoryStyle',
         fontName='Helvetica-Bold',
-        fontSize=8.5,
-        leading=11,
+        fontSize=8.0,
+        leading=10.2,
         textColor=colors.HexColor("#0f172a")
     )
     
     skill_list_style = ParagraphStyle(
         name='SkillListStyle',
         fontName='Helvetica',
-        fontSize=8.5,
-        leading=11,
+        fontSize=8.0,
+        leading=10.2,
         textColor=colors.HexColor("#334155")
     )
 
     # 1. Header Section
     story.append(Paragraph("ANIL PRADHAN", name_style))
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 2))
     
     contact_info = (
         "anilpradhan9644@gmail.com &nbsp;|&nbsp; +91-8917476908 &nbsp;|&nbsp; Bhubaneswar, Odisha, India<br/>"
@@ -112,7 +112,7 @@ def generate_resume(output_path):
         "HackerRank: <a href='https://www.hackerrank.com/profile/anilpradhan9644' color='#1e3a8a'>anilpradhan9644</a>"
     )
     story.append(Paragraph(contact_info, contact_style))
-    story.append(Spacer(1, 5))
+    story.append(Spacer(1, 3))
 
     # Helper function for Section Headers with borders
     def create_section_header(title):
@@ -122,7 +122,7 @@ def generate_resume(output_path):
         )
         header_table.setStyle(TableStyle([
             ('BOTTOMPADDING', (0,0), (-1,-1), 1),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
             ('LINEBELOW', (0,0), (-1,-1), 1.25, colors.HexColor("#1e3a8a")),  # Premium dark blue separator line
@@ -139,8 +139,8 @@ def generate_resume(output_path):
             ('VALIGN', (0,0), (-1,-1), 'TOP'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('TOPPADDING', (0,0), (-1,-1), 1),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('TOPPADDING', (0,0), (-1,-1), 0.5),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.5),
         ]))
         return bullet_table
 
@@ -154,8 +154,8 @@ def generate_resume(output_path):
             ('VALIGN', (0,0), (-1,-1), 'BOTTOM'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('TOPPADDING', (0,0), (-1,-1), 2),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('TOPPADDING', (0,0), (-1,-1), 1.5),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.5),
         ]))
         return entry_table
 
@@ -189,16 +189,19 @@ def generate_resume(output_path):
         "Jun 2026 – Present"
     ))
     story.append(add_bullet(
-        "<b>Selected as a College Ambassador</b> for Techfest IIT Bombay, contributing to web development, marketing, event management, and creative initiatives."
+        "<b>Represented Techfest IIT Bombay</b>, Asia's largest science and technology festival, by leading campus outreach and engagement initiatives to promote competitions, workshops, and technical events across student communities."
     ))
     story.append(add_bullet(
-        "<b>Conducted sponsorship, SEO, and competitor research</b> to identify key partnership and digital outreach opportunities."
+        "<b>Conducted market research</b>, competitor analysis, sponsorship research, and partnership mapping, preparing professional strategy reports for corporate outreach, business development, and event collaborations."
     ))
     story.append(add_bullet(
-        "<b>Created professional reports and campaign concepts</b> for national-level project submissions."
+        "<b>Designed and developed web assets</b>, including landing pages, promotional content, and technical project deliverables supporting Techfest campaigns."
     ))
     story.append(add_bullet(
-        "<b>Executed community engagement and digital outreach strategies</b> targeting student audiences and technical communities."
+        "<b>Planned and executed marketing strategies</b>, collaborating with technical clubs, student organizations, and online communities to increase awareness and participation."
+    ))
+    story.append(add_bullet(
+        "<b>Delivered data-driven recommendations</b> by creating presentation decks, reports, outreach strategies, and execution roadmaps using AI-powered research and productivity tools."
     ))
 
     # 4. Technical Projects (Only AI Career Mentor and VolunteerIQ)
