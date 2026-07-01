@@ -225,7 +225,7 @@ def generate_resume(output_path):
         "<b>Built a secure Google OAuth 2.0 system</b> with JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active WebSocket connections and DailyAnalytics costs."
     ))
     story.append(add_bullet(
-        "<b>Established a robust CI/CD pipeline</b> using GitHub Actions, executing frontend builds and backend pytest (114 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
+        "<b>Established a robust CI/CD pipeline</b> using GitHub Actions, executing frontend builds and backend pytest (116 unit tests) with automatic package audits (pip-audit) and GHCR container deployment."
     ))
 
     # Project 2: VolunteerIQ

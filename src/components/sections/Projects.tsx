@@ -8,13 +8,13 @@ const projectsList = [
   title: "AI Career Mentor",
   tagline: "7 Specialized AI Workflows. 1 Career Transformation. Real-time Voice Coach.",
   description:
-    "A production-grade, full-stack career coaching platform that orchestrates 7 specialized AI workflows (Resume Intelligence, Roadmaps, Market Explorer, LinkedIn Optimizer, WebSocket Mock Interview Engine, Gemini Live Voice Coach, and Full Career Analysis). Built on a decoupled microservices architecture with a Next.js 14 SPA on Vercel, a FastAPI gateway on Render, Neon Serverless Postgres, and Upstash Redis. Features a parallel LangGraph DAG, a Hybrid Semantic RAG Engine (ChromaDB + in-memory MockRAG OOM fallback), real-time WebSocket mock interviews, full-duplex Hinglish voice coaching (Gemini Live), a whitelisted Admin Observability & Telemetry Console (real-time active user/connection tracking and daily rollups), Sentry SDK exception monitoring, and Prometheus telemetry. Verified with 114 passing tests and zero circular dependencies.",
+    "A production-grade, full-stack career coaching platform that orchestrates 7 specialized AI workflows (Resume Intelligence, Roadmaps, Market Explorer, LinkedIn Optimizer, WebSocket Mock Interview Engine, Gemini Live Voice Coach, and Full Career Analysis). Built on a decoupled microservices architecture with a Next.js 14 SPA on Vercel, a FastAPI gateway on Render, Neon Serverless Postgres, and Upstash Redis. Features a parallel LangGraph DAG, a Hybrid Semantic RAG Engine (ChromaDB + in-memory MockRAG OOM fallback), real-time WebSocket mock interviews, full-duplex Hinglish voice coaching (Gemini Live), a whitelisted Admin Observability & Telemetry Console (real-time active user/connection tracking and daily rollups), Sentry SDK exception monitoring, and Prometheus telemetry. Verified with 116 passing tests and zero circular dependencies.",
   highlight:
-    "LangGraph DAG Orchestration · Gemini Live Voice Coach · ChromaDB Hybrid RAG · Real-time Admin Telemetry Dashboard · 114 Pytest Tests · $175K Hackathon Prize Pools",
+    "LangGraph DAG Orchestration · Gemini Live Voice Coach · ChromaDB Hybrid RAG · Real-time Admin Telemetry Dashboard · 116 Pytest Tests · $175K Hackathon Prize Pools",
   stats: [
     { label: "AI Workflows", value: "7" },
     { label: "Voice Coach", value: "Gemini Live" },
-    { label: "Test Coverage", value: "114 tests" },
+    { label: "Test Coverage", value: "116 tests" },
     { label: "Commits", value: "254+" },
     { label: "Hackathon Prize Pool", value: "$175K" },
   ],
@@ -30,7 +30,7 @@ const projectsList = [
     "🔀 Multi-Provider LLM Registry: Dynamic routing across Groq (Llama 3.3 70B), NVIDIA NIM, and Gemini with automatic fallback chains (groq→google) and circuit breakers",
     "🧠 Hybrid Semantic RAG: ChromaDB vector store paired with an in-memory SequenceMatcher fallback to prevent OOM crashes on Render's 512MB RAM containers",
     "🔐 Google OAuth 2.0: ID Token verification server-side, exchanged for JWT + refresh token rotation preventing replay attacks, and SlowAPI/Redis rate limiting",
-    "🏗️ CI/CD & Deployments: GitHub Actions pipeline running frontend lint/build and backend pytest (114 tests) + pip-audit, with auto-deploys via Vercel, Render, and GHCR",
+    "🏗️ CI/CD & Deployments: GitHub Actions pipeline running frontend lint/build and backend pytest (116 tests) + pip-audit, with auto-deploys via Vercel, Render, and GHCR",
   ],
   architecture: {
     pattern: "Decoupled Microservices + LangGraph Static DAG Orchestration + Hybrid Semantic RAG + Multi-Agent",
@@ -115,7 +115,7 @@ const projectsList = [
     "GHCR",
     "Vercel",
     "Render.com",
-    "pytest (114 tests)",
+    "pytest (116 tests)",
   ],
   hackathons: [
     {
@@ -131,14 +131,14 @@ const projectsList = [
   ],
   quickStats: {
     commits: "254+",
-    tests: "114 passing pytest",
+    tests: "116 passing pytest",
     agents: "7 (Resume, Market, LinkedIn, Roadmap, Interview, Voice Coach, Full Analysis) + 1 Observability Console",
     llmProviders: "3 (Groq, NVIDIA NIM, Gemini)",
     responseTime: "<60s full career analysis",
     buildTime: "5–6 months solo",
     hackathonPrizePool: "$175K",
     deployments: "Vercel + Render + Neon + Upstash",
-    codeQuality: "Zero circular deps · Pydantic validation · 114 tests · Real-time telemetry · 100% availability",
+    codeQuality: "Zero circular deps · Pydantic validation · 116 tests · Real-time telemetry · 100% availability",
   },
   githubUrl: "https://github.com/Anil-Pradhan-web/ai-career-mentor",
   liveUrl: "https://ai-career-mentor-anil.vercel.app",
