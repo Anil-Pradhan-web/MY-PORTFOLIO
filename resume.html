@@ -168,7 +168,7 @@
           <span class="text-[8.8px] text-slate-500 font-mono">March 2026 – Present</span>
         </div>
         <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-snug">
-          <li><strong>Multi-Agent Orchestration & Concurrency:</strong> Orchestrated 7 specialized AI agents via a parallel LangGraph DAG, cutting end-to-end latency 60% (4 min → 60s) by parallelizing resume parsing and market scraping.</li>
+          <li><strong>Multi-Agent Orchestration & Concurrency:</strong> Orchestrated 7 specialized AI agents via a parallel LangGraph DAG, cutting latency 60% (4 min → 60s) using a two-phase concurrency flow: parallel resume parsing and market scraping, followed by parallel LinkedIn and roadmap generation.</li>
           <li><strong>System Resilience & Fault Tolerance:</strong> Built failover architecture with custom circuit breakers and multi-provider LLM fallback chains (Groq ⇄ Cerebras ⇄ NVIDIA NIM) to eliminate request drops during rate-limit spikes.</li>
           <li><strong>Real-time Bidirectional Streaming & State Machines:</strong> Designed a full-duplex WebSocket pipeline with Gemini Multimodal Live API powering a 7-phase FSM-driven mock interview simulator with real-time audio coaching and Monaco IDE.</li>
           <li><strong>High-Efficiency RAG & CI/CD:</strong> Optimized RAG retrieval using local ONNX embeddings (all-MiniLM-L6-v2) to eliminate embedding API costs, backed by Redis rate-limiting/JWT middleware and a 116-test Pytest CI/CD suite.</li>
