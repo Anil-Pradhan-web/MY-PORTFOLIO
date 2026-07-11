@@ -273,7 +273,7 @@ def generate_resume(output_path):
         </div>
         <div class="flex items-start">
           <span class="font-bold text-[#1e3a8a] w-[90px] flex-shrink-0">Tools:</span>
-          <span class="text-slate-600 font-semibold">VS Code, Git, Swagger UI, Cline, GitHub Copilot, Gemini Code Assist, OpenAI Codex, AntiGravity IDE</span>
+          <span class="text-slate-600 font-semibold">VS Code, Git, GitHub, Swagger UI, Postman</span>
         </div>
       </div>
     </div>
