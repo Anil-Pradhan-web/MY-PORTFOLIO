@@ -252,12 +252,12 @@ def generate_resume(output_path):
     
     skills_data = [
         ["Languages", "Python, Java, JavaScript, SQL"],
-        ["Frontend", "Next.js, React, Tailwind CSS, Axios"],
-        ["Backend", "FastAPI, LangGraph, LangChain Core, Pydantic, SQLAlchemy 2.0, HTTPX, Loguru, WebSocket, Uvicorn, Prometheus, Sentry, SlowAPI, pdfplumber, edge-tts, Postman Test Suite, Pytest"],
-        ["AI / LLM & RAG", "Groq (Llama 3.3 70B), NVIDIA NIM, Gemini Live API, Tavily, Serper.dev, DuckDuckGo"],
+        ["Frontend", "HTML, CSS, Tailwind CSS, Axios, React"],
+        ["Backend", "FastAPI, LangGraph, Pydantic, SQLAlchemy 2.0, WebSocket, Prometheus, Sentry, pdfplumber, edge-tts"],
+        ["AI / LLM & RAG", "Groq Cloud, Cerebras Cloud, NVIDIA NIM, Gemini Live API, Tavily, Serper.dev, DuckDuckGo"],
         ["Databases", "Neon Postgres, SQLite, Upstash Redis, ChromaDB (Vector Store)"],
-        ["Auth & Security", "JWT (python-jose), Google OAuth 2.0, Firebase Authentication, bcrypt, CORS Middleware, Rate Limiting, HTTPS TLS, .env Secrets"],
-        ["DevOps & Infra", "Docker, GitHub Actions (CI/CD), Vercel, Render.com, GHCR"],
+        ["Auth & Security", "JWT (python-jose), Google OAuth 2.0, bcrypt, CORS Middleware, Rate Limiting, HTTPS"],
+        ["DevOps & Infra", "Docker, GitHub Actions (CI/CD), Vercel, Render.com"],
         ["Tools", "VS Code, Git, Swagger UI, Cline, GitHub Copilot, Gemini Code Assist, OpenAI Codex, AntiGravity IDE"]
     ]
     
