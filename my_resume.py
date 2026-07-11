@@ -26,7 +26,7 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.22in 0.32in;
+        margin: 0.26in 0.32in;
       }
     }
   </style>
@@ -34,17 +34,17 @@ def generate_resume(output_path):
 <body class="bg-white p-0 text-slate-800">
 
   <!-- Header Section -->
-  <div class="bg-[#0f172a] text-white rounded-lg p-4 flex justify-between items-center mb-4">
+  <div class="bg-[#0f172a] text-white rounded-lg p-5 flex justify-between items-center mb-4.5">
     <!-- Left: Profile Info -->
     <div class="w-[58%]">
-      <h1 class="text-2xl font-extrabold tracking-tight">ANIL PRADHAN</h1>
-      <h2 class="text-[9.5px] font-bold tracking-wider text-sky-400 mt-0.5 uppercase">Backend Engineer | AI Systems Builder</h2>
-      <p class="text-[9px] text-slate-300 mt-2 leading-relaxed">
+      <h1 class="text-3xl font-extrabold tracking-tight">ANIL PRADHAN</h1>
+      <h2 class="text-[9.8px] font-bold tracking-wider text-sky-400 mt-0.5 uppercase">Backend Engineer | AI Systems Builder</h2>
+      <p class="text-[9.4px] text-slate-300 mt-2.5 leading-relaxed">
         Computer Science undergraduate passionate about building scalable backend systems and AI-powered applications. Experienced in FastAPI, LangGraph, RAG pipelines, and cloud deployment. Eager to contribute to impactful products and grow as a software engineer.
       </p>
     </div>
     <!-- Right: Contact Details -->
-    <div class="w-[40%] flex flex-col items-end text-[9px] text-slate-200 space-y-1.0 font-mono">
+    <div class="w-[40%] flex flex-col items-end text-[9.4px] text-slate-200 space-y-1.5 font-mono">
       <div class="flex items-center gap-1.5 justify-end">
         <span>anilpradhan9644@gmail.com</span>
         <svg class="w-3 h-3 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -86,8 +86,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Education Section -->
-  <div class="mb-4">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
+  <div class="mb-4.5">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
       <!-- Circle Icon Badge -->
       <div class="w-6 h-6 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -96,36 +96,36 @@ def generate_resume(output_path):
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path>
         </svg>
       </div>
-      <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Education</h3>
+      <h3 class="text-[11.5px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Education</h3>
       <!-- Calendar Icon on the right -->
       <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
       </svg>
     </div>
 
-    <div class="grid grid-cols-2 gap-6 text-[9.8px]">
+    <div class="grid grid-cols-2 gap-6 text-[10px]">
       <div>
         <h4 class="font-bold text-slate-900">ITER, SOA University, Bhubaneswar</h4>
         <p class="text-slate-600 font-medium">B.Tech in Computer Science & Engineering</p>
-        <p class="text-slate-500 font-mono text-[8.8px] mt-0.5">2024 – 2028 &nbsp;|&nbsp; <span class="font-bold text-slate-900">CGPA: 9.11/10</span></p>
+        <p class="text-slate-500 font-mono text-[9px] mt-0.5">2024 – 2028 &nbsp;|&nbsp; <span class="font-bold text-slate-900">CGPA: 9.11/10</span></p>
       </div>
       <div class="border-l border-dashed border-slate-300 pl-4">
         <h4 class="font-bold text-slate-900">Odisha Board of Secondary Education</h4>
         <p class="text-slate-600 font-medium">Class XII (PCM with IT)</p>
-        <p class="text-slate-500 font-mono text-[8.8px] mt-0.5">2022 – 2024 &nbsp;|&nbsp; <span class="font-bold text-slate-900">Percentage: 85%</span></p>
+        <p class="text-slate-500 font-mono text-[9px] mt-0.5">2022 – 2024 &nbsp;|&nbsp; <span class="font-bold text-slate-900">Percentage: 85%</span></p>
       </div>
     </div>
   </div>
 
   <!-- Experience Section -->
-  <div class="mb-4">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
+  <div class="mb-4.5">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
       <div class="w-6 h-6 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
       </div>
-      <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Experience</h3>
+      <h3 class="text-[11.5px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Experience</h3>
       <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
       </svg>
@@ -133,10 +133,10 @@ def generate_resume(output_path):
 
     <div>
       <div class="flex justify-between items-baseline mb-0.5">
-        <h4 class="text-[9.8px] font-bold text-slate-900">College Ambassador <span class="text-slate-400 font-normal">|</span> <span class="text-[#1e3a8a]">Techfest, IIT Bombay</span></h4>
-        <span class="text-[8.8px] text-slate-500 font-mono">Jun 2026 – Present</span>
+        <h4 class="text-[10px] font-bold text-slate-900">College Ambassador <span class="text-slate-400 font-normal">|</span> <span class="text-[#1e3a8a]">Techfest, IIT Bombay</span></h4>
+        <span class="text-[9px] text-slate-500 font-mono">Jun 2026 – Present</span>
       </div>
-      <ul class="list-disc list-outside ml-4 text-[9.3px] text-slate-600 space-y-0.5 leading-normal">
+      <ul class="list-disc list-outside ml-4 text-[9.4px] text-slate-600 space-y-0.5 leading-relaxed">
         <li>Selected as a Campus Ambassador for Techfest, IIT Bombay, participating in technical and industry-oriented initiatives.</li>
         <li>Contributed to web development and marketing by successfully completing multiple project-based assignments.</li>
         <li>Conducted market research, prepared a business strategy presentation, and qualified for Round 2 of the FlowFinance Growth Strategy & Business Development Challenge.</li>
@@ -145,82 +145,82 @@ def generate_resume(output_path):
   </div>
 
   <!-- Projects Section -->
-  <div class="mb-4">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
+  <div class="mb-4.5">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
       <div class="w-6 h-6 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
         </svg>
       </div>
-      <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Technical Projects</h3>
+      <h3 class="text-[11.5px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Technical Projects</h3>
       <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
       </svg>
     </div>
 
-    <div class="space-y-3">
+    <div class="space-y-3.5">
       <!-- Project 1 -->
       <div>
         <div class="flex justify-between items-baseline mb-0.5">
-          <h4 class="text-[9.8px] font-bold text-slate-900">
+          <h4 class="text-[10px] font-bold text-slate-900">
             <span class="text-[#1e3a8a]">AI Career Mentor</span> 
             <span class="text-slate-400 font-normal">|</span> 
             <a href="https://ai-career-mentor-anil.vercel.app/" class="text-[#1e3a8a] hover:underline font-semibold">Live Demo</a> 
             <span class="text-slate-400 font-normal">|</span> 
             <span class="text-slate-500 italic font-normal">Solo Full-Stack Developer</span>
           </h4>
-          <span class="text-[8.8px] text-slate-500 font-mono">March 2026 – Present</span>
+          <span class="text-[9px] text-slate-500 font-mono">March 2026 – Present</span>
         </div>
-        <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-snug">
+        <ul class="list-disc list-outside ml-4 text-[9.4px] text-slate-600 space-y-0.5 leading-relaxed">
           <li><strong>Multi-Agent Orchestration & Concurrency:</strong> Orchestrated 7 specialized AI agents via a parallel LangGraph DAG, designing a two-phase concurrency flow (concurrent resume parsing and market scraping, followed by parallel LinkedIn and career roadmap generation) that reduced end-to-end latency by 60% (4 min → 60s).</li>
           <li><strong>Real-Time Bidirectional Streaming & FSMs:</strong> Engineered a full-duplex WebSocket communication pipeline utilizing the Gemini Multimodal Live API (gemini-2.5-flash-native-audio-latest) for real-time voice coaching, governed by a 7-phase Finite State Machine (FSM) that dynamically manages mock interview stages and Monaco IDE code evaluations.</li>
           <li><strong>API Resilience & Failover Architecture:</strong> Built a resilient multi-provider LLM fallback chain (Groq ⇄ Cerebras ⇄ NVIDIA NIM) with custom circuit breakers and daily rate-limiting/gap-locking policies, maintaining 100% service availability and zero request drops during peak API rate-limit spikes.</li>
           <li><strong>Resource-Optimized RAG & Quality Control:</strong> Optimized RAG retrieval by deploying local ONNX embeddings (all-MiniLM-L6-v2) to eliminate API dependency, implementing a keyword-search fallback to prevent OOM crashes on memory-constrained (512MB RAM) servers, backed by a 116-test Pytest CI/CD suite.</li>
         </ul>
-        <div class="flex flex-wrap gap-1.5 mt-1.5 ml-4">
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">FastAPI</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">LangGraph</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">ChromaDB</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">ONNX</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">Docker</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">Upstash Redis</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">Next.js 14</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">Gemini Live</span>
+        <div class="flex flex-wrap gap-1.5 mt-2 ml-4">
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">FastAPI</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">LangGraph</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">ChromaDB</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">ONNX</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Docker</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Upstash Redis</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Next.js 14</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Gemini Live</span>
         </div>
       </div>
 
       <!-- Project 2 -->
       <div>
         <div class="flex justify-between items-baseline mb-0.5">
-          <h4 class="text-[9.8px] font-bold text-slate-900">
+          <h4 class="text-[10px] font-bold text-slate-900">
             <span class="text-[#1e3a8a]">Task Pilot-AI</span> 
             <span class="text-slate-400 font-normal">|</span> 
             <a href="https://taskpilot-ai-app.onrender.com/" class="text-[#1e3a8a] hover:underline font-semibold">Live Demo</a> 
             <span class="text-slate-400 font-normal">|</span> 
             <span class="text-slate-500 italic font-normal">Integration Lead • Team IdeaForg-E</span>
           </h4>
-          <span class="text-[8.8px] text-slate-500 font-mono">June 2026 – July 2026</span>
+          <span class="text-[9px] text-slate-500 font-mono">June 2026 – July 2026</span>
         </div>
-        <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-snug">
+        <ul class="list-disc list-outside ml-4 text-[9.4px] text-slate-600 space-y-0.5 leading-relaxed">
           <li><strong>Heterogeneous Data Aggregation:</strong> Architected an ingestion pipeline that normalizes and aggregates raw developer data from 7 fragmented sources (Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents) into a unified relational database, saving developers ~2 hours daily of manual task tracking.</li>
           <li><strong>Hybrid Extraction & Deduplication Engine:</strong> Designed a cost-optimized extraction and fusion pipeline using deterministic heuristic models, fuzzy text correlation (SequenceMatcher), and LLM reasoning (Qwen-3.6-27B) to extract hidden action items from unstructured sources, recovering 35% of untracked tasks while reducing LLM API token costs by 75%+.</li>
           <li><strong>Concurrency-Safe Database & High-Priority API:</strong> Configured SQLite in Write-Ahead Logging (WAL) mode with custom busy-timeout strategies, facilitating concurrent multi-agent writes with zero database locking, integrated with a real-time P1 incident-injection API that autonomously re-prioritizes the 6-stage pipeline in under 15 seconds.</li>
           <li><strong>Self-Healing Orchestration & Quality Auditor:</strong> Developed a background daemon to monitor execution states (WorkflowRun) and automatically self-heal stale runs (stuck runs >5 mins), combined with a 7-dimension automated Quality Agent that grades tasks on actionability and generates context-aware follow-up queries for missing information.</li>
         </ul>
-        <div class="flex flex-wrap gap-1.5 mt-1.5 ml-4">
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">FastAPI</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">LangGraph</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">SQLite</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">LLMs</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">React</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">Redis</span>
+        <div class="flex flex-wrap gap-1.5 mt-2 ml-4">
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">FastAPI</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">LangGraph</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">SQLite</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">LLMs</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">React</span>
+          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Redis</span>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Skills Section -->
-  <div class="mb-4">
+  <div class="mb-4.5">
     <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
       <div class="w-6.5 h-6.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -228,13 +228,13 @@ def generate_resume(output_path):
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
         </svg>
       </div>
-      <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Technical Skills</h3>
+      <h3 class="text-[11.5px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Technical Skills</h3>
       <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
       </svg>
     </div>
 
-    <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.2px] leading-snug">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.4px] leading-snug">
       <!-- Column 1 -->
       <div class="space-y-1.5">
         <div class="flex items-start">
@@ -284,14 +284,14 @@ def generate_resume(output_path):
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4l-1.9 2.53a1 1 0 01-1.6 0L12 8z"></path>
         </svg>
       </div>
-      <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Achievements & Certifications</h3>
+      <h3 class="text-[11.5px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Achievements & Certifications</h3>
       <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
       </svg>
     </div>
 
     <!-- 2 Column Achievements List -->
-    <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.2px] text-slate-600 leading-normal">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.4px] text-slate-600 leading-relaxed">
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
         <span>Google Cloud Arcade Program (2024–25): Completed GCP challenges, earning 75 Arcade Points across hands-on cloud labs.</span>
