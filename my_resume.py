@@ -7,14 +7,14 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 
 def generate_resume(output_path):
-    # Setup document geometry: 0.26 in margins top/bottom, 0.45 in left/right
+    # Setup document geometry: 0.22 in margins top/bottom, 0.45 in left/right
     doc = SimpleDocTemplate(
         output_path,
         pagesize=letter,
         leftMargin=0.45 * inch,
         rightMargin=0.45 * inch,
-        topMargin=0.26 * inch,
-        bottomMargin=0.26 * inch
+        topMargin=0.22 * inch,
+        bottomMargin=0.22 * inch
     )
     
     story = []
@@ -24,8 +24,8 @@ def generate_resume(output_path):
     name_style = ParagraphStyle(
         name='NameStyle',
         fontName='Helvetica-Bold',
-        fontSize=16,
-        leading=18,
+        fontSize=15.5,
+        leading=17.5,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#0f172a")  # Dark slate
     )
@@ -33,8 +33,8 @@ def generate_resume(output_path):
     contact_style = ParagraphStyle(
         name='ContactStyle',
         fontName='Helvetica',
-        fontSize=7.8,
-        leading=9.5,
+        fontSize=7.6,
+        leading=9.0,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#334155")  # Muted slate
     )
@@ -42,8 +42,8 @@ def generate_resume(output_path):
     section_header_style = ParagraphStyle(
         name='SectionHeaderStyle',
         fontName='Helvetica-Bold',
-        fontSize=8.8,
-        leading=10.5,
+        fontSize=8.6,
+        leading=10.2,
         textColor=colors.HexColor("#1e3a8a"),  # Deep blue
         spaceAfter=0
     )
@@ -51,16 +51,16 @@ def generate_resume(output_path):
     entry_title_style = ParagraphStyle(
         name='EntryTitleStyle',
         fontName='Helvetica-Bold',
-        fontSize=8.0,
-        leading=10.2,
+        fontSize=7.8,
+        leading=9.8,
         textColor=colors.HexColor("#0f172a")
     )
     
     entry_right_style = ParagraphStyle(
         name='EntryRightStyle',
         fontName='Helvetica',
-        fontSize=7.8,
-        leading=10.2,
+        fontSize=7.6,
+        leading=9.8,
         alignment=TA_RIGHT,
         textColor=colors.HexColor("#334155")
     )
@@ -68,8 +68,8 @@ def generate_resume(output_path):
     bullet_marker_style = ParagraphStyle(
         name='BulletMarkerStyle',
         fontName='Helvetica',
-        fontSize=7.8,
-        leading=9.8,
+        fontSize=7.6,
+        leading=9.4,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#0f172a")
     )
@@ -77,24 +77,24 @@ def generate_resume(output_path):
     bullet_text_style = ParagraphStyle(
         name='BulletTextStyle',
         fontName='Helvetica',
-        fontSize=7.8,
-        leading=9.8,
+        fontSize=7.6,
+        leading=9.4,
         textColor=colors.HexColor("#334155")
     )
     
     skill_category_style = ParagraphStyle(
         name='SkillCategoryStyle',
         fontName='Helvetica-Bold',
-        fontSize=7.8,
-        leading=9.8,
+        fontSize=7.6,
+        leading=9.4,
         textColor=colors.HexColor("#0f172a")
     )
     
     skill_list_style = ParagraphStyle(
         name='SkillListStyle',
         fontName='Helvetica',
-        fontSize=7.8,
-        leading=9.8,
+        fontSize=7.6,
+        leading=9.4,
         textColor=colors.HexColor("#334155")
     )
 
@@ -121,8 +121,8 @@ def generate_resume(output_path):
             colWidths=[7.6 * inch]
         )
         header_table.setStyle(TableStyle([
-            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
-            ('TOPPADDING', (0,0), (-1,-1), 2),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.8),
+            ('TOPPADDING', (0,0), (-1,-1), 1.5),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
             ('LINEBELOW', (0,0), (-1,-1), 1.25, colors.HexColor("#1e3a8a")),  # Premium dark blue separator line
@@ -139,8 +139,8 @@ def generate_resume(output_path):
             ('VALIGN', (0,0), (-1,-1), 'TOP'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('TOPPADDING', (0,0), (-1,-1), 0.3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 0.3),
+            ('TOPPADDING', (0,0), (-1,-1), 0.2),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.2),
         ]))
         return bullet_table
 
@@ -154,8 +154,8 @@ def generate_resume(output_path):
             ('VALIGN', (0,0), (-1,-1), 'BOTTOM'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('TOPPADDING', (0,0), (-1,-1), 1.0),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 0.3),
+            ('TOPPADDING', (0,0), (-1,-1), 0.8),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.2),
         ]))
         return entry_table
 
@@ -185,7 +185,7 @@ def generate_resume(output_path):
     # 3. Experience Section
     story.append(create_section_header("Experience"))
     story.append(create_entry_header(
-        "College Ambassador &nbsp;|&nbsp; <b>Techfest, IIT Bombay</b>",
+        "College Ambassador &nbsp;|&nbsp; <font color='#1e3a8a'><b>Techfest, IIT Bombay</b></font>",
         "Jun 2026 – Present"
     ))
     story.append(add_bullet(
@@ -209,7 +209,7 @@ def generate_resume(output_path):
     
     # Project 1: AI Career Mentor
     story.append(create_entry_header(
-        "AI Career Mentor &nbsp;|&nbsp; <a href='https://ai-career-mentor-anil.vercel.app/' color='#1e3a8a'><b>Live Demo</b></a> &nbsp;|&nbsp; <i>Solo Full-Stack Developer</i>",
+        "<font color='#1e3a8a'><b>AI Career Mentor</b></font> &nbsp;|&nbsp; <a href='https://ai-career-mentor-anil.vercel.app/' color='#1e3a8a'><b>Live Demo</b></a> &nbsp;|&nbsp; <i>Solo Full-Stack Developer</i>",
         "March 2026 – Present"
     ))
     story.append(add_bullet(
@@ -231,19 +231,25 @@ def generate_resume(output_path):
         "<b>Data Durability, Dockerization & CI/CD:</b> Enforced strict data integrity with Pydantic v2 validation schemas at every agent boundary, persisting records to a serverless PostgreSQL database with PgBouncer connection pooling; containerized services via multi-stage Docker builds and automated test validations (116 Pytest suite) via GitHub Actions CI/CD."
     ))
 
-    # Project 2: VolunteerIQ
+    # Project 2: Task Pilot-AI
     story.append(create_entry_header(
-        "VolunteerIQ &nbsp;|&nbsp; <a href='https://volunteer-iq-clutchcode.vercel.app/' color='#1e3a8a'><b>Live Demo</b></a> &nbsp;|&nbsp; <i>Lead Backend Developer &bull; Team ClutchCode</i>",
-        "Mar 16, 2026 – Apr 13, 2026"
+        "<font color='#1e3a8a'><b>Task Pilot-AI</b></font> &nbsp;|&nbsp; <a href='https://taskpilot-ai-app.onrender.com/' color='#1e3a8a'><b>Live Demo</b></a> &nbsp;|&nbsp; <i>Integration Lead &bull; Team IdeaForg-E</i>",
+        "June 2026 – July 2026"
     ))
     story.append(add_bullet(
-        "<b>Developed an AI-driven crisis-response coordination platform</b> for NGOs (submitted to Google Solution Challenge 2026) converting survey uploads into geospatially-mapped tasks on Mapbox GL."
+        "<b>Solved Developer Context Overload:</b> Built a backend pipeline that aggregates engineering tasks from 7 different sources (Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents) into a single database, saving developers up to 2 hours daily by eliminating the need to jump between multiple tools."
     ))
     story.append(add_bullet(
-        "<b>Engineered backend matching algorithms</b> using Gemini 1.5 Pro to analyze field data and map tasks, ranking volunteers based on skills, availability, and geographic proximity."
+        "<b>Recovered Untracked \"Hidden\" Tasks:</b> Developed a hybrid extraction system using LLMs and local keyword rules to scan emails and Slack chats for hidden action items. This captured the ~35% of tasks that usually get lost or buried in chat histories and meeting notes."
     ))
     story.append(add_bullet(
-        "<b>Built secure FastAPI REST endpoints</b> and Firestore integrations with server-side verified Firebase Google Authentication."
+        "<b>Reduced LLM Costs and API Failures:</b> Cut down LLM token usage and resolved Groq API rate limits (429 errors) by building local fallback algorithms. This included using a local fuzzy text-matching algorithm to merge duplicate tasks and parsing Slack messages locally without hitting paid APIs."
+    ))
+    story.append(add_bullet(
+        "<b>Prevented Database Locking and Workflow Freezes:</b> Configured SQLite with Write-Ahead Logging (WAL) to ensure multiple agents could write data simultaneously without locking the database, and created a self-healing monitor that automatically kills and restarts pipeline runs stuck for over 5 minutes."
+    ))
+    story.append(add_bullet(
+        "<b>Automated Real-Time Emergency Re-Prioritization:</b> Built a chat command API that allows developers to type a new issue (e.g., \"inject a P1 defect\"). The backend parses the text, creates the event, and autonomously re-runs the entire 6-stage pipeline to re-rank and update calendars in under 15 seconds."
     ))
 
     # 5. Technical Skills (Exact Copy from Portfolio)
