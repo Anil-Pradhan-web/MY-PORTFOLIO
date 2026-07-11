@@ -172,10 +172,10 @@ def generate_resume(output_path):
           <span class="text-[8.8px] text-slate-500 font-mono">March 2026 – Present</span>
         </div>
         <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-snug">
-          <li><strong>Multi-Agent Orchestration & Concurrency:</strong> Orchestrated 7 specialized AI agents via a parallel LangGraph DAG, cutting latency 60% (4 min → 60s) using a two-phase concurrency flow: parallel resume parsing and market scraping, followed by parallel LinkedIn and roadmap generation.</li>
-          <li><strong>System Resilience & Fault Tolerance:</strong> Built failover architecture with custom circuit breakers and multi-provider LLM fallback chains (Groq ⇄ Cerebras ⇄ NVIDIA NIM) to eliminate request drops during rate-limit spikes.</li>
-          <li><strong>Real-time Bidirectional Streaming & State Machines:</strong> Designed a full-duplex WebSocket pipeline with Gemini Multimodal Live API powering a 7-phase FSM-driven mock interview simulator with real-time audio coaching and Monaco IDE.</li>
-          <li><strong>High-Efficiency RAG & CI/CD:</strong> Optimized RAG retrieval using local ONNX embeddings (all-MiniLM-L6-v2) to eliminate embedding API costs, backed by Redis rate-limiting/JWT middleware and a 116-test Pytest CI/CD suite.</li>
+          <li><strong>Multi-Agent Orchestration & Concurrency:</strong> Orchestrated 7 specialized AI agents via a parallel LangGraph DAG, designing a two-phase concurrency flow (concurrent resume parsing and market scraping, followed by parallel LinkedIn and career roadmap generation) that reduced end-to-end latency by 60% (4 min → 60s).</li>
+          <li><strong>Real-Time Bidirectional Streaming & FSMs:</strong> Engineered a full-duplex WebSocket communication pipeline utilizing the Gemini Multimodal Live API (gemini-2.5-flash-native-audio-latest) for real-time voice coaching, governed by a 7-phase Finite State Machine (FSM) that dynamically manages mock interview stages and Monaco IDE code evaluations.</li>
+          <li><strong>API Resilience & Failover Architecture:</strong> Built a resilient multi-provider LLM fallback chain (Groq ⇄ Cerebras ⇄ NVIDIA NIM) with custom circuit breakers and daily rate-limiting/gap-locking policies, maintaining 100% service availability and zero request drops during peak API rate-limit spikes.</li>
+          <li><strong>Resource-Optimized RAG & Quality Control:</strong> Optimized RAG retrieval by deploying local ONNX embeddings (all-MiniLM-L6-v2) to eliminate API dependency, implementing a keyword-search fallback to prevent OOM crashes on memory-constrained (512MB RAM) servers, backed by a 116-test Pytest CI/CD suite.</li>
         </ul>
         <div class="flex flex-wrap gap-1.5 mt-1.5 ml-4">
           <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">FastAPI</span>
@@ -202,10 +202,10 @@ def generate_resume(output_path):
           <span class="text-[8.8px] text-slate-500 font-mono">June 2026 – July 2026</span>
         </div>
         <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-snug">
-          <li><strong>Solved Developer Context Overload:</strong> Unified engineering tasks from 7 fragmented sources (Jira, GitHub, Slack, Email, Calendar, Meetings, Incidents) into a single DB, saving developers ~2 hrs/day of manual tracking.</li>
-          <li><strong>Recovered Untracked "Hidden" Tasks:</strong> Built an LLM + rule-based extraction pipeline to surface hidden action items buried in emails/Slack, recovering ~35% of previously untracked tasks.</li>
-          <li><strong>Reduced LLM Costs & API Failures:</strong> Cut LLM costs and API failures with local fallback algorithms and fuzzy-matching dedup, bypassing Groq rate limits without sacrificing accuracy.</li>
-          <li><strong>Engineered Concurrency & Self-Healing:</strong> Engineered a self-healing SQLite (WAL-mode) pipeline supporting concurrent multi-agent writes with zero locking, plus a real-time P1-incident API that re-prioritizes the 6-stage schedule in &lt;15s.</li>
+          <li><strong>Heterogeneous Data Aggregation:</strong> Architected an ingestion pipeline that normalizes and aggregates raw developer data from 7 fragmented sources (Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents) into a unified relational database, saving developers ~2 hours daily of manual task tracking.</li>
+          <li><strong>Hybrid Extraction & Deduplication Engine:</strong> Designed a cost-optimized extraction and fusion pipeline using deterministic heuristic models, fuzzy text correlation (SequenceMatcher), and LLM reasoning (Qwen-3.6-27B) to extract hidden action items from unstructured sources, recovering 35% of untracked tasks while reducing LLM API token costs by 75%+.</li>
+          <li><strong>Concurrency-Safe Database & High-Priority API:</strong> Configured SQLite in Write-Ahead Logging (WAL) mode with custom busy-timeout strategies, facilitating concurrent multi-agent writes with zero database locking, integrated with a real-time P1 incident-injection API that autonomously re-prioritizes the 6-stage pipeline in under 15 seconds.</li>
+          <li><strong>Self-Healing Orchestration & Quality Auditor:</strong> Developed a background daemon to monitor execution states (WorkflowRun) and automatically self-heal stale runs (stuck runs >5 mins), combined with a 7-dimension automated Quality Agent that grades tasks on actionability and generates context-aware follow-up queries for missing information.</li>
         </ul>
         <div class="flex flex-wrap gap-1.5 mt-1.5 ml-4">
           <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8px] font-semibold">FastAPI</span>
