@@ -1,8 +1,4 @@
-import os
-import subprocess
-
-def generate_resume(output_path):
-    html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -205,7 +201,7 @@ def generate_resume(output_path):
         </div>
         <ul class="list-disc list-outside ml-4 text-[9.8px] text-slate-600 space-y-0.5">
           <li><strong>Solved Developer Context Overload:</strong> Aggregated engineering tasks from 7 sources (Jira, GitHub, Slack, Email, Calendar, Meetings, Incidents) into a unified DB, saving developers ~2 hours daily.</li>
-          <li><strong>Recovered Untracked \"Hidden\" Tasks:</strong> Developed an LLM and rule-based extraction system to parse emails and Slack chats for hidden action items, capturing ~35% of previously untracked tasks.</li>
+          <li><strong>Recovered Untracked "Hidden" Tasks:</strong> Developed an LLM and rule-based extraction system to parse emails and Slack chats for hidden action items, capturing ~35% of previously untracked tasks.</li>
           <li><strong>Reduced LLM Costs and API Failures:</strong> Built local fallback algorithms to reduce token costs and bypass Groq API rate limits; used fuzzy text-matching for deduplication and local Slack parsing.</li>
           <li><strong>Prevented Database Locking and Workflow Freezes:</strong> Configured SQLite in WAL mode to allow concurrent multi-agent writes without locking; built a self-healing monitor to auto-restart stuck pipeline runs.</li>
           <li><strong>Automated Real-Time Emergency Re-Prioritization:</strong> Created a chat command API allowing developers to inject critical P1 incidents; autonomously re-ran the 6-stage pipeline to update schedules in under 15s.</li>
@@ -349,30 +345,4 @@ def generate_resume(output_path):
     </div>
   </div>
 </body>
-</html>"""
-
-    # Save to resume.html
-    html_path = "resume.html"
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
-    
-    # Use Google Chrome headless to compile PDF
-    chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-    
-    try:
-        subprocess.run([
-            chrome_path,
-            "--headless",
-            "--disable-gpu",
-            "--print-to-pdf-no-header",
-            f"--print-to-pdf={output_path}",
-            html_path
-        ], check=True)
-        print("PDF Resume generated successfully at:", output_path)
-    except Exception as e:
-        print("Error during PDF generation:", e)
-
-if __name__ == "__main__":
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    target_path = os.path.join(current_dir, "public", "Anil_Pradhan_resume.pdf")
-    generate_resume(target_path)
+</html>
