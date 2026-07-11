@@ -237,71 +237,44 @@ def generate_resume(output_path):
       </svg>
     </div>
 
-    <div class="grid grid-cols-6 gap-2 text-[8.2px] leading-tight">
-      <div class="border-r border-slate-100 pr-1">
-        <h4 class="font-bold text-[#1e3a8a] mb-0.5 text-[8.5px]">Languages</h4>
-        <ul class="space-y-0.5 text-slate-600 font-medium">
-          <li>Python</li>
-          <li>Java</li>
-          <li>JavaScript</li>
-          <li>SQL</li>
-        </ul>
+    <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[8.8px] leading-snug">
+      <!-- Column 1 -->
+      <div class="space-y-1.5">
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[80px] flex-shrink-0">Languages:</span>
+          <span class="text-slate-600 font-semibold">Python, Java, JavaScript, SQL</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[80px] flex-shrink-0">Backend:</span>
+          <span class="text-slate-600 font-semibold">FastAPI, LangGraph, Pydantic, SQLAlchemy 2.0, WebSocket, Prometheus, Sentry, pdfplumber, edge-tts</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[80px] flex-shrink-0">Databases:</span>
+          <span class="text-slate-600 font-semibold">Neon Postgres, SQLite, Upstash Redis, ChromaDB (Vector Store)</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[80px] flex-shrink-0">DevOps & Infra:</span>
+          <span class="text-slate-600 font-semibold">Docker, GitHub Actions (CI/CD), Vercel, Render.com</span>
+        </div>
       </div>
-      <div class="border-r border-slate-100 pr-1 pl-0.5">
-        <h4 class="font-bold text-[#1e3a8a] mb-0.5 text-[8.5px]">Backend</h4>
-        <ul class="space-y-0.5 text-slate-600 font-medium">
-          <li>FastAPI</li>
-          <li>LangGraph</li>
-          <li>Pydantic</li>
-          <li>SQLAlchemy</li>
-          <li>WebSocket</li>
-          <li>Prometheus</li>
-          <li>Sentry</li>
-          <li>pdfplumber</li>
-          <li>edge-tts</li>
-        </ul>
-      </div>
-      <div class="border-r border-slate-100 pr-1 pl-0.5">
-        <h4 class="font-bold text-[#1e3a8a] mb-0.5 text-[8.5px]">Frontend</h4>
-        <ul class="space-y-0.5 text-slate-600 font-medium">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Tailwind CSS</li>
-          <li>Axios</li>
-          <li>React</li>
-        </ul>
-      </div>
-      <div class="border-r border-slate-100 pr-1 pl-0.5">
-        <h4 class="font-bold text-[#1e3a8a] mb-0.5 text-[8.5px]">Database</h4>
-        <ul class="space-y-0.5 text-slate-600 font-medium">
-          <li>Neon Postgres</li>
-          <li>SQLite</li>
-          <li>Upstash Redis</li>
-          <li>ChromaDB</li>
-        </ul>
-      </div>
-      <div class="border-r border-slate-100 pr-1 pl-0.5">
-        <h4 class="font-bold text-[#1e3a8a] mb-0.5 text-[8.5px]">DevOps/Tools</h4>
-        <ul class="space-y-0.5 text-slate-600 font-medium">
-          <li>Docker</li>
-          <li>GitHub Actions</li>
-          <li>Vercel</li>
-          <li>Render.com</li>
-          <li>VS Code</li>
-          <li>Git</li>
-        </ul>
-      </div>
-      <div class="pl-0.5">
-        <h4 class="font-bold text-[#1e3a8a] mb-0.5 text-[8.5px]">AI/LLM/RAG</h4>
-        <ul class="space-y-0.5 text-slate-600 font-medium">
-          <li>Groq Cloud</li>
-          <li>Cerebras Cloud</li>
-          <li>NVIDIA NIM</li>
-          <li>Gemini Live</li>
-          <li>Tavily</li>
-          <li>Serper.dev</li>
-          <li>DuckDuckGo</li>
-        </ul>
+      <!-- Column 2 -->
+      <div class="space-y-1.5">
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[90px] flex-shrink-0">Frontend:</span>
+          <span class="text-slate-600 font-semibold">HTML, CSS, Tailwind CSS, Axios, React</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[90px] flex-shrink-0">AI / LLM & RAG:</span>
+          <span class="text-slate-600 font-semibold">Groq Cloud, Cerebras Cloud, NVIDIA NIM, Gemini Live API, Tavily, Serper.dev, DuckDuckGo</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[90px] flex-shrink-0">Auth & Security:</span>
+          <span class="text-slate-600 font-semibold">JWT (python-jose), Google OAuth 2.0, bcrypt, CORS Middleware, Rate Limiting, HTTPS</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[90px] flex-shrink-0">Tools:</span>
+          <span class="text-slate-600 font-semibold">VS Code, Git, Swagger UI, Cline, GitHub Copilot, Gemini Code Assist, OpenAI Codex, AntiGravity IDE</span>
+        </div>
       </div>
     </div>
   </div>
