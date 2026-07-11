@@ -7,14 +7,14 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 
 def generate_resume(output_path):
-    # Setup document geometry: 0.32 in margins top/bottom, 0.45 in left/right
+    # Setup document geometry: 0.26 in margins top/bottom, 0.45 in left/right
     doc = SimpleDocTemplate(
         output_path,
         pagesize=letter,
         leftMargin=0.45 * inch,
         rightMargin=0.45 * inch,
-        topMargin=0.32 * inch,
-        bottomMargin=0.32 * inch
+        topMargin=0.26 * inch,
+        bottomMargin=0.26 * inch
     )
     
     story = []
@@ -24,8 +24,8 @@ def generate_resume(output_path):
     name_style = ParagraphStyle(
         name='NameStyle',
         fontName='Helvetica-Bold',
-        fontSize=17,
-        leading=19,
+        fontSize=16,
+        leading=18,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#0f172a")  # Dark slate
     )
@@ -33,8 +33,8 @@ def generate_resume(output_path):
     contact_style = ParagraphStyle(
         name='ContactStyle',
         fontName='Helvetica',
-        fontSize=8.0,
-        leading=10,
+        fontSize=7.8,
+        leading=9.5,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#334155")  # Muted slate
     )
@@ -42,8 +42,8 @@ def generate_resume(output_path):
     section_header_style = ParagraphStyle(
         name='SectionHeaderStyle',
         fontName='Helvetica-Bold',
-        fontSize=9.0,
-        leading=11,
+        fontSize=8.8,
+        leading=10.5,
         textColor=colors.HexColor("#1e3a8a"),  # Deep blue
         spaceAfter=0
     )
@@ -51,16 +51,16 @@ def generate_resume(output_path):
     entry_title_style = ParagraphStyle(
         name='EntryTitleStyle',
         fontName='Helvetica-Bold',
-        fontSize=8.2,
-        leading=10.5,
+        fontSize=8.0,
+        leading=10.2,
         textColor=colors.HexColor("#0f172a")
     )
     
     entry_right_style = ParagraphStyle(
         name='EntryRightStyle',
         fontName='Helvetica',
-        fontSize=8.0,
-        leading=10.5,
+        fontSize=7.8,
+        leading=10.2,
         alignment=TA_RIGHT,
         textColor=colors.HexColor("#334155")
     )
@@ -68,8 +68,8 @@ def generate_resume(output_path):
     bullet_marker_style = ParagraphStyle(
         name='BulletMarkerStyle',
         fontName='Helvetica',
-        fontSize=8.0,
-        leading=10,
+        fontSize=7.8,
+        leading=9.8,
         alignment=TA_CENTER,
         textColor=colors.HexColor("#0f172a")
     )
@@ -77,30 +77,30 @@ def generate_resume(output_path):
     bullet_text_style = ParagraphStyle(
         name='BulletTextStyle',
         fontName='Helvetica',
-        fontSize=8.0,
-        leading=10.2,
+        fontSize=7.8,
+        leading=9.8,
         textColor=colors.HexColor("#334155")
     )
     
     skill_category_style = ParagraphStyle(
         name='SkillCategoryStyle',
         fontName='Helvetica-Bold',
-        fontSize=8.0,
-        leading=10.2,
+        fontSize=7.8,
+        leading=9.8,
         textColor=colors.HexColor("#0f172a")
     )
     
     skill_list_style = ParagraphStyle(
         name='SkillListStyle',
         fontName='Helvetica',
-        fontSize=8.0,
-        leading=10.2,
+        fontSize=7.8,
+        leading=9.8,
         textColor=colors.HexColor("#334155")
     )
 
     # 1. Header Section
     story.append(Paragraph("ANIL PRADHAN", name_style))
-    story.append(Spacer(1, 2))
+    story.append(Spacer(1, 1))
     
     contact_info = (
         "anilpradhan9644@gmail.com &nbsp;|&nbsp; +91-8917476908 &nbsp;|&nbsp; Bhubaneswar, Odisha, India<br/>"
@@ -112,7 +112,7 @@ def generate_resume(output_path):
         "HackerRank: <a href='https://www.hackerrank.com/profile/anilpradhan9644' color='#1e3a8a'>anilpradhan9644</a>"
     )
     story.append(Paragraph(contact_info, contact_style))
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 2))
 
     # Helper function for Section Headers with borders
     def create_section_header(title):
@@ -139,8 +139,8 @@ def generate_resume(output_path):
             ('VALIGN', (0,0), (-1,-1), 'TOP'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('TOPPADDING', (0,0), (-1,-1), 0.5),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 0.5),
+            ('TOPPADDING', (0,0), (-1,-1), 0.3),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.3),
         ]))
         return bullet_table
 
@@ -154,8 +154,8 @@ def generate_resume(output_path):
             ('VALIGN', (0,0), (-1,-1), 'BOTTOM'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('TOPPADDING', (0,0), (-1,-1), 1.5),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 0.5),
+            ('TOPPADDING', (0,0), (-1,-1), 1.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.3),
         ]))
         return entry_table
 
@@ -213,22 +213,22 @@ def generate_resume(output_path):
         "March 2026 – Present"
     ))
     story.append(add_bullet(
-        "<b>Architected a production-grade multi-agent AI platform</b> using LangGraph, orchestrating 7 specialized AI workflows for resume intelligence, career planning, interview preparation, voice coaching, and market analysis."
+        "<b>Multi-Agent Orchestration & Concurrency:</b> Engineered a high-concurrency Multi-Agent Career Platform orchestrating 7 specialized AI agents using a LangGraph Parallel Directed Acyclic Graph (DAG); reduced end-to-end execution latency by 60% (from ~4 mins to 60s) by fanning out resume parsing and live market scraper nodes concurrently."
     ))
     story.append(add_bullet(
-        "<b>Designed a parallel DAG orchestration pipeline</b> executing independent AI agents concurrently, reducing end-to-end workflow latency by ~60% while maintaining structured state management and deterministic result aggregation."
+        "<b>System Resilience & Fault Tolerance:</b> Implemented a robust failover architecture featuring custom Circuit Breakers and automated API fallback chains (Groq ⇄ Cerebras ⇄ NVIDIA NIM) for downstream LLM calls, ensuring high platform availability and graceful degradation during peak-load API rate limit (429) spikes."
     ))
     story.append(add_bullet(
-        "<b>Implemented a hybrid Retrieval-Augmented Generation (RAG) pipeline</b> combining semantic vector search (ChromaDB) with metadata-aware retrieval to improve response grounding, reduce token consumption, and optimize context retrieval efficiency."
+        "<b>Real-time Bidirectional Streaming & State Machines:</b> Designed a full-duplex WebSocket messaging protocol integrating the Gemini Multimodal Live API (gemini-2.5-flash-native-audio) for low-latency voice coaching, and built a 7-Phase Finite State Machine (FSM) mock interview simulator with an integrated Monaco IDE code sandbox and real-time audio synthesis."
     ))
     story.append(add_bullet(
-        "<b>Built scalable backend services</b> using FastAPI, PostgreSQL, Redis, and WebSockets/SSE, enabling real-time AI streaming, persistent session management, caching, authentication, and high-concurrency communication."
+        "<b>High-Efficiency RAG & Semantic Search:</b> Optimized an offline-first Retrieval-Augmented Generation (RAG) pipeline utilizing ChromaDB with local ONNX runtime embeddings (all-MiniLM-L6-v2) to eliminate API vector search costs, implementing an auto-switching keyword search fallback to prevent Out-Of-Memory (OOM) crashes on resource-constrained hostings."
     ))
     story.append(add_bullet(
-        "<b>Integrated multiple LLM providers</b> (Groq, NVIDIA NIM, Gemini Live) with provider failover, validation pipelines, and structured output enforcement to improve reliability and production resilience."
+        "<b>Rate-Limiting, Caching & Telemetry:</b> Architected a secure backend middleware tier utilizing Upstash Redis for sliding-window rate limiting and active token validation, and integrated structured server diagnostics (Loguru) with a custom telemetry system tracking live API success rates, latency matrices, and token cost rollups."
     ))
     story.append(add_bullet(
-        "<b>Engineered enterprise-grade software practices</b> including Dockerized deployment, CI/CD automation, comprehensive testing, observability, and API validation, resulting in a maintainable and production-ready AI application."
+        "<b>Data Durability, Dockerization & CI/CD:</b> Enforced strict data integrity with Pydantic v2 validation schemas at every agent boundary, persisting records to a serverless PostgreSQL database with PgBouncer connection pooling; containerized services via multi-stage Docker builds and automated test validations (116 Pytest suite) via GitHub Actions CI/CD."
     ))
 
     # Project 2: VolunteerIQ
