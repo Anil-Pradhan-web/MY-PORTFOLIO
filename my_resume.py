@@ -356,19 +356,17 @@ def generate_resume(output_path):
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
     
-    # Use Google Chrome headless to compile PDF
-    chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-    
+    # Use Google Chrome headless to compile PDF via PowerShell Start-Process (extremely robust on Windows)
     try:
-        subprocess.run([
-            chrome_path,
-            "--headless",
-            "--disable-gpu",
-            "--print-to-pdf-no-header",
-            f"--print-to-pdf={output_path}",
-            html_path
-        ], check=True)
-        print("PDF Resume generated successfully at:", output_path)
+        abs_html_path = os.path.abspath(html_path)
+        abs_output_path = os.path.abspath(output_path)
+        cmd = [
+            "powershell",
+            "-Command",
+            f'Start-Process -FilePath "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" -ArgumentList "--headless", "--disable-gpu", "--print-to-pdf-no-header", "--print-to-pdf={abs_output_path}", "{abs_html_path}" -Wait -NoNewWindow'
+        ]
+        subprocess.run(cmd, check=True)
+        print("PDF Resume generated successfully at:", abs_output_path)
     except Exception as e:
         print("Error during PDF generation:", e)
 
