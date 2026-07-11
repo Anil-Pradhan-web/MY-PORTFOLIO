@@ -44,7 +44,7 @@ def generate_resume(output_path):
         fontName='Helvetica-Bold',
         fontSize=8.6,
         leading=10.2,
-        textColor=colors.HexColor("#1e3a8a"),  # Deep blue
+        textColor=colors.HexColor("#0f172a"),  # Dark slate
         spaceAfter=0
     )
     
@@ -114,18 +114,25 @@ def generate_resume(output_path):
     story.append(Paragraph(contact_info, contact_style))
     story.append(Spacer(1, 2))
 
-    # Helper function for Section Headers with borders
+    # Helper function for Section Headers with borders (Recruiter Left-Accent Ribbon Style)
     def create_section_header(title):
         header_table = Table(
-            [[Paragraph(f"<b>{title.upper()}</b>", section_header_style)]],
-            colWidths=[7.6 * inch]
+            [[
+                # Column 1: A solid deep blue vertical bar
+                "",
+                # Column 2: The actual Section Title text
+                Paragraph(f"<b>{title.upper()}</b>", section_header_style)
+            ]],
+            colWidths=[0.06 * inch, 7.54 * inch]
         )
         header_table.setStyle(TableStyle([
-            ('BOTTOMPADDING', (0,0), (-1,-1), 0.8),
-            ('TOPPADDING', (0,0), (-1,-1), 1.5),
+            ('BACKGROUND', (0,0), (0,0), colors.HexColor("#1e3a8a")), # Premium dark blue accent bar
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('TOPPADDING', (0,0), (-1,-1), 2),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
-            ('LINEBELOW', (0,0), (-1,-1), 1.25, colors.HexColor("#1e3a8a")),  # Premium dark blue separator line
+            ('LEFTPADDING', (1,0), (1,0), 6), # 6pt spacing between indicator and text
+            ('LINEBELOW', (1,0), (1,0), 0.75, colors.HexColor("#e2e8f0")), # Modern thin grey line under title
         ]))
         return header_table
 
@@ -283,6 +290,9 @@ def generate_resume(output_path):
     story.append(Spacer(1, 2))
     story.append(add_bullet(
         "<b>Google Cloud Arcade Program (2024–25):</b> Completed GCP challenges, earning 75 Arcade Points across hands-on cloud labs."
+    ))
+    story.append(add_bullet(
+        "<b>Certifications:</b> Earned professional credentials in Python, AI Fundamentals, and Web Development from IBM, Cisco, Anthropic, Infosys, and Udemy."
     ))
     story.append(add_bullet(
         "<b>Solved 200+ problems across GFG and LeetCode</b>, awarded GFG Certificate and T-shirt."
