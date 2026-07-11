@@ -189,19 +189,13 @@ def generate_resume(output_path):
         "Jun 2026 – Present"
     ))
     story.append(add_bullet(
-        "<b>Represented Techfest IIT Bombay</b>, Asia's largest science and technology festival, by leading campus outreach and engagement initiatives to promote competitions, workshops, and technical events across student communities."
+        "<b>Selected as a Campus Ambassador</b> for Techfest, IIT Bombay, participating in technical and industry-oriented initiatives."
     ))
     story.append(add_bullet(
-        "<b>Conducted market research</b>, competitor analysis, sponsorship research, and partnership mapping, preparing professional strategy reports for corporate outreach, business development, and event collaborations."
+        "<b>Contributed to web development</b> and marketing by successfully completing multiple project-based assignments."
     ))
     story.append(add_bullet(
-        "<b>Designed and developed web assets</b>, including landing pages, promotional content, and technical project deliverables supporting Techfest campaigns."
-    ))
-    story.append(add_bullet(
-        "<b>Planned and executed marketing strategies</b>, collaborating with technical clubs, student organizations, and online communities to increase awareness and participation."
-    ))
-    story.append(add_bullet(
-        "<b>Delivered data-driven recommendations</b> by creating presentation decks, reports, outreach strategies, and execution roadmaps using AI-powered research and productivity tools."
+        "<b>Conducted market research</b>, prepared a business strategy presentation, and qualified for Round 2 of the FlowFinance Growth Strategy & Business Development Challenge."
     ))
 
     # 4. Technical Projects (Only AI Career Mentor and VolunteerIQ)
@@ -213,22 +207,22 @@ def generate_resume(output_path):
         "March 2026 – Present"
     ))
     story.append(add_bullet(
-        "<b>Multi-Agent Orchestration & Concurrency:</b> Engineered a high-concurrency Multi-Agent Career Platform orchestrating 7 specialized AI agents using a LangGraph Parallel Directed Acyclic Graph (DAG); reduced end-to-end execution latency by 60% (from ~4 mins to 60s) by fanning out resume parsing and live market scraper nodes concurrently."
+        "<b>Multi-Agent Orchestration & Concurrency:</b> Orchestrated 7 specialized AI agents using a parallel LangGraph DAG; reduced end-to-end latency by 60% (from 4 mins to 60s) by executing resume parsing and market scraping concurrently."
     ))
     story.append(add_bullet(
-        "<b>System Resilience & Fault Tolerance:</b> Implemented a robust failover architecture featuring custom Circuit Breakers and automated API fallback chains (Groq ⇄ Cerebras ⇄ NVIDIA NIM) for downstream LLM calls, ensuring high platform availability and graceful degradation during peak-load API rate limit (429) spikes."
+        "<b>System Resilience & Fault Tolerance:</b> Built failover architecture with custom Circuit Breakers and LLM fallback chains (Groq ⇄ Cerebras ⇄ NVIDIA NIM), preventing request drops during API rate-limit spikes."
     ))
     story.append(add_bullet(
-        "<b>Real-time Bidirectional Streaming & State Machines:</b> Designed a full-duplex WebSocket messaging protocol integrating the Gemini Multimodal Live API (gemini-2.5-flash-native-audio) for low-latency voice coaching, and built a 7-Phase Finite State Machine (FSM) mock interview simulator with an integrated Monaco IDE code sandbox and real-time audio synthesis."
+        "<b>Real-time Bidirectional Streaming & State Machines:</b> Designed a full-duplex WebSocket protocol with Gemini Multimodal Live API for low-latency audio coaching; built a 7-phase FSM coding interview simulator with Monaco IDE."
     ))
     story.append(add_bullet(
-        "<b>High-Efficiency RAG & Semantic Search:</b> Optimized an offline-first Retrieval-Augmented Generation (RAG) pipeline utilizing ChromaDB with local ONNX runtime embeddings (all-MiniLM-L6-v2) to eliminate API vector search costs, implementing an auto-switching keyword search fallback to prevent Out-Of-Memory (OOM) crashes on resource-constrained hostings."
+        "<b>High-Efficiency RAG & Semantic Search:</b> Optimized ChromaDB RAG using local ONNX embeddings (all-MiniLM-L6-v2) to eliminate API costs; built a keyword-search fallback to prevent OOM container crashes."
     ))
     story.append(add_bullet(
-        "<b>Rate-Limiting, Caching & Telemetry:</b> Architected a secure backend middleware tier utilizing Upstash Redis for sliding-window rate limiting and active token validation, and integrated structured server diagnostics (Loguru) with a custom telemetry system tracking live API success rates, latency matrices, and token cost rollups."
+        "<b>Rate-Limiting, Caching & Telemetry:</b> Integrated Upstash Redis middleware for sliding-window rate limiting and JWT validation; built a telemetry dashboard tracking API latencies and token cost rollups."
     ))
     story.append(add_bullet(
-        "<b>Data Durability, Dockerization & CI/CD:</b> Enforced strict data integrity with Pydantic v2 validation schemas at every agent boundary, persisting records to a serverless PostgreSQL database with PgBouncer connection pooling; containerized services via multi-stage Docker builds and automated test validations (116 Pytest suite) via GitHub Actions CI/CD."
+        "<b>Data Durability, Dockerization & CI/CD:</b> Enforced data validation with Pydantic v2, persisting entries to Postgres with PgBouncer pooling; deployed multi-stage Docker builds with a 116 Pytest CI/CD suite."
     ))
 
     # Project 2: Task Pilot-AI
@@ -237,19 +231,19 @@ def generate_resume(output_path):
         "June 2026 – July 2026"
     ))
     story.append(add_bullet(
-        "<b>Solved Developer Context Overload:</b> Built a backend pipeline that aggregates engineering tasks from 7 different sources (Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents) into a single database, saving developers up to 2 hours daily by eliminating the need to jump between multiple tools."
+        "<b>Solved Developer Context Overload:</b> Aggregated engineering tasks from 7 sources (Jira, GitHub, Slack, Email, Calendar, Meetings, Incidents) into a unified DB, saving developers ~2 hours daily."
     ))
     story.append(add_bullet(
-        "<b>Recovered Untracked \"Hidden\" Tasks:</b> Developed a hybrid extraction system using LLMs and local keyword rules to scan emails and Slack chats for hidden action items. This captured the ~35% of tasks that usually get lost or buried in chat histories and meeting notes."
+        "<b>Recovered Untracked \"Hidden\" Tasks:</b> Developed an LLM and rule-based extraction system to parse emails and Slack chats for hidden action items, capturing ~35% of previously untracked tasks."
     ))
     story.append(add_bullet(
-        "<b>Reduced LLM Costs and API Failures:</b> Cut down LLM token usage and resolved Groq API rate limits (429 errors) by building local fallback algorithms. This included using a local fuzzy text-matching algorithm to merge duplicate tasks and parsing Slack messages locally without hitting paid APIs."
+        "<b>Reduced LLM Costs and API Failures:</b> Built local fallback algorithms to reduce token costs and bypass Groq API rate limits; used fuzzy text-matching for deduplication and local Slack parsing."
     ))
     story.append(add_bullet(
-        "<b>Prevented Database Locking and Workflow Freezes:</b> Configured SQLite with Write-Ahead Logging (WAL) to ensure multiple agents could write data simultaneously without locking the database, and created a self-healing monitor that automatically kills and restarts pipeline runs stuck for over 5 minutes."
+        "<b>Prevented Database Locking and Workflow Freezes:</b> Configured SQLite in WAL mode to allow concurrent multi-agent writes without locking; built a self-healing monitor to auto-restart stuck pipeline runs."
     ))
     story.append(add_bullet(
-        "<b>Automated Real-Time Emergency Re-Prioritization:</b> Built a chat command API that allows developers to type a new issue (e.g., \"inject a P1 defect\"). The backend parses the text, creates the event, and autonomously re-runs the entire 6-stage pipeline to re-rank and update calendars in under 15 seconds."
+        "<b>Automated Real-Time Emergency Re-Prioritization:</b> Created a chat command API allowing developers to inject critical P1 incidents; autonomously re-ran the 6-stage pipeline to update schedules in under 15s."
     ))
 
     # 5. Technical Skills (Exact Copy from Portfolio)
