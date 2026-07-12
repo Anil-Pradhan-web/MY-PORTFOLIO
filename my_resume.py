@@ -87,14 +87,15 @@ def generate_resume(output_path):
 
     <div class="grid grid-cols-2 gap-6 text-[10px]">
       <div>
-        <h4 class="font-bold text-slate-900">ITER, SOA University, Bhubaneswar</h4>
-        <p class="text-slate-600 font-medium">B.Tech in Computer Science & Engineering</p>
+        <h4 class="font-bold text-slate-900">Institute of Technical Education & Research (ITER)</h4>
+        <p class="text-slate-600 font-medium">Siksha 'O' Anusandhan (SOA) University, Bhubaneswar</p>
+        <p class="text-slate-600 font-medium mt-0.5">Bachelor of Technology (B.Tech), Computer Science & Engineering</p>
         <p class="text-slate-500 font-mono text-[9px] mt-0.5">2024 – 2028 &nbsp;|&nbsp; <span class="font-bold text-slate-900">CGPA: 9.11/10</span></p>
       </div>
       <div class="border-l border-dashed border-slate-300 pl-4">
-        <h4 class="font-bold text-slate-900">Odisha Board of Secondary Education</h4>
+        <h4 class="font-bold text-slate-900">Council of Higher Secondary Education (CHSE), Odisha</h4>
         <p class="text-slate-600 font-medium">Class XII (PCM with IT)</p>
-        <p class="text-slate-500 font-mono text-[9px] mt-0.5">2022 – 2024 &nbsp;|&nbsp; <span class="font-bold text-slate-900">Percentage: 85%</span></p>
+        <p class="text-slate-500 font-mono text-[9px] mt-1.5">2022 – 2024 &nbsp;|&nbsp; <span class="font-bold text-slate-900">85%</span></p>
       </div>
     </div>
   </div>
