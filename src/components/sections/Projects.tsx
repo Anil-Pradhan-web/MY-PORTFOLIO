@@ -88,7 +88,7 @@ export default function Projects() {
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/3 rounded-full blur-[100px] pointer-events-none group-hover:bg-cyan-500/5 transition-all duration-700" />
 
             {/* Left Side: Info & Metadata */}
-            <div className="flex-1 flex flex-col justify-between gap-8 z-10">
+            <div className="flex-1 flex flex-col justify-start gap-6 z-10">
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <span className="font-mono text-3xl font-extrabold text-violet-500/40">
