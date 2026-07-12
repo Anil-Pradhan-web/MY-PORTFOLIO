@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Lock } from 'lucide-react';
 
 const projectsList = [
   {
@@ -126,7 +126,13 @@ export default function Projects() {
                     rel="noreferrer"
                     className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 hover:text-violet-400 transition-colors cursor-pointer"
                   >
-                    <Github size={14} /> Github
+                    <Github size={14} /> 
+                    <span>Github</span>
+                    {project.isPrivate && (
+                      <span className="flex items-center gap-1 px-1.5 py-0.5 bg-zinc-950 border border-zinc-900 rounded text-[9px] text-zinc-500 font-mono tracking-normal normal-case ml-1 font-normal">
+                        <Lock size={8} className="text-zinc-600" /> Private
+                      </span>
+                    )}
                   </a>
                   {project.liveUrl && project.liveUrl !== 'desktop' && (
                     <a
