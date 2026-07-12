@@ -41,33 +41,19 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col justify-between gap-12"
+          className="flex flex-col justify-center"
         >
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300 text-xs font-mono tracking-wider w-fit">
               <Sparkles size={12} className="text-violet-400" />
               Developer Profile
             </div>
-            <h3 className="font-syne text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+            <h3 className="font-sans text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
               Crafting <span className="gradient-text font-black">Scalable Systems</span> & Intelligent Software
             </h3>
             <p className="text-zinc-400 text-base leading-relaxed font-sans">
               I focus on building production-ready architectures that balance performance, resilience, and clean abstractions. My goal is to write robust backend services and orchestrate multi-agent workflows that deliver measurable real-world impact.
             </p>
-          </div>
-
-          {/* Quick Info Grid */}
-          <div className="grid grid-cols-2 gap-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl p-6 backdrop-blur-xl">
-            <div className="space-y-1">
-              <div className="text-zinc-500 text-xs uppercase font-mono tracking-widest">Education</div>
-              <div className="text-white text-sm font-semibold">B.Tech CSE @ ITER</div>
-              <div className="text-zinc-500 text-[11px] font-mono">2024 – 2028</div>
-            </div>
-            <div className="space-y-1 border-l border-zinc-900 pl-6">
-              <div className="text-zinc-500 text-xs uppercase font-mono tracking-widest">Academics</div>
-              <div className="text-white text-sm font-semibold">CGPA: 9.11 / 10</div>
-              <div className="text-zinc-500 text-[11px] font-mono">Siksha 'O' Anusandhan</div>
-            </div>
           </div>
         </motion.div>
 
@@ -95,7 +81,7 @@ export default function About() {
                     <Icon className="w-6 h-6 text-violet-400" />
                   </div>
                   <div className="flex-grow">
-                    <h3 className="font-syne text-lg font-bold text-white mb-2">{item.title}</h3>
+                    <h3 className="font-sans text-lg font-bold text-white mb-2">{item.title}</h3>
                     {"items" in item ? (
                       <ul className="text-zinc-400 text-sm leading-relaxed space-y-2 list-none">
                         {item.items?.map((bullet, bIdx) => (
