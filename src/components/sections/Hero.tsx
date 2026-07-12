@@ -88,9 +88,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="font-sans text-7xl sm:text-9xl lg:text-[100px] font-black mb-6 tracking-tight leading-[0.95] flex flex-col items-center lg:items-start"
+          className="font-title text-7xl sm:text-9xl lg:text-[100px] font-extrabold mb-6 tracking-tight leading-[0.95] flex flex-col items-center lg:items-start"
         >
-          <span className="relative gradient-text font-black">
+          <span className="relative gradient-text font-extrabold">
             Anil
             <motion.span
               initial={{ width: 0 }}
@@ -99,7 +99,7 @@ export default function Hero() {
               className="absolute -bottom-2 left-0 h-[4px] bg-gradient-to-r from-violet-600 to-transparent rounded-full"
             />
           </span>
-          <span className="lg:ml-12 gradient-text font-black tracking-tight mt-2">Pradhan</span>
+          <span className="lg:ml-12 gradient-text font-extrabold tracking-tight mt-2">Pradhan</span>
         </motion.h1>
 
         {/* Title */}
