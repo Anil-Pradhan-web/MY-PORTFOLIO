@@ -9,17 +9,23 @@ const aboutData = [
   {
     icon: User,
     title: "Who I Am",
-    content: "Anil Pradhan — Software Engineer (Backend & AI) based in Bhubaneswar, Odisha. Currently pursuing B.Tech CSE (2024 - 2028) at ITER, SOA University, Bhubaneswar (CGPA: 9.11)."
+    content: "I'm a Software Engineer specializing in backend engineering and AI systems. I build production-grade applications with a focus on scalable APIs, distributed systems, and intelligent software that solves real-world problems through clean architecture and reliable engineering."
   },
   {
     icon: Activity,
     title: "What I'm Up To",
-    content: "🔨 Building production-grade AI applications, 📚 learning System Design & Distributed Systems, ⚡ exploring scalable backend architectures, and 💪 solving DSA problems daily."
+    items: [
+      "🔨 Building production-grade backend & AI applications",
+      "📚 Learning System Design & Distributed Systems",
+      "☁️ Exploring cloud-native architectures and scalable infrastructure",
+      "💪 Solving DSA consistently while strengthening problem-solving skills"
+    ]
   },
   {
     icon: Sparkles,
     title: "My Philosophy",
-    content: "\"Build real products. Solve real problems. Keep shipping.\" — Committed to building scalable systems that bridge human intuition with machine precision."
+    content: "\"Build real products. Solve real problems. Keep shipping.\"",
+    subContent: "I believe great software is built through consistency, clean engineering, curiosity, and continuous learning—not shortcuts."
   }
 ];
 
@@ -60,9 +66,22 @@ export default function About() {
                   <div className="p-3 bg-gradient-to-br from-violet-500/20 to-cyan-500/20 rounded-xl border border-violet-500/20 group-hover:border-violet-400/40 transition-colors">
                     <Icon className="w-6 h-6 text-violet-400" />
                   </div>
-                  <div>
+                  <div className="flex-grow">
                     <h3 className="font-syne text-lg font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed">{item.content}</p>
+                    {"items" in item ? (
+                      <ul className="text-zinc-400 text-sm leading-relaxed space-y-2 list-none">
+                        {item.items?.map((bullet, bIdx) => (
+                          <li key={bIdx} className="hover:text-zinc-300 transition-colors">{bullet}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <>
+                        <p className="text-zinc-400 text-sm leading-relaxed">{item.content}</p>
+                        {item.subContent && (
+                          <p className="text-zinc-500 text-xs italic mt-3 font-mono leading-relaxed border-t border-zinc-900 pt-3">{item.subContent}</p>
+                        )}
+                      </>
+                    )}
                   </div>
                 </div>
               </motion.div>
