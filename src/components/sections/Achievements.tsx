@@ -12,9 +12,7 @@ const achievements = [
       "Developed production-grade AI solutions for Microsoft AI DevDays, Amazon Nova AI Challenge, and Google Solution Challenge."
     ],
     icon: Trophy,
-    color: "from-violet-500/20 to-purple-500/20",
-    iconColor: "text-violet-400",
-    borderColor: "group-hover:border-violet-500/30"
+    iconColor: "text-violet-400"
   },
   {
     title: "Data Structures & Algorithms",
@@ -23,9 +21,7 @@ const achievements = [
       "Earned the GeeksforGeeks 160 Days of Code Challenge certificate and T-shirt."
     ],
     icon: Code2,
-    color: "from-cyan-500/20 to-blue-500/20",
-    iconColor: "text-cyan-400",
-    borderColor: "group-hover:border-cyan-500/30"
+    iconColor: "text-cyan-400"
   },
   {
     title: "Google Cloud Program",
@@ -35,9 +31,7 @@ const achievements = [
     link: "View Badges",
     linkUrl: "https://www.credly.com/users/anil-pradhan324",
     icon: Cloud,
-    color: "from-sky-500/20 to-blue-500/20",
-    iconColor: "text-sky-400",
-    borderColor: "group-hover:border-sky-500/30"
+    iconColor: "text-sky-400"
   },
   {
     title: "Professional Certifications",
@@ -48,9 +42,7 @@ const achievements = [
       "IBM: AI Fundamentals & Anthropic: Claude 101"
     ],
     icon: Award,
-    color: "from-pink-500/20 to-rose-500/20",
-    iconColor: "text-pink-400",
-    borderColor: "group-hover:border-pink-500/30"
+    iconColor: "text-pink-400"
   }
 ];
 
@@ -59,52 +51,56 @@ export default function Achievements() {
     <section id="achievements" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
       <SectionHeading>Achievements & Certifications</SectionHeading>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 w-full">
+      <div className="mt-12 flex flex-col w-full border-t border-zinc-900/60">
         {achievements.map((item, idx) => {
           const Icon = item.icon;
           return (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className={`flex flex-col bg-[#050508]/60 backdrop-blur-xl p-8 rounded-2xl border border-zinc-800/80 ${item.borderColor} transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.05)] group relative overflow-hidden`}
+              transition={{ delay: idx * 0.08 }}
+              className="group flex flex-col lg:flex-row items-start lg:items-center justify-between py-8 border-b border-zinc-900/60 hover:bg-zinc-950/20 px-4 transition-all duration-300 relative overflow-hidden"
             >
-              {/* Decorative background glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-violet-400/10 transition-all duration-500" />
-              
-              <div className="flex items-center gap-4 mb-6">
-                <div className={`p-3 bg-gradient-to-br ${item.color} rounded-xl border border-white/5`}>
-                  <Icon className={`w-6 h-6 ${item.iconColor}`} />
+              {/* Soft background glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/[0.015] to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              {/* Left Side: Category Title and Icon */}
+              <div className="flex items-center gap-4 lg:w-1/3 mb-4 lg:mb-0 z-10">
+                <div className="p-2.5 bg-zinc-950 border border-zinc-900 rounded-xl group-hover:border-violet-500/30 transition-colors">
+                  <Icon className={`w-5 h-5 ${item.iconColor} group-hover:scale-110 transition-transform`} />
                 </div>
-                <h3 className="font-title text-xl font-bold text-white tracking-tight group-hover:text-zinc-200 transition-colors">
+                <h3 className="font-title text-lg sm:text-xl font-bold text-white group-hover:text-violet-300 transition-colors">
                   {item.title}
                 </h3>
               </div>
 
-              <ul className="text-zinc-400 text-sm leading-relaxed mb-6 space-y-3 font-sans flex-grow">
-                {item.desc.map((d, i) => (
-                  <li key={i} className="flex items-start gap-2.5 hover:text-zinc-300 transition-colors">
-                    <span className="text-violet-400/80 font-bold shrink-0 mt-0.5">✦</span>
-                    <span>{d}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Right Side: Bullet Items & Link */}
+              <div className="flex-1 lg:pl-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 w-full z-10">
+                <ul className="text-zinc-400 text-sm leading-relaxed space-y-2.5 font-sans max-w-2xl">
+                  {item.desc.map((d, i) => (
+                    <li key={i} className="flex items-start gap-2 hover:text-zinc-300 transition-colors">
+                      <span className="text-violet-500/60 font-bold mt-0.5 select-none">•</span>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              {item.link ? (
-                <a
-                  href={item.linkUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-violet-400 hover:text-violet-300 text-xs tracking-wider font-bold uppercase mt-auto flex items-center gap-1.5 transition-colors cursor-pointer w-fit"
-                >
-                  {item.link}
-                  <ExternalLink size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              ) : (
-                <div className="mt-auto h-4"></div>
-              )}
+                {item.link ? (
+                  <a
+                    href={item.linkUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-zinc-500 hover:text-violet-400 text-xs tracking-wider font-bold uppercase flex items-center gap-1.5 transition-colors shrink-0 cursor-pointer w-fit"
+                  >
+                    {item.link}
+                    <ExternalLink size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                ) : (
+                  <div className="w-16"></div>
+                )}
+              </div>
             </motion.div>
           );
         })}
