@@ -99,7 +99,7 @@ export default function Experience() {
               {/* Title & Metadata Header */}
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-white font-syne group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-cyan-400 transition-all duration-300">
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-white font-title group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-cyan-400 transition-all duration-300">
                     {exp.role}
                   </h3>
                   <h4 className="text-lg font-bold text-zinc-300 mt-1 flex items-center gap-2">
