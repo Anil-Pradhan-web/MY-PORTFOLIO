@@ -65,36 +65,6 @@ const projectsList = [
     githubUrl: "https://github.com/IdeaForg-e/TaskPilot-AI",
     liveUrl: "https://taskpilot-ai-app.onrender.com/",
   },
-  {
-    title: "VolunteerIQ",
-    tagline: "🌍 AI-Powered Humanitarian Intelligence for NGOs · Google Solution Challenge 2026",
-    description: "An end-to-end AI coordination platform that transforms how NGOs respond to community crises. VolunteerIQ bridges the gap by converting raw field surveys into coordinated field operations — matching the right skills to the right locations in minutes, not days.",
-    highlight: "Google Solution Challenge 2026 · Team ClutchCode · Live Ops Map + AI Chat",
-    features: [
-      "🤖 Survey Intelligence: Gemini 1.5 Pro analyzes PDF/CSV/DOCX reports to extract top 3 urgent problems & urgency scores",
-      "📊 Live Ops Map: Mapbox-powered geospatial visualization of tasks with colored status pins & click popups",
-      "🧩 Smart Matching: AI ranks available volunteers by skill match, proximity, and availability with 0–100 scores",
-      "💬 Contextual AI Chat: Floating assistant answers plain-English questions using live NGO database as context"
-    ],
-    stack: ["Next.js 14", "FastAPI", "Gemini 1.5 Pro", "Groq", "Firebase Auth", "Mapbox GL", "PostgreSQL", "Docker"],
-    githubUrl: "https://github.com/Anil-Pradhan-web/VolunteerIQ",
-    liveUrl: "https://volunteer-iq-clutchcode.vercel.app"
-  },
-  {
-    title: "S.I.A — Super Intelligent Assistant",
-    tagline: "🤖 Agentic AI Desktop Companion with LangGraph, RAG Memory & Voice Intelligence",
-    description: "A fully local, agentic AI desktop companion v5.0 built for Windows. Unlike standard chatbots, S.I.A uses a LangGraph-powered ReAct agent to autonomously decide which tools to invoke, chain multiple actions, and remember personal context across sessions using ChromaDB.",
-    highlight: "LangGraph ReAct Agent · ChromaDB RAG · 28+ Native OS Tools",
-    features: [
-      "🧠 LangGraph Brain: Native tool calling with Groq Llama 3.3 70B & Gemini 1.5 Flash reasoning",
-      "💾 Hybrid Memory: ChromaDB vector store for RAG + SQLite for permanent user preferences",
-      "🖥️ OS Control: Deep automation for volume, brightness, screenshots, and file system via Win32 API",
-      "🌐 Web Autonomy: Selenium-driven browser automation with persistent Chrome profiles"
-    ],
-    stack: ["Next.js 16", "FastAPI", "LangGraph", "ChromaDB", "Python", "Groq", "Gemini", "Selenium", "SQLite"],
-    githubUrl: "https://github.com/Anil-Pradhan-web",
-    liveUrl: "desktop"
-  },
 ]
 
 export default function Projects() {
