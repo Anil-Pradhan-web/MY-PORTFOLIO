@@ -116,13 +116,14 @@ def generate_resume(output_path):
 
     <div>
       <div class="flex justify-between items-baseline mb-0.5">
-        <h4 class="text-[10px] font-bold text-slate-900">College Ambassador <span class="text-slate-400 font-normal">|</span> <span class="text-[#1e3a8a]">Techfest, IIT Bombay</span></h4>
-        <span class="text-[9px] text-slate-500 font-mono">Jun 2026 – Present</span>
+        <h4 class="text-[10px] font-bold text-slate-900">College Ambassador (Corporate Projects Program) <span class="text-slate-400 font-normal">|</span> <span class="text-[#1e3a8a]">Techfest, IIT Bombay</span></h4>
+        <span class="text-[9px] text-slate-500 font-mono">Jul 2026 – Present</span>
       </div>
       <ul class="list-disc list-outside ml-4 text-[9.4px] text-slate-600 space-y-0.5 leading-relaxed">
-        <li>Selected as a Campus Ambassador for Techfest, IIT Bombay, participating in technical and industry-oriented initiatives.</li>
-        <li>Contributed to web development and marketing by successfully completing multiple project-based assignments.</li>
-        <li>Conducted market research, prepared a business strategy presentation, and qualified for Round 2 of the FlowFinance Growth Strategy & Business Development Challenge.</li>
+        <li>Selected as a College Ambassador for Techfest, IIT Bombay, representing one of Asia's largest science and technology festivals.</li>
+        <li>Completed industry-sponsored corporate projects across web development, business strategy, and market research in collaboration with partner organizations.</li>
+        <li>Qualified for Round 2 of the FlowFinance Growth Strategy & Business Development Challenge by developing a business strategy presentation and market analysis.</li>
+        <li>Collaborated with multidisciplinary teams while delivering project submissions within defined deadlines.</li>
       </ul>
     </div>
   </div>
