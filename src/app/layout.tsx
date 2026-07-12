@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Syne, JetBrains_Mono, Inter, Outfit, Calistoga } from 'next/font/google';
+import { Syne, JetBrains_Mono, Inter, Outfit, Calistoga, Space_Grotesk, Sora } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 
@@ -34,6 +34,18 @@ const inter = Inter({
   display: 'swap',
 });
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-sora',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: 'Anil Pradhan — Full-Stack & AI Developer',
   description: 'B.Tech CSE student at SOA University. Building production-grade AI + Full-Stack systems. CGPA 9.11. Open to internships in Bangalore, Hyderabad, Bhubaneswar.',
@@ -58,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${syne.variable} ${jetbrainsMono.variable} ${inter.variable} ${outfit.variable} ${calistoga.variable} font-outfit bg-[#030014] text-zinc-300 antialiased overflow-x-hidden`}
+        className={`${syne.variable} ${jetbrainsMono.variable} ${inter.variable} ${outfit.variable} ${calistoga.variable} ${spaceGrotesk.variable} ${sora.variable} font-sans bg-[#030014] text-zinc-300 antialiased overflow-x-hidden`}
       >
         <Navbar />
         {children}
