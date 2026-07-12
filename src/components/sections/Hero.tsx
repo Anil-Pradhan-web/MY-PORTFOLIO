@@ -205,47 +205,29 @@ export default function Hero() {
           className="relative group"
         >
           {/* Outer Glows */}
-          <div className="absolute -inset-4 bg-gradient-to-tr from-violet-600/30 via-cyan-400/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
-          <div className="absolute -inset-0.5 bg-gradient-to-tr from-violet-500 to-cyan-400 rounded-full opacity-20 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+          <div className="absolute -inset-4 bg-gradient-to-tr from-violet-600/20 via-cyan-400/15 to-transparent rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
+          <div className="absolute -inset-0.5 bg-gradient-to-tr from-violet-500 to-cyan-400 rounded-[2rem] opacity-20 group-hover:opacity-100 transition-opacity duration-500 blur-sm pointer-events-none" />
           
           {/* Main Image Container */}
-          <div className="relative w-56 h-56 xl:w-64 xl:h-64 rounded-full border-2 border-white/10 overflow-hidden backdrop-blur-sm shadow-[0_0_50px_rgba(139,92,246,0.1)]">
+          <div className="relative w-56 h-56 xl:w-64 xl:h-64 rounded-[2rem] border-2 border-white/10 overflow-hidden backdrop-blur-sm shadow-[0_0_50px_rgba(139,92,246,0.1)] bg-zinc-950/20">
             <img 
               src="/anil.jpeg" 
               alt="Anil Pradhan" 
-              className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+              className="w-full h-full object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-            
-            {/* Animated Ring */}
-            <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none opacity-40">
-              <circle 
-                cx="50%" cy="50%" r="48%" 
-                fill="none" 
-                stroke="url(#grad1)" 
-                strokeWidth="2" 
-                strokeDasharray="10 20"
-                className="animate-[spin_20s_linear_infinite]"
-              />
-              <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#8b5cf6" />
-                  <stop offset="100%" stopColor="#06b6d4" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Floating Badge */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-lg border border-white/10 shadow-xl"
+            className="absolute -bottom-2 -right-2 glass-card px-3 py-1.5 rounded-xl border border-white/10 shadow-xl z-20"
           >
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-[10px] font-mono text-zinc-300 uppercase tracking-widest">Available</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[9px] font-mono text-zinc-300 uppercase tracking-widest">Available</span>
             </div>
           </motion.div>
         </motion.div>
