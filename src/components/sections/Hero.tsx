@@ -17,11 +17,7 @@ export default function Hero() {
  
   [Education]
   🎓 B.Tech CSE @ ITER, SOA University
-  📈 CGPA: 9.11 / 10.0 (2024 - 2028)
- 
-  [Status]
-  💻 Active in GDG Tech Community
-  ✨ Code. Learn. Build. Repeat.`;
+  📈 CGPA: 9.11 / 10.0 (2024 - 2028)`;
 
   useEffect(() => {
     let i = 0;
