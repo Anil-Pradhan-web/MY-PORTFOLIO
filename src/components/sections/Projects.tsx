@@ -73,30 +73,32 @@ export default function Projects() {
     <section id="projects" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
       <SectionHeading>Things I&apos;ve Built</SectionHeading>
 
-      <div className="flex flex-col mt-16 w-full gap-20">
+      <div className="flex flex-col mt-16 w-full gap-12">
         {projectsList.map((project, idx) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className={`flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-20 w-full ${
-              idx !== projectsList.length - 1 ? 'border-b border-zinc-900/60 pb-20' : ''
-            }`}
+            transition={{ duration: 0.7, delay: idx * 0.1 }}
+            className="relative bg-[#050508]/60 backdrop-blur-2xl rounded-3xl border border-zinc-800/80 hover:border-violet-500/30 transition-all duration-500 hover:shadow-[0_0_60px_rgba(139,92,246,0.08)] overflow-hidden group p-8 lg:p-12 flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch"
           >
+            {/* Ambient inner glow behind card */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-violet-600/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-violet-500/10 transition-all duration-700" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/3 rounded-full blur-[100px] pointer-events-none group-hover:bg-cyan-500/5 transition-all duration-700" />
+
             {/* Left Side: Info & Metadata */}
-            <div className="flex-1 flex flex-col justify-between gap-8">
+            <div className="flex-1 flex flex-col justify-between gap-8 z-10">
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <span className="font-mono text-3xl font-extrabold text-violet-500/40">
                     0{idx + 1}.
                   </span>
-                  <h3 className="font-title text-3xl sm:text-4xl font-extrabold text-white tracking-tight hover:text-violet-300 transition-colors">
+                  <h3 className="font-title text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-zinc-200 transition-colors">
                     {project.title}
                   </h3>
                 </div>
-                <p className="font-mono text-sky-400 text-xs tracking-wider uppercase">
+                <p className="font-mono text-sky-400 text-xs tracking-wider uppercase font-semibold">
                   {project.tagline}
                 </p>
                 <p className="text-zinc-400 text-sm leading-relaxed font-sans pt-2">
@@ -110,7 +112,7 @@ export default function Projects() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 bg-zinc-950/60 border border-zinc-900 text-zinc-400 text-[10px] font-mono rounded-md"
+                      className="px-2.5 py-1 bg-zinc-950/80 border border-zinc-900 text-zinc-400 text-[10px] font-mono rounded-md"
                     >
                       {tech}
                     </span>
@@ -141,7 +143,7 @@ export default function Projects() {
             </div>
 
             {/* Right Side: Key Engine Modules / Features */}
-            <div className="flex-1 flex flex-col justify-center gap-4">
+            <div className="flex-1 flex flex-col justify-center gap-4 z-10">
               <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-1">
                 Key Engine Modules
               </h4>
@@ -149,7 +151,7 @@ export default function Projects() {
                 {project.features.map((feature, fIdx) => (
                   <div
                     key={fIdx}
-                    className="bg-[#050508]/40 border border-zinc-900 p-4 rounded-xl hover:border-zinc-800 transition-colors flex flex-col justify-between"
+                    className="bg-[#0b0b0e]/70 border border-zinc-900 hover:border-zinc-800 p-4 rounded-xl transition-all duration-300 flex flex-col justify-between"
                   >
                     <div className="text-zinc-300 text-xs font-semibold mb-1 leading-normal">
                       {feature.split(': ')[0]}
