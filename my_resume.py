@@ -38,7 +38,7 @@ def generate_resume(output_path):
     <!-- Left: Profile Info -->
     <div class="w-[58%]">
       <h1 class="text-3xl font-extrabold tracking-tight">ANIL PRADHAN</h1>
-      <h2 class="text-[9.8px] font-bold tracking-wider text-sky-400 mt-0.5 uppercase">Backend Engineer | LLM Application Developer</h2>
+      <h2 class="text-[9.8px] font-bold tracking-wider text-sky-400 mt-0.5 uppercase">SOFTWARE ENGINEER | BACKEND & AI</h2>
       <p class="text-[9.2px] text-slate-300 mt-2.5 leading-relaxed">
         Backend-focused Computer Science undergraduate with hands-on experience building production-grade AI applications using FastAPI, LangGraph, RAG, Docker, and cloud technologies. Passionate about scalable backend architecture, distributed systems, and AI-powered software.
       </p>
