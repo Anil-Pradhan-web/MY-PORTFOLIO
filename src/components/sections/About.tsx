@@ -1,9 +1,8 @@
-
 "use client";
 
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import { User, Target, Code2, Activity, Sparkles } from 'lucide-react';
+import { User, Activity, Sparkles } from 'lucide-react';
 
 const aboutData = [
   {
@@ -29,26 +28,55 @@ const aboutData = [
   }
 ];
 
-const stats = [
-  { label: "CGPA", value: "9.11", suffix: "/10" },
-  { label: "Major Projects", value: "3", suffix: "" },
-  { label: "Hackathons", value: "4", suffix: "" },
-  { label: "Coding Problems", value: "200", suffix: "+" }
-];
-
 export default function About() {
   return (
     <section id="about" className="py-32 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
       <SectionHeading>About Me</SectionHeading>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 w-full mt-12 items-stretch">
 
-        {/* Left Column - Info Cards */}
+        {/* Left Column - Profile Summary & Metadata */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="flex flex-col justify-between gap-12"
+        >
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300 text-xs font-mono tracking-wider w-fit">
+              <Sparkles size={12} className="text-violet-400" />
+              Developer Profile
+            </div>
+            <h3 className="font-syne text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+              Crafting <span className="gradient-text font-black">Scalable Systems</span> & Intelligent Software
+            </h3>
+            <p className="text-zinc-400 text-base leading-relaxed font-sans">
+              I focus on building production-ready architectures that balance performance, resilience, and clean abstractions. My goal is to write robust backend services and orchestrate multi-agent workflows that deliver measurable real-world impact.
+            </p>
+          </div>
+
+          {/* Quick Info Grid */}
+          <div className="grid grid-cols-2 gap-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl p-6 backdrop-blur-xl">
+            <div className="space-y-1">
+              <div className="text-zinc-500 text-xs uppercase font-mono tracking-widest">Education</div>
+              <div className="text-white text-sm font-semibold">B.Tech CSE @ ITER</div>
+              <div className="text-zinc-500 text-[11px] font-mono">2024 – 2028</div>
+            </div>
+            <div className="space-y-1 border-l border-zinc-900 pl-6">
+              <div className="text-zinc-500 text-xs uppercase font-mono tracking-widest">Academics</div>
+              <div className="text-white text-sm font-semibold">CGPA: 9.11 / 10</div>
+              <div className="text-zinc-500 text-[11px] font-mono">Siksha 'O' Anusandhan</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right Column - Info Cards */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col gap-6"
         >
           {aboutData.map((item, idx) => {
@@ -87,38 +115,6 @@ export default function About() {
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Right Column - Stats Grid */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 gap-4"
-        >
-          {stats.map((stat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group relative glass-card backdrop-blur-xl rounded-2xl p-8 flex flex-col justify-center overflow-hidden border border-zinc-800 hover:border-violet-500/30 transition-all duration-300"
-            >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="relative z-10">
-                <h4 className="font-syne text-5xl lg:text-6xl font-bold gradient-text mb-2 tracking-tight">
-                  {stat.value}<span className="text-2xl text-zinc-500">{stat.suffix}</span>
-                </h4>
-                <p className="text-zinc-500 font-sans text-xs uppercase tracking-widest font-medium">
-                  {stat.label}
-                </p>
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
       </div>
 
