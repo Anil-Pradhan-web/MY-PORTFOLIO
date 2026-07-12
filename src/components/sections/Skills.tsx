@@ -3,10 +3,18 @@
 import { motion, Variants } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, SiFirebase, SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, SiSwagger, SiOpenai, SiMapbox, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, SiTailwindcss, SiMarkdown, SiAxios, SiLangchain, SiDuckduckgo, SiSentry, SiPrometheus } from 'react-icons/si';
+import { 
+  SiTypescript, SiJavascript, SiFastapi, SiNextdotjs, SiSqlite, 
+  SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis, 
+  SiSwagger, SiGoogle, SiJsonwebtokens, SiNvidia, SiPostgresql, 
+  SiTailwindcss, SiAxios, SiSentry, SiPrometheus 
+} from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { VscCode } from 'react-icons/vsc';
-import { BrainCircuit, Cpu, Database, Code2, Zap, Lock, Workflow, FileText, Volume2, ShieldCheck, GitBranch, Search, Box, LayoutGrid, LineChart, Upload, Bell, Bot, Mic, Beaker, Globe, Activity } from 'lucide-react';
+import { 
+  BrainCircuit, Cpu, Database, Code2, Zap, Lock, 
+  ShieldCheck, GitBranch, Box, Globe, Activity, Award, Github
+} from 'lucide-react';
 
 const skillCategories = [
   {
@@ -56,106 +64,97 @@ const techConfig: Record<string, { icon: React.ElementType; color?: string }> = 
   "TypeScript": { icon: SiTypescript, color: "#3178C6" },
 
   // Frontend
-  "Next.js":      { icon: SiNextdotjs,   color: "#ffffff" },
-  "Next.js 14":   { icon: SiNextdotjs,   color: "#ffffff" },
   "React":        { icon: FaReact,       color: "#61DAFB" },
-  "React 18":     { icon: FaReact,       color: "#61DAFB" },
   "Tailwind CSS": { icon: SiTailwindcss, color: "#38BDF8" },
   "Axios":        { icon: SiAxios,       color: "#5a29e4" },
+  "HTML":         { icon: Code2,         color: "#E34F26" },
+  "CSS":          { icon: Code2,         color: "#1572B6" },
 
   // Backend
-  "FastAPI":                           { icon: SiFastapi,   color: "#009688" },
-  "Uvicorn":                           { icon: Zap,         color: "#facc15" },
-  "LangGraph":                         { icon: GitBranch,   color: "#4ade80" },
-  "LangChain Core":                    { icon: SiLangchain, color: "#15c213" },
-  "SQLAlchemy 2.0":                    { icon: Database,    color: "#D71F00" },
-  "Pydantic":                          { icon: ShieldCheck, color: "#E92063" },
-  "HTTPX":                             { icon: Globe,       color: "#0ea5e9" },
-  "Loguru":                            { icon: FileText,    color: "#16A34A" },
-  "WebSocket":                         { icon: Zap,         color: "#f59e0b" },
-  "Prometheus":                        { icon: SiPrometheus, color: "#E6522C" },
-  "Sentry":                            { icon: SiSentry,     color: "#362D59" },
-  "SlowAPI":                           { icon: TbApi,       color: "#0ea5e9" },
-  "pdfplumber":                        { icon: FileText,    color: "#ef4444" },
-  "edge-tts":                          { icon: Volume2,     color: "#6366f1" },
-  "Postman Test Suite":                { icon: SiPostman,    color: "#FF6C37" },
-  "Pytest":                            { icon: Beaker,      color: "#0ea5e9" },
-  "Alembic":                           { icon: Database,    color: "#8b5cf6" },
+  "FastAPI":      { icon: SiFastapi,   color: "#009688" },
+  "REST APIs":    { icon: TbApi,       color: "#0ea5e9" },
+  "WebSockets":   { icon: Zap,         color: "#f59e0b" },
+  "LangGraph":    { icon: GitBranch,   color: "#4ade80" },
+  "SQLAlchemy":   { icon: Database,    color: "#D71F00" },
+  "Pydantic":     { icon: ShieldCheck, color: "#E92063" },
+  "Prometheus":   { icon: SiPrometheus, color: "#E6522C" },
+  "Sentry":       { icon: SiSentry,     color: "#362D59" },
 
-  // AI / LLM & RAG
-  "Groq (Llama 3.3 70B)":   { icon: Cpu,          color: "#f97316" },
-  "NVIDIA NIM":              { icon: SiNvidia,     color: "#76B900" },
-  "Gemini Live API":         { icon: Mic,          color: "#38bdf8" },
-  "Tavily":                  { icon: Search,        color: "#818cf8" },
-  "Tavily AI":               { icon: Search,        color: "#818cf8" },
-  "Serper.dev":              { icon: Search,        color: "#4285F4" },
-  "DuckDuckGo":              { icon: SiDuckduckgo,  color: "#de5833" },
+  // AI / GenAI
+  "RAG":             { icon: BrainCircuit, color: "#a78bfa" },
+  "Gemini Live API": { icon: BrainCircuit, color: "#38bdf8" },
+  "Groq":            { icon: Cpu,          color: "#f97316" },
+  "NVIDIA NIM":      { icon: SiNvidia,     color: "#76B900" },
+  "Cerebras":        { icon: Cpu,          color: "#FF6B35" },
 
   // Databases
-  "Neon Postgres":           { icon: Database, color: "#00E599" },
-  "SQLite":                  { icon: SiSqlite, color: "#64b5f6" },
-  "Upstash Redis":           { icon: SiRedis,  color: "#DC382D" },
-  "ChromaDB (Vector Store)": { icon: Box,      color: "#FF6B35" },
+  "PostgreSQL (Neon)": { icon: Database, color: "#00E599" },
+  "SQLite":            { icon: SiSqlite, color: "#64b5f6" },
+  "Redis (Upstash)":   { icon: SiRedis,  color: "#DC382D" },
+  "ChromaDB":          { icon: Box,      color: "#FF6B35" },
 
-  // Auth & Security
-  "JWT (python-jose)":       { icon: SiJsonwebtokens, color: "#FB015B" },
-  "Google OAuth 2.0":        { icon: SiGoogle,        color: "#4285F4" },
-  "Firebase Authentication": { icon: SiFirebase,      color: "#FFCA28" },
-  "bcrypt":                  { icon: Lock,             color: "#94a3b8" },
-  "CORS Middleware":         { icon: ShieldCheck,      color: "#22C55E" },
-  "Rate Limiting":           { icon: Activity,         color: "#0EA5E9" },
-  "HTTPS TLS":               { icon: Lock,             color: "#DC2626" },
-  ".env Secrets":            { icon: Lock,             color: "#7C3AED" },
+  // Security
+  "JWT":              { icon: SiJsonwebtokens, color: "#FB015B" },
+  "Google OAuth 2.0": { icon: SiGoogle,        color: "#4285F4" },
+  "bcrypt":           { icon: Lock,             color: "#94a3b8" },
+  "CORS":             { icon: ShieldCheck,      color: "#22C55E" },
+  "Rate Limiting":    { icon: Activity,         color: "#0EA5E9" },
 
-  // DevOps & Infra
-  "Docker":                  { icon: FaDocker,        color: "#2496ED" },
-  "GitHub Actions (CI/CD)":  { icon: SiGithubactions, color: "#2088FF" },
-  "Vercel":                  { icon: SiVercel,         color: "#ffffff" },
-  "Render.com":              { icon: SiRender,         color: "#46E3B7" },
-  "GHCR":                    { icon: Box,              color: "#6e40c9" },
+  // DevOps & Cloud
+  "Docker":                 { icon: FaDocker,        color: "#2496ED" },
+  "GitHub Actions (CI/CD)": { icon: SiGithubactions, color: "#2088FF" },
+  "Vercel":                 { icon: SiVercel,         color: "#ffffff" },
+  "Render":                 { icon: SiRender,         color: "#46E3B7" },
 
   // Tools
-  "VS Code":            { icon: VscCode,      color: "#007ACC" },
-  "Git":                { icon: FaGitAlt,     color: "#F05032" },
-  "Swagger UI":         { icon: SiSwagger,    color: "#85EA2D" },
-  "Cline":              { icon: BrainCircuit, color: "#a78bfa" },
-  "GitHub Copilot":     { icon: Code2,        color: "#ffffff" },
-  "Gemini Code Assist": { icon: BrainCircuit, color: "#8b5cf6" },
-  "OpenAI Codex":       { icon: SiOpenai,     color: "#412991" },
-  "AntiGravity IDE":    { icon: Zap,          color: "#00ff94" },
+  "VS Code":    { icon: VscCode,    color: "#007ACC" },
+  "Git":        { icon: FaGitAlt,   color: "#F05032" },
+  "GitHub":     { icon: Github,     color: "#ffffff" },
+  "Postman":    { icon: SiPostman,   color: "#FF6C37" },
+  "Swagger UI": { icon: SiSwagger,  color: "#85EA2D" },
 };
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.04 }
+    transition: { staggerChildren: 0.03 }
   }
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.92, y: 8 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.25, ease: "easeOut" } }
+  hidden: { opacity: 0, scale: 0.95, y: 6 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } }
 };
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 w-full max-w-6xl mx-auto px-4 sm:px-8 md:px-16">
-      <SectionHeading>Tech Stack</SectionHeading>
+    <section id="skills" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
+      <SectionHeading>Technical Skills</SectionHeading>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full">
         {skillCategories.map((category, idx) => (
-          <div key={idx} className="flex flex-col gap-3">
-            <h3 className="font-mono text-violet-400 font-semibold tracking-widest text-xs uppercase">
-              {category.title}
+          <motion.div 
+            key={idx}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.05 }}
+            className="flex flex-col gap-4 bg-[#050508]/40 border border-zinc-900 p-6 rounded-2xl hover:border-zinc-800 transition-colors"
+          >
+            <h3 className="font-title text-sm font-bold text-white tracking-wider uppercase border-b border-zinc-900 pb-2 flex items-center justify-between">
+              <span>{category.title}</span>
+              <span className="text-[10px] text-zinc-600 font-mono tracking-normal font-normal">
+                {category.skills.length} skills
+              </span>
             </h3>
 
             <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              className="flex flex-wrap gap-2"
+              viewport={{ once: true }}
+              className="flex flex-wrap gap-2 pt-1"
             >
               {category.skills.map((skill) => {
                 const config = techConfig[skill];
@@ -164,20 +163,20 @@ export default function Skills() {
                   <motion.span
                     key={skill}
                     variants={itemVariants}
-                    className="flex items-center gap-2 px-3 py-1.5 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-sm font-medium rounded-lg hover:border-violet-500/60 hover:text-white hover:bg-violet-500/5 hover:shadow-[0_0_10px_rgba(139,92,246,0.12)] transition-all duration-200 cursor-default"
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 bg-zinc-950/60 border border-zinc-900/60 hover:border-violet-500/30 text-zinc-400 hover:text-zinc-200 text-xs font-mono rounded-lg transition-all cursor-default"
                   >
                     {Icon && (
-  <Icon
-    className="w-7 h-7 flex-shrink-0"
-    style={{ color: config?.color }}
-  />
+                      <Icon
+                        className="w-3.5 h-3.5 flex-shrink-0"
+                        style={{ color: config?.color }}
+                      />
                     )}
-                    <span className="leading-none text-sm">{skill}</span>
+                    <span className="leading-none">{skill}</span>
                   </motion.span>
                 );
               })}
             </motion.div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
