@@ -138,62 +138,53 @@
       </svg>
     </div>
 
-    <div class="space-y-3.5">
+    <div class="space-y-4">
       <!-- Project 1 -->
       <div>
         <div class="flex justify-between items-baseline mb-0.5">
-          <h4 class="text-[10px] font-bold text-slate-900">
+          <h4 class="text-[10px] font-bold text-slate-900 flex items-center gap-1">
             <span class="text-[#1e3a8a]">AI Career Mentor</span> 
             <span class="text-slate-400 font-normal">|</span> 
-            <a href="https://ai-career-mentor-anil.vercel.app/" class="text-[#1e3a8a] hover:underline font-semibold">Live Demo</a> 
+            <a href="https://ai-career-mentor-anil.vercel.app/" class="text-[#1e3a8a] hover:underline font-semibold text-[9.5px]">Live Demo</a> 
             <span class="text-slate-400 font-normal">|</span> 
-            <span class="text-slate-500 italic font-normal">Solo Full-Stack Developer</span>
+            <a href="https://github.com/Anil-Pradhan-web/ai-career-mentor" class="text-[#1e3a8a] hover:underline font-semibold text-[9.5px]">GitHub</a>
           </h4>
-          <span class="text-[9px] text-slate-500 font-mono">March 2026 – Present</span>
+          <span class="text-[9px] text-slate-500 font-mono">Mar 2026 – Present</span>
         </div>
+        <div class="text-[9.2px] text-slate-500 italic font-medium ml-0.5 mb-1">Solo Full Stack Developer</div>
         <ul class="list-disc list-outside ml-4 text-[9.4px] text-slate-600 space-y-0.5 leading-relaxed">
-          <li><strong>Multi-Agent Orchestration & Concurrency:</strong> Orchestrated 7 specialized AI agents via a parallel LangGraph DAG, designing a two-phase concurrency flow (concurrent resume parsing and market scraping, followed by parallel LinkedIn and career roadmap generation) that reduced end-to-end latency by 60% (4 min → 60s).</li>
-          <li><strong>Real-Time Bidirectional Streaming & FSMs:</strong> Engineered a full-duplex WebSocket communication pipeline utilizing the Gemini Multimodal Live API (gemini-2.5-flash-native-audio-latest) for real-time voice coaching, governed by a 7-phase Finite State Machine (FSM) that dynamically manages mock interview stages and Monaco IDE code evaluations.</li>
-          <li><strong>API Resilience & Failover Architecture:</strong> Built a resilient multi-provider LLM fallback chain (Groq ⇄ Cerebras ⇄ NVIDIA NIM) with custom circuit breakers and daily rate-limiting/gap-locking policies, maintaining 100% service availability and zero request drops during peak API rate-limit spikes.</li>
-          <li><strong>Resource-Optimized RAG & Quality Control:</strong> Optimized RAG retrieval by deploying local ONNX embeddings (all-MiniLM-L6-v2) to eliminate API dependency, implementing a keyword-search fallback to prevent OOM crashes on memory-constrained (512MB RAM) servers, backed by a 116-test Pytest CI/CD suite.</li>
+          <li>Architected a parallel LangGraph workflow with 7 specialized AI agents, reducing end-to-end career analysis latency by 60% (4 min → 60 sec).</li>
+          <li>Built a real-time AI Mock Interview Engine using FastAPI, WebSockets, and a 7-stage Finite State Machine (FSM), delivering company-specific technical interviews with live coding evaluation and personalized feedback.</li>
+          <li>Developed "Anya", a real-time multimodal AI Voice Coach powered by the Gemini Live API, enabling full-duplex voice conversations with resume-aware career guidance, interview coaching, and personalized learning support.</li>
+          <li>Engineered a fault-tolerant multi-LLM architecture (Groq, NVIDIA NIM, Cerebras) with circuit breakers, automatic failover, and rate limiting, achieving uninterrupted service availability.</li>
+          <li>Optimized RAG retrieval using local ONNX embeddings with keyword-search fallback, eliminating embedding API dependency while ensuring reliable performance on low-memory cloud deployments validated through 116 automated tests.</li>
         </ul>
-        <div class="flex flex-wrap gap-1.5 mt-2 ml-4">
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">FastAPI</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">LangGraph</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">ChromaDB</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">ONNX</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Docker</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Upstash Redis</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Next.js 14</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Gemini Live</span>
+        <div class="mt-1.5 ml-4 text-[8.5px] text-slate-500 font-semibold">
+          <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; Next.js &bull; ChromaDB &bull; Redis &bull; Docker &bull; Gemini Live &bull; ONNX
         </div>
       </div>
 
       <!-- Project 2 -->
       <div>
         <div class="flex justify-between items-baseline mb-0.5">
-          <h4 class="text-[10px] font-bold text-slate-900">
-            <span class="text-[#1e3a8a]">Task Pilot-AI</span> 
+          <h4 class="text-[10px] font-bold text-slate-900 flex items-center gap-1">
+            <span class="text-[#1e3a8a]">TaskPilot AI</span> 
             <span class="text-slate-400 font-normal">|</span> 
-            <a href="https://taskpilot-ai-app.onrender.com/" class="text-[#1e3a8a] hover:underline font-semibold">Live Demo</a> 
+            <a href="https://taskpilot-ai-app.onrender.com/" class="text-[#1e3a8a] hover:underline font-semibold text-[9.5px]">Live Demo</a> 
             <span class="text-slate-400 font-normal">|</span> 
-            <span class="text-slate-500 italic font-normal">Integration Lead • Team IdeaForg-E</span>
+            <a href="https://github.com/IdeaForg-e/TaskPilot-AI" class="text-[#1e3a8a] hover:underline font-semibold text-[9.5px]">GitHub</a>
           </h4>
-          <span class="text-[9px] text-slate-500 font-mono">June 2026 – July 2026</span>
+          <span class="text-[9px] text-slate-500 font-mono">Jun 2026 – Jul 2026</span>
         </div>
+        <div class="text-[9.2px] text-slate-500 italic font-medium ml-0.5 mb-1">Integration Lead | Team IdeaForg-E</div>
         <ul class="list-disc list-outside ml-4 text-[9.4px] text-slate-600 space-y-0.5 leading-relaxed">
-          <li><strong>Heterogeneous Data Aggregation:</strong> Architected an ingestion pipeline that normalizes and aggregates raw developer data from 7 fragmented sources (Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents) into a unified relational database, saving developers ~2 hours daily of manual task tracking.</li>
-          <li><strong>Hybrid Extraction & Deduplication Engine:</strong> Designed a cost-optimized extraction and fusion pipeline using deterministic heuristic models, fuzzy text correlation (SequenceMatcher), and LLM reasoning (Qwen-3.6-27B) to extract hidden action items from unstructured sources, recovering 35% of untracked tasks while reducing LLM API token costs by 75%+.</li>
-          <li><strong>Concurrency-Safe Database & High-Priority API:</strong> Configured SQLite in Write-Ahead Logging (WAL) mode with custom busy-timeout strategies, facilitating concurrent multi-agent writes with zero database locking, integrated with a real-time P1 incident-injection API that autonomously re-prioritizes the 6-stage pipeline in under 15 seconds.</li>
-          <li><strong>Self-Healing Orchestration & Quality Auditor:</strong> Developed a background daemon to monitor execution states (WorkflowRun) and automatically self-heal stale runs (stuck runs >5 mins), combined with a 7-dimension automated Quality Agent that grades tasks on actionability and generates context-aware follow-up queries for missing information.</li>
+          <li>Architected a multi-agent engineering productivity platform integrating 7 fragmented developer tools (Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents), reducing manual task tracking by ~2 hours/day.</li>
+          <li>Designed a hybrid AI task extraction pipeline combining heuristic rules, fuzzy matching, and LLM reasoning (Qwen), recovering 35% more hidden action items while reducing LLM inference costs by 75% through selective AI execution.</li>
+          <li>Built a concurrency-safe orchestration backend using FastAPI, SQLite WAL mode, and Redis, enabling reliable parallel multi-agent execution with real-time P1 incident reprioritization in under 15 seconds.</li>
+          <li>Developed a self-healing workflow engine with automated stale-run recovery and an AI-powered quality evaluator that validated task completeness, actionability, and generated context-aware follow-up questions.</li>
         </ul>
-        <div class="flex flex-wrap gap-1.5 mt-2 ml-4">
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">FastAPI</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">LangGraph</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">SQLite</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">LLMs</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">React</span>
-          <span class="bg-blue-50/50 text-[#1e3a8a] border border-blue-200/80 px-2 py-0.5 rounded text-[8.5px] font-semibold">Redis</span>
+        <div class="mt-1.5 ml-4 text-[8.5px] text-slate-500 font-semibold">
+          <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; React &bull; SQLite &bull; Redis &bull; LLMs
         </div>
       </div>
     </div>
