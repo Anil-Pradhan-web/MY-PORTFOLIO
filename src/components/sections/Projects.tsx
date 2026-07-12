@@ -1,7 +1,8 @@
 "use client";
 
+import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import ProjectCard from '../ui/ProjectCard';
+import { Github, ExternalLink } from 'lucide-react';
 
 const projectsList = [
   {
@@ -65,20 +66,104 @@ const projectsList = [
     githubUrl: "https://github.com/IdeaForg-e/TaskPilot-AI",
     liveUrl: "https://taskpilot-ai-app.onrender.com/",
   },
-]
+];
 
 export default function Projects() {
   return (
     <section id="projects" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
       <SectionHeading>Things I&apos;ve Built</SectionHeading>
 
-      <div className="grid grid-cols-1 gap-12 mt-12">
+      <div className="flex flex-col mt-16 w-full gap-20">
         {projectsList.map((project, idx) => (
-          <ProjectCard
+          <motion.div
             key={project.title}
-            index={idx}
-            {...project}
-          />
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: idx * 0.1 }}
+            className={`flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-20 w-full ${
+              idx !== projectsList.length - 1 ? 'border-b border-zinc-900/60 pb-20' : ''
+            }`}
+          >
+            {/* Left Side: Info & Metadata */}
+            <div className="flex-1 flex flex-col justify-between gap-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <span className="font-mono text-3xl font-extrabold text-violet-500/40">
+                    0{idx + 1}.
+                  </span>
+                  <h3 className="font-title text-3xl sm:text-4xl font-extrabold text-white tracking-tight hover:text-violet-300 transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+                <p className="font-mono text-sky-400 text-xs tracking-wider uppercase">
+                  {project.tagline}
+                </p>
+                <p className="text-zinc-400 text-sm leading-relaxed font-sans pt-2">
+                  {project.description}
+                </p>
+              </div>
+
+              {/* Stack and Action Links */}
+              <div className="space-y-6 pt-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 bg-zinc-950/60 border border-zinc-900 text-zinc-400 text-[10px] font-mono rounded-md"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 hover:text-violet-400 transition-colors cursor-pointer"
+                  >
+                    <Github size={14} /> Github
+                  </a>
+                  {project.liveUrl && project.liveUrl !== 'desktop' && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 hover:text-sky-400 transition-colors cursor-pointer"
+                    >
+                      <ExternalLink size={14} /> Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side: Key Engine Modules / Features */}
+            <div className="flex-1 flex flex-col justify-center gap-4">
+              <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-1">
+                Key Engine Modules
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                {project.features.map((feature, fIdx) => (
+                  <div
+                    key={fIdx}
+                    className="bg-[#050508]/40 border border-zinc-900 p-4 rounded-xl hover:border-zinc-800 transition-colors flex flex-col justify-between"
+                  >
+                    <div className="text-zinc-300 text-xs font-semibold mb-1 leading-normal">
+                      {feature.split(': ')[0]}
+                    </div>
+                    {feature.split(': ')[1] && (
+                      <div className="text-zinc-500 text-[11px] leading-relaxed font-sans">
+                        {feature.split(': ')[1]}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         ))}
       </div>
     </section>
