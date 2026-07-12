@@ -211,7 +211,7 @@ export default function Hero() {
           {/* Main Image Container */}
           <div className="relative w-56 h-56 xl:w-64 xl:h-64 rounded-full border-2 border-white/10 overflow-hidden backdrop-blur-sm shadow-[0_0_50px_rgba(139,92,246,0.1)]">
             <img 
-              src="/anil.png" 
+              src="/anil.jpeg" 
               alt="Anil Pradhan" 
               className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
             />
