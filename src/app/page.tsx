@@ -11,10 +11,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between w-full max-w-[100vw] overflow-hidden bg-[#0a0a0a]">
       <Hero />
       <About />
-      <Achievements />
-      <Projects />
       <Skills />
+      <Projects />
       <Experience />
+      <Achievements />
       <Contact />
     </main>
   );
