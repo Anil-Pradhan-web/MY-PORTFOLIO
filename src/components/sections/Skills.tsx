@@ -14,85 +14,36 @@ const skillCategories = [
     skills: ["Python", "Java", "JavaScript", "SQL"]
   },
   {
-    title: "🌐 Frontend",
-    skills: ["Next.js", "React", "Tailwind CSS", "Axios"]
-  },
-  {
     title: "⚙️ Backend",
-    skills: [
-      "FastAPI",
-      "LangGraph",
-      "LangChain Core",
-      "Pydantic",
-      "SQLAlchemy 2.0",
-      "HTTPX",
-      "Loguru",
-      "WebSocket",
-      "Uvicorn",
-      "Prometheus",
-      "Sentry",
-      "SlowAPI",
-      "pdfplumber",
-      "edge-tts",
-      "Postman Test Suite",
-      "Pytest"
-    ]
+    skills: ["FastAPI", "REST APIs", "WebSockets", "LangGraph", "SQLAlchemy", "Pydantic"]
   },
   {
-    title: "🧠 AI / LLM & RAG",
-    skills: [
-      "Groq (Llama 3.3 70B)",
-      "NVIDIA NIM",
-      "Gemini Live API",
-      "Tavily",
-      "Serper.dev",
-      "DuckDuckGo"
-    ]
+    title: "🌐 Frontend",
+    skills: ["React", "HTML", "CSS", "Tailwind CSS", "Axios"]
   },
   {
     title: "🗄️ Databases",
-    skills: [
-      "Neon Postgres",
-      "SQLite",
-      "Upstash Redis",
-      "ChromaDB (Vector Store)"
-    ]
+    skills: ["PostgreSQL (Neon)", "SQLite", "Redis (Upstash)", "ChromaDB"]
   },
   {
-    title: "🔐 Auth & Security",
-    skills: [
-      "JWT (python-jose)",
-      "Google OAuth 2.0",
-      "Firebase Authentication",
-      "bcrypt",
-      "CORS Middleware",
-      "Rate Limiting",
-      "HTTPS TLS",
-      ".env Secrets"
-    ]
+    title: "🧠 AI / GenAI",
+    skills: ["RAG", "LangGraph", "Gemini Live API", "Groq", "NVIDIA NIM", "Cerebras"]
   },
   {
-    title: "🚀 DevOps & Infra",
-    skills: [
-      "Docker",
-      "GitHub Actions (CI/CD)",
-      "Vercel",
-      "Render.com",
-      "GHCR"
-    ]
+    title: "🚀 DevOps & Cloud",
+    skills: ["Docker", "GitHub Actions (CI/CD)", "Render", "Vercel"]
   },
   {
-    title: "🛠️ Tools",
-    skills: [
-      "VS Code",
-      "Git",
-      "Swagger UI",
-      "Cline",
-      "GitHub Copilot",
-      "Gemini Code Assist",
-      "OpenAI Codex",
-      "AntiGravity IDE"
-    ]
+    title: "🔐 Authentication & Security",
+    skills: ["JWT", "Google OAuth 2.0", "bcrypt", "CORS", "Rate Limiting"]
+  },
+  {
+    title: "📊 Monitoring",
+    skills: ["Prometheus", "Sentry"]
+  },
+  {
+    title: "🛠️ Developer Tools",
+    skills: ["Git", "GitHub", "Postman", "Swagger UI", "VS Code"]
   }
 ];
 

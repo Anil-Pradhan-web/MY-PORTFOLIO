@@ -111,13 +111,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-xl sm:text-2xl lg:text-[32px] text-zinc-300 font-syne font-medium tracking-wide mb-8 leading-relaxed lg:leading-tight flex flex-col lg:flex-row lg:items-center gap-y-2.5 lg:gap-x-4 lg:gap-y-0 text-center lg:text-left"
+          className="text-xl sm:text-2xl lg:text-[24px] text-sky-400 font-syne font-extrabold tracking-wider mb-8 text-center lg:text-left flex items-center"
         >
-          <span className="px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300 text-sm sm:text-base lg:text-[15px] font-mono tracking-wider w-fit mx-auto lg:mx-0 shadow-[0_0_15px_rgba(139,92,246,0.05)]">Full Stack Developer</span>
-          <span className="text-zinc-800 hidden lg:inline">|</span>
-          <span className="px-3.5 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-300 text-sm sm:text-base lg:text-[15px] font-mono tracking-wider w-fit mx-auto lg:mx-0 shadow-[0_0_15px_rgba(6,182,212,0.05)]">AI Systems Engineer</span>
-          <span className="text-zinc-800 hidden lg:inline">|</span>
-          <span className="px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300 text-sm sm:text-base lg:text-[15px] font-mono tracking-wider w-fit mx-auto lg:mx-0 shadow-[0_0_15px_rgba(139,92,246,0.05)]">Backend Builder</span>
+          <span className="px-5 py-2 bg-gradient-to-r from-sky-500/10 to-violet-500/10 border border-sky-500/20 rounded-2xl text-sky-300 font-mono tracking-widest text-xs sm:text-sm lg:text-[14px] shadow-[0_0_25px_rgba(6,182,212,0.05)]">
+            SOFTWARE ENGINEER | BACKEND & AI
+          </span>
         </motion.h2>
  
         {/* Description */}

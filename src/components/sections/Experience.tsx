@@ -6,61 +6,60 @@ import SectionHeading from '../ui/SectionHeading';
 
 const experiences = [
   {
-    role: "College Ambassador",
+    role: "College Ambassador (Corporate Projects Program)",
     org: "Techfest, IIT Bombay",
-    period: "Jun 2026 – Present",
+    period: "Jul 2026 – Present",
     location: "Mumbai, India (Remote)",
-    type: "Leadership & Outreach",
+    type: "Leadership & Corporate Projects",
     bullets: [
-      "Represented Techfest IIT Bombay, Asia's largest science and technology festival, by leading campus outreach and technical engagement initiatives to promote workshops, events, and competitions.",
-      "Conducted competitor analysis, sponsorship research, and partnership mapping, compiling comprehensive business development and event collaboration reports.",
-      "Designed and developed landing pages and creative digital assets supporting national-level promotional campaigns.",
-      "Collaborated with technical clubs and student organizations to execute offline/online event management and marketing strategies.",
-      "Delivered data-driven strategic outlines and campaign decks using AI-powered research and presentation tools."
+      "Selected as a College Ambassador for Techfest, IIT Bombay, representing one of Asia's largest science and technology festivals.",
+      "Completed industry-sponsored corporate projects across web development, business strategy, and market research in collaboration with partner organizations.",
+      "Qualified for Round 2 of the FlowFinance Growth Strategy & Business Development Challenge by developing a business strategy presentation and market analysis.",
+      "Collaborated with multidisciplinary teams while delivering project submissions within defined deadlines."
     ],
-    skills: ["Outreach", "Market Research", "Landing Page Dev", "Sponsorships", "Strategic Communication", "AI Tools"],
+    skills: ["Web Development", "Business Strategy", "Market Research", "Team Collaboration", "Strategic Presentation"],
     metrics: [
-      { label: "Reach", value: "5,000+ Students" },
+      { label: "Challenge", value: "Round 2 Qualifier" },
       { label: "Festival Scale", value: "Asia's Largest" },
     ]
   },
   {
-    role: "Solo Full-Stack Developer",
-    org: "AI Career Mentor – Multi-Agent AI Platform",
-    period: "Feb – June 2026",
-    location: "Personal Commercial App",
-    type: "Production-Grade AI System",
+    role: "Solo Full Stack Developer",
+    org: "AI Career Mentor",
+    period: "Mar 2026 – Present",
+    location: "Bhubaneswar, Odisha (Remote)",
+    type: "Agentic AI platform",
     bullets: [
-      "Architected a production-grade multi-agent AI platform using LangGraph, orchestrating 7 specialized AI workflows for resume intelligence, career planning, interview prep, voice coaching, and market analysis.",
-      "Designed a parallel DAG orchestration pipeline executing independent AI agents concurrently, reducing end-to-end latency by ~60% (down to <60s) via SSE status streaming.",
-      "Implemented a hybrid Retrieval-Augmented Generation (RAG) pipeline combining ChromaDB vector search with an in-memory SequenceMatcher fallback to prevent Render container OOM crashes.",
-      "Developed a real-time full-duplex Hinglish Voice Coach using Gemini Live WebSocket API and a 7-phase FSM Mock Interview engine with a Monaco Editor sandbox and Edge-TTS audio synthesis.",
-      "Built secure Google OAuth 2.0 auth, JWT refresh token rotation, SlowAPI rate-limiting, and a whitelisted Admin Observation & Telemetry Console tracking active connections.",
-      "Engineered CI/CD pipeline via GitHub Actions executing frontend builds, backend Pytest (116 unit tests), automated pip-audit scans, and GHCR Docker container deployments."
+      "Architected a parallel LangGraph workflow with 7 specialized AI agents, reducing end-to-end career analysis latency by 60% (4 min → 60 sec).",
+      "Built a real-time AI Mock Interview Engine using FastAPI, WebSockets, and a 7-stage Finite State Machine (FSM), delivering company-specific technical interviews with live coding evaluation and personalized feedback.",
+      "Developed 'Anya', a real-time multimodal AI Voice Coach powered by the Gemini Live API, enabling full-duplex voice conversations with resume-aware career guidance, interview coaching, and personalized learning support.",
+      "Engineered a fault-tolerant multi-LLM architecture (Groq, NVIDIA NIM, Cerebras) with circuit breakers, automatic failover, and rate limiting, achieving uninterrupted service availability.",
+      "Optimized RAG retrieval using local ONNX embeddings with keyword-search fallback, eliminating embedding API dependency while ensuring reliable performance on low-memory cloud deployments validated through 116 automated tests."
     ],
-    skills: ["LangGraph", "FastAPI", "Next.js 14", "WebSockets", "ChromaDB", "Upstash Redis", "Neon Postgres", "Docker", "Pytest"],
+    skills: ["FastAPI", "LangGraph", "Next.js", "ChromaDB", "Redis", "Docker", "Gemini Live", "ONNX"],
     metrics: [
       { label: "Orchestration", value: "7 AI Agents" },
-      { label: "Tests", value: "116 passing" },
-      { label: "Latency", value: "~60% reduction" }
+      { label: "Latency", value: "60% Reduction" },
+      { label: "Pytest Suite", value: "116 passing tests" }
     ]
   },
   {
-    role: "Lead Backend Developer",
-    org: "VolunteerIQ – Google Solution Challenge 2026",
-    period: "Mar – Apr 2026",
-    location: "Team ClutchCode (Submission)",
-    type: "Geospatial Crisis-Response Platform",
+    role: "Integration Lead",
+    org: "TaskPilot AI – Team IdeaForg-E",
+    period: "Jun 2026 – Jul 2026",
+    location: "Bengaluru, India (Remote)",
+    type: "AI Productivity Platform",
     bullets: [
-      "Co-created an AI-driven crisis-response coordination platform for NGOs, mapping field survey uploads directly to a Geospatial Mapbox GL dashboard.",
-      "Engineered backend matching algorithms using Gemini 1.5 Pro to analyze field data and rank volunteers based on skills, availability, and proximity scores (0–100 scale).",
-      "Built secure FastAPI REST endpoints and Firestore integrations with server-side verified Firebase Google Authentication."
+      "Architected a multi-agent engineering productivity platform integrating 7 fragmented developer tools (Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents), reducing manual task tracking by ~2 hours/day.",
+      "Designed a hybrid AI task extraction pipeline combining heuristic rules, fuzzy matching, and LLM reasoning (Qwen), recovering 35% more hidden action items while reducing LLM inference costs by 75% through selective AI execution.",
+      "Built a concurrency-safe orchestration backend using FastAPI, SQLite WAL mode, and Redis, enabling reliable parallel multi-agent execution with real-time P1 incident reprioritization in under 15 seconds.",
+      "Developed a self-healing workflow engine with automated stale-run recovery and an AI-powered quality evaluator that validated task completeness, actionability, and generated context-aware follow-up questions."
     ],
-    skills: ["FastAPI", "Gemini 1.5 Pro", "Firebase Auth", "Firestore", "Next.js 14", "Mapbox GL", "Google Cloud"],
+    skills: ["FastAPI", "LangGraph", "React", "SQLite", "Redis", "LLMs", "Qwen"],
     metrics: [
-      { label: "Campaign", value: "GSC 2026" },
-      { label: "Matching", value: "Geospatial AI" },
-      { label: "Team", value: "ClutchCode" }
+      { label: "Integrations", value: "7 Fragmented Tools" },
+      { label: "Manual Tracking", value: "-2 hours/day" },
+      { label: "Incident Sync", value: "<15 seconds" }
     ]
   }
 ];

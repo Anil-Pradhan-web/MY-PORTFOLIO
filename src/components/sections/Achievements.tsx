@@ -5,39 +5,39 @@ import SectionHeading from '../ui/SectionHeading';
 
 const achievements = [
   {
-    title: "Coding Platforms",
+    title: "Hackathons & Competitions",
     desc: [
-      "Solved 100+ problems in GFG's 160 days challenge, earning a certificate and t-shirt.",
-      "Solved 50+ questions on LeetCode and actively continuing.",
-      "Continuously solving problems on HackerRank across Java, Algorithms, DSA, and SQL."
+      "Finalist, Dell FutureMinds AI Hackathon 2026 – Team IdeaForg-E, shortlisted for the Grand Finale to present TaskPilot AI at Dell Technologies, Bengaluru.",
+      "Developed production-grade AI solutions for Microsoft AI DevDays, Amazon Nova AI Challenge, and Google Solution Challenge."
     ],
-    icon: "☕"
+    icon: "🏆"
   },
   {
-    title: "Community & Event Participation",
+    title: "Data Structures & Algorithms",
     desc: [
-      "Participated in in-person events  of GDG ITER, GDG KIIT, GDG Bhubaneswar, GDG Cloud Kolkata, and ML Kolkata.",
-      "Attended online events and workshops by Google, Microsoft, and other top tech companies, including Google I/O and Microsoft Build."
-    ],
-    icon: "👥"
-  },
-  {
-    title: "Competitive Programming",
-    desc: [
-      "Participated in the preliminary round of Algo Utsav 2026, a competitive coding competition by NIT Rourkela.",
-      "Competed in Reverse Coding-X, a competitive coding event by IIT Madras."
+      "Solved 200+ DSA problems across LeetCode & GeeksforGeeks.",
+      "Earned the GeeksforGeeks 160 Days of Code Challenge certificate and T-shirt."
     ],
     icon: "💻"
   },
   {
-    title: "Courses & Certifications",
+    title: "Google Cloud Program",
     desc: [
-      "Completed the Google Cloud Arcade Program (2024–25) with 75 Arcade Points.",
-      "Earned certificates in Python, AI, and other fields from IBM, Cisco, Google, Anthropic, and Microsoft."
+      "Completed Google Cloud Arcade Program (2024–25), earning 75+ Arcade Points through hands-on cloud architecture labs."
     ],
     link: "View Badges →",
     linkUrl: "https://www.credly.com/users/anil-pradhan324",
     icon: "☁️"
+  },
+  {
+    title: "Professional Certifications",
+    desc: [
+      "Microsoft: Career Essentials in Software Development",
+      "Cisco: Python Essentials 2",
+      "HackerRank: Python (Basic) and Java (Basic)",
+      "IBM: AI Fundamentals & Anthropic: Claude 101"
+    ],
+    icon: "📜"
   }
 ];
 

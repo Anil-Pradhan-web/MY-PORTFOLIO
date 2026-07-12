@@ -9,7 +9,7 @@ const aboutData = [
   {
     icon: User,
     title: "Who I Am",
-    content: "Anil Pradhan — Full Stack Developer & AI Systems Engineer based in Bhubaneswar, Odisha. Currently pursuing B.Tech CSE (2024 - 2028) at ITER, SOA University, Bhubaneswar (CGPA: 9.11)."
+    content: "Anil Pradhan — Software Engineer (Backend & AI) based in Bhubaneswar, Odisha. Currently pursuing B.Tech CSE (2024 - 2028) at ITER, SOA University, Bhubaneswar (CGPA: 9.11)."
   },
   {
     icon: Activity,
@@ -27,7 +27,7 @@ const stats = [
   { label: "CGPA", value: "9.11", suffix: "/10" },
   { label: "Major Projects", value: "3", suffix: "" },
   { label: "Hackathons", value: "4", suffix: "" },
-  { label: "Coding Problems", value: "150", suffix: "+" }
+  { label: "Coding Problems", value: "200", suffix: "+" }
 ];
 
 export default function About() {
