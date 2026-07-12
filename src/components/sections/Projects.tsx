@@ -7,18 +7,18 @@ import { Github, ExternalLink } from 'lucide-react';
 const projectsList = [
   {
     title: "AI Career Mentor",
-    tagline: "7 Specialized AI Workflows. 1 Career Transformation. Real-time Voice Coach.",
+    tagline: "✦ 7 Specialized AI Workflows. 1 Career Orchestration OS. ✦",
     description:
-      "A production-grade, full-stack career coaching platform that orchestrates 7 specialized AI workflows (Resume Intelligence, Roadmaps, Market Explorer, LinkedIn Optimizer, WebSocket Mock Interview Engine, Gemini Live Voice Coach, and Full Career Analysis). Built on a decoupled microservices architecture with a Next.js 14 SPA on Vercel, a FastAPI gateway on Render, Neon Serverless Postgres, and Upstash Redis. Features a parallel LangGraph DAG, a Hybrid Semantic RAG Engine (ChromaDB + in-memory MockRAG OOM fallback), real-time WebSocket mock interviews, full-duplex Hinglish voice coaching (Gemini Live), and a resilient multi-provider LLM fallback chain.",
+      "A production-grade, enterprise-ready Career Orchestration OS designed to fast-track developer career transitions. By combining a parallel LangGraph multi-agent system, vector-search RAG retrieval, and real-time full-duplex WebSocket protocols, it automates the entire career transition pipeline. Built on a decoupled microservices architecture with a Next.js 14 SPA on Vercel, a FastAPI gateway on Render, Neon Serverless Postgres, and Upstash Redis. Optimized to run completely on free-tier LLM endpoints via resilient fallback registries.",
     highlight:
       "LangGraph DAG Orchestration · Gemini Live Voice Coach · ChromaDB Hybrid RAG · Multi-LLM Fallback Architecture · 116 Pytest Tests",
     features: [
-      "📄 Resume Intelligence: PDF parsed via pdfplumber, ATS scoring engine with keyword breakdowns, and AI skill-gap detection persisted to Neon Postgres",
-      "🗺️ Career Roadmap Builder: LangGraph roadmap aggregator using Gemini 2.5 Flash & ChromaDB RAG to build personal 8-week gamified learning paths",
-      "📈 Live Market Explorer: Real-time salary data, hiring trends, and company intelligence via Serper.dev & Tavily AI with async link validation",
-      "🎤 Mock Interview Engine: 7-phase FSM over WebSockets with adaptive coding interviews (3 difficulty tiers) and real-time Monaco editor execution",
-      "🎙️ Anya Voice Coach: Real-time bidirectional Hinglish voice coach powered by Gemini Live Multimodal WebSocket API with full-duplex audio",
-      "🔀 Multi-Provider LLM Registry: Dynamic routing across Groq (Llama 3.3 70B), NVIDIA NIM, and Gemini with automatic fallback chains and circuit breakers"
+      "📄 Resume Intelligence: 4-layer PDF magic-bytes validation, deterministic ATS rules-based auditing, and LLM semantic skill-gap extraction persisted to Neon Postgres with a 2-day rate cooldown",
+      "🗺️ Personalized RAG Roadmaps: Generates an 8-week structured syllabus utilizing thread-pool concurrent searches on DuckDuckGo, filtering YouTube/GitHub links by domain quality score & HTTP reachability",
+      "📈 Live Market Scrapers: Region-aware salary scraping via Serper.dev and Tavily APIs, currency normalization (INR/USD/EUR/etc.), and regional hiring volume trends without static database reliance",
+      "🎤 7-Phase FSM Mock Interview: Bidirectional WebSocket interview engine with adaptive coding challenges (Monaco editor canvas), session FSM checkpoints, and Edge-TTS audio speech feedback",
+      "🎙️ Anya Multimodal Voice Coach: Bidirectional Hinglish conversation engine powered by Gemini Live Multimodal WebSocket API with audio streaming and dynamic resume context injection",
+      "🔀 Resilient Orchestration: Dynamic LLM routing (Groq Llama 3.3, NVIDIA NIM, Gemini) featuring circuit breakers, custom fallbacks, and a 4-agent parallel LangGraph DAG streaming progress via SSE"
     ],
     stack: [
       "FastAPI",
@@ -30,11 +30,11 @@ const projectsList = [
       "Upstash Redis",
       "Neon Postgres",
       "Gemini Live",
-      "Groq",
+      "Groq (Llama 3.3)",
       "NVIDIA NIM",
-      "ONNX",
-      "Docker",
-      "pytest (116 tests)"
+      "pdfplumber",
+      "pytest (116 tests)",
+      "Docker"
     ],
     githubUrl: "https://github.com/Anil-Pradhan-web/ai-career-mentor",
     liveUrl: "https://ai-career-mentor-anil.vercel.app",
