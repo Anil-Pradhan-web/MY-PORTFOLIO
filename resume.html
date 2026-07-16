@@ -153,11 +153,11 @@
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Solo Full Stack Developer</div>
         <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
-          <li>Architected a parallel LangGraph workflow with 7 specialized AI agents, reducing end-to-end career analysis latency by 60% (4 min → 60 sec).</li>
-          <li>Built a real-time AI Mock Interview Engine using FastAPI, WebSockets, and a 7-stage Finite State Machine (FSM), delivering company-specific technical interviews with live coding evaluation and personalized feedback.</li>
-          <li>Developed "Anya", a real-time multimodal AI Voice Coach powered by the Gemini Live API, enabling full-duplex voice conversations with resume-aware career guidance, interview coaching, and personalized learning support.</li>
-          <li>Engineered a fault-tolerant multi-LLM architecture (Groq, NVIDIA NIM, Cerebras) with circuit breakers, automatic failover, and rate limiting, achieving uninterrupted service availability.</li>
-          <li>Optimized RAG retrieval using local ONNX embeddings with keyword-search fallback, eliminating embedding API dependency while ensuring reliable performance on low-memory cloud deployments validated through 116 automated tests.</li>
+          <li>Engineered a parallel 4-agent LangGraph pipeline with a concurrent fan-out/fan-in architecture, reducing end-to-end latency by 75% (4 min → 60 sec) while streaming real-time logs via SSE.</li>
+          <li>Built a WebSocket-based mock interview engine using FastAPI and an 8-stage FSM; dynamically evaluates coding and system design skills with adaptive difficulty based on target company profiles.</li>
+          <li>Developed 'Anya', a full-duplex multimodal AI voice coach utilizing Gemini Live API over WebSockets; engineered Hinglish system tuning, 16kHz audio streaming, and user interrupt handling.</li>
+          <li>Engineered a resilient multi-LLM provider registry (Groq, Cerebras, OpenRouter) featuring automatic failover, custom circuit breakers, and Redis-backed rate limiting to guarantee 99.9% uptime.</li>
+          <li>Designed a resource-optimized ChromaDB RAG engine with an in-memory mock database fallback, preventing OOM crashes on 512MB RAM cloud platforms (Render), validated via 116 tests.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
           <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; Next.js &bull; ChromaDB &bull; Redis &bull; Docker &bull; Gemini Live &bull; ONNX
