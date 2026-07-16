@@ -9,16 +9,16 @@ const projectsList = [
     title: "AI Career Mentor",
     tagline: "✦ 7 Specialized AI Workflows. 1 Career Orchestration OS. ✦",
     description:
-      "A production-grade, enterprise-ready Career Orchestration OS designed to fast-track developer career transitions. By combining a parallel LangGraph multi-agent system, vector-search RAG retrieval, and real-time full-duplex WebSocket protocols, it automates the entire career transition pipeline. Built on a decoupled microservices architecture with a Next.js 14 SPA on Vercel, a FastAPI gateway on Render, Neon Serverless Postgres, and Upstash Redis. Optimized to run completely on free-tier LLM endpoints via resilient fallback registries.",
+      "A production-grade, enterprise-ready Career Orchestration OS designed to automate and fast-track developer career transitions. Built on a decoupled microservices architecture with a Next.js SPA, a FastAPI gateway, Neon Postgres, and Upstash Redis, it leverages a parallel LangGraph multi-agent orchestrator to execute intensive resume audits, market analytics, and RAG roadmaps. Includes a real-time full-duplex WebSocket speech engine (Anya) powered by the Gemini Live API alongside an adaptive 8-stage mock interview engine.",
     highlight:
-      "LangGraph DAG Orchestration · Gemini Live Voice Coach · ChromaDB Hybrid RAG · Multi-LLM Fallback Architecture · 116 Pytest Tests",
+      "LangGraph Parallel DAG · Gemini Live voice · ChromaDB RAG · Multi-LLM provider registry · 116 tests",
     features: [
-      "📄 Resume Intelligence: 4-layer PDF magic-bytes validation, deterministic ATS rules-based auditing, and LLM semantic skill-gap extraction persisted to Neon Postgres with a 2-day rate cooldown",
-      "🗺️ Personalized RAG Roadmaps: Generates an 8-week structured syllabus utilizing thread-pool concurrent searches on DuckDuckGo, filtering YouTube/GitHub links by domain quality score & HTTP reachability",
-      "📈 Live Market Scrapers: Region-aware salary scraping via Serper.dev and Tavily APIs, currency normalization (INR/USD/EUR/etc.), and regional hiring volume trends without static database reliance",
-      "🎤 7-Phase FSM Mock Interview: Bidirectional WebSocket interview engine with adaptive coding challenges (Monaco editor canvas), session FSM checkpoints, and Edge-TTS audio speech feedback",
-      "🎙️ Anya Multimodal Voice Coach: Bidirectional Hinglish conversation engine powered by Gemini Live Multimodal WebSocket API with audio streaming and dynamic resume context injection",
-      "🔀 Resilient Orchestration: Dynamic LLM routing (Groq Llama 3.3, NVIDIA NIM, Gemini) featuring circuit breakers, custom fallbacks, and a 4-agent parallel LangGraph DAG streaming progress via SSE"
+      "🔗 Parallel DAG Orchestration: Executes a 4-agent LangGraph workflow via concurrent fan-out/fan-in paths, reducing analysis latency by 75% (4 min → 60 sec) with real-time SSE progress streaming.",
+      "🎙️ Anya Multimodal Voice Coach: Full-duplex voice interaction engine using the Gemini Live API over WebSockets, featuring custom Hinglish tuning, 16kHz audio proxying, and user barge-in cutoff.",
+      "🎤 8-Stage FSM Mock Interview: Bidirectional WebSocket evaluation canvas utilizing Monaco editor coding checks and adaptive question loops customized by target company profiles.",
+      "🗃️ Optimized Vector RAG Engine: Resource-efficient ChromaDB retrieval leveraging an in-memory mock database fallback, preventing OOM crashes on Render's 512MB RAM free tier.",
+      "🛡️ Resilient LLM Provider Registry: Dynamic routing across Groq, Cerebras, and OpenRouter with automatic failover policies, custom circuit breakers, and Redis-backed rate limiting.",
+      "📄 Deterministic ATS Auditing: 4-layer PDF magic-bytes validation, semantic skill-gap extraction, and Neon Postgres metadata persistence protected by a 5-day rate cooldown."
     ],
     stack: [
       "FastAPI",
