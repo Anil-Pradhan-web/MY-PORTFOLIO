@@ -28,7 +28,7 @@ export default function About() {
               Crafting <span className="gradient-text font-extrabold">Scalable Systems</span> & Intelligent Software
             </h3>
             <p className="text-zinc-400 text-base leading-relaxed font-sans">
-              I specialize in backend engineering and AI systems, currently pursuing my B.Tech in Computer Science & Engineering (2024 - 2028) at ITER, Siksha &apos;O&apos; Anusandhan University, Bhubaneswar (CGPA: 9.11/10). I focus on building production-ready architectures that balance performance, resilience, and clean, reliable engineering.
+              I specialize in backend engineering and AI systems, currently pursuing my B.Tech in Computer Science & Engineering (2024 - 2028) at ITER, Siksha &apos;O&apos; Anusandhan University, Bhubaneswar (CGPA: 8.93/10). I focus on building production-ready architectures that balance performance, resilience, and clean, reliable engineering.
             </p>
           </div>
 
