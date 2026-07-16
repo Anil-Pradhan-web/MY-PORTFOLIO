@@ -7,18 +7,18 @@ import { Github, ExternalLink, Lock } from 'lucide-react';
 const projectsList = [
   {
     title: "AI Career Mentor",
-    tagline: "✦ 7 Specialized AI Workflows. 1 Career Orchestration OS. ✦",
+    tagline: "✦ 7 Specialized AI Workflows ✦",
     description:
       "A production-grade, enterprise-ready Career Orchestration OS designed to automate and fast-track developer career transitions. Built on a decoupled microservices architecture with a Next.js SPA, a FastAPI gateway, Neon Postgres, and Upstash Redis, it leverages a parallel LangGraph multi-agent orchestrator to execute intensive resume audits, market analytics, and RAG roadmaps. Includes a real-time full-duplex WebSocket speech engine (Anya) powered by the Gemini Live API alongside an adaptive 8-stage mock interview engine.",
     highlight:
       "LangGraph Parallel DAG · Gemini Live voice · ChromaDB RAG · Multi-LLM provider registry · 116 tests",
     features: [
-      "🔗 Parallel DAG Orchestration: Executes a 4-agent LangGraph workflow via concurrent fan-out/fan-in paths, reducing analysis latency by 75% (4 min → 60 sec) with real-time SSE progress streaming.",
-      "🎙️ Anya Multimodal Voice Coach: Full-duplex voice interaction engine using the Gemini Live API over WebSockets, featuring custom Hinglish tuning, 16kHz audio proxying, and user barge-in cutoff.",
-      "🎤 8-Stage FSM Mock Interview: Bidirectional WebSocket evaluation canvas utilizing Monaco editor coding checks and adaptive question loops customized by target company profiles.",
-      "🗃️ Optimized Vector RAG Engine: Resource-efficient ChromaDB retrieval leveraging an in-memory mock database fallback, preventing OOM crashes on Render's 512MB RAM free tier.",
-      "🛡️ Resilient LLM Provider Registry: Dynamic routing across Groq, Cerebras, and OpenRouter with automatic failover policies, custom circuit breakers, and Redis-backed rate limiting.",
-      "📄 Deterministic ATS Auditing: 4-layer PDF magic-bytes validation, semantic skill-gap extraction, and Neon Postgres metadata persistence protected by a 5-day rate cooldown."
+      "🔗 Parallel DAG Orchestration: Runs a 4-agent LangGraph workflow via concurrent fan-out/fan-in paths, reducing analysis latency by 75% (4 min → 60 sec) with real-time SSE logs.",
+      "🎙️ Anya Voice Coach: Full-duplex Hinglish voice coaching using the Gemini Live API over WebSockets, featuring user barge-in cutoff and context grounding.",
+      "🎤 8-Stage FSM Mock Interview: Interactive WebSocket evaluation canvas utilizing Monaco Editor coding checks and adaptive company-tier question loops.",
+      "🗃️ Optimized Vector RAG: Resource-efficient ChromaDB setup utilizing in-memory mock database fallbacks to prevent OOM crashes on Render's 512MB RAM tier.",
+      "🛡️ Resilient LLM Registry: Dynamic provider routing across Groq, Cerebras, and OpenRouter with automatic failover, circuit breakers, and Redis rate limiting.",
+      "📄 Deterministic ATS Auditing: Magic-bytes PDF validation, semantic skill-gap extraction, and Neon Postgres persistence with a 5-day rate cooldown."
     ],
     stack: [
       "FastAPI",
@@ -126,7 +126,7 @@ export default function Projects() {
                     rel="noreferrer"
                     className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 hover:text-violet-400 transition-colors cursor-pointer"
                   >
-                    <Github size={14} /> 
+                    <Github size={14} />
                     <span>Github</span>
                     {project.isPrivate && (
                       <span className="flex items-center gap-1 px-1.5 py-0.5 bg-zinc-950 border border-zinc-900 rounded text-[9px] text-zinc-500 font-mono tracking-normal normal-case ml-1 font-normal">
