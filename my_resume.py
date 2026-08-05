@@ -157,14 +157,14 @@ def generate_resume(output_path):
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Solo Full Stack Developer</div>
         <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
-          <li>Engineered a parallel 4-agent LangGraph pipeline with a concurrent fan-out/fan-in architecture, reducing end-to-end latency by 75% (4 min → 60 sec) while streaming real-time logs via SSE.</li>
-          <li>Built a WebSocket-based mock interview engine using FastAPI and an 8-stage FSM; dynamically evaluates coding and system design skills with adaptive difficulty based on target company profiles.</li>
-          <li>Developed 'Anya', a full-duplex multimodal AI voice coach utilizing Gemini Live API over WebSockets; engineered Hinglish system tuning, 16kHz audio streaming, and user interrupt handling.</li>
-          <li>Engineered a resilient multi-LLM provider registry (Groq, Cerebras, OpenRouter) featuring automatic failover, custom circuit breakers, and Redis-backed rate limiting to guarantee 99.9% uptime.</li>
-          <li>Designed a resource-optimized ChromaDB RAG engine with an in-memory mock database fallback, preventing OOM crashes on 512MB RAM cloud platforms (Render), validated via 116 tests.</li>
+          <li>Built a parallel multi-agent career analysis pipeline using LangGraph DAG orchestration, executing 4 specialized AI agents concurrently with real-time SSE progress streaming and shared state accumulation.</li>
+          <li>Reduced end-to-end analysis latency by ~60% (4 min → 60 sec) via fan-out/fan-in DAG execution, delivering unified career intelligence reports with atomic database persistence.</li>
+          <li>Engineered a resource-optimized RAG system using ChromaDB vector search with in-memory fallbacks, backed by a resilient multi-LLM provider registry (Groq, Cerebras, NVIDIA NIM) featuring circuit breakers and automatic failover.</li>
+          <li>Developed an adaptive mock interview engine combining a 7-phase FSM with persistent WebSocket sessions, Monaco code evaluation, and automated performance scoring tailored by company tier and role category.</li>
+          <li>Delivered a cloud-native backend on FastAPI, PostgreSQL, Redis, and Docker with GitHub Actions CI/CD, Pydantic validation, and 116 automated tests for production-grade reliability.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
-          <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; Next.js &bull; ChromaDB &bull; Redis &bull; Docker &bull; Gemini Live &bull; ONNX
+          <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; Next.js &bull; ChromaDB &bull; Redis &bull; Docker &bull;  ONNX
         </div>
       </div>
 
@@ -188,7 +188,7 @@ def generate_resume(output_path):
           <li>Developed a self-healing workflow engine with automated stale-run recovery and an AI-powered quality evaluator that validated task completeness, actionability, and generated context-aware follow-up questions.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
-          <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; React &bull; SQLite &bull; Redis &bull; LLMs
+          <span class="text-[#1e3a8a]">Tech:</span> FastAPI  &bull; React &bull; SQLite &bull; Redis &bull; LLMs
         </div>
       </div>
     </div>
@@ -281,7 +281,7 @@ def generate_resume(output_path):
       </div>
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Completed Google Cloud Arcade (75+ Arcade Points) through hands-on Google Cloud labs.</span>
+        <span>Completed Google Cloud Arcade (75+ Arcade Points) through hands-on Google Cloud labs and earned awesome rewards from Google Cloud.</span>
       </div>
       <div class="flex items-start gap-2 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
