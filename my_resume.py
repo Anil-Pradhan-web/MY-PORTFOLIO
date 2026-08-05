@@ -269,7 +269,7 @@ def generate_resume(output_path):
     <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.1px] text-slate-600 leading-relaxed">
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Finalist, Dell FutureMinds AI Hackathon 2026 – Team IdeaForg-E, shortlisted for the Grand Finale to present TaskPilot AI at Dell Technologies, Bengaluru.</span>
+        <span>2nd Runner-Up, Dell FutureMinds AI Hackathon 2026 – Presented our solution at the Dell Technologies Office, Bengaluru, as a Grand Finalist in the national-level hackathon.</span>
       </div>
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>

@@ -8,7 +8,7 @@ const achievements = [
   {
     title: "Hackathons & Competitions",
     desc: [
-      "Finalist, Dell FutureMinds AI Hackathon 2026 – Team IdeaForg-E, shortlisted for the Grand Finale to present TaskPilot AI at Dell Technologies, Bengaluru.",
+      "2nd Runner-Up, Dell FutureMinds AI Hackathon 2026 – Presented our solution at the Dell Technologies Office, Bengaluru, as a Grand Finalist in the national-level hackathon.",
       "Developed production-grade AI solutions for Microsoft AI DevDays, Amazon Nova AI Challenge, and Google Solution Challenge."
     ],
     icon: Trophy,
