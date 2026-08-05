@@ -213,43 +213,39 @@ def generate_resume(output_path):
       <!-- Column 1 -->
       <div class="space-y-1">
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[95px] flex-shrink-0">Languages:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Programming Languages:</span>
           <span class="text-slate-600 font-semibold">Python, Java, JavaScript, SQL</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[95px] flex-shrink-0">Backend:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Backend & APIs:</span>
           <span class="text-slate-600 font-semibold">FastAPI, REST APIs, WebSockets, LangGraph, SQLAlchemy, Pydantic</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[95px] flex-shrink-0">Databases:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Databases:</span>
           <span class="text-slate-600 font-semibold">PostgreSQL (Neon), SQLite, Redis (Upstash), ChromaDB</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[95px] flex-shrink-0">DevOps & Cloud:</span>
-          <span class="text-slate-600 font-semibold">Docker, GitHub Actions (CI/CD), Render, Vercel</span>
-        </div>
-        <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[95px] flex-shrink-0">Monitoring:</span>
-          <span class="text-slate-600 font-semibold">Prometheus, Sentry</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">DevOps & Cloud:</span>
+          <span class="text-slate-600 font-semibold">Docker, GitHub Actions, Render, Vercel</span>
         </div>
       </div>
       <!-- Column 2 -->
       <div class="space-y-1">
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[135px] flex-shrink-0">Frontend:</span>
-          <span class="text-slate-600 font-semibold">React, HTML, CSS, Tailwind CSS, Axios</span>
+          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">Frontend:</span>
+          <span class="text-slate-600 font-semibold">React, HTML, CSS, Tailwind CSS</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[135px] flex-shrink-0">AI / GenAI:</span>
-          <span class="text-slate-600 font-semibold">RAG, LangGraph, Gemini Live API, Groq, NVIDIA NIM, Cerebras</span>
-        </div>
-        <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[135px] flex-shrink-0">Authentication & Security:</span>
+          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">Security & Auth:</span>
           <span class="text-slate-600 font-semibold">JWT, Google OAuth 2.0, bcrypt, CORS, Rate Limiting</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[135px] flex-shrink-0">Developer Tools:</span>
+          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">Developer Tools:</span>
           <span class="text-slate-600 font-semibold">Git, GitHub, Postman, Swagger UI, VS Code</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">AI / GenAI:</span>
+          <span class="text-slate-600 font-semibold">Prompt Engineering, Retrieval-Augmented Generation (RAG), Agentic AI, Multi-Agent Systems, Semantic Search, LLM Integration</span>
         </div>
       </div>
     </div>
