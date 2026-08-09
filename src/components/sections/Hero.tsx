@@ -1,171 +1,122 @@
+'use client';
 
-"use client";
-
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Code2, Brain, Cpu, Rocket, Globe, Phone, Mail, Linkedin, Github, Code } from 'lucide-react';
+import { ArrowRight, MousePointer2, Mail, Phone, MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
-  const [terminalText, setTerminalText] = useState("");
-  const fullTerminalText = `$ anil --status
- 
-  [Focus]
-  🚀 Building Production-Grade AI Systems
-  🧠 FastAPI | LangGraph | RAG Pipelines
-  🛡️ Backend & System Design
-  ⚙️ Distributed Systems
- 
-  [Education]
-  🎓 B.Tech CSE @ ITER, SOA University
-  📈 CGPA: 8.93 / 10.0 (2024 - 2028)`;
-
-  useEffect(() => {
-    let i = 0;
-    const typingInterval = setInterval(() => {
-      setTerminalText(fullTerminalText.substring(0, i));
-      i++;
-      if (i > fullTerminalText.length) {
-        clearInterval(typingInterval);
-      }
-    }, 20);
-    return () => clearInterval(typingInterval);
-  }, [fullTerminalText]);
-
-
-
   return (
-    <section id="hero" className="relative min-h-screen w-full flex flex-col lg:flex-row items-center justify-between gap-8 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 mx-auto max-w-7xl pt-32 pb-16 overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen w-full flex items-center justify-center px-6 py-20 overflow-hidden"
+      aria-labelledby="hero-title"
+    >
+      {/* Subtle ambient background */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[200px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-teal-500/3 rounded-full blur-[200px]" />
+      </div>
 
-      {/* Static Background Orbs for Performance */}
-      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-violet-600/15 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-500/5 rounded-full blur-[180px] pointer-events-none" />
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)] pointer-events-none"
+        aria-hidden="true"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(0,212,170,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,170,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)] pointer-events-none" />
-
-      {/* Floating Tech Elements */}
-      <motion.div
-        animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-[15%] hidden lg:block text-violet-400/20"
-      >
-        <Code2 size={120} />
-      </motion.div>
-      <motion.div
-        animate={{ y: [0, 20, 0], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/4 left-[10%] hidden lg:block text-cyan-400/20"
-      >
-        <Brain size={100} />
-      </motion.div>
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[15%] left-[20%] hidden lg:block text-violet-500/10"
-      >
-        <Cpu size={80} />
-      </motion.div>
-
-      {/* Main Content */}
-      <motion.div
-        className="flex flex-1 flex-col z-10 w-full text-center lg:text-left items-center lg:items-start"
-      >
-
-
-        {/* Intro Text */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="font-mono text-violet-400 text-lg sm:text-xl mb-4 tracking-wide"
+      <div className="relative z-10 max-w-4xl w-full text-center">
+        {/* Profile Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8"
         >
-          &gt; Hello, I&apos;m
-        </motion.p>
+          <div className="relative inline-block">
+            {/* Subtle glow behind photo */}
+            <div className="absolute -inset-2 bg-teal-500/10 rounded-full blur-xl pointer-events-none" aria-hidden="true" />
+            <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden border-2 border-border-primary hover:border-teal-500/50 transition-all duration-300 shadow-lg">
+              <img
+                src="/anil.jpeg"
+                alt="Anil Pradhan"
+                className="w-full h-full object-cover object-top"
+                width={192}
+                height={192}
+              />
+            </div>
+          </div>
+        </motion.div>
 
-        {/* Name with Gradient */}
+        {/* Name */}
         <motion.h1
+          id="hero-title"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="font-title text-7xl sm:text-9xl lg:text-[100px] font-extrabold mb-6 tracking-tight leading-[0.95] flex flex-col items-center lg:items-start"
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="heading-1 mb-4"
         >
-          <span className="relative gradient-text font-extrabold">
-            Anil
-            <motion.span
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="absolute -bottom-2 left-0 h-[4px] bg-gradient-to-r from-violet-600 to-transparent rounded-full"
-            />
-          </span>
-          <span className="lg:ml-12 gradient-text font-extrabold tracking-tight mt-2">Pradhan</span>
+          Anil Pradhan
         </motion.h1>
 
         {/* Title */}
-        <motion.h2
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-xl sm:text-2xl lg:text-[24px] text-sky-400 font-syne font-extrabold tracking-wider mb-8 text-center lg:text-left flex items-center"
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="font-mono text-sm md:text-base font-medium text-teal-400 tracking-widest uppercase mb-8"
         >
-          <span className="px-5 py-2 bg-gradient-to-r from-sky-500/10 to-violet-500/10 border border-sky-500/20 rounded-2xl text-sky-300 font-mono tracking-widest text-xs sm:text-sm lg:text-[14px] shadow-[0_0_25px_rgba(6,182,212,0.05)]">
-            SOFTWARE ENGINEER | BACKEND & AI
-          </span>
-        </motion.h2>
- 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.45 }}
-          className="text-zinc-400 text-base sm:text-lg max-w-xl mb-6 leading-relaxed font-sans lg:text-left text-center"
-        >
-          Building scalable backend systems and production-grade AI applications.
-          Turning ideas into scalable systems, one commit at a time.
+          Software Engineer | Backend &amp; AI
         </motion.p>
 
-        {/* Contact Links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-400 text-xs sm:text-sm font-mono mb-4 justify-center lg:justify-start"
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="body-lg max-w-2xl mx-auto mb-8 text-text-secondary"
         >
-          <a href="tel:+918917476908" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
-            <Phone size={13} className="text-violet-400" /> +91 8917476908
+          Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.
+        </motion.p>
+
+        {/* Contact info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-mono text-text-muted mb-10"
+        >
+          <a href="mailto:anilpradhan9644@gmail.com" className="flex items-center gap-1.5 hover:text-teal-400 transition-colors">
+            <Mail className="w-3.5 h-3.5 text-teal-400" />
+            anilpradhan9644@gmail.com
           </a>
-          <span className="text-zinc-700">·</span>
-          <a href="mailto:anilpradhan9644@gmail.com" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
-            <Mail size={13} className="text-violet-400" /> anilpradhan9644@gmail.com
+          <a href="tel:+918917476908" className="flex items-center gap-1.5 hover:text-teal-400 transition-colors">
+            <Phone className="w-3.5 h-3.5 text-teal-400" />
+            +91 8917476908
           </a>
-          <span className="text-zinc-700">·</span>
-          <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
-            <Linkedin size={13} className="text-violet-400" /> linkedin.com/in/anil-pradhan543
-          </a>
-          <span className="text-zinc-700">·</span>
-          <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
-            <Github size={13} className="text-violet-400" /> github.com/Anil-Pradhan-web
-          </a>
+          <span className="flex items-center gap-1.5">
+            <MapPin className="w-3.5 h-3.5 text-teal-400" />
+            Bhubaneswar, Odisha
+          </span>
         </motion.div>
 
-        {/* Profiles */}
+        {/* Links */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.55 }}
-          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-400 text-xs sm:text-sm font-mono mb-8 justify-center lg:justify-start"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-mono mb-10"
         >
-          <a href="https://leetcode.com/u/Anil_Pradhan/" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
-            <Code size={13} className="text-violet-400" /> LeetCode
+          <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-teal-400 transition-colors">
+            LinkedIn
           </a>
-          <span className="text-zinc-700">·</span>
-          <a href="https://www.geeksforgeeks.org/profile/anilpradhan543" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
-            <Code size={13} className="text-violet-400" /> GeeksForGeeks
+          <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-teal-400 transition-colors">
+            GitHub
           </a>
-          <span className="text-zinc-700">·</span>
-          <a href="https://www.hackerrank.com/profile/anilpradhan9644" target="_blank" rel="noreferrer" className="hover:text-violet-400 transition-colors flex items-center gap-1.5">
-            <Code size={13} className="text-violet-400" /> HackerRank
+          <a href="#featured-work" className="text-text-secondary hover:text-teal-400 transition-colors">
+            Portfolio
           </a>
         </motion.div>
 
@@ -173,124 +124,35 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="#projects"
-            className="group relative flex items-center justify-center bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-bold px-8 py-4 rounded-xl w-full sm:w-auto text-center transition-all font-sans shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:shadow-[0_0_50px_rgba(139,92,246,0.6)] overflow-hidden"
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-violet-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative z-10">Explore My Work</span>
-          </a>
-          <a
-            href="/Anil_Pradhan_resume.pdf?v=1.1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center glass-card backdrop-blur-md border border-zinc-700 text-zinc-300 font-medium px-8 py-4 rounded-xl w-full sm:w-auto text-center hover:bg-zinc-800/50 hover:text-white hover:border-violet-400/50 transition-all font-sans"
-          >
-            Download Resume
-          </a>
-        </motion.div>
-      </motion.div>
-
-      {/* Right Side - Image and Terminal Container */}
-      <div className="flex flex-col gap-12 z-10 w-full lg:w-auto items-center lg:items-end">
-        
-        {/* User Photo Frame */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: 20 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative group"
-        >
-          {/* Outer Glows */}
-          <div className="absolute -inset-4 bg-gradient-to-tr from-violet-600/20 via-cyan-400/15 to-transparent rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
-          <div className="absolute -inset-0.5 bg-gradient-to-tr from-violet-500 to-cyan-400 rounded-[2rem] opacity-20 group-hover:opacity-100 transition-opacity duration-500 blur-sm pointer-events-none" />
-          
-          {/* Main Image Container */}
-          <div className="relative w-56 h-56 xl:w-64 xl:h-64 rounded-[2rem] border-2 border-white/10 overflow-hidden backdrop-blur-sm shadow-[0_0_50px_rgba(139,92,246,0.1)] bg-zinc-950/20">
-            <img 
-              src="/anil.jpeg" 
-              alt="Anil Pradhan" 
-              className="w-full h-full object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-          </div>
-
-          {/* Floating Badge */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-2 -right-2 glass-card px-3 py-1.5 rounded-xl border border-white/10 shadow-xl z-20"
-          >
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-[9px] font-mono text-zinc-300 uppercase tracking-widest">Available</span>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Terminal Block */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
-          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="w-full lg:w-[450px] xl:w-[500px] relative perspective-1000"
-        >
-          {/* Glow Effects */}
-          <div className="absolute -inset-1 bg-gradient-to-tr from-violet-500/40 via-cyan-500/20 to-transparent rounded-2xl blur-2xl opacity-60 translate-y-4 -translate-x-4" />
-          <div className="absolute inset-x-10 -bottom-8 h-24 bg-violet-400/20 blur-3xl opacity-60" />
-
-          {/* Terminal Window */}
-          <div className="relative w-full rounded-2xl border border-white/10 bg-[#050508]/60 backdrop-blur-2xl overflow-hidden shadow-[0_0_100px_rgba(139,92,246,0.15)]">
-            {/* Scanlines Effect */}
-            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,33,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_2px,3px_100%]" />
-
-            {/* Header */}
-            <div className="flex px-5 py-4 w-full items-center justify-between border-b border-white/5 bg-white/5">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-              </div>
-              <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">
-                <Rocket size={10} className="text-violet-400" />
-                <span>system_core.sh</span>
-              </div>
-              <div className="w-4 h-4 rounded-full border border-violet-500/20 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></div>
-              </div>
-            </div>
-
-            {/* Body */}
-            <div className="p-5 sm:p-6 lg:p-8 font-mono text-[14px] leading-7 text-violet-200/90 whitespace-pre-wrap w-full overflow-hidden min-h-[340px] relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent pointer-events-none" />
-              <span className="relative z-10">{terminalText}</span>
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ repeat: Infinity, duration: 0.8 }}
-                className="inline-block w-2 bg-violet-400 h-[1.2em] translate-y-1 ml-1 shadow-[0_0_15px_rgba(139,92,246,1)]"
-              ></motion.span>
-            </div>
-          </div>
+          <Link href="#featured-work" className="btn-primary group" aria-label="View featured projects">
+            <span className="relative z-10 flex items-center gap-2">
+              View My Work
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </span>
+          </Link>
+          <Link href="#contact" className="btn-secondary" aria-label="Get in touch">
+            Get In Touch
+          </Link>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll indicator - outside content div, positioned relative to section */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        transition={{ duration: 0.6, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-muted z-10"
+        aria-hidden="true"
       >
-        <span className="text-zinc-500 text-xs tracking-widest uppercase">Scroll</span>
+        <span className="font-mono text-xs tracking-widest uppercase">Scroll</span>
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ArrowDown className="w-5 h-5 text-violet-400" />
+          <MousePointer2 className="w-5 h-5 text-teal-500/60" />
         </motion.div>
       </motion.div>
     </section>

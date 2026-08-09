@@ -1,22 +1,26 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, MapPin, Briefcase } from 'lucide-react';
-import SectionHeading from '../ui/SectionHeading';
+import { Mail, Linkedin, Github, MapPin, Briefcase, Copy, Check } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
+import { Button } from '@/components/ui/Button';
+import { Input, Textarea } from '@/components/ui/Input';
+import { cn } from '@/lib/utils';
 
 const contactInfo = [
-  { icon: Mail, text: "anilpradhan9644@gmail.com", href: "mailto:anilpradhan9644@gmail.com" },
-  { icon: Linkedin, text: "linkedin.com/in/anil-pradhan543", href: "https://linkedin.com/in/anil-pradhan543" },
-  { icon: Github, text: "github.com/Anil-Pradhan-web", href: "https://github.com/Anil-Pradhan-web" },
-  { icon: MapPin, text: "Bhubaneswar, Odisha, India" },
-  { icon: Briefcase, text: "Open to: Internships in Bangalore, Hyderabad, Bhubaneswar" }
+  { icon: Mail, text: 'anilpradhan9644@gmail.com', href: 'mailto:anilpradhan9644@gmail.com', label: 'Email' },
+  { icon: Linkedin, text: 'linkedin.com/in/anil-pradhan543', href: 'https://linkedin.com/in/anil-pradhan543', label: 'LinkedIn' },
+  { icon: Github, text: 'github.com/Anil-Pradhan-web', href: 'https://github.com/Anil-Pradhan-web', label: 'GitHub' },
+  { icon: MapPin, text: 'Bhubaneswar, Odisha' },
+  { icon: Briefcase, text: 'Open to: Internships in Bangalore, Hyderabad, Bhubaneswar' },
 ];
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,130 +45,160 @@ export default function Contact() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('anilpradhan9644@gmail.com');
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    } catch {
+      window.location.href = 'mailto:anilpradhan9644@gmail.com';
+    }
+  };
+
   return (
-    <section id="contact" className="py-24 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-24">
-      <SectionHeading>Let's Build Together</SectionHeading>
+    <section id="contact" className="section-padding w-full border-t border-border-primary" aria-labelledby="contact-heading">
+      <div className="container-custom">
+        <SectionHeading
+          id="contact-heading"
+          title="Let&apos;s Build Together"
+          subtitle="Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you."
+        />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mt-12 w-full">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col gap-6"
-        >
-          {contactInfo.map((info, idx) => {
-            const Icon = info.icon;
-            return (
-              <div key={idx} className="flex items-center gap-4 text-zinc-300 group">
-                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-lg group-hover:border-violet-400/50 group-hover:bg-violet-400/10 transition-colors">
-                  <Icon className="text-zinc-500 group-hover:text-violet-400 transition-colors" size={20} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Left: Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-6"
+          >
+            {contactInfo.map((info, idx) => {
+              const Icon = info.icon;
+              return (
+                <div key={idx} className="flex items-center gap-4 group">
+                  <div className="p-3 rounded-xl bg-bg-card border border-border-primary group-hover:border-teal-500/30 transition-colors">
+                    <Icon className="w-5 h-5 text-text-muted group-hover:text-teal-400 transition-colors" />
+                  </div>
+                  <div className="flex-1">
+                    {info.href ? (
+                      <a
+                        href={info.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-body text-text-secondary hover:text-teal-400 transition-colors"
+                      >
+                        {info.text}
+                      </a>
+                    ) : (
+                      <span className="font-body text-text-secondary">{info.text}</span>
+                    )}
+                  </div>
                 </div>
-                {info.href ? (
-                  <a href={info.href} target="_blank" rel="noreferrer" className="text-lg hover:text-violet-400 transition-colors font-sans">
-                    {info.text}
-                  </a>
-                ) : (
-                  <span className="text-lg font-sans">
-                    {info.text}
-                  </span>
-                )}
-              </div>
-            );
-          })}
-        </motion.div>
+              );
+            })}
 
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-[#0f0f0f] border border-zinc-800 p-8 rounded-xl shadow-2xl relative overflow-hidden"
-        >
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
-          
-          <form suppressHydrationWarning className="flex flex-col gap-6" onSubmit={handleSubmit}>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-sm font-semibold text-zinc-400 font-mono tracking-wide">Name</label>
-              <input
+            {/* Copy email button */}
+            <div className="pt-4">
+              <button
                 suppressHydrationWarning
-                id="name"
+                onClick={handleCopyEmail}
+                className={cn(
+                  'inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all duration-200 font-mono text-sm',
+                  copiedEmail
+                    ? 'bg-teal-500/10 border-teal-500/30 text-teal-400'
+                    : 'bg-bg-card border-border-primary text-text-secondary hover:border-teal-500/30 hover:text-teal-400'
+                )}
+                aria-label={copiedEmail ? 'Email copied!' : 'Copy email address'}
+              >
+                {copiedEmail ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    Copy Email Address
+                  </>
+                )}
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Right: Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <form onSubmit={handleSubmit} className="space-y-5 p-6 md:p-8 rounded-2xl border border-border-primary bg-bg-card">
+              <Input
+                id="contact-name"
                 name="name"
-                type="text"
+                label="Name"
+                placeholder="John Doe"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="John Doe"
-                className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400/50 transition-all placeholder:text-zinc-600"
                 required
                 disabled={isSubmitting}
               />
-            </div>
-            
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-sm font-semibold text-zinc-400 font-mono tracking-wide">Email</label>
-              <input
-                suppressHydrationWarning
-                id="email"
+
+              <Input
+                id="contact-email"
                 name="email"
                 type="email"
+                label="Email"
+                placeholder="john@example.com"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="john@example.com"
-                className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400/50 transition-all placeholder:text-zinc-600"
                 required
                 disabled={isSubmitting}
               />
-            </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-sm font-semibold text-zinc-400 font-mono tracking-wide">Message</label>
-              <textarea
-                suppressHydrationWarning
-                id="message"
+              <Textarea
+                id="contact-message"
                 name="message"
+                label="Message"
                 rows={4}
+                placeholder="How can we help?"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="How can we help?"
-                className="bg-black border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all placeholder:text-zinc-600 resize-none"
                 required
                 disabled={isSubmitting}
-              ></textarea>
-            </div>
+              />
 
-            {submitStatus === 'success' && (
-              <p className="text-green-400 text-sm font-mono">Message sent successfully! I'll get back to you soon.</p>
-            )}
-            {submitStatus === 'error' && (
-              <p className="text-red-400 text-sm font-mono">Failed to send message. Please try again or email directly.</p>
-            )}
+              {submitStatus === 'success' && (
+                <p className="text-sm font-body text-teal-400" role="status">
+                  Message sent successfully! I&apos;ll get back to you soon.
+                </p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="text-sm font-body text-red-400" role="alert">
+                  Failed to send message. Please try again or email directly.
+                </p>
+              )}
 
-            <button
-              suppressHydrationWarning
-              type="submit"
-              disabled={isSubmitting}
-              className="mt-2 w-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-bold text-lg py-4 rounded-lg hover:from-violet-400 hover:to-cyan-400 transition-all neon-glow shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
-        </motion.div>
-      </div>
-
-      <footer className="mt-32 pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between text-zinc-600 text-sm gap-4">
-        <span>Built by Anil Pradhan · 2026 · ITER, SOA University, Bhubaneswar, Odisha</span>
-        <div className="flex gap-4">
-          <a href="https://github.com/Anil-Pradhan-web" className="hover:text-violet-400 transition-colors">GitHub</a>
-          <a href="https://linkedin.com/in/anil-pradhan543" className="hover:text-violet-400 transition-colors">LinkedIn</a>
+              <Button
+                type="submit"
+                isLoading={isSubmitting}
+                disabled={isSubmitting}
+                className="w-full"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </Button>
+            </form>
+          </motion.div>
         </div>
-      </footer>
+      </div>
     </section>
   );
 }

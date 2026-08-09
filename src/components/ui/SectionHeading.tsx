@@ -1,25 +1,42 @@
+'use client';
+
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 interface SectionHeadingProps {
-  children: React.ReactNode;
+  id?: string;
+  title: string;
+  subtitle?: string;
   align?: 'left' | 'center';
+  className?: string;
 }
 
-export default function SectionHeading({ children, align = 'left' }: SectionHeadingProps) {
+export default function SectionHeading({ id, title, subtitle, align = 'left', className }: SectionHeadingProps) {
+  const alignClasses = {
+    left: 'items-start text-left',
+    center: 'items-center text-center',
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className={`mb-16 flex flex-col w-full ${align === 'center' ? 'items-center' : 'items-start'}`}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={cn('mb-16 flex flex-col w-full', alignClasses[align], className)}
     >
-      <h2 className="font-syne text-4xl lg:text-[40px] font-bold text-white tracking-wide z-10">
-        {children}
+      <h2 id={id} className="heading-2 font-display">
+        {title}
       </h2>
-      <div className={`relative w-full mt-6 ${align === 'center' ? 'max-w-md mx-auto' : ''}`}>
-        <div className={`absolute inset-y-0 ${align === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0'} w-1/3 bg-violet-500 blur-md opacity-20`} />
-        <div className={`h-[1px] w-full ${align === 'center' ? 'bg-gradient-to-r from-transparent via-violet-400 to-transparent' : 'bg-gradient-to-r from-violet-400 via-cyan-400/50 to-transparent'} relative z-10`} />
+      {subtitle && (
+        <p className="mt-4 body-lg max-w-2xl text-text-secondary">
+          {subtitle}
+        </p>
+      )}
+      <div className="mt-6 flex w-full" aria-hidden="true">
+        <div className={align === 'center' ? 'mx-auto' : ''} style={{ width: '60px' }}>
+          <div className="h-[2px] bg-gradient-to-r from-teal-500 to-teal-500/20 rounded-full" />
+        </div>
       </div>
     </motion.div>
   );

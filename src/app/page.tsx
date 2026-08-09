@@ -1,20 +1,18 @@
 import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Projects from '@/components/sections/Projects';
-import Skills from '@/components/sections/Skills';
+import FeaturedWork from '@/components/sections/FeaturedWork';
 import Experience from '@/components/sections/Experience';
-import Achievements from '@/components/sections/Achievements';
+import TechStack from '@/components/sections/TechStack';
+import BuildLog from '@/components/sections/BuildLog';
 import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between w-full max-w-[100vw] overflow-hidden bg-[#0a0a0a]">
+    <main className="flex min-h-screen flex-col w-full">
       <Hero />
-      <About />
-      <Skills />
-      <Projects />
+      <FeaturedWork />
       <Experience />
-      <Achievements />
+      <TechStack />
+      <BuildLog />
       <Contact />
     </main>
   );
