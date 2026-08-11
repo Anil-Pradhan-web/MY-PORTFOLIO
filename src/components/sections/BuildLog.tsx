@@ -17,8 +17,8 @@ const achievements = [
     title: 'Data Structures & Algorithms',
     icon: Code2,
     items: [
-      'Solved 200+ DSA problems across LeetCode & GeeksforGeeks.',
-      'Earned the GFG 160 Days of Code T-shirt.',
+      'Solved 200+ DSA problems across LeetCode & GeeksforGeeks & HackerRank.',
+      'Participated in GeeksforGeeks 160 Days Coding Challenge and earned a GFG T-shirt.',
     ],
   },
   {
@@ -37,6 +37,7 @@ const achievements = [
       'HackerRank: Python (Basic) and Java (Basic)',
       'IBM: AI Fundamentals',
       'Anthropic: Claude 101',
+      'HackerRank: SQL (Basic) and Problem Solving (Basic)',
     ],
   },
 ];

@@ -277,15 +277,15 @@ def generate_resume(output_path):
       </div>
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Solved 200+ DSA problems across LeetCode & GeeksforGeeks; earned the GFG 160 Days of Code T-shirt.</span>
+        <span>Participated in GeeksforGeeks 160 Days Coding Challenge and earned a GFG T-shirt and Solved 200+ DSA problems across LeetCode & GeeksforGeeks and HackerRank.</span>
       </div>
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Completed Google Cloud Arcade (75+ Arcade Points) through hands-on Google Cloud labs and earned awesome rewards from Google Cloud.</span>
+        <span>Completed Google Cloud Arcade (75+ Arcade Points) through hands-on Google Cloud labs and earned rewards from Google Cloud.</span>
       </div>
       <div class="flex items-start gap-2 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span><strong>Certifications:</strong> Microsoft Career Essentials in Software Development, Cisco Python Essentials 2, HackerRank Python (Basic) and Java(Basic), IBM AI Fundamentals, Anthropic Claude 101.</span>
+        <span><strong>Certifications:</strong> Microsoft Career Essentials in Software Development, Cisco Python Essentials 2, HackerRank Python (Basic) and Java(Basic) and SQL (Basic) and Problem Solving (Basic), IBM AI Fundamentals, Anthropic Claude 101.</span>
       </div>
     </div>
   </div>
