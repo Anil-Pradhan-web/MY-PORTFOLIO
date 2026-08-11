@@ -26,7 +26,7 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.20in 0.32in;
+        margin: 0.16in 0.26in;
       }
     }
   </style>
@@ -34,7 +34,7 @@ def generate_resume(output_path):
 <body class="bg-white p-0 text-slate-800">
 
   <!-- Header Section -->
-  <div class="bg-[#0f172a] text-white rounded-lg p-4 flex justify-between items-center mb-3.5">
+  <div class="bg-[#0f172a] text-white rounded-lg p-3.5 flex justify-between items-center mb-3">
     <!-- Left: Profile Info -->
     <div class="w-[58%]">
       <h1 class="text-3xl font-extrabold tracking-tight">ANIL PRADHAN</h1>
@@ -68,8 +68,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Education Section -->
-  <div class="mb-3.5">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
+  <div class="mb-2.5">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
       <!-- Circle Icon Badge -->
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -101,8 +101,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Experience Section -->
-  <div class="mb-3.5 font-sans">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
+  <div class="mb-2.5 font-sans">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -129,8 +129,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Projects Section -->
-  <div class="mb-3.5">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
+  <div class="mb-2.5">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -157,11 +157,11 @@ def generate_resume(output_path):
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Solo Full Stack Developer</div>
         <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
-          <li>Built a parallel multi-agent career analysis pipeline using LangGraph DAG orchestration, executing 4 specialized AI agents concurrently with real-time SSE progress streaming and shared state accumulation.</li>
-          <li>Reduced end-to-end analysis latency by ~60% (4 min → 60 sec) via fan-out/fan-in DAG execution, delivering unified career intelligence reports with atomic database persistence.</li>
-          <li>Engineered a resource-optimized RAG system using ChromaDB vector search with in-memory fallbacks, backed by a resilient multi-LLM provider registry (Groq, Cerebras, NVIDIA NIM) featuring circuit breakers and automatic failover.</li>
-          <li>Developed an adaptive mock interview engine combining a 7-phase FSM with persistent WebSocket sessions, Monaco code evaluation, and automated performance scoring tailored by company tier and role category.</li>
-          <li>Delivered a cloud-native backend on FastAPI, PostgreSQL, Redis, and Docker with GitHub Actions CI/CD, Pydantic validation, and 116 automated tests for production-grade reliability.</li>
+          <li>Designed and built a multi-agent AI workflow that coordinates specialized agents (Resume Auditor, Market Scraper, Roadmap Generator, and LinkedIn Optimizer) to generate unified, context-aware career reports.</li>
+          <li>Developed robust backend REST APIs using FastAPI (Python) for resume processing, profile history, and user settings, managing database records securely with SQLAlchemy and SQL databases.</li>
+          <li>Integrated a Retrieval-Augmented Generation (RAG) system using ChromaDB vector database to search and recommend highly-rated study resources (YouTube, GitHub, official docs) tailored to the candidate's skill gaps.</li>
+          <li>Created an interactive mock interview simulator featuring real-time chat, a Monaco Editor code sandbox for live coding, and automated scorecards that grade code execution and response relevance.</li>
+          <li><strong>[AI-Collaborative Architect]</strong> Pair-programmed with AI co-pilots to design the high-level architecture of a startup MVP; focused on system design, multi-agent flow, and prompt orchestration, using AI to accelerate implementation of LangGraph DAGs, WebSocket FSMs, Docker, and 116 tests.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
           <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; Next.js &bull; ChromaDB &bull; Redis &bull; Docker &bull; ONNX
@@ -182,10 +182,11 @@ def generate_resume(output_path):
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Integration Lead | Team IdeaForg-E</div>
         <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
-          <li>Built an AI-powered task management system using 8 specialized agents to manage and prioritize software engineering tasks.</li>
-          <li>Integrated data from 7 sources including Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents into one platform.</li>
-          <li>Developed an 8-factor priority system to rank tasks based on severity, deadline, customer impact, blockers, and business impact.</li>
-          <li>Added an AI chat assistant that can detect P1 issues and automatically re-run the pipeline to update task priorities and schedules.</li>
+          <li>Integrated data connectors to pull developer tasks from 7 sources including Jira, GitHub, Slack, Email, Calendar, Meetings, and Incident trackers.</li>
+          <li>Developed an 8-factor mathematical scoring formula to rank tasks based on deadlines, blockers, customer urgency, and business impact.</li>
+          <li>Structured the relational database using SQLite with Write-Ahead Logging (WAL) concurrency to ensure fast, lock-free read and write operations.</li>
+          <li>Built a WebSocket-powered chat assistant that lets engineers query schedules, update tasks, and inject urgent issues in real-time.</li>
+          <li><strong>[AI-Collaborative Architect]</strong> Pair-programmed with AI co-pilots to design the high-level architecture of an 8-agent system; focused on system design, sequential DAG flows, and prompt orchestration, using AI to accelerate implementation of SQLite WAL, regex parsers, and dashboard latency diagnostics.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
           <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; React &bull; SQLite &bull; Redis &bull; LLMs
@@ -195,8 +196,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Skills Section -->
-  <div class="mb-3.5">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2.5">
+  <div class="mb-2.5">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
@@ -225,27 +226,31 @@ def generate_resume(output_path):
           <span class="text-slate-600 font-semibold">PostgreSQL (Neon), SQLite, Redis (Upstash), ChromaDB</span>
         </div>
         <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Security & Auth:</span>
+          <span class="text-slate-600 font-semibold">JWT, Google OAuth 2.0, bcrypt, CORS, Rate Limiting</span>
+        </div>
+        <div class="flex items-start">
           <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">DevOps & Cloud:</span>
           <span class="text-slate-600 font-semibold">Docker, GitHub Actions, Render, Vercel</span>
         </div>
       </div>
       <!-- Column 2 -->
-      <div class="space-y-1.5">
+      <div class="space-y-1">
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">Frontend:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">AI / GenAI:</span>
+          <span class="text-slate-600 font-semibold">Prompt Engineering, Retrieval-Augmented Generation (RAG), Agentic AI, Multi-Agent Systems, Semantic Search, LLM Integration</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Agentic AI Tools:</span>
+          <span class="text-slate-600 font-semibold">AnythingLLM, OpenCode, Multica</span>
+        </div>
+        <div class="flex items-start">
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Frontend:</span>
           <span class="text-slate-600 font-semibold">React, HTML, CSS, Tailwind CSS</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">Security & Auth:</span>
-          <span class="text-slate-600 font-semibold">JWT, Google OAuth 2.0, bcrypt, CORS, Rate Limiting</span>
-        </div>
-        <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">Developer Tools:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Developer Tools:</span>
           <span class="text-slate-600 font-semibold">Git, GitHub, Postman, Swagger UI, VS Code</span>
-        </div>
-        <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[110px] flex-shrink-0">AI / GenAI:</span>
-          <span class="text-slate-600 font-semibold">Prompt Engineering, Retrieval-Augmented Generation (RAG), Agentic AI, Multi-Agent Systems, Semantic Search, LLM Integration</span>
         </div>
       </div>
     </div>
@@ -253,7 +258,7 @@ def generate_resume(output_path):
 
   <!-- Achievements Section -->
   <div>
-    <div class="flex items-center gap-3 border-b border-slate-200 pb-1.5 mb-2.5">
+    <div class="flex items-center gap-3 border-b border-slate-200 pb-1 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4l-1.9 2.53a1 1 0 01-1.6 0L12 8z"></path>

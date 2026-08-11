@@ -90,6 +90,14 @@ const skillCategories = [
       { name: 'LLM Integration', icon: BrainCircuit, color: '#76B900' },
     ],
   },
+  {
+    category: 'Agentic AI Tools',
+    items: [
+      { name: 'AnythingLLM', icon: BrainCircuit, color: '#f59e0b' },
+      { name: 'OpenCode', icon: Cpu, color: '#0ea5e9' },
+      { name: 'Multica', icon: Box, color: '#FF6B35' },
+    ],
+  },
 ];
 
 export default function TechStack() {

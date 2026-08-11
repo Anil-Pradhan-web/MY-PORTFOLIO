@@ -12,11 +12,11 @@ const projects = [
     title: 'AI Career Mentor',
     tagline: 'Solo Full Stack Developer · Mar 2026 – Jul 2026',
     description:
-      'Built a parallel multi-agent career analysis pipeline using LangGraph DAG orchestration, executing 4 specialized AI agents concurrently with real-time SSE progress streaming and shared state accumulation.',
+      'Engineered a multi-agent AI system containing specialized agents (Resume Auditor, Market Scraper, Roadmap Generator, and LinkedIn Optimizer) built to simplify and streamline developer career transitions.',
     challenge:
       'Developer career transitions are fragmented across dozens of disconnected tools — resume builders, job boards, interview prep platforms — with no unified intelligence layer to orchestrate the process.',
     solution:
-      'Reduced end-to-end analysis latency by ~60% (4 min → 60 sec) via fan-out/fan-in DAG execution, delivering unified career intelligence reports with atomic database persistence. Engineered a resource-optimized RAG system using ChromaDB vector search with in-memory fallbacks, backed by a resilient multi-LLM provider registry (Groq, Cerebras, NVIDIA NIM) featuring circuit breakers and automatic failover.',
+      'Created a robust FastAPI and SQL database backend to manage user profiles and logs, and integrated a RAG system using ChromaDB to retrieve study links matching candidate skill gaps. Leveraged advanced AI agents to build a production-grade startup MVP containing parallel multi-agent workflows, WebSocket mock interviews, Monaco editor sandboxing, multi-LLM failovers, and Docker deployment.',
     architecture: {
       layers: [
         { name: 'Frontend', tech: 'Next.js + TypeScript', icon: '🌐' },
@@ -33,11 +33,11 @@ const projects = [
       { label: 'Providers', value: '3', detail: 'with failover' },
     ],
     features: [
-      'Built a parallel multi-agent career analysis pipeline using LangGraph DAG orchestration, executing 4 specialized AI agents concurrently with real-time SSE progress streaming and shared state accumulation.',
-      'Reduced end-to-end analysis latency by ~60% (4 min → 60 sec) via fan-out/fan-in DAG execution, delivering unified career intelligence reports with atomic database persistence.',
-      'Engineered a resource-optimized RAG system using ChromaDB vector search with in-memory fallbacks, backed by a resilient multi-LLM provider registry (Groq, Cerebras, NVIDIA NIM) featuring circuit breakers and automatic failover.',
-      'Developed an adaptive mock interview engine combining a 7-phase FSM with persistent WebSocket sessions, Monaco code evaluation, and automated performance scoring tailored by company tier and role category.',
-      'Delivered a cloud-native backend on FastAPI, PostgreSQL, Redis, and Docker with GitHub Actions CI/CD, Pydantic validation, and 116 automated tests for production-grade reliability.',
+      'Designed and built a multi-agent AI workflow that coordinates specialized agents (Resume Auditor, Market Scraper, Roadmap Generator, and LinkedIn Optimizer) to generate unified, context-aware career reports.',
+      'Developed robust backend REST APIs using FastAPI (Python) for resume processing, profile history, and user settings, managing database records securely with SQLAlchemy and SQL databases.',
+      'Integrated a Retrieval-Augmented Generation (RAG) system using ChromaDB vector database to search and recommend highly-rated study resources (YouTube, GitHub, official docs) tailored to the candidates skill gaps.',
+      'Created an interactive mock interview simulator featuring real-time chat, a Monaco Editor code sandbox for live coding, and automated scorecards that grade code execution and response relevance.',
+      '[AI-Collaborative Architect] Pair-programmed with AI co-pilots to design the high-level architecture of a startup MVP; focused on system design, multi-agent flow, and prompt orchestration, using AI to accelerate implementation of LangGraph DAGs, WebSocket FSMs, Docker, and 116 tests.',
     ],
     stack: ['FastAPI', 'LangGraph', 'Next.js', 'ChromaDB', 'Redis', 'Docker', 'ONNX'],
     githubUrl: 'https://github.com/Anil-Pradhan-web/ai-career-mentor',
@@ -69,10 +69,11 @@ const projects = [
       { label: 'P1 Detection', value: 'Auto', detail: 're-run pipeline' },
     ],
     features: [
-      'Built an AI-powered task management system using 8 specialized agents to manage and prioritize software engineering tasks.',
-      'Integrated data from 7 sources including Jira, GitHub, Slack, Email, Calendar, Meetings, and Incidents into one platform.',
-      'Developed an 8-factor priority system to rank tasks based on severity, deadline, customer impact, blockers, and business impact.',
-      'Added an AI chat assistant that can detect P1 issues and automatically re-run the pipeline to update task priorities and schedules.',
+      'Integrated data connectors to pull developer tasks from 7 sources including Jira, GitHub, Slack, Email, Calendar, Meetings, and Incident trackers.',
+      'Developed an 8-factor mathematical scoring formula to rank tasks based on deadlines, blockers, customer urgency, and business impact.',
+      'Structured the relational database using SQLite with Write-Ahead Logging (WAL) concurrency to ensure fast, lock-free read and write operations.',
+      'Built a WebSocket-powered chat assistant that lets engineers query schedules, update tasks, and inject urgent issues in real-time.',
+      '[AI-Collaborative Architect] Pair-programmed with AI co-pilots to design the high-level architecture of an 8-agent system; focused on system design, sequential DAG flows, and prompt orchestration, using AI to accelerate implementation of SQLite WAL, regex parsers, and dashboard latency diagnostics.',
     ],
     stack: ['FastAPI', 'React', 'SQLite', 'Redis', 'LLMs'],
     githubUrl: 'https://github.com/IdeaForg-e/TaskPilot-AI',
