@@ -182,11 +182,11 @@ def generate_resume(output_path):
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Integration Lead | Team IdeaForg-E</div>
         <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
-          <li>Integrated data connectors to pull developer tasks from 7 sources including Jira, GitHub, Slack, Email, Calendar, Meetings, and Incident trackers.</li>
-          <li>Developed an 8-factor mathematical scoring formula to rank tasks based on deadlines, blockers, customer urgency, and business impact.</li>
-          <li>Structured the relational database using SQLite with Write-Ahead Logging (WAL) concurrency to ensure fast, lock-free read and write operations.</li>
-          <li>Built a WebSocket-powered chat assistant that lets engineers query schedules, update tasks, and inject urgent issues in real-time.</li>
-          <li><strong>[AI-Collaborative Architect]</strong> Pair-programmed with AI co-pilots to design the high-level architecture of an 8-agent system; focused on system design, sequential DAG flows, and prompt orchestration, using AI to accelerate implementation of SQLite WAL, regex parsers, and dashboard latency diagnostics.</li>
+          <li>Built the orchestrator service coordinating an 8-agent pipeline (Ingestion → Extraction → Fusion → Quality → Priority → Planning) with self-healing stale-run recovery.</li>
+          <li>Integrated autonomous re-prioritization — a chat agent that injects new incidents and auto-triggers the full pipeline re-run in real time.</li>
+          <li>Implemented multi-provider LLM failover (Groq → NVIDIA NIM → local heuristics) ensuring the pipeline never breaks even without API keys.</li>
+          <li>Led end-to-end integration and deployment (Render + CI/CD) connecting 8 data sources into a unified SQLite-backed pipeline.</li>
+          <li>Used AI-assisted development (Claude,Codex and Antigravity) to design the orchestration flow and failover architecture, while handling integration and deployment myself.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
           <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; React &bull; SQLite &bull; Redis &bull; LLMs
