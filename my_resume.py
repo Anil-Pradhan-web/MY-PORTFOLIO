@@ -26,7 +26,7 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.16in 0.26in;
+        margin: 0.24in 0.32in;
       }
     }
   </style>
@@ -34,12 +34,12 @@ def generate_resume(output_path):
 <body class="bg-white p-0 text-slate-800">
 
   <!-- Header Section -->
-  <div class="bg-[#0f172a] text-white rounded-lg p-3.5 flex justify-between items-center mb-3">
+  <div class="bg-[#0f172a] text-white rounded-lg p-4 flex justify-between items-center mb-3.5">
     <!-- Left: Profile Info -->
     <div class="w-[58%]">
       <h1 class="text-3xl font-extrabold tracking-tight">ANIL PRADHAN</h1>
       <h2 class="text-[9.8px] font-bold tracking-wider text-sky-400 mt-0.5 uppercase">SOFTWARE ENGINEER | BACKEND & AI</h2>
-      <p class="text-[9.2px] text-slate-300 mt-2.5 leading-relaxed">
+      <p class="text-[9.2px] text-slate-300 mt-2 leading-relaxed">
         Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.
       </p>
     </div>
@@ -68,8 +68,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Education Section -->
-  <div class="mb-2.5">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
+  <div class="mb-3">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
       <!-- Circle Icon Badge -->
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -101,8 +101,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Experience Section -->
-  <div class="mb-2.5 font-sans">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
+  <div class="mb-3 font-sans">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -119,7 +119,7 @@ def generate_resume(output_path):
         <h4 class="text-[9.8px] font-bold text-slate-900">College Ambassador (Corporate Projects Program) <span class="text-slate-400 font-normal">|</span> <span class="text-[#1e3a8a]">Techfest, IIT Bombay</span></h4>
         <span class="text-[8.8px] text-slate-500 font-mono">Jul 2026 – Present</span>
       </div>
-      <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
+      <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-relaxed">
         <li>Selected as a College Ambassador for Techfest, IIT Bombay, representing one of Asia's largest science and technology festivals.</li>
         <li>Completed industry-sponsored corporate projects across web development, business strategy, and market research in collaboration with partner organizations.</li>
         <li>Qualified for Round 2 of the FlowFinance Growth Strategy & Business Development Challenge by developing a business strategy presentation and market analysis.</li>
@@ -129,8 +129,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Projects Section -->
-  <div class="mb-2.5">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
+  <div class="mb-3">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -156,7 +156,7 @@ def generate_resume(output_path):
           <span class="text-[8.8px] text-slate-500 font-mono">Mar 2026 – Jul 2026</span>
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Solo Full Stack Developer</div>
-        <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
+        <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-relaxed">
           <li>Built a multi-agent AI system using LangGraph's parallel DAG to orchestrate 4 agents (Resume, Market, Roadmap, LinkedIn) with shared state, cutting analysis latency by ~60%.</li>
           <li>Developed a real-time mock interview engine using a 7-phase FSM over WebSockets with a live Monaco code editor and resume-personalized questions.</li>
           <li>Built a RAG-powered roadmap generator using ChromaDB vector search to create personalized 8-week learning paths with quality-scored resources.</li>
@@ -181,7 +181,7 @@ def generate_resume(output_path):
           <span class="text-[8.8px] text-slate-500 font-mono">Jun 2026 – Jul 2026</span>
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Integration Lead | Team IdeaForg-E</div>
-        <ul class="list-disc list-outside ml-4 text-[9.1px] text-slate-600 space-y-0.2 leading-relaxed">
+        <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-relaxed">
           <li>Built the orchestrator service coordinating an 8-agent pipeline (Ingestion → Extraction → Fusion → Quality → Priority → Planning) with self-healing stale-run recovery.</li>
           <li>Integrated autonomous re-prioritization — a chat agent that injects new incidents and auto-triggers the full pipeline re-run in real time.</li>
           <li>Implemented multi-provider LLM failover (Groq → NVIDIA NIM → local heuristics) ensuring the pipeline never breaks even without API keys.</li>
@@ -196,8 +196,8 @@ def generate_resume(output_path):
   </div>
 
   <!-- Skills Section -->
-  <div class="mb-2.5">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1 mb-2">
+  <div class="mb-3">
+    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
@@ -210,9 +210,9 @@ def generate_resume(output_path):
       </svg>
     </div>
 
-    <div class="grid grid-cols-2 gap-x-8 gap-y-1 text-[9.1px] leading-snug">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.2px] leading-snug">
       <!-- Column 1 -->
-      <div class="space-y-1">
+      <div class="space-y-1.5">
         <div class="flex items-start">
           <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Programming Languages:</span>
           <span class="text-slate-600 font-semibold">Python, Java, JavaScript, SQL</span>
@@ -235,7 +235,7 @@ def generate_resume(output_path):
         </div>
       </div>
       <!-- Column 2 -->
-      <div class="space-y-1">
+      <div class="space-y-1.5">
         <div class="flex items-start">
           <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">AI / GenAI:</span>
           <span class="text-slate-600 font-semibold">Prompt Engineering, Retrieval-Augmented Generation (RAG), Agentic AI, Multi-Agent Systems, Semantic Search, LLM Integration</span>
@@ -258,7 +258,7 @@ def generate_resume(output_path):
 
   <!-- Achievements Section -->
   <div>
-    <div class="flex items-center gap-3 border-b border-slate-200 pb-1 mb-2">
+    <div class="flex items-center gap-3 border-b border-slate-200 pb-1.5 mb-2">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4l-1.9 2.53a1 1 0 01-1.6 0L12 8z"></path>
@@ -271,7 +271,7 @@ def generate_resume(output_path):
     </div>
 
     <!-- 2 Column Achievements List -->
-    <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.1px] text-slate-600 leading-relaxed">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-2 text-[9.2px] text-slate-600 leading-relaxed">
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
         <span>2nd Runner-Up — Dell FutureMinds AI Hackathon 2026: Secured a Top 3 finish among 8,000+ participants nationwide, advancing to the Grand Finale and presenting our solution to senior Dell leaders and corporate employees at the Dell Bengaluru office.</span>
