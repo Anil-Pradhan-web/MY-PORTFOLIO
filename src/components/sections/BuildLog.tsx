@@ -10,7 +10,7 @@ const highlights = [
   {
     label: 'Dell FutureMinds AI Hackathon 2026',
     result: '2nd Runner-Up',
-    detail: 'Top 3 among 8,000+ participants nationwide — Grand Finale presentation at Dell Bengaluru office.',
+    detail: 'Secured a Top 3 finish among 8,000+ participants nationwide, advancing to the Grand Finale and presenting our solution to senior Dell leaders and corporate employees at the Dell Bengaluru office.',
     icon: Trophy,
     metrics: [
       { key: 'Rank', value: 'Top 3' },
@@ -20,7 +20,7 @@ const highlights = [
   {
     label: 'FlowFinance × Techfest IIT Bombay',
     result: 'Round 2 Qualifier',
-    detail: 'Designed a GTM strategy deck — platform analysis, customer personas, and acquisition/retention framework — with real customer outreach.',
+    detail: 'Selected for Round 2 (Real-World Business Development) — FlowFinance × Techfest IIT Bombay Growth Challenge: Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.',
     icon: Trophy,
     metrics: [
       { key: 'Round', value: '2 / 3' },
@@ -33,17 +33,17 @@ const milestones = [
   {
     icon: Trophy,
     title: 'International Hackathons',
-    text: 'Built and deployed AI products in Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
+    text: 'Built and deployed AI products in three international hackathons — Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
   },
   {
     icon: Code2,
     title: 'GFG 160 Days of Code',
-    text: '100+ day coding streak — recognized with a GFG reward for consistency.',
+    text: "Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with a GFG reward (T-shirt) for consistency.",
   },
   {
     icon: Cloud,
     title: 'Google Cloud Arcade',
-    text: '75+ points through hands-on labs, earning official rewards from Google Cloud.',
+    text: 'Completed 75+ Google Cloud Arcade points through hands-on labs on Google Cloud services, earning official rewards from Google Cloud.',
   },
 ];
 
