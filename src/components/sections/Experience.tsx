@@ -24,21 +24,19 @@ const education = [
 
 const experiences = [
   {
-    role: 'College Ambassador (Corporate Projects Program)',
+    role: 'College Ambassador (Internship)',
     org: 'Techfest, IIT Bombay',
     period: 'Jul 2026 – Present',
     location: 'Mumbai, India (Remote)',
-    type: 'Leadership & Corporate Projects',
+    type: 'Internship & Ambassador Program',
     bullets: [
-      'Selected as a College Ambassador for Techfest, IIT Bombay, representing one of Asia\'s largest science and technology festivals.',
-      'Completed industry-sponsored corporate projects across web development, business strategy, and market research in collaboration with partner organizations.',
-      'Qualified for Round 2 of the FlowFinance Growth Strategy & Business Development Challenge by developing a business strategy presentation and market analysis.',
-      'Collaborated with multidisciplinary teams while delivering project submissions within defined deadlines.',
+      "Completed verified tasks across web development, event management, and creatives — including landing page builds, event ideation, and social media content for Asia's largest tech festival.",
+      'Executed marketing, outreach, and media tasks — including sponsorship communication, SEO research, and digital ecosystem mapping — as part of a performance-based ambassador program.',
     ],
-    skills: ['Web Development', 'Business Strategy', 'Market Research', 'Team Collaboration', 'Strategic Presentation'],
+    skills: ['Web Development', 'Event Management', 'Marketing & Outreach', 'SEO Research', 'Sponsorship Communication'],
     metrics: [
-      { label: 'Challenge', value: 'Round 2 Qualifier' },
-      { label: 'Scale', value: "Asia's Largest" },
+      { label: 'Festival Scale', value: "Asia's Largest" },
+      { label: 'Role Type', value: 'Performance-Based' },
     ],
   },
 ];
