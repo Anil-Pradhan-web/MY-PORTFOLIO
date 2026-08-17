@@ -284,7 +284,7 @@ def generate_resume(output_path):
       </div>
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Participated in GeeksforGeeks 160 Days Coding Challenge (earned T-shirt) and Solved 200+ DSA problems across LeetCode & GeeksforGeeks and HackerRank.</span>
+        <span>Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with a GFG reward (T-shirt) for consistency.</span>
       </div>
       <div class="flex items-start gap-2 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
@@ -309,13 +309,28 @@ def generate_resume(output_path):
     try:
         abs_html_path = os.path.abspath(html_path)
         abs_output_path = os.path.abspath(output_path)
+        temp_pdf_path = abs_output_path + ".tmp.pdf"
+        if os.path.exists(temp_pdf_path):
+            try:
+                os.remove(temp_pdf_path)
+            except Exception:
+                pass
         cmd = [
             "powershell",
             "-Command",
-            f'Start-Process -FilePath "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" -ArgumentList "--headless", "--disable-gpu", "--print-to-pdf-no-header", "--print-to-pdf={abs_output_path}", "{abs_html_path}" -Wait -NoNewWindow'
+            f'Start-Process -FilePath "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" -ArgumentList "--headless", "--disable-gpu", "--print-to-pdf-no-header", "--print-to-pdf={temp_pdf_path}", "{abs_html_path}" -Wait -NoNewWindow'
         ]
         subprocess.run(cmd, check=True)
-        print("PDF Resume generated successfully at:", abs_output_path)
+        if os.path.exists(temp_pdf_path):
+            import shutil
+            shutil.copyfile(temp_pdf_path, abs_output_path)
+            try:
+                os.remove(temp_pdf_path)
+            except Exception:
+                pass
+            print("PDF Resume generated successfully at:", abs_output_path)
+        else:
+            print("Warning: Temp PDF file was not generated.")
     except Exception as e:
         print("Error during PDF generation:", e)
 

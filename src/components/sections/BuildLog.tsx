@@ -18,8 +18,7 @@ const achievements = [
     title: 'Data Structures & Algorithms',
     icon: Code2,
     items: [
-      'Solved 200+ DSA problems across LeetCode & GeeksforGeeks & HackerRank.',
-      'Participated in GeeksforGeeks 160 Days Coding Challenge and earned a GFG T-shirt.',
+      "Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with a GFG reward (T-shirt) for consistency.",
     ],
   },
   {
