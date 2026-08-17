@@ -11,7 +11,7 @@ const achievements = [
     items: [
       '2nd Runner-Up — Dell FutureMinds AI Hackathon 2026: Secured a Top 3 finish among 8,000+ participants nationwide, advancing to the Grand Finale and presenting our solution to senior Dell leaders and corporate employees at the Dell Bengaluru office.',
       "Selected for Round 2 (Real-World Business Development) — FlowFinance × Techfest IIT Bombay Growth Challenge: Designed a comprehensive GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.",
-      'Developed production-grade AI solutions for Microsoft AI DevDays, Amazon Nova AI Challenge, and Google Solution Challenge.',
+      'Built and deployed AI products in three international hackathons — Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
     ],
   },
   {
@@ -25,7 +25,7 @@ const achievements = [
     title: 'Google Cloud Program',
     icon: Cloud,
     items: [
-      'Completed Google Cloud Arcade (75+ Arcade Points) through hands-on Google Cloud labs and earned awesome rewards from Google Cloud.',
+      'Completed 75+ Google Cloud Arcade points through hands-on labs on Google Cloud services, earning official rewards from Google Cloud.',
     ],
   },
   {

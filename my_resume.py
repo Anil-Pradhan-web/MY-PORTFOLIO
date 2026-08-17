@@ -280,7 +280,7 @@ def generate_resume(output_path):
       </div>
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Developed production-grade AI solutions for Microsoft AI DevDays, Amazon Nova AI Challenge, and Google Solution Challenge.</span>
+        <span>Built and deployed AI products in three international hackathons — Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.</span>
       </div>
       <div class="flex items-start gap-2">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
@@ -288,7 +288,7 @@ def generate_resume(output_path):
       </div>
       <div class="flex items-start gap-2 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Completed Google Cloud Arcade (75+ Arcade Points) through hands-on Google Cloud labs and earned rewards from Google Cloud.</span>
+        <span>Completed 75+ Google Cloud Arcade points through hands-on labs on Google Cloud services, earning official rewards from Google Cloud.</span>
       </div>
       <div class="flex items-start gap-2 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
