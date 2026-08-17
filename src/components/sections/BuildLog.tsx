@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Trophy, Code2, Cloud, Award, ExternalLink } from 'lucide-react';
+import { Trophy, Code2, Cloud, Award } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 /* ─── Data ─── */
@@ -58,10 +58,10 @@ const certifications = [
 
 /* ─── Animation presets ─── */
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 } as const,
-  whileInView: { opacity: 1, y: 0 } as const,
-  viewport: { once: true } as const,
-  transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] },
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] as const },
 });
 
 /* ─── Component ─── */
