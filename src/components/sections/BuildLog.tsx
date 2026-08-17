@@ -1,237 +1,70 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Trophy, Code2, Cloud, Award, Medal, Zap, ExternalLink } from 'lucide-react';
+import { Trophy, Code2, Cloud, Award, ExternalLink } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 /* ─── Data ─── */
 
-const heroAchievement = {
-  title: '2nd Runner-Up — Dell FutureMinds AI Hackathon 2026',
-  description:
-    'Secured a Top 3 finish among 8,000+ participants nationwide, advancing to the Grand Finale and presenting our solution to senior Dell leaders and corporate employees at the Dell Bengaluru office.',
-  stats: [
-    { label: 'Participants', value: '8,000+' },
-    { label: 'Finish', value: 'Top 3' },
-    { label: 'Scope', value: 'Nationwide' },
-  ],
-};
-
-const competitionItems = [
+const highlights = [
   {
-    title: 'FlowFinance × Techfest IIT Bombay',
-    badge: 'Round 2 Qualifier',
-    description:
-      'Selected for Round 2 (Real-World Business Development) — designed a comprehensive GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.',
+    label: 'Dell FutureMinds AI Hackathon 2026',
+    result: '2nd Runner-Up',
+    detail: 'Top 3 among 8,000+ participants nationwide — Grand Finale presentation at Dell Bengaluru office.',
+    icon: Trophy,
+    metrics: [
+      { key: 'Rank', value: 'Top 3' },
+      { key: 'Participants', value: '8K+' },
+    ],
   },
   {
-    title: 'International Hackathons',
-    badge: '3 Events',
-    description:
-      'Built and deployed AI products in three international hackathons — Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
+    label: 'FlowFinance × Techfest IIT Bombay',
+    result: 'Round 2 Qualifier',
+    detail: 'Designed a GTM strategy deck — platform analysis, customer personas, and acquisition/retention framework — with real customer outreach.',
+    icon: Trophy,
+    metrics: [
+      { key: 'Round', value: '2 / 3' },
+      { key: 'Scope', value: 'National' },
+    ],
   },
 ];
 
-const dsaItem = {
-  title: 'GeeksforGeeks 160 Days of Code',
-  streak: '100+',
-  description:
-    "Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with a GFG reward (T-shirt) for consistency.",
-};
-
-const cloudItem = {
-  title: 'Google Cloud Arcade',
-  points: '75+',
-  description:
-    'Completed 75+ Google Cloud Arcade points through hands-on labs on Google Cloud services, earning official rewards from Google Cloud.',
-};
+const milestones = [
+  {
+    icon: Trophy,
+    title: 'International Hackathons',
+    text: 'Built and deployed AI products in Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
+  },
+  {
+    icon: Code2,
+    title: 'GFG 160 Days of Code',
+    text: '100+ day coding streak — recognized with a GFG reward for consistency.',
+  },
+  {
+    icon: Cloud,
+    title: 'Google Cloud Arcade',
+    text: '75+ points through hands-on labs, earning official rewards from Google Cloud.',
+  },
+];
 
 const certifications = [
-  { name: 'Career Essentials in Software Development', issuer: 'Microsoft', color: '#00A4EF' },
-  { name: 'Python Essentials 2', issuer: 'Cisco', color: '#049FD9' },
-  { name: 'AI Fundamentals', issuer: 'IBM', color: '#0F62FE' },
-  { name: 'Claude 101', issuer: 'Anthropic', color: '#D4A574' },
-  { name: 'Python (Basic) & Java (Basic)', issuer: 'HackerRank', color: '#00EA64' },
-  { name: 'SQL (Basic) & Problem Solving', issuer: 'HackerRank', color: '#00EA64' },
+  { name: 'Career Essentials in Software Development', org: 'Microsoft' },
+  { name: 'Python Essentials 2', org: 'Cisco' },
+  { name: 'AI Fundamentals', org: 'IBM' },
+  { name: 'Claude 101', org: 'Anthropic' },
+  { name: 'Python (Basic) & Java (Basic)', org: 'HackerRank' },
+  { name: 'SQL (Basic) & Problem Solving', org: 'HackerRank' },
 ];
 
-/* ─── Components ─── */
+/* ─── Animation presets ─── */
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 16 } as const,
+  whileInView: { opacity: 1, y: 0 } as const,
+  viewport: { once: true } as const,
+  transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] },
+});
 
-function HeroCard() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden rounded-2xl border border-amber-500/20 bg-gradient-to-br from-amber-500/5 via-bg-card to-bg-card p-8"
-    >
-      {/* Glow */}
-      <div className="absolute -top-20 -right-20 w-60 h-60 bg-amber-500/8 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
-
-      <div className="relative z-10">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 mb-5">
-          <Trophy className="w-3.5 h-3.5 text-amber-400" />
-          <span className="font-mono text-[0.7rem] font-semibold text-amber-400 uppercase tracking-wider">
-            Featured Achievement
-          </span>
-        </div>
-
-        <h3 className="font-display text-xl md:text-2xl font-bold text-text-primary mb-3 leading-tight">
-          {heroAchievement.title}
-        </h3>
-        <p className="body-sm text-text-secondary max-w-2xl leading-relaxed mb-6">
-          {heroAchievement.description}
-        </p>
-
-        {/* Stats Row */}
-        <div className="flex flex-wrap gap-6">
-          {heroAchievement.stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col">
-              <span className="font-display text-2xl font-bold text-amber-400">{stat.value}</span>
-              <span className="font-mono text-[0.65rem] text-text-muted uppercase tracking-wider mt-0.5">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function CompetitionCard({ item, index }: { item: typeof competitionItems[0]; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="group p-6 rounded-xl border border-border-primary bg-bg-card hover:border-violet-500/30 transition-all duration-300"
-    >
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-violet-500/10 border border-violet-500/20">
-            <Medal className="w-3.5 h-3.5 text-violet-400" />
-          </div>
-          <h4 className="font-display text-base font-bold text-text-primary group-hover:text-violet-400 transition-colors">
-            {item.title}
-          </h4>
-        </div>
-        <span className="flex-shrink-0 px-2.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 font-mono text-[0.6rem] text-violet-400 uppercase tracking-wider whitespace-nowrap">
-          {item.badge}
-        </span>
-      </div>
-      <p className="body-sm text-text-secondary leading-relaxed">{item.description}</p>
-    </motion.div>
-  );
-}
-
-function DSACard() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="group p-6 rounded-xl border border-border-primary bg-bg-card hover:border-emerald-500/30 transition-all duration-300"
-    >
-      <div className="flex items-start gap-4">
-        {/* Streak Counter */}
-        <div className="flex-shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-          <span className="font-display text-xl font-bold text-emerald-400 leading-none">{dsaItem.streak}</span>
-          <span className="font-mono text-[0.5rem] text-emerald-400/70 uppercase tracking-wider mt-0.5">days</span>
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-2">
-            <Code2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-            <h4 className="font-display text-base font-bold text-text-primary group-hover:text-emerald-400 transition-colors">
-              {dsaItem.title}
-            </h4>
-          </div>
-          <p className="body-sm text-text-secondary leading-relaxed">{dsaItem.description}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function CloudCard() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="group p-6 rounded-xl border border-border-primary bg-bg-card hover:border-sky-500/30 transition-all duration-300"
-    >
-      <div className="flex items-start gap-4">
-        {/* Points Counter */}
-        <div className="flex-shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-sky-500/10 border border-sky-500/20">
-          <span className="font-display text-xl font-bold text-sky-400 leading-none">{cloudItem.points}</span>
-          <span className="font-mono text-[0.5rem] text-sky-400/70 uppercase tracking-wider mt-0.5">points</span>
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-2">
-            <Cloud className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
-            <h4 className="font-display text-base font-bold text-text-primary group-hover:text-sky-400 transition-colors">
-              {cloudItem.title}
-            </h4>
-          </div>
-          <p className="body-sm text-text-secondary leading-relaxed">{cloudItem.description}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function CertificationsGrid() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {/* Section Label */}
-      <div className="flex items-center gap-2.5 mb-5">
-        <div className="p-2 rounded-lg bg-teal-500/10 border border-teal-500/20">
-          <Award className="w-4 h-4 text-teal-400" />
-        </div>
-        <h3 className="font-display text-lg font-bold text-text-primary">Certifications</h3>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {certifications.map((cert, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.4 + idx * 0.06, ease: [0.22, 1, 0.36, 1] }}
-            className="group flex items-center gap-3 p-4 rounded-xl border border-border-primary bg-bg-card hover:border-border-secondary transition-all duration-200"
-          >
-            {/* Issuer Dot */}
-            <div
-              className="w-2 h-2 rounded-full flex-shrink-0"
-              style={{ backgroundColor: cert.color }}
-              aria-hidden="true"
-            />
-            <div className="flex-1 min-w-0">
-              <p className="font-body text-sm font-medium text-text-primary truncate">{cert.name}</p>
-              <p className="font-mono text-[0.65rem] uppercase tracking-wider mt-0.5" style={{ color: cert.color }}>
-                {cert.issuer}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-  );
-}
-
-/* ─── Main Section ─── */
+/* ─── Component ─── */
 
 export default function BuildLog() {
   return (
@@ -243,26 +76,97 @@ export default function BuildLog() {
           subtitle="Recognition and milestones along the way."
         />
 
-        <div className="space-y-8">
-          {/* 1. Hero Achievement */}
-          <HeroCard />
+        {/* ── Highlight Cards ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+          {highlights.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                {...fadeUp(idx * 0.08)}
+                className="group relative rounded-xl border border-border-primary bg-bg-card p-6 hover:border-border-secondary transition-colors duration-200"
+              >
+                {/* Top row: icon + label + result badge */}
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="p-2 rounded-lg bg-teal-500/10 border border-teal-500/20 flex-shrink-0">
+                      <Icon className="w-4 h-4 text-teal-400" />
+                    </div>
+                    <h3 className="font-display text-base font-bold text-text-primary truncate group-hover:text-teal-400 transition-colors">
+                      {item.label}
+                    </h3>
+                  </div>
+                  <span className="flex-shrink-0 px-2.5 py-1 rounded-md bg-teal-500/10 border border-teal-500/20 font-mono text-[0.65rem] font-semibold text-teal-400 uppercase tracking-wider whitespace-nowrap">
+                    {item.result}
+                  </span>
+                </div>
 
-          {/* 2. Competitions Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {competitionItems.map((item, idx) => (
-              <CompetitionCard key={idx} item={item} index={idx} />
+                {/* Description */}
+                <p className="text-text-secondary text-sm leading-relaxed mb-5">
+                  {item.detail}
+                </p>
+
+                {/* Inline metrics */}
+                <div className="flex gap-4">
+                  {item.metrics.map((m, mIdx) => (
+                    <div key={mIdx} className="flex items-baseline gap-2">
+                      <span className="font-mono text-[0.6rem] text-text-muted uppercase tracking-wider">{m.key}</span>
+                      <span className="font-display text-lg font-bold text-teal-400">{m.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* ── Milestones Row ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+          {milestones.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                {...fadeUp(0.16 + idx * 0.06)}
+                className="group rounded-xl border border-border-primary bg-bg-card p-5 hover:border-border-secondary transition-colors duration-200"
+              >
+                <div className="flex items-center gap-2.5 mb-3">
+                  <Icon className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                  <h4 className="font-display text-sm font-bold text-text-primary group-hover:text-teal-400 transition-colors">
+                    {item.title}
+                  </h4>
+                </div>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* ── Certifications ── */}
+        <motion.div {...fadeUp(0.32)}>
+          <div className="flex items-center gap-2.5 mb-5">
+            <Award className="w-4 h-4 text-teal-400" />
+            <h3 className="font-display text-base font-bold text-text-primary">Certifications</h3>
+            <span className="ml-auto font-mono text-[0.65rem] text-text-muted">{certifications.length} verified</span>
+          </div>
+
+          <div className="rounded-xl border border-border-primary bg-bg-card overflow-hidden divide-y divide-border-primary">
+            {certifications.map((cert, idx) => (
+              <motion.div
+                key={idx}
+                {...fadeUp(0.36 + idx * 0.04)}
+                className="flex items-center justify-between px-5 py-3.5 hover:bg-bg-card-hover transition-colors duration-150"
+              >
+                <span className="text-sm text-text-primary font-medium">{cert.name}</span>
+                <span className="font-mono text-[0.65rem] text-text-muted uppercase tracking-wider flex-shrink-0 ml-4">
+                  {cert.org}
+                </span>
+              </motion.div>
             ))}
           </div>
-
-          {/* 3. DSA + Cloud Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <DSACard />
-            <CloudCard />
-          </div>
-
-          {/* 4. Certifications */}
-          <CertificationsGrid />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
