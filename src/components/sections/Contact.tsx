@@ -145,7 +145,7 @@ export default function Contact() {
                 id="contact-name"
                 name="name"
                 label="Name"
-                placeholder="John Doe"
+                placeholder="Your name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -157,7 +157,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 label="Email"
-                placeholder="john@example.com"
+                placeholder="you@company.com"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -169,7 +169,7 @@ export default function Contact() {
                 name="message"
                 label="Message"
                 rows={4}
-                placeholder="How can we help?"
+                placeholder="Let's build something great together..."
                 value={formData.message}
                 onChange={handleChange}
                 required
