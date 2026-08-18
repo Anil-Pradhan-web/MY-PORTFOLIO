@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="absolute -inset-2 bg-teal-500/10 rounded-full blur-xl pointer-events-none" aria-hidden="true" />
             <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden border-2 border-border-primary hover:border-teal-500/50 transition-all duration-300 shadow-lg">
               <img
-                src="/anil.jpeg"
+                src="/anil.png"
                 alt="Anil Pradhan"
                 className="w-full h-full object-cover object-top"
                 width={192}
