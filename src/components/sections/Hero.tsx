@@ -37,15 +37,14 @@ export default function Hero() {
         >
           <div className="relative inline-block">
             {/* Subtle glow behind photo */}
-            <div className="absolute -inset-2 bg-teal-500/10 rounded-full blur-xl pointer-events-none" aria-hidden="true" />
-            <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden border-2 border-border-primary hover:border-teal-500/50 transition-all duration-300 shadow-lg">
+            <div className="absolute -inset-2 bg-teal-500/10 rounded-2xl blur-xl pointer-events-none" aria-hidden="true" />
+            <div className="relative w-44 sm:w-48 md:w-52 lg:w-56 rounded-2xl overflow-hidden border-2 border-border-primary hover:border-teal-500/50 transition-all duration-300 shadow-lg">
               <img
                 src="/anil.png"
                 alt="Anil Pradhan"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 30%' }}
-                width={192}
-                height={192}
+                className="w-full h-auto block"
+                width={224}
+                height={298}
               />
             </div>
           </div>
