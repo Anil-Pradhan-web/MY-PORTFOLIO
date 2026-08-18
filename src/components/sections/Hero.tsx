@@ -42,7 +42,8 @@ export default function Hero() {
               <img
                 src="/anil.png"
                 alt="Anil Pradhan"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 30%' }}
                 width={192}
                 height={192}
               />
