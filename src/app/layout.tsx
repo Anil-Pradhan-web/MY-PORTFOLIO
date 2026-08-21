@@ -45,6 +45,14 @@ export const metadata: Metadata = {
     title: 'Anil Pradhan — Software Engineer | Backend & AI',
     description: 'Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.',
   },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
