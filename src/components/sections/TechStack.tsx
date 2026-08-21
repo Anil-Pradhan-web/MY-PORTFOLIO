@@ -93,9 +93,10 @@ const skillCategories = [
   {
     category: 'Agentic AI Tools',
     items: [
+      { name: 'Claude Code', icon: BrainCircuit, color: '#D4A574' },
       { name: 'AnythingLLM', icon: BrainCircuit, color: '#f59e0b' },
-      { name: 'OpenCode', icon: Cpu, color: '#0ea5e9' },
       { name: 'Multica', icon: Box, color: '#FF6B35' },
+      { name: 'OpenCode', icon: Cpu, color: '#0ea5e9' },
     ],
   },
 ];
