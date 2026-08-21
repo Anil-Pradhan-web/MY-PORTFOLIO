@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Trophy, Code2, Cloud, Award } from 'lucide-react';
+import { Trophy, Code2, Cloud, Award, CheckCircle2 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 /* ─── Data ─── */
@@ -47,13 +47,28 @@ const milestones = [
   },
 ];
 
-const certifications = [
-  { name: 'Career Essentials in Software Development', org: 'Microsoft' },
-  { name: 'Python Essentials 2', org: 'Cisco' },
-  { name: 'AI Fundamentals', org: 'IBM' },
-  { name: 'Claude 101', org: 'Anthropic' },
-  { name: 'Python (Basic) & Java (Basic)', org: 'HackerRank' },
-  { name: 'SQL (Basic) & Problem Solving', org: 'HackerRank' },
+const certificationGroups = [
+  {
+    group: 'Software Engineering & Industry Simulations',
+    items: [
+      { name: 'Software Engineering Job Simulation', org: 'Wells Fargo (Forage)', badge: 'Industry Sim' },
+      { name: 'Python Essentials 2', org: 'Cisco Networking Academy', badge: 'Core Python' },
+    ],
+  },
+  {
+    group: 'AI, LLMs & Applied Machine Learning',
+    items: [
+      { name: 'AI Fundamentals', org: 'IBM', badge: 'AI & GenAI' },
+      { name: 'Claude 101 & AI Fluency', org: 'Anthropic', badge: 'LLM Systems' },
+    ],
+  },
+  {
+    group: 'Problem Solving & Core CS',
+    items: [
+      { name: 'Problem Solving (Basic) & SQL (Basic)', org: 'HackerRank', badge: 'DSA & SQL' },
+      { name: 'Python (Basic) & Java (Basic)', org: 'HackerRank', badge: 'Languages' },
+    ],
+  },
 ];
 
 /* ─── Animation presets ─── */
@@ -121,7 +136,7 @@ export default function BuildLog() {
         </div>
 
         {/* ── Milestones Row ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           {milestones.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -144,25 +159,47 @@ export default function BuildLog() {
           })}
         </div>
 
-        {/* ── Certifications ── */}
+        {/* ── Grouped Certifications ── */}
         <motion.div {...fadeUp(0.32)}>
-          <div className="flex items-center gap-2.5 mb-5">
-            <Award className="w-4 h-4 text-teal-400" />
-            <h3 className="font-display text-base font-bold text-text-primary">Certifications</h3>
-            <span className="ml-auto font-mono text-[0.65rem] text-text-muted">{certifications.length} verified</span>
+          <div className="flex items-center justify-between gap-2.5 mb-6">
+            <div className="flex items-center gap-2.5">
+              <div className="p-2 rounded-lg bg-teal-500/10 border border-teal-500/20">
+                <Award className="w-4 h-4 text-teal-400" />
+              </div>
+              <h3 className="font-display text-lg font-bold text-text-primary">Verified Credentials &amp; Certifications</h3>
+            </div>
+            <span className="font-mono text-[0.7rem] text-text-muted">High-Signal Portfolio Track</span>
           </div>
 
-          <div className="rounded-xl border border-border-primary bg-bg-card overflow-hidden divide-y divide-border-primary">
-            {certifications.map((cert, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {certificationGroups.map((group, gIdx) => (
               <motion.div
-                key={idx}
-                {...fadeUp(0.36 + idx * 0.04)}
-                className="flex items-center justify-between px-5 py-3.5 hover:bg-bg-card-hover transition-colors duration-150"
+                key={gIdx}
+                {...fadeUp(0.36 + gIdx * 0.06)}
+                className="rounded-2xl border border-border-primary bg-bg-card p-5 flex flex-col justify-between hover:border-border-secondary transition-colors duration-200"
               >
-                <span className="text-sm text-text-primary font-medium">{cert.name}</span>
-                <span className="font-mono text-[0.65rem] text-text-muted uppercase tracking-wider flex-shrink-0 ml-4">
-                  {cert.org}
-                </span>
+                <div>
+                  <h4 className="font-mono text-xs font-bold text-teal-400/90 uppercase tracking-wider mb-4 pb-2.5 border-b border-border-primary">
+                    {group.group}
+                  </h4>
+                  <div className="space-y-3.5">
+                    {group.items.map((cert, cIdx) => (
+                      <div key={cIdx} className="group/cert">
+                        <div className="flex items-start justify-between gap-2 mb-1">
+                          <span className="text-sm text-text-primary font-medium group-hover/cert:text-teal-300 transition-colors">
+                            {cert.name}
+                          </span>
+                          <span className="font-mono text-[0.6rem] px-1.5 py-0.5 rounded bg-bg-primary border border-border-primary text-text-muted flex-shrink-0">
+                            {cert.badge}
+                          </span>
+                        </div>
+                        <p className="font-mono text-[0.7rem] text-text-secondary">
+                          {cert.org}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

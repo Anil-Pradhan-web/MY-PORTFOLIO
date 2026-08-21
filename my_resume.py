@@ -300,7 +300,7 @@ def generate_resume(output_path):
       </div>
       <div class="flex items-start gap-1.5 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span><strong class="text-slate-900">Certifications:</strong> Microsoft Career Essentials in Software Development, Cisco Python Essentials 2, HackerRank Python (Basic) and Java (Basic) and SQL (Basic) and Problem Solving (Basic), IBM AI Fundamentals, Anthropic Claude 101.</span>
+        <span><strong class="text-slate-900">Certifications:</strong> Wells Fargo Software Engineering Job Simulation (Forage), Cisco Python Essentials 2, HackerRank Python / SQL / Problem Solving (Basic), IBM AI Fundamentals.</span>
       </div>
     </div>
   </div>
