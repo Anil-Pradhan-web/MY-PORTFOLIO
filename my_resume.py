@@ -1,5 +1,6 @@
 import os
 import subprocess
+import shutil
 
 def generate_resume(output_path):
     html_content = """<!DOCTYPE html>
@@ -34,12 +35,12 @@ def generate_resume(output_path):
 <body class="bg-white p-0 text-slate-800">
 
   <!-- Header Section -->
-  <div class="bg-[#0f172a] text-white rounded-lg p-4 flex justify-between items-center mb-3.5">
+  <div class="bg-[#0f172a] text-white rounded-lg p-4 flex justify-between items-center mb-3">
     <!-- Left: Profile Info -->
     <div class="w-[58%]">
-      <h1 class="text-3xl font-extrabold tracking-tight">ANIL PRADHAN</h1>
-      <h2 class="text-[9.8px] font-bold tracking-wider text-sky-400 mt-0.5 uppercase">SOFTWARE ENGINEER | BACKEND & AI</h2>
-      <p class="text-[9.2px] text-slate-300 mt-2 leading-relaxed">
+      <h1 class="text-[28px] font-extrabold tracking-tight leading-none">ANIL PRADHAN</h1>
+      <h2 class="text-[9.8px] font-bold tracking-wider text-sky-400 mt-1 uppercase">SOFTWARE ENGINEER | BACKEND &amp; AI</h2>
+      <p class="text-[9.2px] text-slate-300 mt-1.5 leading-relaxed">
         Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.
       </p>
     </div>
@@ -47,17 +48,17 @@ def generate_resume(output_path):
     <div class="w-[40%] flex flex-col items-end text-[9.3px] text-slate-200 space-y-1.5">
       <div class="flex items-center gap-1.5 justify-end">
         <span>anilpradhan9644@gmail.com</span>
-        <span>📧</span>
+        <svg class="w-3.5 h-3.5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
       </div>
       <div class="flex items-center gap-1.5 justify-end">
         <span>+91 8917476908</span>
-        <span>📞</span>
+        <svg class="w-3.5 h-3.5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
       </div>
       <div class="flex items-center gap-1.5 justify-end">
         <span>Bhubaneswar, Odisha</span>
-        <span>📍</span>
+        <svg class="w-3.5 h-3.5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
       </div>
-      <div class="flex items-center gap-1.5 justify-end mt-2 pt-1 border-t border-slate-700 w-full font-mono text-[9px] text-sky-400">
+      <div class="flex items-center gap-1.5 justify-end mt-1.5 pt-1 border-t border-slate-700 w-full font-mono text-[9px] text-sky-400">
         <a href="https://linkedin.com/in/anil-pradhan543" class="hover:underline font-semibold">LinkedIn</a>
         <span class="text-slate-500">|</span>
         <a href="https://github.com/Anil-Pradhan-web" class="hover:underline font-semibold">GitHub</a>
@@ -67,10 +68,9 @@ def generate_resume(output_path):
     </div>
   </div>
 
-  <!-- Education Section -->
+  <!-- Education Section (ATS-safe vertical stack) -->
   <div class="mb-3">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
-      <!-- Circle Icon Badge -->
+    <div class="flex items-center gap-2 border-b border-slate-200 pb-1.5 mb-1.5">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path>
@@ -79,30 +79,38 @@ def generate_resume(output_path):
         </svg>
       </div>
       <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Education</h3>
-      <!-- Calendar Icon on the right -->
       <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
       </svg>
     </div>
 
-    <div class="grid grid-cols-2 gap-6 text-[9.6px]">
+    <div class="space-y-1.5 text-[9.4px]">
       <div>
-        <h4 class="font-bold text-slate-900">Institute of Technical Education & Research (ITER)</h4>
-        <p class="text-slate-600 font-medium">Siksha 'O' Anusandhan (SOA) University, Bhubaneswar</p>
-        <p class="text-slate-600 font-medium mt-0.5">Bachelor of Technology (B.Tech), Computer Science & Engineering</p>
-        <p class="text-slate-500 font-mono text-[9px] mt-0.5">2024 – 2028 &nbsp;|&nbsp; <span class="font-bold text-slate-900">CGPA: 8.93/10</span></p>
+        <div class="flex justify-between items-baseline">
+          <h4 class="font-bold text-slate-900">Institute of Technical Education &amp; Research (ITER), SOA University</h4>
+          <span class="text-slate-500 font-mono text-[8.8px]">2024 – 2028 &nbsp;|&nbsp; Bhubaneswar, Odisha</span>
+        </div>
+        <div class="flex justify-between items-baseline text-[9px] text-slate-600">
+          <span>Bachelor of Technology (B.Tech), Computer Science &amp; Engineering</span>
+          <span class="font-bold text-slate-900 font-mono">CGPA: 8.93 / 10</span>
+        </div>
       </div>
-      <div class="border-l border-dashed border-slate-300 pl-4">
-        <h4 class="font-bold text-slate-900">Council of Higher Secondary Education (CHSE), Odisha</h4>
-        <p class="text-slate-600 font-medium">Class XII (PCM with IT)</p>
-        <p class="text-slate-500 font-mono text-[9px] mt-1.5">2022 – 2024 &nbsp;|&nbsp; <span class="font-bold text-slate-900">85%</span></p>
+      <div>
+        <div class="flex justify-between items-baseline">
+          <h4 class="font-bold text-slate-900">Council of Higher Secondary Education (CHSE), Odisha</h4>
+          <span class="text-slate-500 font-mono text-[8.8px]">2022 – 2024 &nbsp;|&nbsp; Odisha</span>
+        </div>
+        <div class="flex justify-between items-baseline text-[9px] text-slate-600">
+          <span>Class XII (Higher Secondary) — Physics, Chemistry, Mathematics with IT</span>
+          <span class="font-bold text-slate-900 font-mono">Score: 85%</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Experience Section -->
   <div class="mb-3 font-sans">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
+    <div class="flex items-center gap-2 border-b border-slate-200 pb-1.5 mb-1.5">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -128,7 +136,7 @@ def generate_resume(output_path):
 
   <!-- Projects Section -->
   <div class="mb-3">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
+    <div class="flex items-center gap-2 border-b border-slate-200 pb-1.5 mb-1.5">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -159,7 +167,7 @@ def generate_resume(output_path):
           <li>Developed a real-time mock interview engine using a 7-phase FSM over WebSockets with a live Monaco code editor and resume-personalized questions.</li>
           <li>Built a RAG-powered roadmap generator using ChromaDB vector search to create personalized 8-week learning paths with quality-scored resources.</li>
           <li>Designed a fault-tolerant backend (FastAPI, PostgreSQL, Redis) with multi-provider LLM failover and a 113-test CI/CD suite.</li>
-          <li>Used AI-assisted development (Claude,codex and Antigravity) to design high-level architecture — DAG structure, FSM design, and failover strategy — for solo delivery of a production-grade platform.</li>
+          <li>Used AI-assisted development (Claude Code, Codex, and Antigravity) to design high-level architecture — DAG structure, FSM design, and failover strategy — for solo delivery of a production-grade platform.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
           <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; LangGraph &bull; Next.js &bull; ChromaDB &bull; Redis &bull; Docker &bull; ONNX
@@ -184,7 +192,7 @@ def generate_resume(output_path):
           <li>Integrated autonomous re-prioritization — a chat agent that injects new incidents and auto-triggers the full pipeline re-run in real time.</li>
           <li>Implemented multi-provider LLM failover (Groq → NVIDIA NIM → local heuristics) ensuring the pipeline never breaks even without API keys.</li>
           <li>Led end-to-end integration and deployment (Render + CI/CD) connecting 8 data sources into a unified SQLite-backed pipeline.</li>
-          <li>Used AI-assisted development (Claude,Codex and Antigravity) to design the orchestration flow and failover architecture, while handling integration and deployment myself.</li>
+          <li>Used AI-assisted development (Claude Code, Codex, and Antigravity) to design the orchestration flow and failover architecture, while handling integration and deployment myself.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
           <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; React &bull; SQLite &bull; Redis &bull; LLMs
@@ -195,7 +203,7 @@ def generate_resume(output_path):
 
   <!-- Skills Section -->
   <div class="mb-3">
-    <div class="flex items-center gap-2.5 border-b border-slate-200 pb-1.5 mb-2">
+    <div class="flex items-center gap-2 border-b border-slate-200 pb-1.5 mb-1.5">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
@@ -216,7 +224,7 @@ def generate_resume(output_path):
           <span class="text-slate-600 font-semibold">Python, Java, JavaScript, SQL</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Backend & APIs:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Backend &amp; APIs:</span>
           <span class="text-slate-600 font-semibold">FastAPI, REST APIs, WebSockets, LangGraph, SQLAlchemy, Pydantic</span>
         </div>
         <div class="flex items-start">
@@ -224,11 +232,11 @@ def generate_resume(output_path):
           <span class="text-slate-600 font-semibold">PostgreSQL (Neon), SQLite, Redis (Upstash), ChromaDB</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Security & Auth:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Security &amp; Auth:</span>
           <span class="text-slate-600 font-semibold">JWT, Google OAuth 2.0, bcrypt, CORS, Rate Limiting</span>
         </div>
         <div class="flex items-start">
-          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">DevOps & Cloud:</span>
+          <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">DevOps &amp; Cloud:</span>
           <span class="text-slate-600 font-semibold">Docker, GitHub Actions, Render, Vercel</span>
         </div>
       </div>
@@ -240,7 +248,7 @@ def generate_resume(output_path):
         </div>
         <div class="flex items-start">
           <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Agentic AI Tools:</span>
-          <span class="text-slate-600 font-semibold">AnythingLLM, OpenCode, Multica</span>
+          <span class="text-slate-600 font-semibold">Claude Code, AnythingLLM, Multica, OpenCode</span>
         </div>
         <div class="flex items-start">
           <span class="font-bold text-[#1e3a8a] w-[130px] flex-shrink-0">Frontend:</span>
@@ -256,13 +264,13 @@ def generate_resume(output_path):
 
   <!-- Achievements Section -->
   <div>
-    <div class="flex items-center gap-3 border-b border-slate-200 pb-1.5 mb-2">
+    <div class="flex items-center gap-2 border-b border-slate-200 pb-1.5 mb-1.5">
       <div class="w-5.5 h-5.5 bg-[#1e3a8a] text-white rounded-full flex items-center justify-center flex-shrink-0">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4l-1.9 2.53a1 1 0 01-1.6 0L12 8z"></path>
         </svg>
       </div>
-      <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Achievements & Certifications</h3>
+      <h3 class="text-[11px] font-extrabold tracking-wider text-[#0f172a] uppercase flex-grow">Achievements &amp; Certifications</h3>
       <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
       </svg>
@@ -270,32 +278,31 @@ def generate_resume(output_path):
 
     <!-- 2 Column Achievements List -->
     <div class="grid grid-cols-2 gap-x-8 gap-y-1.5 text-[9.1px] text-slate-600 leading-relaxed">
-      <div class="flex items-start gap-2">
+      <div class="flex items-start gap-1.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>2nd Runner-Up — Dell FutureMinds AI Hackathon 2026: Secured a Top 3 finish among 8,000+ participants nationwide, advancing to the Grand Finale and presenting our solution to senior Dell leaders and corporate employees at the Dell Bengaluru office.</span>
+        <span><strong class="text-slate-900">2nd Runner-Up — Dell FutureMinds AI Hackathon 2026:</strong> Secured a <strong class="text-slate-900">Top 3 finish among 8,000+</strong> participants nationwide, advancing to the Grand Finale and presenting our solution to senior Dell leaders and corporate employees at the Dell Bengaluru office.</span>
       </div>
-      <div class="flex items-start gap-2">
+      <div class="flex items-start gap-1.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Selected for Round 2 (Real-World Business Development) — FlowFinance × Techfest IIT Bombay Growth Challenge: Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.</span>
+        <span><strong class="text-slate-900">Round 2 Qualifier (Real-World Business Development) — FlowFinance × Techfest IIT Bombay Growth Challenge:</strong> Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.</span>
       </div>
-      <div class="flex items-start gap-2">
+      <div class="flex items-start gap-1.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Built and deployed AI products in three international hackathons — Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.</span>
+        <span><strong class="text-slate-900">International Hackathons:</strong> Built and deployed AI products in three international hackathons — <strong class="text-slate-900">Microsoft AI Dev Days</strong>, <strong class="text-slate-900">Amazon Nova AI Challenge</strong>, and <strong class="text-slate-900">Google Solution Challenge</strong>.</span>
       </div>
-      <div class="flex items-start gap-2">
+      <div class="flex items-start gap-1.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with a GFG reward (T-shirt) for consistency.</span>
+        <span><strong class="text-slate-900">100+ Day DSA Streak:</strong> Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with a GFG reward (T-shirt) for consistency.</span>
       </div>
-      <div class="flex items-start gap-2 col-span-2 mt-0.5">
+      <div class="flex items-start gap-1.5 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span>Completed 75+ Google Cloud Arcade points through hands-on labs on Google Cloud services, earning official rewards from Google Cloud.</span>
+        <span><strong class="text-slate-900">Google Cloud Arcade:</strong> Completed <strong class="text-slate-900">75+ Google Cloud Arcade points</strong> through hands-on labs on Google Cloud services, earning official rewards from Google Cloud.</span>
       </div>
-      <div class="flex items-start gap-2 col-span-2 mt-0.5">
+      <div class="flex items-start gap-1.5 col-span-2 mt-0.5">
         <span class="text-sky-500 font-bold flex-shrink-0">&bull;</span>
-        <span><strong>Certifications:</strong> Microsoft Career Essentials in Software Development, Cisco Python Essentials 2, HackerRank Python (Basic) and Java(Basic) and SQL (Basic) and Problem Solving (Basic), IBM AI Fundamentals, Anthropic Claude 101.</span>
+        <span><strong class="text-slate-900">Certifications:</strong> Microsoft Career Essentials in Software Development, Cisco Python Essentials 2, HackerRank Python (Basic) and Java (Basic) and SQL (Basic) and Problem Solving (Basic), IBM AI Fundamentals, Anthropic Claude 101.</span>
       </div>
     </div>
-  </div>
   </div>
 </body>
 </html>"""
@@ -322,7 +329,6 @@ def generate_resume(output_path):
         ]
         subprocess.run(cmd, check=True)
         if os.path.exists(temp_pdf_path):
-            import shutil
             shutil.copyfile(temp_pdf_path, abs_output_path)
             try:
                 os.remove(temp_pdf_path)
