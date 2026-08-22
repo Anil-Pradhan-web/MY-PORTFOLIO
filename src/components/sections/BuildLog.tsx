@@ -10,7 +10,7 @@ const highlights = [
   {
     label: 'Dell FutureMinds AI Hackathon 2026',
     result: '2nd Runner-Up',
-    detail: 'Secured a Top 3 finish among 8,000+ participants nationwide, advancing to the Grand Finale and presenting our solution to senior Dell leaders and corporate employees at the Dell Bengaluru office.',
+    detail: 'Advanced through a 4-stage national selection (8,000+ participants → 370 → Top 10 → Top 6 Grand Finalists) to secure 3rd position; presented final solution to Dell jury, senior leaders, and employees at Dell Bengaluru office.',
     icon: Trophy,
     metrics: [
       { key: 'Rank', value: 'Top 3' },
