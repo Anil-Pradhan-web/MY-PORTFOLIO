@@ -10,7 +10,7 @@ const highlights = [
   {
     label: 'Dell FutureMinds AI Hackathon 2026',
     result: '2nd Runner-Up',
-    detail: 'Advanced through a 4-stage national selection (8,000+ participants → 370 → Top 10 → Top 6 Grand Finalists) to secure 3rd position; presented final solution to Dell jury, senior leaders, and employees at Dell Bengaluru office.',
+    detail: "Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with 8,000+ participants attempting a HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, a Zoom pitch round, and finally into the Top 6 Grand Finalists. We flew to Dell's Bengaluru office to present our solution live to Dell's jury, senior leadership, and employees — securing 3rd position (2nd Runner-Up) overall.",
     icon: Trophy,
     metrics: [
       { key: 'Rank', value: 'Top 3' },
