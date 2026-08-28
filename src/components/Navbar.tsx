@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
+  { name: 'About', href: '#about' },
   { name: 'Work', href: '#featured-work' },
   { name: 'Experience', href: '#experience' },
   { name: 'Stack', href: '#tech-stack' },
@@ -16,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,26 @@ export default function Navbar() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll-spy: highlight the nav link for the section currently in view
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.getElementById(link.href.slice(1)))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveSection(`#${visible.target.id}`);
+      },
+      { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -57,11 +79,20 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="font-body text-sm font-medium text-text-secondary hover:text-teal-400 transition-colors relative py-2"
+                  aria-current={activeSection === link.href ? 'true' : undefined}
+                  className={cn(
+                    'group font-body text-sm font-medium transition-colors relative py-2',
+                    activeSection === link.href
+                      ? 'text-teal-400'
+                      : 'text-text-secondary hover:text-teal-400'
+                  )}
                 >
                   {link.name}
                   <span
-                    className="absolute bottom-0 left-0 w-0 h-[2px] bg-teal-400 transition-all duration-300 group-hover:w-full"
+                    className={cn(
+                      'absolute bottom-0 left-0 h-[2px] bg-teal-400 transition-all duration-300',
+                      activeSection === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+                    )}
                     aria-hidden="true"
                   />
                 </Link>

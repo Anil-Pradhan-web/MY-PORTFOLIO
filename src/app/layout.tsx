@@ -25,6 +25,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://anilpradhan.dev'),
   title: 'Anil Pradhan — Software Engineer | Backend & AI',
   description: 'Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG. CGPA 8.93. Open to internships in Bangalore, Hyderabad, Bhubaneswar.',
   keywords: ['Backend Engineer', 'AI Engineer', 'FastAPI', 'LangGraph', 'Distributed Systems', 'RAG', 'Python', 'Java', 'Anil Pradhan'],
@@ -39,11 +40,20 @@ export const metadata: Metadata = {
     title: 'Anil Pradhan — Software Engineer | Backend & AI',
     description: 'Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.',
     siteName: 'Anil Pradhan Portfolio',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Anil Pradhan — Software Engineer | Backend & AI',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Anil Pradhan — Software Engineer | Backend & AI',
     description: 'Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.',
+    images: ['/og-image.png'],
   },
   icons: {
     icon: [

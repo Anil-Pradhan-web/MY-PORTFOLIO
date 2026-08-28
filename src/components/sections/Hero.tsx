@@ -129,6 +129,16 @@ export default function Hero() {
             className="flex-shrink-0"
           >
             <div className="relative">
+              {/* Status pill */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/10 backdrop-blur-sm text-emerald-400 font-mono text-xs font-medium whitespace-nowrap shadow-lg">
+                  <span className="relative flex h-2 w-2" aria-hidden="true">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                  </span>
+                  Open to internships
+                </span>
+              </div>
               {/* Subtle glow behind photo */}
               <div className="absolute -inset-3 bg-teal-500/10 rounded-2xl blur-2xl pointer-events-none" aria-hidden="true" />
               <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 rounded-2xl overflow-hidden border-2 border-border-primary hover:border-teal-500/50 transition-all duration-300 shadow-lg">

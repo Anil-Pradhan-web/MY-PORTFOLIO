@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion';
 import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
 import {
-  SiTypescript, SiJavascript, SiFastapi, SiSqlite,
+  SiJavascript, SiFastapi, SiSqlite,
   SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis,
-  SiSwagger, SiJsonwebtokens, SiPostgresql,
-  SiTailwindcss,
+  SiJsonwebtokens, SiPostgresql,
+  SiTailwindcss, SiHtml5, SiCss,
 } from 'react-icons/si';
-import { BrainCircuit, Cpu, GitBranch, Box, Github, ShieldCheck } from 'lucide-react';
+import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const skillCategories = [
@@ -30,6 +30,8 @@ const skillCategories = [
       { name: 'LangGraph', icon: GitBranch, color: '#4ade80' },
       { name: 'SQLAlchemy', icon: Cpu, color: '#D71F00' },
       { name: 'Pydantic', icon: ShieldCheck, color: '#E92063' },
+      { name: 'JWT Auth', icon: SiJsonwebtokens, color: '#FB015B' },
+      { name: 'OAuth 2.0', icon: ShieldCheck, color: '#4285F4' },
     ],
   },
   {
@@ -48,55 +50,27 @@ const skillCategories = [
       { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
       { name: 'Render', icon: SiRender, color: '#46E3B7' },
       { name: 'Vercel', icon: SiVercel, color: '#ffffff' },
+      { name: 'Git', icon: FaGitAlt, color: '#F05032' },
+      { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
     ],
   },
   {
     category: 'Frontend',
     items: [
       { name: 'React', icon: FaReact, color: '#61DAFB' },
-      { name: 'HTML', icon: SiJavascript, color: '#E34F26' },
-      { name: 'CSS', icon: SiTailwindcss, color: '#1572B6' },
+      { name: 'HTML', icon: SiHtml5, color: '#E34F26' },
+      { name: 'CSS', icon: SiCss, color: '#1572B6' },
       { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
-    ],
-  },
-  {
-    category: 'Security & Auth',
-    items: [
-      { name: 'JWT', icon: SiJsonwebtokens, color: '#FB015B' },
-      { name: 'Google OAuth 2.0', icon: ShieldCheck, color: '#4285F4' },
-      { name: 'bcrypt', icon: ShieldCheck, color: '#94a3b8' },
-      { name: 'CORS', icon: ShieldCheck, color: '#22C55E' },
-      { name: 'Rate Limiting', icon: Cpu, color: '#0EA5E9' },
-    ],
-  },
-  {
-    category: 'Developer Tools',
-    items: [
-      { name: 'Git', icon: FaGitAlt, color: '#F05032' },
-      { name: 'GitHub', icon: Github, color: '#ffffff' },
-      { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
-      { name: 'Swagger UI', icon: SiSwagger, color: '#85EA2D' },
-      { name: 'VS Code', icon: SiTypescript, color: '#007ACC' },
     ],
   },
   {
     category: 'AI / GenAI',
     items: [
-      { name: 'Prompt Engineering', icon: BrainCircuit, color: '#a78bfa' },
       { name: 'RAG', icon: BrainCircuit, color: '#38bdf8' },
       { name: 'Agentic AI', icon: BrainCircuit, color: '#4ade80' },
       { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
-      { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
       { name: 'LLM Integration', icon: BrainCircuit, color: '#76B900' },
-    ],
-  },
-  {
-    category: 'Agentic AI Tools',
-    items: [
-      { name: 'Claude Code', icon: BrainCircuit, color: '#D4A574' },
-      { name: 'AnythingLLM', icon: BrainCircuit, color: '#f59e0b' },
-      { name: 'Multica', icon: Box, color: '#FF6B35' },
-      { name: 'OpenCode', icon: Cpu, color: '#0ea5e9' },
+      { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
     ],
   },
 ];
@@ -111,7 +85,7 @@ export default function TechStack() {
           subtitle="Tools and technologies I use to build systems that scale."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {skillCategories.map((category, idx) => (
             <motion.div
               key={idx}
