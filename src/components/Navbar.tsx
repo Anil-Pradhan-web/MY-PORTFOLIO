@@ -143,7 +143,13 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-base font-medium text-text-secondary hover:text-teal-400 transition-colors py-3 border-b border-border-primary/50"
+                aria-current={activeSection === link.href ? 'true' : undefined}
+                className={cn(
+                  'font-body text-base font-medium transition-colors py-3 border-b border-border-primary/50',
+                  activeSection === link.href
+                    ? 'text-teal-400'
+                    : 'text-text-secondary hover:text-teal-400'
+                )}
               >
                 {link.name}
               </Link>

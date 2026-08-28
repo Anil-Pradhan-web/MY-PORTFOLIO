@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, MousePointer2, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -142,12 +143,14 @@ export default function Hero() {
               {/* Subtle glow behind photo */}
               <div className="absolute -inset-3 bg-teal-500/10 rounded-2xl blur-2xl pointer-events-none" aria-hidden="true" />
               <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 rounded-2xl overflow-hidden border-2 border-border-primary hover:border-teal-500/50 transition-all duration-300 shadow-lg">
-                <img
+                <Image
                   src="/anil.png"
                   alt="Anil Pradhan"
                   className="w-full h-auto block"
                   width={320}
                   height={426}
+                  priority
+                  sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
                 />
               </div>
             </div>
