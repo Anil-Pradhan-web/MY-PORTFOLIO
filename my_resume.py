@@ -194,12 +194,12 @@ def generate_resume(output_path):
         </div>
         <div class="text-[9px] text-slate-500 italic font-medium ml-0.5 mb-1">Integration Lead | Team IdeaForg-E</div>
         <ul class="list-disc list-outside ml-4 text-[9.2px] text-slate-600 space-y-0.5 leading-relaxed">
-          <li>Built an 8-agent AI system that collects tasks from 7 platforms (Jira, GitHub, Slack, Email) and removes duplicates automatically.</li>
-          <li>Designed an 8-factor ranking engine to prioritize urgent issues, score task quality, and create dynamic, meeting-aware daily schedules.</li>
-          <li>Implemented multi-provider LLM failover (Groq → NVIDIA NIM → local heuristics) ensuring the pipeline never breaks even without API keys.</li>
+          <li>Built an 8-agent AI system that collects, cleans, and merges tasks from 5 sources (GitHub, Slack, Email, Calendar, Meeting notes), using fuzzy matching plus LLM checks to catch duplicates.</li>
+          <li>Built a 7-factor system to rank tasks by urgency, deadline, and impact, with clear reasons for each rank, plus a smart daily planner that works around your meetings.</li>
+          <li>Added backup AI models (Groq → NVIDIA NIM → local rules) so the app never breaks, and a chat assistant that can add urgent tasks and instantly re-rank everything.</li>
         </ul>
         <div class="mt-1.5 ml-4 text-[8.2px] text-slate-500 font-semibold">
-          <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; React &bull; SQLite &bull; Redis &bull; LLMs
+          <span class="text-[#1e3a8a]">Tech:</span> FastAPI &bull; React &bull; SQLite &bull; Groq/NVIDIA NIM
         </div>
       </div>
     </div>
