@@ -41,13 +41,12 @@ def generate_resume(output_path):
       <h1 class="text-[28px] font-extrabold tracking-tight leading-none">ANIL PRADHAN</h1>
       <h2 class="text-[9.8px] font-bold tracking-wider text-sky-400 mt-1 uppercase">SOFTWARE ENGINEER | BACKEND &amp; AI</h2>
       <p class="text-[9.2px] text-slate-300 mt-1.5 leading-relaxed">
-        Backend-focused Computer Science undergraduate building AI-powered, scalable systems with FastAPI, LangGraph &amp; RAG.
+        Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.
       </p>
       <!-- Enterprise-style stat chips -->
       <div class="flex flex-wrap gap-1.5 mt-2">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sky-400/10 border border-sky-400/30 text-[8.2px] font-semibold text-sky-300 tracking-wide">CGPA 8.93 / 10</span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-[8.2px] font-semibold text-amber-300 tracking-wide">🏆 Dell Hackathon — National Finalist</span>
         <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-400/10 border border-emerald-400/30 text-[8.2px] font-semibold text-emerald-300 tracking-wide">Open to Internships</span>
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-white/5 border border-white/15 text-[8.2px] font-semibold text-slate-200 tracking-wide">Dell FutureMinds — Top 6 Finalist</span>
       </div>
     </div>
     <!-- Right: Contact Details -->
@@ -98,7 +97,6 @@ def generate_resume(output_path):
         </div>
         <div class="flex justify-between items-baseline text-[9px] text-slate-600">
           <span>Bachelor of Technology (B.Tech), Computer Science &amp; Engineering</span>
-          <span class="font-bold text-slate-900 font-mono">CGPA: 8.93 / 10</span>
         </div>
       </div>
       <div>
