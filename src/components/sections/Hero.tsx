@@ -1,9 +1,22 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, MousePointer2, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+
+// One orchestrated load sequence: heading → subtitle → body → contact → socials → CTAs
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+};
 
 export default function Hero() {
   return (
@@ -31,14 +44,17 @@ export default function Hero() {
       <div className="relative z-10 container-custom w-full">
         <div className="flex flex-col-reverse lg:flex-row items-center lg:items-center gap-12 lg:gap-16">
 
-          {/* ── Left: Text Content ── */}
-          <div className="flex-1 text-center lg:text-left">
+          {/* ── Left: Text Content (staggered entrance) ── */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="flex-1 text-center lg:text-left"
+          >
             {/* Name */}
             <motion.h1
               id="hero-title"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              variants={item}
               className="heading-1 mb-4"
             >
               Anil Pradhan
@@ -46,19 +62,16 @@ export default function Hero() {
 
             {/* Title */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              variants={item}
               className="font-mono text-sm md:text-base font-medium text-teal-400 tracking-widest uppercase mb-6"
             >
               Software Engineer | Backend &amp; AI
+              <span className="cursor-blink ml-1" aria-hidden="true">▍</span>
             </motion.p>
 
             {/* Description */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              variants={item}
               className="body-lg max-w-xl mb-8 text-text-secondary"
             >
               Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.
@@ -66,9 +79,7 @@ export default function Hero() {
 
             {/* Contact info */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              variants={item}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2.5 text-sm font-mono text-text-muted mb-6"
             >
               <a href="mailto:anilpradhan9644@gmail.com" className="flex items-center gap-1.5 hover:text-teal-400 transition-colors">
@@ -87,9 +98,7 @@ export default function Hero() {
 
             {/* Social Links */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              variants={item}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2.5 text-sm font-mono mb-8"
             >
               <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-teal-400 transition-colors">
@@ -105,9 +114,7 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              variants={item}
               className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
             >
               <Link href="#featured-work" className="btn-primary group" aria-label="View featured projects">
@@ -120,7 +127,7 @@ export default function Hero() {
                 Get In Touch
               </Link>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* ── Right: Photo ── */}
           <motion.div

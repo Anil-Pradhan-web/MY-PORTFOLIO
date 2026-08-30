@@ -8,7 +8,7 @@ import {
   SiJsonwebtokens, SiPostgresql,
   SiTailwindcss, SiHtml5, SiCss,
 } from 'react-icons/si';
-import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck } from 'lucide-react';
+import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck, Database } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const skillCategories = [
@@ -18,7 +18,7 @@ const skillCategories = [
       { name: 'Python', icon: FaPython, color: '#3776AB' },
       { name: 'Java', icon: FaJava, color: '#f89820' },
       { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-      { name: 'SQL', icon: SiPostgresql, color: '#336791' },
+      { name: 'SQL', icon: Database, color: '#0ea5e9' },
     ],
   },
   {

@@ -1,28 +1,7 @@
 import type { Metadata } from 'next';
-import { Syne, JetBrains_Mono, Inter } from 'next/font/google';
+import { spaceGrotesk, jetbrainsMono, inter } from './fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar';
-
-const syne = Syne({
-  subsets: ['latin'],
-  variable: '--font-syne',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://anilpradhan.dev'),
@@ -80,7 +59,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${syne.variable} ${jetbrainsMono.variable} ${inter.variable} font-body bg-bg-primary text-text-primary antialiased overflow-x-hidden`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${inter.variable} font-body bg-bg-primary text-text-primary antialiased overflow-x-hidden`}
       >
         <Navbar />
         <main id="main-content">{children}</main>
