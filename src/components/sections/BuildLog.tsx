@@ -161,14 +161,11 @@ export default function BuildLog() {
 
         {/* ── Grouped Certifications ── */}
         <motion.div {...fadeUp(0.32)}>
-          <div className="flex items-center justify-between gap-2.5 mb-6">
-            <div className="flex items-center gap-2.5">
-              <div className="p-2 rounded-lg bg-teal-500/10 border border-teal-500/20">
-                <Award className="w-4 h-4 text-teal-400" />
-              </div>
-              <h3 className="font-display text-lg font-bold text-text-primary">Verified Credentials &amp; Certifications</h3>
+          <div className="flex items-center gap-2.5 mb-6">
+            <div className="p-2 rounded-lg bg-teal-500/10 border border-teal-500/20">
+              <Award className="w-4 h-4 text-teal-400" />
             </div>
-            <span className="font-mono text-[0.7rem] text-text-muted">High-Signal Portfolio Track</span>
+            <h3 className="font-display text-lg font-bold text-text-primary">Verified Credentials &amp; Certifications</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
