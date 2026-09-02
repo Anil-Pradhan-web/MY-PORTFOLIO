@@ -53,47 +53,38 @@ export default function About() {
             className="space-y-6"
           >
             <motion.p variants={childFade} className="body-lg leading-relaxed">
-              I got into coding because I was curious —{' '}
+              I usually start with a simple question:{' '}
               <span className="text-text-primary font-medium">
-                how do apps actually work behind the screen?
+                &ldquo;What happens if I actually try this?&rdquo;
               </span>{' '}
-              So I started building things. Badly at first, but enough to get hooked.
+              That&apos;s how most of my projects begin.
             </motion.p>
 
             <motion.p variants={childFade} className="body-lg leading-relaxed">
-              What really stuck with me was when things{' '}
-              <span className="text-text-primary font-medium">broke</span>. My
-              first script crashed under real users. My first API started throwing
-              errors the moment more than one person touched it. That&apos;s when I
-              realized —{' '}
-              <span className="text-text-primary font-medium">
-                working in a demo and working in real life are two very different
-                things.
-              </span>
+              I build things, break things, fix them, and usually learn something I didn&apos;t expect along the way. Sometimes the code works perfectly. Sometimes it completely falls apart for a reason I didn&apos;t even think about. And honestly, I like that part.
             </motion.p>
 
             <motion.p variants={childFade} className="body-lg leading-relaxed">
-              That gap between{' '}
-              <span className="font-mono text-sm text-teal-400 bg-teal-400/10 px-2 py-0.5 rounded">
-                &quot;works on my machine&quot;
+              Over time, I found myself spending more time thinking about{' '}
+              <span className="text-text-primary font-medium">
+                what happens behind the scenes
               </span>{' '}
-              and{' '}
-              <span className="font-mono text-sm text-teal-400 bg-teal-400/10 px-2 py-0.5 rounded">
-                &quot;actually works&quot;
-              </span>{' '}
-              — that&apos;s where I live now. Backend systems and AI are where it
-              gets most interesting, and I haven&apos;t looked away since.
+              — APIs, databases, performance, edge cases, failures, and now AI systems too. I&apos;m not very interested in building projects just to make a nice demo. I like building something, putting it under pressure, and seeing where it breaks.
+            </motion.p>
+
+            <motion.p variants={childFade} className="body-lg leading-relaxed">
+              That&apos;s also why I try to keep my projects measurable. If something is slow, I want to know how slow. If a model makes mistakes, I want to know where. If a system fails, I want to understand why.
             </motion.p>
 
             <motion.div
               variants={childFade}
-              className="border-l-2 border-teal-500/40 pl-5 py-1"
+              className="border-l-2 border-teal-500/40 pl-5 py-2 bg-teal-500/5 rounded-r-xl"
             >
-              <p className="body-lg leading-relaxed text-text-secondary italic">
-                I&apos;d rather ship something small and honest than something big
-                and flashy. Every project here has real numbers — load tests, latency,
-                failure modes — because if I can&apos;t measure it, I don&apos;t
-                really understand it yet.
+              <p className="body-lg font-bold text-text-primary">
+                Build it. Break it. Fix it. Learn from it.
+              </p>
+              <p className="body text-text-secondary mt-0.5 italic">
+                That&apos;s pretty much how I like to work.
               </p>
             </motion.div>
           </motion.div>
@@ -145,7 +136,7 @@ export default function About() {
 
             {/* Philosophy tag list */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {['Fails gracefully', 'Measured systems', 'Real metrics', 'Clean docs'].map(
+              {['Build & Break', 'Measured systems', 'Under pressure', 'Edge cases & Failures'].map(
                 (tag) => (
                   <span key={tag} className="badge-outline">
                     {tag}

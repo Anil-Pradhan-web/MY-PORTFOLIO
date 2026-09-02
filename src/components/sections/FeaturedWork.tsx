@@ -8,6 +8,42 @@ import { Badge } from '@/components/ui/Badge';
 
 const projects = [
   {
+    id: 'verivision-ai',
+    title: 'VeriVision AI',
+    tagline: 'Agent Developer · Team IdeaForg-E · Aug 2026 – Present',
+    description:
+      'Built an end-to-end Agentic AI platform for hardware parts fraud detection using a 5-agent LangGraph pipeline with computer vision, replacing manual visual inspection with deterministic, explainable verdicts.',
+    challenge:
+      'Manual inspection of hardware parts for counterfeiting takes 4+ hours per pallet and is inconsistent across sites. Inspectors miss subtle fraud like single-character serial number alterations (0→O) or non-OEM label hue shifts.',
+    solution:
+      'Designed a 5-agent LangGraph state machine that orchestrates CLIP-based golden reference matching, image quality gating with ORB homography, and a 6-method parallel anomaly ensemble. Built a Noisy-OR multi-angle fusion engine to produce deterministic fraud verdicts with audit-ready PDF reports.',
+    architecture: {
+      layers: [
+        { name: 'Frontend', tech: 'React + Vite + Tailwind CSS', icon: '🌐' },
+        { name: 'API Gateway', tech: 'FastAPI (REST)', icon: '⚡' },
+        { name: 'Orchestration', tech: 'LangGraph StateGraph (5 agents)', icon: '🧠' },
+        { name: 'Vision Engine', tech: 'OpenCV + CLIP ViT-B/32 + EasyOCR', icon: '👁️' },
+        { name: 'AI Providers', tech: 'NVIDIA NIM (Vision + Text LLM)', icon: '🤖' },
+        { name: 'Data Layer', tech: 'SQLite + File System', icon: '💾' },
+      ],
+    },
+    metrics: [
+      { label: 'Agents', value: '5', detail: 'LangGraph pipeline' },
+      { label: 'Detection', value: '6', detail: 'parallel methods' },
+      { label: 'Speed', value: '3-5s', detail: 'per part (vs 4+ hrs)' },
+      { label: 'Hackathon', value: 'Dell', detail: 'Grand Final 2026' },
+    ],
+    features: [
+      'Built a 5-agent LangGraph pipeline for hardware parts fraud detection, orchestrating CLIP-based reference matching, quality gating, and a 6-method parallel anomaly ensemble (SSIM, EasyOCR, ORB keypoints, template ROI, color histogram, vision LLM).',
+      'Implemented a Noisy-OR multi-angle fusion engine with a weighted scoring matrix to produce deterministic fraud verdicts, replacing 4+ hours of manual inspection with ~3-5 second automated analysis.',
+      'Integrated NVIDIA NIM microservices for multimodal vision inspection and natural language audit explanations, with graceful fallback to local rule-based templates for offline operation.',
+      'Designed a Human-in-the-Loop (HITL) review workbench with override capabilities and automated generation of laboratory-grade PDF audit reports featuring JET heatmaps and OCR character diffs.',
+    ],
+    stack: ['FastAPI', 'LangGraph', 'OpenCV', 'CLIP ViT-B/32', 'EasyOCR', 'PyTorch', 'NVIDIA NIM'],
+    githubUrl: 'https://github.com/IdeaForg-e/VeriVision-AI',
+    liveUrl: '',
+  },
+  {
     id: 'ai-career-mentor',
     title: 'AI Career Mentor',
     tagline: 'Solo Full Stack Developer · Mar 2026 – Jul 2026',

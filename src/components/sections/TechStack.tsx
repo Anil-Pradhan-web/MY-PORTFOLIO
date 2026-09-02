@@ -44,7 +44,7 @@ const skillCategories = [
     ],
   },
   {
-    category: 'DevOps & Cloud',
+    category: 'Tools & Technologies',
     items: [
       { name: 'Docker', icon: FaDocker, color: '#2496ED' },
       { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
@@ -71,6 +71,29 @@ const skillCategories = [
       { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
       { name: 'LLM Integration', icon: BrainCircuit, color: '#76B900' },
       { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
+      { name: 'Computer Vision', icon: BrainCircuit, color: '#8B5CF6' },
+      { name: 'Image Processing', icon: BrainCircuit, color: '#EC4899' },
+      { name: 'Anomaly Detection', icon: BrainCircuit, color: '#EF4444' },
+    ],
+  },
+  {
+    category: 'Core Concepts',
+    items: [
+      { name: 'Data Structures & Algorithms', icon: Cpu, color: '#0ea5e9' },
+      { name: 'Operating Systems', icon: Cpu, color: '#f59e0b' },
+      { name: 'Computer Networks', icon: GitBranch, color: '#4ade80' },
+      { name: 'Database Management Systems', icon: Database, color: '#8B5CF6' },
+      { name: 'Object Oriented Programming', icon: Box, color: '#EC4899' },
+    ],
+  },
+  {
+    category: 'Soft Skills',
+    items: [
+      { name: 'Problem-Solving', icon: Cpu, color: '#4ade80' },
+      { name: 'Agile Collaboration & Teamwork', icon: GitBranch, color: '#38bdf8' },
+      { name: 'Technical Communication', icon: ShieldCheck, color: '#f97316' },
+      { name: 'Time Management', icon: Cpu, color: '#8B5CF6' },
+      { name: 'Adaptability', icon: BrainCircuit, color: '#EC4899' },
     ],
   },
 ];

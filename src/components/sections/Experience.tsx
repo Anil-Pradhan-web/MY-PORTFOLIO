@@ -24,19 +24,19 @@ const education = [
 
 const experiences = [
   {
-    role: 'College Ambassador (Internship)',
-    org: 'Techfest, IIT Bombay',
+    role: 'Agentic AI Trainee',
+    org: 'ITER, SOA University',
     period: 'Jul 2026 – Present',
-    location: 'Mumbai, India (Remote)',
-    type: 'Internship & Ambassador Program',
+    location: 'Bhubaneswar, India',
+    type: 'Training Program',
     bullets: [
-      "Completed verified tasks across web development, event management, and creatives — including landing page builds, event ideation, and social media content for Asia's largest tech festival.",
-      'Executed marketing, outreach, and media tasks — including sponsorship communication, SEO research, and digital ecosystem mapping — as part of a performance-based ambassador program.',
+      'Trained in Agentic AI concepts including LLM fine-tuning, MCP integration, multi-agent orchestration, and tools like AnythingLLM, OpenCode, and Hermes through a structured program with hands-on labs and assessments.',
+      'Building a collaborative team project following corporate development workflows — requirement analysis, sprint planning, and iterative delivery — to develop a production-style AI application.',
     ],
-    skills: ['Web Development', 'Event Management', 'Marketing & Outreach', 'SEO Research', 'Sponsorship Communication'],
+    skills: ['LLM Fine-tuning', 'MCP Integration', 'Multi-Agent Orchestration', 'AnythingLLM', 'Sprint Planning'],
     metrics: [
-      { label: 'Festival Scale', value: "Asia's Largest" },
-      { label: 'Role Type', value: 'Performance-Based' },
+      { label: 'Program Type', value: 'Agentic AI' },
+      { label: 'Format', value: 'Corporate-Style' },
     ],
   },
 ];
@@ -52,8 +52,8 @@ export default function Experience() {
       <div className="container-custom relative z-10">
         <SectionHeading
           id="experience-heading"
-          title="Experience & Education"
-          subtitle="Building systems that solve real problems."
+          title="Training & Experience"
+          subtitle="Continuous learning through structured programs and real-world practice."
         />
 
         {/* Education */}
