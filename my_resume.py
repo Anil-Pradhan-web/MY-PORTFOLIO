@@ -33,31 +33,31 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.3in 0.38in;
+        margin: 0.30in 0.36in;
       }
     }
     .resume-container {
       max-width: 8.5in;
       margin: 0 auto;
-      padding: 0.3in 0.38in;
+      padding: 0.30in 0.36in;
     }
 
     /* ===== HEADER ===== */
     .header {
       text-align: center;
-      margin-bottom: 3pt;
+      margin-bottom: 3.5pt;
     }
     .header h1 {
       font-family: 'Source Serif 4', 'Georgia', serif;
-      font-size: 16.5pt;
+      font-size: 17pt;
       font-weight: 700;
       letter-spacing: 0.5pt;
       color: #111;
-      margin-bottom: 1pt;
+      margin-bottom: 1.5pt;
       text-transform: uppercase;
     }
     .header .contact-line {
-      font-size: 8.6pt;
+      font-size: 8.65pt;
       color: #333;
       word-spacing: 0.5pt;
     }
@@ -73,15 +73,15 @@ def generate_resume(output_path):
       color: #999;
     }
     .header .tagline {
-      font-size: 8.6pt;
+      font-size: 8.65pt;
       color: #333;
-      margin-top: 1.5pt;
+      margin-top: 2pt;
       font-style: normal;
     }
 
     /* ===== SECTION ===== */
     .section {
-      margin-top: 5pt;
+      margin-top: 6.8pt;
     }
     .section-title {
       font-family: 'Source Serif 4', 'Georgia', serif;
@@ -91,13 +91,13 @@ def generate_resume(output_path):
       letter-spacing: 0.4pt;
       color: #111;
       border-bottom: 1pt solid #111;
-      padding-bottom: 1.5pt;
+      padding-bottom: 1.2pt;
       margin-bottom: 3pt;
     }
 
     /* ===== ENTRY (Education / Experience) ===== */
     .entry {
-      margin-bottom: 3pt;
+      margin-bottom: 3.5pt;
     }
     .entry-header {
       display: flex;
@@ -105,7 +105,7 @@ def generate_resume(output_path):
       align-items: baseline;
     }
     .entry-title {
-      font-size: 9.2pt;
+      font-size: 9.25pt;
       font-weight: 700;
       color: #111;
     }
@@ -119,7 +119,7 @@ def generate_resume(output_path):
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.6pt;
+      font-size: 8.65pt;
       color: #333;
       font-style: italic;
       margin-top: 0pt;
@@ -138,12 +138,12 @@ def generate_resume(output_path):
       margin-bottom: 0pt;
     }
     .project-name {
-      font-size: 9.3pt;
+      font-size: 9.35pt;
       font-weight: 700;
       color: #111;
     }
     .project-links {
-      font-size: 8.2pt;
+      font-size: 8.25pt;
     }
     .project-links a {
       color: #1a5276;
@@ -164,7 +164,7 @@ def generate_resume(output_path):
       margin-bottom: 0pt;
     }
     .project-tech {
-      font-size: 8.2pt;
+      font-size: 8.25pt;
       color: #444;
       margin-top: 1pt;
     }
@@ -179,9 +179,9 @@ def generate_resume(output_path):
       padding: 0;
     }
     ul.bullets li {
-      font-size: 8.7pt;
+      font-size: 8.65pt;
       color: #222;
-      margin-bottom: 1pt;
+      margin-bottom: 1.4pt;
       line-height: 1.25;
       padding-left: 1pt;
     }
@@ -191,8 +191,8 @@ def generate_resume(output_path):
       display: block;
     }
     .skill-row {
-      margin-bottom: 1pt;
-      font-size: 8.7pt;
+      margin-bottom: 1.4pt;
+      font-size: 8.65pt;
       line-height: 1.28;
     }
     .skill-row strong {
@@ -209,10 +209,10 @@ def generate_resume(output_path):
       padding: 0;
     }
     ul.achievements li {
-      font-size: 8.7pt;
+      font-size: 8.65pt;
       color: #222;
       margin-bottom: 1.5pt;
-      line-height: 1.25;
+      line-height: 1.24;
       padding-left: 1pt;
     }
     ul.achievements li strong {
@@ -229,18 +229,18 @@ def generate_resume(output_path):
     <div class="contact-line">
       <a href="mailto:anilpradhan9644@gmail.com">anilpradhan9644@gmail.com</a>
       <span class="sep">|</span>
-      +91 8917476908
+      <span>+91 8917476908</span>
       <span class="sep">|</span>
-      Bhubaneswar, Odisha
+      <span>Bhubaneswar, Odisha</span>
       <span class="sep">|</span>
       <a href="https://linkedin.com/in/anil-pradhan543">LinkedIn</a>
       <span class="sep">|</span>
       <a href="https://github.com/Anil-Pradhan-web">GitHub</a>
       <span class="sep">|</span>
-      <a href="https://my-portfolio-anil.vercel.app/">Portfolio</a>
+      <a href="https://anil-portfolio-web.vercel.app">Portfolio</a>
     </div>
-    <div class="tagline">Backend-focused Computer Science undergraduate building AI and multi-agent systems with Python, FastAPI, LangGraph, RAG, and scalable backend architectures.</div>
-    <div style="font-size: 8.2pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons (Microsoft, Amazon, Google)</div>
+    <div class="tagline">Backend-focused Computer Science undergraduate building AI and multi-agent systems with Python, FastAPI, LangGraph, RAG, and scalable backends.</div>
+    <div style="font-size: 8.65pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons (Microsoft, Amazon, Google)</div>
   </div>
 
   <!-- ===== EDUCATION ===== -->
@@ -277,21 +277,21 @@ def generate_resume(output_path):
     <!-- Project 1: Most Recent -->
     <div class="entry">
       <div class="project-header">
-        <span class="project-name">VeriVision AI</span>
+        <span class="project-name">VisionForge AI</span>
         <span class="entry-date">Aug 2026 – Present</span>
       </div>
       <div style="margin-bottom: 2pt;">
         <span class="project-links">
           <a href="https://github.com/IdeaForg-e/VeriVision-AI">GitHub</a>
         </span>
-        <span class="project-role"> — Agent Developer | Team IdeaForg-E</span>
+        <span class="project-role"> — AI/Backend Developer | Team IdeaForg-E</span>
       </div>
       <ul class="bullets">
-        <li>Built a <strong>5-agent LangGraph pipeline</strong> for automated hardware fraud detection, covering reference matching, triage, inspection, scoring, and explanation.</li>
-        <li>Developed the <strong>agentic inspection layer</strong> using CLIP, SSIM, OCR, keypoint matching, and Vision LLMs to detect counterfeit and tampered components.</li>
-        <li>Implemented <strong>risk scoring, multi-angle fusion, and Human-in-the-Loop review</strong> for explainable fraud detection and audit-ready reports.</li>
+        <li>Built an AI inspection pipeline to <strong>detect counterfeit and tampered hardware parts</strong> using OpenCV embeddings and FAISS reference matching.</li>
+        <li>Developed <strong>ROI-based inspection agents</strong> using OCR, SSIM, YOLO, and Vision LLMs to detect missing, altered, or suspicious components.</li>
+        <li>Combined evidence from multiple checks to generate <strong>explainable fraud verdicts and recommended actions</strong> (Accept, Retake, Quarantine, or Verify).</li>
       </ul>
-      <div class="project-tech"><strong>Tech:</strong> FastAPI · LangGraph · OpenCV · CLIP ViT-B/32 · EasyOCR · PyTorch · NVIDIA NIM</div>
+      <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · LangGraph · OpenCV · CLIP · FAISS · YOLO · NVIDIA NIM</div>
     </div>
 
     <!-- Project 2 -->
@@ -345,11 +345,12 @@ def generate_resume(output_path):
 
     <div class="entry">
       <div class="entry-header">
-        <span class="entry-title">Agentic AI Training Program — ITER, SOA University</span>
-        <span class="entry-date">Jul 2026 – Present</span>
+        <span class="entry-title">Agentic AI Training Program — CogniForce.AI &amp; ITER, SOA University</span>
+        <span class="entry-date">2026 – Present</span>
       </div>
       <ul class="bullets">
-        <li>Hands-on training in LLM fine-tuning, Model Context Protocol (MCP), multi-agent orchestration, and tooling (AnythingLLM, OpenCode, Multica) with collaborative sprint-based delivery of a production-style AI application.</li>
+        <li>Hands-on training in Agentic AI, LLMs, prompt engineering, RAG, tool calling, MCP, and multi-agent orchestration.</li>
+        <li>Built and experimented with agents using OpenClaw, Multica, AnythingLLM, OpenRouter, Claude Code, OpenCode, and MCP servers, including agent squads and tool integrations.</li>
       </ul>
     </div>
   </div>
@@ -361,7 +362,7 @@ def generate_resume(output_path):
       <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, JavaScript, SQL</span></div>
       <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, WebSockets, SSE, SQLAlchemy, Pydantic, JWT, OAuth 2.0</span></div>
       <div class="skill-row"><strong>Generative AI:</strong> <span>LangGraph, Agentic AI, Multi-Agent Systems, RAG, LLM Orchestration, LLM Integration, Semantic Search, Vector Search, Prompt Engineering</span></div>
-      <div class="skill-row"><strong>AI / ML:</strong> <span>Computer Vision, CLIP, PyTorch, OpenCV, EasyOCR, Anomaly Detection</span></div>
+      <div class="skill-row"><strong>Computer Vision:</strong> <span>OpenCV, CLIP, FAISS, OCR, SSIM, YOLO, Image Embeddings, Anomaly Detection</span></div>
       <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, Redis, SQLite, ChromaDB</span></div>
       <div class="skill-row"><strong>DevOps &amp; Testing:</strong> <span>Docker, Git, GitHub Actions, Pytest, Postman</span></div>
       <div class="skill-row"><strong>AI &amp; Cloud Platforms:</strong> <span>Groq, Google AI Studio, OpenRouter, NVIDIA NIM</span></div>
@@ -376,9 +377,9 @@ def generate_resume(output_path):
     <ul class="achievements">
       <li><strong>Dell FutureMinds AI Hackathon 2026 — 2nd Runner-Up (3rd Place):</strong> Advanced through a 4-stage national selection (8,000+ participants → 370 → Top 10 → Top 6 Grand Finalists); presented final solution to Dell jury and senior leaders at Dell Bengaluru.</li>
       <li><strong>FlowFinance × Techfest IIT Bombay — Round 2 Qualifier:</strong> Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.</li>
-      <li><strong>Built in 3 International Hackathons:</strong> Built and deployed AI products in Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.</li>
+      <li><strong>Built in 3 International Hackathons:</strong> Built and deployed AI products in Microsoft AI Dev Days, Amazon Nova Challenge, and Google Solution Challenge.</li>
       <li><strong>100+ Day DSA Streak:</strong> Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with GFG consistency reward.</li>
-      <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python Essentials 2 · Wells Fargo SWE Job Simulation (Forage) · HackerRank Problem Solving / SQL / Java / Python.</li>
+      <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python Essentials 2 · Wells Fargo SWE (Forage) · HackerRank (Problem Solving, SQL, Java, Python).</li>
     </ul>
   </div>
 

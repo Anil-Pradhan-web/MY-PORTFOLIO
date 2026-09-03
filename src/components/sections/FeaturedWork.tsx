@@ -8,45 +8,47 @@ import { Badge } from '@/components/ui/Badge';
 
 const projects = [
   {
-    id: 'verivision-ai',
-    title: 'VeriVision AI',
-    tagline: 'Agent Developer · Team IdeaForg-E · Aug 2026 – Present',
+    id: 'visionforge-ai',
+    title: 'VisionForge AI',
+    tagline: 'AI / Backend Developer · Team IdeaForg-E · Aug 2026 – Present',
     description:
-      'Built an end-to-end Agentic AI platform for hardware parts fraud detection using a 5-agent LangGraph pipeline with computer vision, replacing manual visual inspection with deterministic, explainable verdicts.',
+      'Built an AI-powered hardware inspection platform to detect counterfeit, tampered, and defective parts through an explainable 8-stage inspection pipeline combining computer vision, multi-agent AI, and evidence-based reasoning.',
     challenge:
-      'Manual inspection of hardware parts for counterfeiting takes 4+ hours per pallet and is inconsistent across sites. Inspectors miss subtle fraud like single-character serial number alterations (0→O) or non-OEM label hue shifts.',
+      'Manual hardware inspection is slow and inconsistent, making it difficult to detect subtle issues such as altered labels, missing components, tampered images, and counterfeit parts.',
     solution:
-      'Designed a 5-agent LangGraph state machine that orchestrates CLIP-based golden reference matching, image quality gating with ORB homography, and a 6-method parallel anomaly ensemble. Built a Noisy-OR multi-angle fusion engine to produce deterministic fraud verdicts with audit-ready PDF reports.',
+      'Built an automated inspection pipeline that validates images, finds the correct golden reference, routes relevant regions to specialized AI agents, combines their evidence, and produces an explainable final verdict.',
     architecture: {
       layers: [
-        { name: 'Frontend', tech: 'React + Vite + Tailwind CSS', icon: '🌐' },
-        { name: 'API Gateway', tech: 'FastAPI (REST)', icon: '⚡' },
-        { name: 'Orchestration', tech: 'LangGraph StateGraph (5 agents)', icon: '🧠' },
-        { name: 'Vision Engine', tech: 'OpenCV + CLIP ViT-B/32 + EasyOCR', icon: '👁️' },
-        { name: 'AI Providers', tech: 'NVIDIA NIM (Vision + Text LLM)', icon: '🤖' },
-        { name: 'Data Layer', tech: 'SQLite + File System', icon: '💾' },
+        { name: 'API', tech: 'FastAPI', icon: '⚡' },
+        { name: 'Orchestration', tech: 'LangGraph (8-stage pipeline)', icon: '🧠' },
+        { name: 'Computer Vision', tech: 'OpenCV · CLIP · FAISS · YOLO', icon: '👁️' },
+        { name: 'AI Agents', tech: 'PaddleOCR · EasyOCR · Vision LLM', icon: '🤖' },
+        { name: 'Reasoning', tech: 'Groq · Google Gemini', icon: '⚡' },
+        { name: 'Data Layer', tech: 'PostgreSQL · SQLite · Redis', icon: '💾' },
       ],
     },
     metrics: [
-      { label: 'Agents', value: '5', detail: 'LangGraph pipeline' },
-      { label: 'Detection', value: '6', detail: 'parallel methods' },
-      { label: 'Speed', value: '3-5s', detail: 'per part (vs 4+ hrs)' },
-      { label: 'Hackathon', value: 'Dell', detail: 'Grand Final 2026' },
+      { label: 'Stages', value: '8', detail: 'Inspection stages' },
+      { label: 'Agents', value: '4', detail: 'Specialized evidence agents' },
+      { label: 'Classes', value: '10', detail: 'YOLO component classes' },
+      { label: 'Hardware', value: '3', detail: 'Supported types' },
     ],
     features: [
-      'Agentic Workflow Development — Designed and implemented the 5-agent LangGraph workflow to automate reference selection, image triage, fraud inspection, decision-making, and explanation.',
-      'Vision Agent Integration — Integrated CLIP, OpenCV, SSIM, EasyOCR, and Vision LLMs into the inspection agent for detecting visual, structural, and text-based anomalies.',
-      'Decision & Evidence Engine — Built the risk scoring and multi-angle fusion logic to combine evidence from multiple detection methods into a final fraud verdict.',
-      'Explainable AI & Human Review — Implemented LLM-based explanations, audit reports, and Human-in-the-Loop review, making detection results easier to verify and audit.',
+      'Image Intelligence — Built image quality, authenticity, and golden-reference matching pipelines using OpenCV, embeddings, CLIP, and FAISS.',
+      'Agentic Inspection — Developed 4 specialized evidence agents for OCR, labels, structural anomalies, and general visual inspection.',
+      'ROI-Based Processing — Implemented ROI scheduling and targeted analysis to route relevant image regions to the right inspection agent.',
+      'Evidence Fusion — Combined findings from multiple detectors and image angles into a single confidence-aware evidence set.',
+      'AI Decision Engine — Implemented an AI Judge + policy engine to convert inspection evidence into actionable fraud decisions.',
+      'Explainable Inspection — Generated evidence-backed reports with confidence, root-cause reasoning, and recommended actions for human verification.',
     ],
-    stack: ['FastAPI', 'LangGraph', 'OpenCV', 'CLIP ViT-B/32', 'EasyOCR', 'PyTorch', 'NVIDIA NIM'],
+    stack: ['FastAPI', 'LangGraph', 'OpenCV', 'CLIP', 'FAISS', 'YOLO', 'PaddleOCR', 'Gemini'],
     githubUrl: 'https://github.com/IdeaForg-e/VeriVision-AI',
     liveUrl: '',
   },
   {
     id: 'ai-career-mentor',
     title: 'AI Career Mentor',
-    tagline: 'Solo Full Stack Developer · Mar 2026 – Jul 2026',
+    tagline: 'Solo Developer · Mar 2026 – Jul 2026',
     description:
       'Engineered a multi-agent AI system containing specialized agents (Resume Auditor, Market Scraper, Roadmap Generator, and LinkedIn Optimizer) built to simplify and streamline developer career transitions.',
     challenge:

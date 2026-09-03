@@ -25,17 +25,18 @@ const education = [
 const experiences = [
   {
     role: 'Agentic AI Trainee',
-    org: 'ITER, SOA University',
-    period: 'Jul 2026 – Present',
+    org: 'CogniForce.AI & ITER, SOA University',
+    period: '2026 – Present',
     location: 'Bhubaneswar, India',
     type: 'Training Program',
     bullets: [
-      'Hands-on training in LLM fine-tuning, Model Context Protocol (MCP), multi-agent orchestration, and tooling (AnythingLLM, OpenCode, Multica) with collaborative sprint-based delivery of a production-style AI application.',
+      'Hands-on training in Agentic AI, LLMs, prompt engineering, RAG, tool calling, MCP, and multi-agent orchestration.',
+      'Built and experimented with agents using OpenClaw, Multica, AnythingLLM, OpenRouter, Claude Code, OpenCode, and MCP servers, including agent squads and tool integrations.',
     ],
-    skills: ['LLM Fine-tuning', 'MCP Integration', 'Multi-Agent Orchestration', 'AnythingLLM', 'Sprint Planning'],
+    skills: ['Agentic AI', 'LLMs', 'Prompt Engineering', 'RAG', 'Tool Calling', 'MCP', 'Multi-Agent Orchestration', 'Claude Code', 'OpenClaw'],
     metrics: [
       { label: 'Program Type', value: 'Agentic AI' },
-      { label: 'Format', value: 'Corporate-Style' },
+      { label: 'Partners', value: 'CogniForce × ITER' },
     ],
   },
 ];

@@ -8,7 +8,7 @@ import {
   SiJsonwebtokens, SiPostgresql,
   SiPytorch, SiOpencv, SiPytest,
 } from 'react-icons/si';
-import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck, Database, Radio, Sparkles, Clock } from 'lucide-react';
+import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck, Database, Radio, Sparkles, Clock, ScanText, Target, ShieldAlert } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const skillCategories = [
@@ -49,14 +49,16 @@ const skillCategories = [
     ],
   },
   {
-    category: 'AI / ML',
+    category: 'Computer Vision',
     items: [
-      { name: 'Computer Vision', icon: BrainCircuit, color: '#8B5CF6' },
-      { name: 'CLIP', icon: Box, color: '#FF6F00' },
-      { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C' },
       { name: 'OpenCV', icon: SiOpencv, color: '#5C3EE8' },
-      { name: 'EasyOCR', icon: BrainCircuit, color: '#00C853' },
-      { name: 'Anomaly Detection', icon: BrainCircuit, color: '#EF4444' },
+      { name: 'CLIP', icon: Box, color: '#FF6F00' },
+      { name: 'FAISS', icon: Database, color: '#00A389' },
+      { name: 'OCR', icon: ScanText, color: '#00C853' },
+      { name: 'SSIM', icon: Cpu, color: '#38BDF8' },
+      { name: 'YOLO', icon: Target, color: '#F59E0B' },
+      { name: 'Image Embeddings', icon: Box, color: '#8B5CF6' },
+      { name: 'Anomaly Detection', icon: ShieldAlert, color: '#EF4444' },
     ],
   },
   {
