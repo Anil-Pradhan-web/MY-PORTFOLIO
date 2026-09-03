@@ -33,31 +33,31 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.25in 0.35in;
+        margin: 0.3in 0.38in;
       }
     }
     .resume-container {
       max-width: 8.5in;
       margin: 0 auto;
-      padding: 0.25in 0.35in;
+      padding: 0.3in 0.38in;
     }
 
     /* ===== HEADER ===== */
     .header {
       text-align: center;
-      margin-bottom: 2pt;
+      margin-bottom: 3pt;
     }
     .header h1 {
       font-family: 'Source Serif 4', 'Georgia', serif;
-      font-size: 16pt;
+      font-size: 16.5pt;
       font-weight: 700;
-      letter-spacing: 1.5pt;
+      letter-spacing: 0.5pt;
       color: #111;
       margin-bottom: 1pt;
       text-transform: uppercase;
     }
     .header .contact-line {
-      font-size: 8.5pt;
+      font-size: 8.6pt;
       color: #333;
       word-spacing: 0.5pt;
     }
@@ -73,31 +73,31 @@ def generate_resume(output_path):
       color: #999;
     }
     .header .tagline {
-      font-size: 8.5pt;
-      color: #444;
-      margin-top: 1pt;
-      font-style: italic;
+      font-size: 8.6pt;
+      color: #333;
+      margin-top: 1.5pt;
+      font-style: normal;
     }
 
     /* ===== SECTION ===== */
     .section {
-      margin-top: 4pt;
+      margin-top: 5pt;
     }
     .section-title {
       font-family: 'Source Serif 4', 'Georgia', serif;
       font-size: 10pt;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5pt;
+      letter-spacing: 0.4pt;
       color: #111;
       border-bottom: 1pt solid #111;
-      padding-bottom: 1pt;
-      margin-bottom: 2pt;
+      padding-bottom: 1.5pt;
+      margin-bottom: 3pt;
     }
 
     /* ===== ENTRY (Education / Experience) ===== */
     .entry {
-      margin-bottom: 2pt;
+      margin-bottom: 3pt;
     }
     .entry-header {
       display: flex;
@@ -105,7 +105,7 @@ def generate_resume(output_path):
       align-items: baseline;
     }
     .entry-title {
-      font-size: 9pt;
+      font-size: 9.2pt;
       font-weight: 700;
       color: #111;
     }
@@ -119,7 +119,7 @@ def generate_resume(output_path):
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.5pt;
+      font-size: 8.6pt;
       color: #333;
       font-style: italic;
       margin-top: 0pt;
@@ -138,12 +138,12 @@ def generate_resume(output_path):
       margin-bottom: 0pt;
     }
     .project-name {
-      font-size: 9pt;
+      font-size: 9.3pt;
       font-weight: 700;
       color: #111;
     }
     .project-links {
-      font-size: 8pt;
+      font-size: 8.2pt;
     }
     .project-links a {
       color: #1a5276;
@@ -164,25 +164,25 @@ def generate_resume(output_path):
       margin-bottom: 0pt;
     }
     .project-tech {
-      font-size: 8pt;
-      color: #555;
-      margin-top: 0pt;
+      font-size: 8.2pt;
+      color: #444;
+      margin-top: 1pt;
     }
     .project-tech strong {
-      color: #333;
+      color: #222;
     }
 
     /* ===== BULLET LISTS ===== */
     ul.bullets {
       list-style: disc;
-      margin-left: 12pt;
+      margin-left: 13pt;
       padding: 0;
     }
     ul.bullets li {
-      font-size: 8.5pt;
+      font-size: 8.7pt;
       color: #222;
-      margin-bottom: 0pt;
-      line-height: 1.18;
+      margin-bottom: 1pt;
+      line-height: 1.25;
       padding-left: 1pt;
     }
 
@@ -191,9 +191,9 @@ def generate_resume(output_path):
       display: block;
     }
     .skill-row {
-      margin-bottom: 0pt;
-      font-size: 8.5pt;
-      line-height: 1.25;
+      margin-bottom: 1pt;
+      font-size: 8.7pt;
+      line-height: 1.28;
     }
     .skill-row strong {
       color: #111;
@@ -205,14 +205,14 @@ def generate_resume(output_path):
     /* ===== ACHIEVEMENTS ===== */
     ul.achievements {
       list-style: disc;
-      margin-left: 12pt;
+      margin-left: 13pt;
       padding: 0;
     }
     ul.achievements li {
-      font-size: 8.5pt;
+      font-size: 8.7pt;
       color: #222;
-      margin-bottom: 0pt;
-      line-height: 1.18;
+      margin-bottom: 1.5pt;
+      line-height: 1.25;
       padding-left: 1pt;
     }
     ul.achievements li strong {
@@ -239,8 +239,8 @@ def generate_resume(output_path):
       <span class="sep">|</span>
       <a href="https://my-portfolio-anil.vercel.app/">Portfolio</a>
     </div>
-    <div class="tagline">Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.</div>
-    <div style="font-size: 8.2pt; color: #111; margin-top: 2pt; font-weight: 600;">2nd Runner-Up, Dell FutureMinds AI Hackathon 2026 (Top 6 / 8,000+) · 3× International Hackathon Builder (Microsoft, Amazon, Google)</div>
+    <div class="tagline">Backend-focused Computer Science undergraduate building AI and multi-agent systems with Python, FastAPI, LangGraph, RAG, and scalable backend architectures.</div>
+    <div style="font-size: 8.2pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons (Microsoft, Amazon, Google)</div>
   </div>
 
   <!-- ===== EDUCATION ===== -->
@@ -287,9 +287,9 @@ def generate_resume(output_path):
         <span class="project-role"> — Agent Developer | Team IdeaForg-E</span>
       </div>
       <ul class="bullets">
-        <li>Built a 5-agent LangGraph pipeline for hardware parts fraud detection, orchestrating CLIP-based reference matching, quality gating, and a 6-method parallel anomaly ensemble (SSIM, EasyOCR, ORB keypoints, template ROI, color histogram, vision LLM).</li>
-        <li>Implemented a Noisy-OR multi-angle fusion engine with a weighted scoring matrix to produce deterministic fraud verdicts, replacing 4+ hours of manual inspection with ~3-5 second automated analysis.</li>
-        <li>Integrated NVIDIA NIM microservices for multimodal vision inspection and natural language audit explanations, with graceful fallback to local rule-based templates for offline operation.</li>
+        <li>Built a <strong>5-agent LangGraph pipeline</strong> for automated hardware fraud detection, covering reference matching, triage, inspection, scoring, and explanation.</li>
+        <li>Developed the <strong>agentic inspection layer</strong> using CLIP, SSIM, OCR, keypoint matching, and Vision LLMs to detect counterfeit and tampered components.</li>
+        <li>Implemented <strong>risk scoring, multi-angle fusion, and Human-in-the-Loop review</strong> for explainable fraud detection and audit-ready reports.</li>
       </ul>
       <div class="project-tech"><strong>Tech:</strong> FastAPI · LangGraph · OpenCV · CLIP ViT-B/32 · EasyOCR · PyTorch · NVIDIA NIM</div>
     </div>
@@ -306,7 +306,7 @@ def generate_resume(output_path):
           <span class="sep">|</span>
           <a href="https://github.com/Anil-Pradhan-web/ai-career-mentor">GitHub</a>
         </span>
-        <span class="project-role"> — Solo Full Stack Developer</span>
+        <span class="project-role"> — Solo Developer</span>
       </div>
       <ul class="bullets">
         <li>Built a multi-agent AI system using LangGraph to orchestrate 4 parallel agents (Resume, Market, Roadmap, LinkedIn) with shared state, reducing analysis latency by ~60%.</li>
@@ -333,15 +333,15 @@ def generate_resume(output_path):
       <ul class="bullets">
         <li>Built an 8-agent AI system that collects, cleans, and merges tasks from 5 sources (GitHub, Slack, Email, Calendar, Meeting notes), using fuzzy matching plus LLM checks to catch duplicates.</li>
         <li>Built a 7-factor system to rank tasks by urgency, deadline, and impact, with clear reasons for each rank, plus a smart daily planner that works around your meetings.</li>
-        <li>Added backup AI models (Groq → NVIDIA NIM → local rules) so the app never breaks, and a chat assistant that can add urgent tasks and instantly re-rank everything.</li>
+        <li>Implemented multi-provider LLM failover (Groq → NVIDIA NIM → local rules) to ensure zero downtime, with a chat assistant for urgent task insertion and instant re-ranking.</li>
       </ul>
       <div class="project-tech"><strong>Tech:</strong> FastAPI · React · SQLite · Groq/NVIDIA NIM</div>
     </div>
   </div>
 
-  <!-- ===== TRAINING & EXPERIENCE ===== -->
+  <!-- ===== TRAINING ===== -->
   <div class="section">
-    <div class="section-title">Training &amp; Experience</div>
+    <div class="section-title">Training</div>
 
     <div class="entry">
       <div class="entry-header">
@@ -349,8 +349,7 @@ def generate_resume(output_path):
         <span class="entry-date">Jul 2026 – Present</span>
       </div>
       <ul class="bullets">
-        <li>Trained in Agentic AI concepts including LLM fine-tuning, MCP integration, multi-agent orchestration, and tools like AnythingLLM, OpenCode, and Hermes through a structured program with hands-on labs and assessments.</li>
-        <li>Building a collaborative team project following corporate development workflows — requirement analysis, sprint planning, and iterative delivery — to develop a production-style AI application.</li>
+        <li>Hands-on training in LLM fine-tuning, Model Context Protocol (MCP), multi-agent orchestration, and tooling (AnythingLLM, OpenCode, Multica) with collaborative sprint-based delivery of a production-style AI application.</li>
       </ul>
     </div>
   </div>
@@ -359,14 +358,15 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
-      <div class="skill-row"><strong>Programming Languages:</strong> <span>Python, Java, JavaScript, SQL</span></div>
-      <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, WebSockets, LangGraph, SQLAlchemy, Pydantic, JWT, OAuth 2.0</span></div>
-      <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL (Neon), SQLite, Redis (Upstash), ChromaDB</span></div>
-      <div class="skill-row"><strong>Tools &amp; Technologies:</strong> <span>Docker, GitHub Actions, Render, Vercel, Git, Postman</span></div>
-      <div class="skill-row"><strong>Frontend:</strong> <span>React, HTML, CSS, Tailwind CSS</span></div>
-      <div class="skill-row"><strong>AI / GenAI:</strong> <span>RAG, Agentic AI, Multi-Agent Systems, LLM Integration, Semantic Search, Computer Vision, Image Processing, Anomaly Detection</span></div>
-      <div class="skill-row"><strong>Core Concepts:</strong> <span>Data Structures &amp; Algorithms, Operating Systems, Computer Networks, Database Management Systems, Object Oriented Programming</span></div>
-      <div class="skill-row"><strong>Soft Skills:</strong> <span>Problem-Solving, Agile Collaboration &amp; Teamwork, Technical Communication, Time Management, Adaptability</span></div>
+      <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, JavaScript, SQL</span></div>
+      <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, WebSockets, SSE, SQLAlchemy, Pydantic, JWT, OAuth 2.0</span></div>
+      <div class="skill-row"><strong>Generative AI:</strong> <span>LangGraph, Agentic AI, Multi-Agent Systems, RAG, LLM Orchestration, LLM Integration, Semantic Search, Vector Search, Prompt Engineering</span></div>
+      <div class="skill-row"><strong>AI / ML:</strong> <span>Computer Vision, CLIP, PyTorch, OpenCV, EasyOCR, Anomaly Detection</span></div>
+      <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, Redis, SQLite, ChromaDB</span></div>
+      <div class="skill-row"><strong>DevOps &amp; Testing:</strong> <span>Docker, Git, GitHub Actions, Pytest, Postman</span></div>
+      <div class="skill-row"><strong>AI &amp; Cloud Platforms:</strong> <span>Groq, Google AI Studio, OpenRouter, NVIDIA NIM</span></div>
+      <div class="skill-row"><strong>Core CS:</strong> <span>Data Structures &amp; Algorithms, OOP, DBMS, Operating Systems, Computer Networks</span></div>
+      <div class="skill-row"><strong>Soft Skills:</strong> <span>Problem-Solving, Teamwork, Technical Communication, Time Management</span></div>
     </div>
   </div>
 
@@ -374,12 +374,11 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Achievements &amp; Certifications</div>
     <ul class="achievements">
-      <li><strong>2nd Runner-Up — Dell FutureMinds AI Hackathon 2026:</strong> Advanced through a 4-stage national selection (8,000+ participants → 370 → Top 10 → Top 6 Grand Finalists) to secure 3rd position; presented final solution to Dell jury, senior leaders, and employees at Dell Bengaluru office.</li>
-      <li><strong>Round 2 Qualifier (Real-World Business Development) — FlowFinance × Techfest IIT Bombay Growth Challenge:</strong> Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.</li>
-      <li><strong>International Hackathons:</strong> Built and deployed AI products in three international hackathons — <strong>Microsoft AI Dev Days</strong>, <strong>Amazon Nova AI Challenge</strong>, and <strong>Google Solution Challenge</strong>.</li>
-      <li><strong>100+ Day DSA Streak:</strong> Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with a GFG reward (T-shirt) for consistency.</li>
-      <li><strong>Google Cloud Arcade:</strong> Completed <strong>75+ Google Cloud Arcade points</strong> through hands-on labs on Google Cloud services, earning official rewards from Google Cloud.</li>
-      <li><strong>Certifications:</strong> Wells Fargo Software Engineering Job Simulation (Forage), Cisco Python Essentials 2, HackerRank Java / Python / SQL / Problem Solving (Basic), IBM AI Fundamentals.</li>
+      <li><strong>Dell FutureMinds AI Hackathon 2026 — 2nd Runner-Up (3rd Place):</strong> Advanced through a 4-stage national selection (8,000+ participants → 370 → Top 10 → Top 6 Grand Finalists); presented final solution to Dell jury and senior leaders at Dell Bengaluru.</li>
+      <li><strong>FlowFinance × Techfest IIT Bombay — Round 2 Qualifier:</strong> Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.</li>
+      <li><strong>Built in 3 International Hackathons:</strong> Built and deployed AI products in Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.</li>
+      <li><strong>100+ Day DSA Streak:</strong> Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with GFG consistency reward.</li>
+      <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python Essentials 2 · Wells Fargo SWE Job Simulation (Forage) · HackerRank Problem Solving / SQL / Java / Python.</li>
     </ul>
   </div>
 

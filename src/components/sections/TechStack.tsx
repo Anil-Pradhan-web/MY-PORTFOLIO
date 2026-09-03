@@ -4,16 +4,16 @@ import { motion } from 'framer-motion';
 import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
 import {
   SiJavascript, SiFastapi, SiSqlite,
-  SiVercel, SiRender, SiGithubactions, SiPostman, SiRedis,
+  SiGithubactions, SiPostman, SiRedis,
   SiJsonwebtokens, SiPostgresql,
-  SiTailwindcss, SiHtml5, SiCss,
+  SiPytorch, SiOpencv, SiPytest,
 } from 'react-icons/si';
-import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck, Database } from 'lucide-react';
+import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck, Database, Radio, Sparkles, Clock } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const skillCategories = [
   {
-    category: 'Programming Languages',
+    category: 'Languages',
     items: [
       { name: 'Python', icon: FaPython, color: '#3776AB' },
       { name: 'Java', icon: FaJava, color: '#f89820' },
@@ -27,73 +27,83 @@ const skillCategories = [
       { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
       { name: 'REST APIs', icon: GitBranch, color: '#0ea5e9' },
       { name: 'WebSockets', icon: Cpu, color: '#f59e0b' },
-      { name: 'LangGraph', icon: GitBranch, color: '#4ade80' },
+      { name: 'SSE', icon: Radio, color: '#00E599' },
       { name: 'SQLAlchemy', icon: Cpu, color: '#D71F00' },
       { name: 'Pydantic', icon: ShieldCheck, color: '#E92063' },
-      { name: 'JWT Auth', icon: SiJsonwebtokens, color: '#FB015B' },
+      { name: 'JWT', icon: SiJsonwebtokens, color: '#FB015B' },
       { name: 'OAuth 2.0', icon: ShieldCheck, color: '#4285F4' },
+    ],
+  },
+  {
+    category: 'Generative AI',
+    items: [
+      { name: 'LangGraph', icon: GitBranch, color: '#4ade80' },
+      { name: 'Agentic AI', icon: BrainCircuit, color: '#4ade80' },
+      { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
+      { name: 'RAG', icon: BrainCircuit, color: '#38bdf8' },
+      { name: 'LLM Orchestration', icon: BrainCircuit, color: '#76B900' },
+      { name: 'LLM Integration', icon: BrainCircuit, color: '#10B981' },
+      { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
+      { name: 'Vector Search', icon: Box, color: '#8B5CF6' },
+      { name: 'Prompt Engineering', icon: Sparkles, color: '#EC4899' },
+    ],
+  },
+  {
+    category: 'AI / ML',
+    items: [
+      { name: 'Computer Vision', icon: BrainCircuit, color: '#8B5CF6' },
+      { name: 'CLIP', icon: Box, color: '#FF6F00' },
+      { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C' },
+      { name: 'OpenCV', icon: SiOpencv, color: '#5C3EE8' },
+      { name: 'EasyOCR', icon: BrainCircuit, color: '#00C853' },
+      { name: 'Anomaly Detection', icon: BrainCircuit, color: '#EF4444' },
     ],
   },
   {
     category: 'Databases',
     items: [
-      { name: 'PostgreSQL (Neon)', icon: SiPostgresql, color: '#00E599' },
+      { name: 'PostgreSQL', icon: SiPostgresql, color: '#00E599' },
+      { name: 'Redis', icon: SiRedis, color: '#DC382D' },
       { name: 'SQLite', icon: SiSqlite, color: '#64b5f6' },
-      { name: 'Redis (Upstash)', icon: SiRedis, color: '#DC382D' },
       { name: 'ChromaDB', icon: Box, color: '#FF6B35' },
     ],
   },
   {
-    category: 'Tools & Technologies',
+    category: 'DevOps & Testing',
     items: [
       { name: 'Docker', icon: FaDocker, color: '#2496ED' },
-      { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
-      { name: 'Render', icon: SiRender, color: '#46E3B7' },
-      { name: 'Vercel', icon: SiVercel, color: '#ffffff' },
       { name: 'Git', icon: FaGitAlt, color: '#F05032' },
+      { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
+      { name: 'Pytest', icon: SiPytest, color: '#0A9EDC' },
       { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
     ],
   },
   {
-    category: 'Frontend',
+    category: 'AI & Cloud Platforms',
     items: [
-      { name: 'React', icon: FaReact, color: '#61DAFB' },
-      { name: 'HTML', icon: SiHtml5, color: '#E34F26' },
-      { name: 'CSS', icon: SiCss, color: '#1572B6' },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
+      { name: 'Groq', icon: Cpu, color: '#F55036' },
+      { name: 'Google AI Studio', icon: Sparkles, color: '#4285F4' },
+      { name: 'OpenRouter', icon: BrainCircuit, color: '#6366F1' },
+      { name: 'NVIDIA NIM', icon: Cpu, color: '#76B900' },
     ],
   },
   {
-    category: 'AI / GenAI',
-    items: [
-      { name: 'RAG', icon: BrainCircuit, color: '#38bdf8' },
-      { name: 'Agentic AI', icon: BrainCircuit, color: '#4ade80' },
-      { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
-      { name: 'LLM Integration', icon: BrainCircuit, color: '#76B900' },
-      { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
-      { name: 'Computer Vision', icon: BrainCircuit, color: '#8B5CF6' },
-      { name: 'Image Processing', icon: BrainCircuit, color: '#EC4899' },
-      { name: 'Anomaly Detection', icon: BrainCircuit, color: '#EF4444' },
-    ],
-  },
-  {
-    category: 'Core Concepts',
+    category: 'Core CS',
     items: [
       { name: 'Data Structures & Algorithms', icon: Cpu, color: '#0ea5e9' },
+      { name: 'OOP', icon: Box, color: '#EC4899' },
+      { name: 'DBMS', icon: Database, color: '#8B5CF6' },
       { name: 'Operating Systems', icon: Cpu, color: '#f59e0b' },
       { name: 'Computer Networks', icon: GitBranch, color: '#4ade80' },
-      { name: 'Database Management Systems', icon: Database, color: '#8B5CF6' },
-      { name: 'Object Oriented Programming', icon: Box, color: '#EC4899' },
     ],
   },
   {
     category: 'Soft Skills',
     items: [
       { name: 'Problem-Solving', icon: Cpu, color: '#4ade80' },
-      { name: 'Agile Collaboration & Teamwork', icon: GitBranch, color: '#38bdf8' },
+      { name: 'Teamwork', icon: GitBranch, color: '#38bdf8' },
       { name: 'Technical Communication', icon: ShieldCheck, color: '#f97316' },
-      { name: 'Time Management', icon: Cpu, color: '#8B5CF6' },
-      { name: 'Adaptability', icon: BrainCircuit, color: '#EC4899' },
+      { name: 'Time Management', icon: Clock, color: '#EC4899' },
     ],
   },
 ];

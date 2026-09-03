@@ -30,8 +30,7 @@ const experiences = [
     location: 'Bhubaneswar, India',
     type: 'Training Program',
     bullets: [
-      'Trained in Agentic AI concepts including LLM fine-tuning, MCP integration, multi-agent orchestration, and tools like AnythingLLM, OpenCode, and Hermes through a structured program with hands-on labs and assessments.',
-      'Building a collaborative team project following corporate development workflows — requirement analysis, sprint planning, and iterative delivery — to develop a production-style AI application.',
+      'Hands-on training in LLM fine-tuning, Model Context Protocol (MCP), multi-agent orchestration, and tooling (AnythingLLM, OpenCode, Multica) with collaborative sprint-based delivery of a production-style AI application.',
     ],
     skills: ['LLM Fine-tuning', 'MCP Integration', 'Multi-Agent Orchestration', 'AnythingLLM', 'Sprint Planning'],
     metrics: [

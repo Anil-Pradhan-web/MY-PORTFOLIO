@@ -9,7 +9,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 const highlights = [
   {
     label: 'Dell FutureMinds AI Hackathon 2026',
-    result: '2nd Runner-Up',
+    result: '2nd Runner-Up (3rd Place)',
     detail: "Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with 8,000+ participants attempting a HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, a Zoom pitch round, and finally into the Top 6 Grand Finalists. We flew to Dell's Bengaluru office to present our solution live to Dell's jury, senior leadership, and employees — securing 3rd position (2nd Runner-Up) overall.",
     icon: Trophy,
     metrics: [
@@ -32,7 +32,7 @@ const highlights = [
 const milestones = [
   {
     icon: Trophy,
-    title: 'International Hackathons',
+    title: 'Built in 3 International Hackathons',
     text: 'Built and deployed AI products in three international hackathons — Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
   },
   {

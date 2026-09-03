@@ -72,10 +72,18 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={item}
-              className="body-lg max-w-xl mb-8 text-text-secondary"
+              className="body-lg max-w-xl mb-4 text-text-secondary"
             >
-              Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.
+              Backend-focused Computer Science undergraduate building AI and multi-agent systems with Python, FastAPI, LangGraph, RAG, and scalable backend architectures.
             </motion.p>
+
+            {/* Achievement Strip */}
+            <motion.div
+              variants={item}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-300 font-medium mb-8"
+            >
+              <span>Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons</span>
+            </motion.div>
 
             {/* Contact info */}
             <motion.div
