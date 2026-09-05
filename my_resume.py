@@ -361,8 +361,8 @@ def generate_resume(output_path):
     <div class="skills-grid">
       <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, JavaScript, SQL</span></div>
       <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, SQLAlchemy, Alembic, Pydantic v2, JWT, RBAC, SSE</span></div>
-      <div class="skill-row"><strong>Generative AI &amp; LLM Orchestration:</strong> <span>LangGraph, Custom Multi-Agent Pipeline Design, Prompt Engineering, Agentic AI, Semantic Search, LLM Resilience Patterns (Circuit Breaker, Rate-Limit Handling)</span></div>
-      <div class="skill-row"><strong>Computer Vision &amp; Embeddings:</strong> <span>OpenCV, PyTorch, YOLO11n (custom fine-tuning), CLIP, FAISS, OCR, SSIM</span></div>
+      <div class="skill-row"><strong>Generative AI &amp; LLM Orchestration:</strong> <span>LangGraph, Multi-Agent Systems, Agent Orchestration, Prompt Engineering, Agentic AI, RAG, Semantic Search, LLM Integration, LLM Resilience &amp; Failover</span></div>
+      <div class="skill-row"><strong>Computer Vision &amp; Embeddings:</strong> <span>OpenCV, PyTorch, YOLO11n, CLIP, FAISS, OCR, SSIM, Anomaly Detection</span></div>
       <div class="skill-row"><strong>LLM Providers:</strong> <span>Groq, Google Gemini, OpenRouter</span></div>
       <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, SQLite, Redis, ChromaDB</span></div>
       <div class="skill-row"><strong>DevOps &amp; Testing:</strong> <span>Docker, GitHub Actions (CI/CD), Render, Vercel, pytest</span></div>

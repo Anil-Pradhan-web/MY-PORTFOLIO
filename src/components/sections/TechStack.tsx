@@ -39,11 +39,14 @@ const skillCategories = [
     category: 'Generative AI & LLM Orchestration',
     items: [
       { name: 'LangGraph', icon: GitBranch, color: '#4ade80' },
-      { name: 'Custom Multi-Agent Pipeline Design', icon: BrainCircuit, color: '#f97316' },
+      { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
+      { name: 'Agent Orchestration', icon: Cpu, color: '#76B900' },
       { name: 'Prompt Engineering', icon: Sparkles, color: '#EC4899' },
       { name: 'Agentic AI', icon: BrainCircuit, color: '#4ade80' },
+      { name: 'RAG', icon: BrainCircuit, color: '#38bdf8' },
       { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
-      { name: 'LLM Resilience Patterns (Circuit Breaker, Rate-Limit Handling)', icon: ShieldAlert, color: '#EF4444' },
+      { name: 'LLM Integration', icon: GitBranch, color: '#10B981' },
+      { name: 'LLM Resilience & Failover', icon: ShieldAlert, color: '#EF4444' },
     ],
   },
   {
@@ -51,11 +54,12 @@ const skillCategories = [
     items: [
       { name: 'OpenCV', icon: SiOpencv, color: '#5C3EE8' },
       { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C' },
-      { name: 'YOLO11n (custom fine-tuning)', icon: Target, color: '#F59E0B' },
+      { name: 'YOLO11n', icon: Target, color: '#F59E0B' },
       { name: 'CLIP', icon: Box, color: '#FF6F00' },
       { name: 'FAISS', icon: Database, color: '#00A389' },
       { name: 'OCR', icon: ScanText, color: '#00C853' },
       { name: 'SSIM', icon: Cpu, color: '#38BDF8' },
+      { name: 'Anomaly Detection', icon: ShieldAlert, color: '#EF4444' },
     ],
   },
   {

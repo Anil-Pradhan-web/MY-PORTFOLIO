@@ -72,23 +72,45 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={item}
-              className="body-lg max-w-xl mb-4 text-text-secondary"
+              className="body-lg max-w-xl mb-3 text-text-primary font-medium"
             >
-              Computer Science undergraduate engineering autonomous multi-agent systems, computer vision inspection pipelines, and resilient backend architectures with Python, FastAPI, LangGraph, OpenCV, and PyTorch.
+              I&apos;m a Computer Science undergraduate who enjoys building the systems behind real-world AI products.
+            </motion.p>
+            <motion.p
+              variants={item}
+              className="body max-w-xl mb-6 text-text-secondary leading-relaxed"
+            >
+              My work focuses on <strong className="text-text-primary font-semibold">backend engineering, multi-agent systems, computer vision, and reliable AI pipelines</strong> using <span className="text-teal-400 font-mono text-xs">Python · FastAPI · LangGraph · OpenCV · PyTorch</span>.
             </motion.p>
 
             {/* Achievement Strip */}
             <motion.div
               variants={item}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-300 font-medium mb-8"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-300 font-medium mb-6"
             >
               <span>Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons</span>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              variants={item}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-sm font-mono mb-6"
+            >
+              <Link href="#featured-work" className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 transition-colors font-medium">
+                View My Work →
+              </Link>
+              <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-teal-400 transition-colors">
+                GitHub →
+              </a>
+              <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-teal-400 transition-colors">
+                LinkedIn →
+              </a>
             </motion.div>
 
             {/* Contact info */}
             <motion.div
               variants={item}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2.5 text-sm font-mono text-text-muted mb-6"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs font-mono text-text-muted mb-8"
             >
               <a href="mailto:anilpradhan9644@gmail.com" className="flex items-center gap-1.5 hover:text-teal-400 transition-colors">
                 <Mail className="w-3.5 h-3.5 text-teal-400" />
@@ -102,22 +124,6 @@ export default function Hero() {
                 <MapPin className="w-3.5 h-3.5 text-teal-400" />
                 Bhubaneswar, Odisha
               </span>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              variants={item}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2.5 text-sm font-mono mb-8"
-            >
-              <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-teal-400 transition-colors">
-                LinkedIn
-              </a>
-              <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-teal-400 transition-colors">
-                GitHub
-              </a>
-              <a href="#featured-work" className="text-text-secondary hover:text-teal-400 transition-colors">
-                Portfolio
-              </a>
             </motion.div>
 
             {/* CTA Buttons */}
