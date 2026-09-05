@@ -239,7 +239,7 @@ def generate_resume(output_path):
       <span class="sep">|</span>
       <a href="https://anil-portfolio-web.vercel.app">Portfolio</a>
     </div>
-    <div class="tagline">Backend-focused Computer Science undergraduate building AI and multi-agent systems with Python, FastAPI, LangGraph, RAG, and scalable backends.</div>
+    <div class="tagline">AI &amp; Backend Engineer specializing in autonomous multi-agent architectures, computer vision pipelines, and resilient backend systems with Python, FastAPI, LangGraph, and PyTorch.</div>
     <div style="font-size: 8.65pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons (Microsoft, Amazon, Google)</div>
   </div>
 
@@ -297,8 +297,30 @@ def generate_resume(output_path):
     <!-- Project 2 -->
     <div class="entry">
       <div class="project-header">
+        <span class="project-name">TaskPilot AI</span>
+        <span class="entry-date">Jul 2026 – Present</span>
+      </div>
+      <div style="margin-bottom: 2pt;">
+        <span class="project-links">
+          <a href="https://taskpilot-ai-app.onrender.com/">Live Demo</a>
+          <span class="sep">|</span>
+          <a href="https://github.com/IdeaForg-e/TaskPilot-AI">GitHub</a>
+        </span>
+        <span class="project-role"> — Integration Lead | Team IdeaForg-E</span>
+      </div>
+      <ul class="bullets">
+        <li>Built a <strong>6-stage multi-agent pipeline</strong> (Agent 0 Orchestrator) in Python &amp; FastAPI to collect, extract, clean, and schedule tasks from 5 tools in <strong>~20 seconds</strong>.</li>
+        <li>Developed <strong>smart deduplication and a 7-factor priority engine</strong> (severity, deadline, outage risk, customer impact) with a 7-point quality checker to rank tasks with clear explanations.</li>
+        <li>Implemented a <strong>reliable LLM client with circuit breaker</strong> (Groq + local fallback rules) and an AI chat assistant for <strong>instant P1 bug injection</strong> and calendar-aware daily scheduling.</li>
+      </ul>
+      <div class="project-tech"><strong>Tech:</strong> FastAPI · React · SQLite · Groq/NVIDIA NIM</div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="entry">
+      <div class="project-header">
         <span class="project-name">AI Career Mentor</span>
-        <span class="entry-date">Mar 2026 – Jul 2026</span>
+        <span class="entry-date">Feb 2026 – Aug 2026</span>
       </div>
       <div style="margin-bottom: 2pt;">
         <span class="project-links">
@@ -314,28 +336,6 @@ def generate_resume(output_path):
         <li>Designed a fault-tolerant backend (FastAPI, PostgreSQL, Redis) with RAG-powered roadmap generation via ChromaDB, multi-provider LLM failover, and a 113-test CI/CD pipeline.</li>
       </ul>
       <div class="project-tech"><strong>Tech:</strong> FastAPI · LangGraph · Next.js · ChromaDB · Redis · Docker · ONNX</div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="entry">
-      <div class="project-header">
-        <span class="project-name">TaskPilot AI</span>
-        <span class="entry-date">Jun 2026 – Jul 2026</span>
-      </div>
-      <div style="margin-bottom: 2pt;">
-        <span class="project-links">
-          <a href="https://taskpilot-ai-app.onrender.com/">Live Demo</a>
-          <span class="sep">|</span>
-          <a href="https://github.com/IdeaForg-e/TaskPilot-AI">GitHub</a>
-        </span>
-        <span class="project-role"> — Integration Lead | Team IdeaForg-E</span>
-      </div>
-      <ul class="bullets">
-        <li>Built an 8-agent AI system that collects, cleans, and merges tasks from 5 sources (GitHub, Slack, Email, Calendar, Meeting notes), using fuzzy matching plus LLM checks to catch duplicates.</li>
-        <li>Built a 7-factor system to rank tasks by urgency, deadline, and impact, with clear reasons for each rank, plus a smart daily planner that works around your meetings.</li>
-        <li>Implemented multi-provider LLM failover (Groq → NVIDIA NIM → local rules) to ensure zero downtime, with a chat assistant for urgent task insertion and instant re-ranking.</li>
-      </ul>
-      <div class="project-tech"><strong>Tech:</strong> FastAPI · React · SQLite · Groq/NVIDIA NIM</div>
     </div>
   </div>
 
@@ -360,13 +360,13 @@ def generate_resume(output_path):
     <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
       <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, JavaScript, SQL</span></div>
-      <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, WebSockets, SSE, SQLAlchemy, Pydantic, JWT, OAuth 2.0</span></div>
-      <div class="skill-row"><strong>Generative AI:</strong> <span>LangGraph, Agentic AI, Multi-Agent Systems, RAG, LLM Orchestration, LLM Integration, Semantic Search, Vector Search, Prompt Engineering</span></div>
-      <div class="skill-row"><strong>Computer Vision:</strong> <span>OpenCV, CLIP, FAISS, OCR, SSIM, YOLO, Image Embeddings, Anomaly Detection</span></div>
-      <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, Redis, SQLite, ChromaDB</span></div>
-      <div class="skill-row"><strong>DevOps &amp; Testing:</strong> <span>Docker, Git, GitHub Actions, Pytest, Postman</span></div>
-      <div class="skill-row"><strong>AI &amp; Cloud Platforms:</strong> <span>Groq, Google AI Studio, OpenRouter, NVIDIA NIM</span></div>
-      <div class="skill-row"><strong>Core CS:</strong> <span>Data Structures &amp; Algorithms, OOP, DBMS, Operating Systems, Computer Networks</span></div>
+      <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, SQLAlchemy, Alembic, Pydantic v2, JWT, RBAC, SSE</span></div>
+      <div class="skill-row"><strong>Generative AI &amp; LLM Orchestration:</strong> <span>LangGraph, Custom Multi-Agent Pipeline Design, Prompt Engineering, Agentic AI, Semantic Search, LLM Resilience Patterns (Circuit Breaker, Rate-Limit Handling)</span></div>
+      <div class="skill-row"><strong>Computer Vision &amp; Embeddings:</strong> <span>OpenCV, PyTorch, YOLO11n (custom fine-tuning), CLIP, FAISS, OCR, SSIM</span></div>
+      <div class="skill-row"><strong>LLM Providers:</strong> <span>Groq, Google Gemini, OpenRouter</span></div>
+      <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, SQLite, Redis, ChromaDB</span></div>
+      <div class="skill-row"><strong>DevOps &amp; Testing:</strong> <span>Docker, GitHub Actions (CI/CD), Render, Vercel, pytest</span></div>
+      <div class="skill-row"><strong>Core Concepts:</strong> <span>Data Structures &amp; Algorithms, OS, CN, DBMS, Object-Oriented Programming</span></div>
       <div class="skill-row"><strong>Soft Skills:</strong> <span>Problem-Solving, Teamwork, Technical Communication, Time Management</span></div>
     </div>
   </div>

@@ -1,14 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaJava, FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
+import { FaJava, FaPython, FaDocker } from 'react-icons/fa';
 import {
   SiJavascript, SiFastapi, SiSqlite,
-  SiGithubactions, SiPostman, SiRedis,
+  SiGithubactions, SiRedis,
   SiJsonwebtokens, SiPostgresql,
   SiPytorch, SiOpencv, SiPytest,
+  SiVercel, SiRender,
 } from 'react-icons/si';
-import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck, Database, Radio, Sparkles, Clock, ScanText, Target, ShieldAlert } from 'lucide-react';
+import { BrainCircuit, Cpu, GitBranch, Box, ShieldCheck, Database, Radio, Sparkles, Clock, ScanText, Target, ShieldAlert, Lock } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const skillCategories = [
@@ -26,47 +27,51 @@ const skillCategories = [
     items: [
       { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
       { name: 'REST APIs', icon: GitBranch, color: '#0ea5e9' },
-      { name: 'WebSockets', icon: Cpu, color: '#f59e0b' },
-      { name: 'SSE', icon: Radio, color: '#00E599' },
       { name: 'SQLAlchemy', icon: Cpu, color: '#D71F00' },
-      { name: 'Pydantic', icon: ShieldCheck, color: '#E92063' },
+      { name: 'Alembic', icon: Database, color: '#38bdf8' },
+      { name: 'Pydantic v2', icon: ShieldCheck, color: '#E92063' },
       { name: 'JWT', icon: SiJsonwebtokens, color: '#FB015B' },
-      { name: 'OAuth 2.0', icon: ShieldCheck, color: '#4285F4' },
+      { name: 'RBAC', icon: Lock, color: '#10B981' },
+      { name: 'SSE', icon: Radio, color: '#00E599' },
     ],
   },
   {
-    category: 'Generative AI',
+    category: 'Generative AI & LLM Orchestration',
     items: [
       { name: 'LangGraph', icon: GitBranch, color: '#4ade80' },
-      { name: 'Agentic AI', icon: BrainCircuit, color: '#4ade80' },
-      { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
-      { name: 'RAG', icon: BrainCircuit, color: '#38bdf8' },
-      { name: 'LLM Orchestration', icon: BrainCircuit, color: '#76B900' },
-      { name: 'LLM Integration', icon: BrainCircuit, color: '#10B981' },
-      { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
-      { name: 'Vector Search', icon: Box, color: '#8B5CF6' },
+      { name: 'Custom Multi-Agent Pipeline Design', icon: BrainCircuit, color: '#f97316' },
       { name: 'Prompt Engineering', icon: Sparkles, color: '#EC4899' },
+      { name: 'Agentic AI', icon: BrainCircuit, color: '#4ade80' },
+      { name: 'Semantic Search', icon: BrainCircuit, color: '#FF6B35' },
+      { name: 'LLM Resilience Patterns (Circuit Breaker, Rate-Limit Handling)', icon: ShieldAlert, color: '#EF4444' },
     ],
   },
   {
-    category: 'Computer Vision',
+    category: 'Computer Vision & Embeddings',
     items: [
       { name: 'OpenCV', icon: SiOpencv, color: '#5C3EE8' },
+      { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C' },
+      { name: 'YOLO11n (custom fine-tuning)', icon: Target, color: '#F59E0B' },
       { name: 'CLIP', icon: Box, color: '#FF6F00' },
       { name: 'FAISS', icon: Database, color: '#00A389' },
       { name: 'OCR', icon: ScanText, color: '#00C853' },
       { name: 'SSIM', icon: Cpu, color: '#38BDF8' },
-      { name: 'YOLO', icon: Target, color: '#F59E0B' },
-      { name: 'Image Embeddings', icon: Box, color: '#8B5CF6' },
-      { name: 'Anomaly Detection', icon: ShieldAlert, color: '#EF4444' },
+    ],
+  },
+  {
+    category: 'LLM Providers',
+    items: [
+      { name: 'Groq', icon: Cpu, color: '#F55036' },
+      { name: 'Google Gemini', icon: Sparkles, color: '#4285F4' },
+      { name: 'OpenRouter', icon: BrainCircuit, color: '#6366F1' },
     ],
   },
   {
     category: 'Databases',
     items: [
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#00E599' },
-      { name: 'Redis', icon: SiRedis, color: '#DC382D' },
       { name: 'SQLite', icon: SiSqlite, color: '#64b5f6' },
+      { name: 'Redis', icon: SiRedis, color: '#DC382D' },
       { name: 'ChromaDB', icon: Box, color: '#FF6B35' },
     ],
   },
@@ -74,29 +79,20 @@ const skillCategories = [
     category: 'DevOps & Testing',
     items: [
       { name: 'Docker', icon: FaDocker, color: '#2496ED' },
-      { name: 'Git', icon: FaGitAlt, color: '#F05032' },
-      { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
-      { name: 'Pytest', icon: SiPytest, color: '#0A9EDC' },
-      { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
+      { name: 'GitHub Actions (CI/CD)', icon: SiGithubactions, color: '#2088FF' },
+      { name: 'Render', icon: SiRender, color: '#46E3B7' },
+      { name: 'Vercel', icon: SiVercel, color: '#ffffff' },
+      { name: 'pytest', icon: SiPytest, color: '#0A9EDC' },
     ],
   },
   {
-    category: 'AI & Cloud Platforms',
-    items: [
-      { name: 'Groq', icon: Cpu, color: '#F55036' },
-      { name: 'Google AI Studio', icon: Sparkles, color: '#4285F4' },
-      { name: 'OpenRouter', icon: BrainCircuit, color: '#6366F1' },
-      { name: 'NVIDIA NIM', icon: Cpu, color: '#76B900' },
-    ],
-  },
-  {
-    category: 'Core CS',
+    category: 'Core Concepts',
     items: [
       { name: 'Data Structures & Algorithms', icon: Cpu, color: '#0ea5e9' },
-      { name: 'OOP', icon: Box, color: '#EC4899' },
+      { name: 'OS', icon: Cpu, color: '#f59e0b' },
+      { name: 'CN', icon: GitBranch, color: '#4ade80' },
       { name: 'DBMS', icon: Database, color: '#8B5CF6' },
-      { name: 'Operating Systems', icon: Cpu, color: '#f59e0b' },
-      { name: 'Computer Networks', icon: GitBranch, color: '#4ade80' },
+      { name: 'Object-Oriented Programming', icon: Box, color: '#EC4899' },
     ],
   },
   {

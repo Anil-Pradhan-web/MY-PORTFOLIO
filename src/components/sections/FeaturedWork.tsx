@@ -46,9 +46,46 @@ const projects = [
     liveUrl: '',
   },
   {
+    id: 'taskpilot-ai',
+    title: 'TaskPilot AI',
+    tagline: 'Integration Lead · Team IdeaForg-E · Jul 2026 – Present',
+    description:
+      'Built an AI-powered task management system using 8 specialized agents to manage and prioritize software engineering tasks. Integrated data from 5 sources — GitHub, Slack, Email, Calendar, and Meeting transcripts — into one platform.',
+    challenge:
+      'Engineers lose hours daily switching between GitHub, Slack, Email, Calendar, and meeting notes. Critical action items — especially ones buried in unstructured emails and Slack threads — fall through the cracks across these disconnected tools.',
+    solution:
+      'Developed a 7-factor priority system to rank tasks based on severity, deadline proximity, customer/business impact, and blocker status. Added an AI chat copilot that can detect P1 issues from natural language and autonomously re-run the full pipeline to update priorities and the daily schedule in real time.',
+    architecture: {
+      layers: [
+        { name: 'Frontend', tech: 'React + Vite + Tailwind CSS', icon: '🌐' },
+        { name: 'API Layer', tech: 'FastAPI (REST, polling-based live updates)', icon: '⚡' },
+        { name: 'Agents', tech: 'Custom multi-agent orchestrator (8 agents, ThreadPoolExecutor for parallel LLM calls)', icon: '🧠' },
+        { name: 'Integrations', tech: 'GitHub / Slack / Email / Calendar / Meeting notes', icon: '🔌' },
+        { name: 'Data Layer', tech: 'SQLite (SQLAlchemy)', icon: '💾' },
+      ],
+    },
+    metrics: [
+      { label: 'Agents', value: '8', detail: 'specialized' },
+      { label: 'Sources', value: '5', detail: 'integrated' },
+      { label: 'Priority Factors', value: '7', detail: 'factor weighted system' },
+      { label: 'P1 Detection', value: 'Auto', detail: 're-run pipeline' },
+    ],
+    features: [
+      'Agent 0 Orchestrator & Self-Healing Pipeline — Built the central controller to run all 6 pipeline stages (Ingestion to Planning) in ~20 seconds, with background execution and automatic recovery for stuck runs.',
+      'Multi-Source Ingestion & Task Extraction — Collected developer activity across 5 tools (GitHub, Slack, Email, Calendar, Meeting notes) using regex and LLM prompts to find hidden action items.',
+      'Fast Task Deduplication & Traceability — Created a fast string-matching algorithm that merges duplicate tasks across tools in ~3 seconds while keeping full links back to original sources.',
+      '7-Dimension Quality & Explainable Priority — Built an automated checker that scores task quality across 7 checks, plus a weighted priority system that explains exactly why a task is ranked high or low.',
+      'Calendar-Aware Dynamic Daily Planner — Created a smart daily planner that protects scheduled meetings, adds short breaks between deep work, and fits prioritized tasks into available free hours.',
+      "Reliable LLM Client & Instant P1 Chat Copilot — Added a fail-safe LLM client with circuit breakers and fallback rules, paired with an AI chat assistant that lets users inject urgent P1 issues to instantly re-rank the day's plan.",
+    ],
+    stack: ['FastAPI', 'React', 'SQLite', 'Groq/NVIDIA NIM'],
+    githubUrl: 'https://github.com/IdeaForg-e/TaskPilot-AI',
+    liveUrl: 'https://taskpilot-ai-app.onrender.com/',
+  },
+  {
     id: 'ai-career-mentor',
     title: 'AI Career Mentor',
-    tagline: 'Solo Developer · Mar 2026 – Jul 2026',
+    tagline: 'Solo Developer · Feb 2026 – Aug 2026',
     description:
       'Engineered a multi-agent AI system containing specialized agents (Resume Auditor, Market Scraper, Roadmap Generator, and LinkedIn Optimizer) built to simplify and streamline developer career transitions.',
     challenge:
@@ -81,41 +118,6 @@ const projects = [
     stack: ['FastAPI', 'LangGraph', 'Next.js', 'ChromaDB', 'Redis', 'Docker', 'ONNX'],
     githubUrl: 'https://github.com/Anil-Pradhan-web/ai-career-mentor',
     liveUrl: 'https://ai-career-mentor-anil.vercel.app',
-  },
-  {
-    id: 'taskpilot-ai',
-    title: 'TaskPilot AI',
-    tagline: 'Integration Lead · Team IdeaForg-E · Jun 2026 – Jul 2026',
-    description:
-      'Built an AI-powered task management system using 8 specialized agents to manage and prioritize software engineering tasks. Integrated data from 5 sources — GitHub, Slack, Email, Calendar, and Meeting transcripts — into one platform.',
-    challenge:
-      'Engineers lose hours daily switching between GitHub, Slack, Email, Calendar, and meeting notes. Critical action items — especially ones buried in unstructured emails and Slack threads — fall through the cracks across these disconnected tools.',
-    solution:
-      'Developed a 7-factor priority system to rank tasks based on severity, deadline proximity, customer/business impact, and blocker status. Added an AI chat copilot that can detect P1 issues from natural language and autonomously re-run the full pipeline to update priorities and the daily schedule in real time.',
-    architecture: {
-      layers: [
-        { name: 'Frontend', tech: 'React + Vite + Tailwind CSS', icon: '🌐' },
-        { name: 'API Layer', tech: 'FastAPI (REST, polling-based live updates)', icon: '⚡' },
-        { name: 'Agents', tech: 'Custom multi-agent orchestrator (8 agents, ThreadPoolExecutor for parallel LLM calls)', icon: '🧠' },
-        { name: 'Integrations', tech: 'GitHub / Slack / Email / Calendar / Meeting notes', icon: '🔌' },
-        { name: 'Data Layer', tech: 'SQLite (SQLAlchemy)', icon: '💾' },
-      ],
-    },
-    metrics: [
-      { label: 'Agents', value: '8', detail: 'specialized' },
-      { label: 'Sources', value: '5', detail: 'integrated' },
-      { label: 'Priority Factors', value: '7', detail: 'factor weighted system' },
-      { label: 'P1 Detection', value: 'Auto', detail: 're-run pipeline' },
-    ],
-    features: [
-      'Orchestrator Development — Built the Agent 0 Orchestrator in Python to control the complete multi-agent workflow, manage execution state, and handle failed/stale runs.',
-      'End-to-End Agent Integration — Connected the Ingestion → Extraction → Fusion → Quality → Prioritization → Planning stages into one working pipeline using FastAPI, SQLAlchemy, SQLite, and shared agent context.',
-      'LLM Integration & Reliability — Integrated Groq and NVIDIA NIM through a multi-provider LLM client with parallel processing, token optimization, failover, and deterministic fallback logic.',
-      'Deployment & System Integration — Integrated the React + FastAPI application, configured Render deployment and GitHub auto-deployment, and prepared the complete system for end-to-end demo and testing.',
-    ],
-    stack: ['FastAPI', 'React', 'SQLite', 'Groq/NVIDIA NIM'],
-    githubUrl: 'https://github.com/IdeaForg-e/TaskPilot-AI',
-    liveUrl: 'https://taskpilot-ai-app.onrender.com/',
   },
 ];
 

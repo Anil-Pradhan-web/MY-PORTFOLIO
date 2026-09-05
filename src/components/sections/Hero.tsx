@@ -65,7 +65,7 @@ export default function Hero() {
               variants={item}
               className="font-mono text-sm md:text-base font-medium text-teal-400 tracking-widest uppercase mb-6"
             >
-              Software Engineer | Backend &amp; AI
+              AI &amp; Backend Engineer | Multi-Agent Systems &amp; Computer Vision
               <span className="cursor-blink ml-1" aria-hidden="true">▍</span>
             </motion.p>
 
@@ -74,7 +74,7 @@ export default function Hero() {
               variants={item}
               className="body-lg max-w-xl mb-4 text-text-secondary"
             >
-              Backend-focused Computer Science undergraduate building AI and multi-agent systems with Python, FastAPI, LangGraph, RAG, and scalable backend architectures.
+              Computer Science undergraduate engineering autonomous multi-agent systems, computer vision inspection pipelines, and resilient backend architectures with Python, FastAPI, LangGraph, OpenCV, and PyTorch.
             </motion.p>
 
             {/* Achievement Strip */}

@@ -24,12 +24,12 @@ const highlights = [
   {
     icon: Code2,
     label: 'Bias',
-    text: 'Small & honest beats big & flashy',
+    text: 'Honest engineering beats flashy demos',
   },
   {
     icon: Zap,
     label: 'Focus',
-    text: 'Backend systems & applied AI',
+    text: 'Autonomous AI Agents, Computer Vision & Backends',
   },
 ];
 
@@ -53,27 +53,26 @@ export default function About() {
             className="space-y-6"
           >
             <motion.p variants={childFade} className="body-lg leading-relaxed">
-              I usually start with a simple question:{' '}
+              I&apos;ve always been the kind of person who learns best by getting my hands dirty. I don&apos;t just want to read tutorials or theorize — I like opening a fresh code editor, building something from scratch, and seeing how far I can push it. That&apos;s honestly how every project of mine begins.
+            </motion.p>
+
+            <motion.p variants={childFade} className="body-lg leading-relaxed">
+              Early on, I realized I cared much more about what happens{' '}
               <span className="text-text-primary font-medium">
-                &ldquo;What happens if I actually try this?&rdquo;
+                behind
               </span>{' '}
-              That&apos;s how most of my projects begin.
+              the screen than on top of it. I fell in love with backend engineering — designing clean APIs, organizing databases, and figuring out what happens when a system runs into weird edge cases or heavy traffic.
             </motion.p>
 
             <motion.p variants={childFade} className="body-lg leading-relaxed">
-              I build things, break things, fix them, and usually learn something I didn&apos;t expect along the way. Sometimes the code works perfectly. Sometimes it completely falls apart for a reason I didn&apos;t even think about. And honestly, I like that part.
-            </motion.p>
-
-            <motion.p variants={childFade} className="body-lg leading-relaxed">
-              Over time, I found myself spending more time thinking about{' '}
+              When I started diving into AI, I saw so many people building the same basic ChatGPT wrappers. That felt boring to me. I wanted to tackle problems that actually had moving parts:{' '}
               <span className="text-text-primary font-medium">
-                what happens behind the scenes
-              </span>{' '}
-              — APIs, databases, performance, edge cases, failures, and now AI systems too. I&apos;m not very interested in building projects just to make a nice demo. I like building something, putting it under pressure, and seeing where it breaks.
+                What if 8 different AI agents need to coordinate like a team to organize messy developer tasks? What if a camera and a vision model have to inspect physical hardware and catch counterfeit chips in seconds?
+              </span>
             </motion.p>
 
             <motion.p variants={childFade} className="body-lg leading-relaxed">
-              That&apos;s also why I try to keep my projects measurable. If something is slow, I want to know how slow. If a model makes mistakes, I want to know where. If a system fails, I want to understand why.
+              Real-world AI is messy. Models hallucinate, network connections drop, and API keys hit rate limits. For me, the real engineering isn&apos;t just getting an AI to generate a cool response — it&apos;s building the safety nets, fallbacks, and pipelines around it so the entire system never breaks when things go wrong.
             </motion.p>
 
             <motion.div
@@ -81,10 +80,10 @@ export default function About() {
               className="border-l-2 border-teal-500/40 pl-5 py-2 bg-teal-500/5 rounded-r-xl"
             >
               <p className="body-lg font-bold text-text-primary">
-                Build it. Break it. Fix it. Learn from it.
+                &ldquo;Build things that actually hold up, especially when the pieces want to fail.&rdquo;
               </p>
               <p className="body text-text-secondary mt-0.5 italic">
-                That&apos;s pretty much how I like to work.
+                That&apos;s the mindset I bring to my work every day.
               </p>
             </motion.div>
           </motion.div>
@@ -125,7 +124,7 @@ export default function About() {
                   Open to work
                 </span>
                 <p className="mt-2 text-text-primary font-medium text-sm leading-relaxed">
-                  Currently open to backend / AI engineering internships.
+                  Currently open to AI / Backend Engineering internships.
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-xs text-teal-400 font-medium group cursor-pointer">
                   <span>Let&apos;s talk</span>
@@ -136,7 +135,7 @@ export default function About() {
 
             {/* Philosophy tag list */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {['Build & Break', 'Measured systems', 'Under pressure', 'Edge cases & Failures'].map(
+              {['Curiosity & Tinkering', 'Autonomous Agents', 'Computer Vision', 'Resilient Backends', 'Real-World Problems'].map(
                 (tag) => (
                   <span key={tag} className="badge-outline">
                     {tag}
