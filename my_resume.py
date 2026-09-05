@@ -81,7 +81,7 @@ def generate_resume(output_path):
 
     /* ===== SECTION ===== */
     .section {
-      margin-top: 6.8pt;
+      margin-top: 5.5pt;
     }
     .section-title {
       font-family: 'Source Serif 4', 'Georgia', serif;
@@ -240,7 +240,7 @@ def generate_resume(output_path):
       <a href="https://anil-portfolio-web.vercel.app">Portfolio</a>
     </div>
     <div class="tagline">AI &amp; Backend Engineer specializing in autonomous multi-agent architectures, computer vision pipelines, and resilient backend systems with Python, FastAPI, LangGraph, and PyTorch.</div>
-    <div style="font-size: 8.65pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons (Microsoft, Amazon, Google)</div>
+    <div style="font-size: 8.4pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds 2nd Runner-Up (Top 6 / 8,000+) · 4× AI Hackathon Builder (Dell, MSFT, AWS, Google)</div>
   </div>
 
   <!-- ===== EDUCATION ===== -->
@@ -377,7 +377,7 @@ def generate_resume(output_path):
     <ul class="achievements">
       <li><strong>Dell FutureMinds AI Hackathon 2026 — 2nd Runner-Up (3rd Place):</strong> Advanced through a 4-stage national selection (8,000+ participants → 370 → Top 10 → Top 6 Grand Finalists); presented final solution to Dell jury and senior leaders at Dell Bengaluru.</li>
       <li><strong>FlowFinance × Techfest IIT Bombay — Round 2 Qualifier:</strong> Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.</li>
-      <li><strong>Built in 3 International Hackathons:</strong> Built and deployed AI products in Microsoft AI Dev Days, Amazon Nova Challenge, and Google Solution Challenge.</li>
+      <li><strong>4× AI Hackathon Builder:</strong> Built and deployed AI solutions across 4 hackathons, including Microsoft AI Dev Days, Amazon Nova Challenge, and Google Solution Challenge.</li>
       <li><strong>100+ Day DSA Streak:</strong> Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with GFG consistency reward.</li>
       <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python Essentials 2 · Wells Fargo SWE (Forage) · HackerRank (Problem Solving, SQL, Java, Python).</li>
     </ul>

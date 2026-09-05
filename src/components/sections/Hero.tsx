@@ -88,7 +88,7 @@ export default function Hero() {
               variants={item}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-300 font-medium mb-6"
             >
-              <span>Dell FutureMinds AI Hackathon 2026 – 2nd Runner-Up (Top 6 / 8,000+) · Built in 3 International Hackathons</span>
+              <span>Dell FutureMinds 2nd Runner-Up (Top 6 / 8,000+) · 4× AI Hackathon Builder (Dell, MSFT, AWS, Google)</span>
             </motion.div>
 
             {/* Quick Links */}

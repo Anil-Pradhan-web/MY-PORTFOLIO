@@ -32,8 +32,8 @@ const highlights = [
 const milestones = [
   {
     icon: Trophy,
-    title: 'Built in 3 International Hackathons',
-    text: 'Built and deployed AI products in three international hackathons — Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
+    title: '4× AI Hackathon Builder',
+    text: 'Built and shipped functional AI applications across 4 hackathons — Dell FutureMinds 2026, Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge.',
   },
   {
     icon: Code2,
