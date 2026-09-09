@@ -359,15 +359,14 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
-      <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, JavaScript, SQL</span></div>
-      <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, SQLAlchemy, Alembic, Pydantic v2, JWT, RBAC, SSE</span></div>
-      <div class="skill-row"><strong>Generative AI &amp; LLM Orchestration:</strong> <span>LangGraph, Multi-Agent Systems, Agent Orchestration, Prompt Engineering, Agentic AI, RAG, Semantic Search, LLM Integration, LLM Resilience &amp; Failover</span></div>
-      <div class="skill-row"><strong>Computer Vision &amp; Embeddings:</strong> <span>OpenCV, PyTorch, YOLO11n, CLIP, FAISS, OCR, SSIM, Anomaly Detection</span></div>
-      <div class="skill-row"><strong>LLM Providers:</strong> <span>Groq, Google Gemini, OpenRouter</span></div>
-      <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, SQLite, Redis, ChromaDB</span></div>
-      <div class="skill-row"><strong>DevOps &amp; Testing:</strong> <span>Docker, GitHub Actions (CI/CD), Render, Vercel, pytest</span></div>
-      <div class="skill-row"><strong>Core Concepts:</strong> <span>Data Structures &amp; Algorithms, OS, CN, DBMS, Object-Oriented Programming</span></div>
-      <div class="skill-row"><strong>Soft Skills:</strong> <span>Problem-Solving, Teamwork, Technical Communication, Time Management</span></div>
+      <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, SQL</span></div>
+      <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, SQLAlchemy, Pydantic v2, JWT/RBAC, SSE, Alembic</span></div>
+      <div class="skill-row"><strong>Gen AI &amp; Agentic AI:</strong> <span>LangGraph, Multi-Agent Systems, Agent Orchestration, RAG, Semantic Search, Prompt Engineering, LLM Integration &amp; Failover Resilience</span></div>
+      <div class="skill-row"><strong>Computer Vision &amp; Embeddings:</strong> <span>PyTorch, OpenCV, YOLO11n, CLIP, FAISS, OCR, Anomaly Detection (SSIM)</span></div>
+      <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, Redis, ChromaDB, SQLite</span></div>
+      <div class="skill-row"><strong>DevOps &amp; Tools:</strong> <span>Docker, GitHub Actions (CI/CD), Git/GitHub, VS Code, Antigravity, Linux/Bash</span></div>
+      <div class="skill-row"><strong>Core CS:</strong> <span>DSA, OOP, OS, DBMS, CN</span></div>
+      <div class="skill-row"><strong>Soft Skills:</strong> <span>Problem-Solving, Technical Communication, Teamwork, Time Management</span></div>
     </div>
   </div>
 
