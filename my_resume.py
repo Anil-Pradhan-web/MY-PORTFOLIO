@@ -260,7 +260,7 @@ def generate_resume(output_path):
 
     <div class="entry">
       <div class="entry-header">
-        <span class="entry-title">Council of Higher Secondary Education (CHSE), Odisha</span>
+        <span class="entry-title">Nalanda Vidya Mandir Higher Secondary School, Berhampur, Odisha</span>
         <span class="entry-date">2022 – 2024</span>
       </div>
       <div class="entry-subtitle">

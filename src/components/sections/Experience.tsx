@@ -15,8 +15,8 @@ const education = [
   },
   {
     degree: 'Class XII (PCM with IT)',
-    institution: 'Council of Higher Secondary Education (CHSE), Odisha',
-    university: '',
+    institution: 'Nalanda Vidya Mandir Higher Secondary School',
+    university: 'Berhampur, Odisha',
     period: '2022 – 2024',
     score: '85%',
   },
