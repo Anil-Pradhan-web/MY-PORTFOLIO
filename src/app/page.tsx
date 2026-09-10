@@ -8,18 +8,20 @@ import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col w-full">
+    <div className="flex min-h-screen flex-col w-full">
       <Hero />
-      <About />
+      <div className="w-full relative">
+        <About />
+      </div>
       <FeaturedWork />
-      <div className="w-full bg-bg-secondary/40">
+      <div className="w-full bg-bg-secondary/60 border-y border-border-primary/50 relative">
         <Experience />
       </div>
       <TechStack />
-      <div className="w-full bg-bg-secondary/40">
+      <div className="w-full bg-bg-secondary/60 border-y border-border-primary/50 relative">
         <BuildLog />
       </div>
       <Contact />
-    </main>
+    </div>
   );
 }

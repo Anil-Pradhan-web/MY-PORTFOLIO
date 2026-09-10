@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -63,13 +63,17 @@ export default function RootLayout({
       >
         <Navbar />
         <main id="main-content">{children}</main>
-        <footer className="border-t border-border-primary py-8">
-          <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-4 text-text-muted text-sm font-body">
-            <p>Built by Anil Pradhan · 2026 · ITER, SOA University, Bhubaneswar, Odisha</p>
-            <div className="flex gap-6">
-              <a href="https://github.com/Anil-Pradhan-web" className="link" aria-label="GitHub">GitHub</a>
-              <a href="https://linkedin.com/in/anil-pradhan543" className="link" aria-label="LinkedIn">LinkedIn</a>
-              <a href="mailto:anilpradhan9644@gmail.com" className="link" aria-label="Email">Email</a>
+        <footer className="border-t border-border-primary/80 py-10 bg-bg-secondary/70">
+          <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6 text-text-muted text-xs font-body">
+            <div className="flex flex-col sm:flex-row items-center gap-2 text-center md:text-left">
+              <span className="font-semibold text-text-secondary">Anil Pradhan</span>
+              <span className="hidden sm:inline text-border-secondary">|</span>
+              <span>B.Tech CSE · ITER, Siksha &apos;O&apos; Anusandhan University, Bhubaneswar, Odisha</span>
+            </div>
+            <div className="flex items-center gap-6 font-mono text-xs">
+              <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="text-text-muted hover:text-emerald-400 transition-colors" aria-label="GitHub">GitHub</a>
+              <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-muted hover:text-emerald-400 transition-colors" aria-label="LinkedIn">LinkedIn</a>
+              <a href="mailto:anilpradhan9644@gmail.com" className="text-text-muted hover:text-emerald-400 transition-colors" aria-label="Email">Email</a>
             </div>
           </div>
         </footer>

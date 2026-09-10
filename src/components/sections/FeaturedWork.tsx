@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, ChevronDown, ChevronUp, Layers, Zap, Shield, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import {
+  ExternalLink, Zap, Shield, ArrowUpRight, Terminal,
+  Globe, Workflow, Eye, Bot, BrainCircuit, Database, Share2, Radio, Cpu
+} from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import SectionHeading from '@/components/ui/SectionHeading';
-import { Badge } from '@/components/ui/Badge';
 
 const projects = [
   {
@@ -19,19 +21,19 @@ const projects = [
       'Built an automated inspection pipeline that validates images, finds the correct golden reference, routes relevant regions to specialized AI agents, combines their evidence, and produces an explainable final verdict.',
     architecture: {
       layers: [
-        { name: 'API', tech: 'FastAPI', icon: '⚡' },
-        { name: 'Orchestration', tech: 'LangGraph (8-stage pipeline)', icon: '🧠' },
-        { name: 'Computer Vision', tech: 'OpenCV · CLIP · FAISS · YOLO', icon: '👁️' },
-        { name: 'AI Agents', tech: 'PaddleOCR · EasyOCR · Vision LLM', icon: '🤖' },
-        { name: 'Reasoning', tech: 'Groq · Google Gemini', icon: '⚡' },
-        { name: 'Data Layer', tech: 'PostgreSQL · SQLite · Redis', icon: '💾' },
+        { name: 'API Gateway', tech: 'FastAPI (REST Endpoints)', stage: '01', icon: Globe, color: '#009688' },
+        { name: 'Orchestration', tech: 'LangGraph (8-stage inspection pipeline)', stage: '02', icon: Workflow, color: '#34D399' },
+        { name: 'Computer Vision', tech: 'OpenCV · CLIP · FAISS · YOLO11n', stage: '03', icon: Eye, color: '#38BDF8' },
+        { name: 'Inspection Agents', tech: 'PaddleOCR · EasyOCR · Vision LLMs', stage: '04', icon: Bot, color: '#818CF8' },
+        { name: 'Evidence & Reasoning', tech: 'Groq · Google Gemini (AI Judge)', stage: '05', icon: BrainCircuit, color: '#F59E0B' },
+        { name: 'Data Persistence', tech: 'PostgreSQL · SQLite · Redis Caching', stage: '06', icon: Database, color: '#EC4899' },
       ],
     },
     metrics: [
-      { label: 'Stages', value: '8', detail: 'Inspection stages' },
-      { label: 'Agents', value: '4', detail: 'Specialized evidence agents' },
-      { label: 'Classes', value: '10', detail: 'YOLO component classes' },
-      { label: 'Hardware', value: '3', detail: 'Supported types' },
+      { label: 'Inspection Stages', value: '8', detail: 'Automated pipeline stages' },
+      { label: 'Specialized Agents', value: '4', detail: 'Evidence collection agents' },
+      { label: 'Detection Classes', value: '10', detail: 'YOLO component classes' },
+      { label: 'Supported Hardware', value: '3', detail: 'Component types supported' },
     ],
     features: [
       'Image Intelligence — Built image quality, authenticity, and golden-reference matching pipelines using OpenCV, embeddings, CLIP, and FAISS.',
@@ -57,18 +59,18 @@ const projects = [
       'Developed a 7-factor priority system to rank tasks based on severity, deadline proximity, customer/business impact, and blocker status. Added an AI chat copilot that can detect P1 issues from natural language and autonomously re-run the full pipeline to update priorities and the daily schedule in real time.',
     architecture: {
       layers: [
-        { name: 'Frontend', tech: 'React + Vite + Tailwind CSS', icon: '🌐' },
-        { name: 'API Layer', tech: 'FastAPI (REST, polling-based live updates)', icon: '⚡' },
-        { name: 'Agents', tech: 'Custom multi-agent orchestrator (8 agents, ThreadPoolExecutor for parallel LLM calls)', icon: '🧠' },
-        { name: 'Integrations', tech: 'GitHub / Slack / Email / Calendar / Meeting notes', icon: '🔌' },
-        { name: 'Data Layer', tech: 'SQLite (SQLAlchemy)', icon: '💾' },
+        { name: 'Client App', tech: 'React + Vite + Tailwind CSS', stage: '01', icon: Globe, color: '#38BDF8' },
+        { name: 'API Layer', tech: 'FastAPI (REST, polling-based live updates)', stage: '02', icon: Zap, color: '#009688' },
+        { name: 'Multi-Agent Core', tech: 'Custom orchestrator (8 agents, ThreadPoolExecutor parallel LLM calls)', stage: '03', icon: BrainCircuit, color: '#F97316' },
+        { name: 'Integrations', tech: 'GitHub · Slack · Email · Calendar · Meeting Notes', stage: '04', icon: Share2, color: '#818CF8' },
+        { name: 'Persistence', tech: 'SQLite (SQLAlchemy Models)', stage: '05', icon: Database, color: '#34D399' },
       ],
     },
     metrics: [
-      { label: 'Agents', value: '8', detail: 'specialized' },
-      { label: 'Sources', value: '5', detail: 'integrated' },
-      { label: 'Priority Factors', value: '7', detail: 'factor weighted system' },
-      { label: 'P1 Detection', value: 'Auto', detail: 're-run pipeline' },
+      { label: 'Autonomous Agents', value: '8', detail: 'Specialized pipeline agents' },
+      { label: 'Ingestion Sources', value: '5', detail: 'Integrated developer tools' },
+      { label: 'Priority Scoring', value: '7-Factor', detail: 'Weighted algorithmic ranking' },
+      { label: 'P1 Incident Recovery', value: 'Real-time', detail: 'Auto pipeline re-execution' },
     ],
     features: [
       'Agent 0 Orchestrator & Self-Healing Pipeline — Built the central controller to run all 6 pipeline stages (Ingestion to Planning) in ~20 seconds, with background execution and automatic recovery for stuck runs.',
@@ -94,18 +96,18 @@ const projects = [
       'Created a robust FastAPI and SQL database backend to manage user profiles and logs, and integrated a RAG system using ChromaDB to retrieve study links matching candidate skill gaps. Leveraged advanced AI agents to build a production-grade startup MVP containing parallel multi-agent workflows, WebSocket mock interviews, Monaco editor sandboxing, multi-LLM failovers, and Docker deployment.',
     architecture: {
       layers: [
-        { name: 'Frontend', tech: 'Next.js + TypeScript', icon: '🌐' },
-        { name: 'API Gateway', tech: 'FastAPI + WebSocket', icon: '⚡' },
-        { name: 'Orchestration', tech: 'LangGraph DAG (4 agents)', icon: '🧠' },
-        { name: 'AI Providers', tech: 'Groq / NVIDIA NIM / Cerebras', icon: '🤖' },
-        { name: 'Data Layer', tech: 'PostgreSQL + Redis + ChromaDB', icon: '💾' },
+        { name: 'Web Interface', tech: 'Next.js + TypeScript', stage: '01', icon: Globe, color: '#38BDF8' },
+        { name: 'Gateway & Live Sockets', tech: 'FastAPI + WebSocket FSM', stage: '02', icon: Radio, color: '#009688' },
+        { name: 'DAG Orchestration', tech: 'LangGraph (4 Concurrent Agents)', stage: '03', icon: Workflow, color: '#34D399' },
+        { name: 'LLM Routing & Failover', tech: 'Groq / NVIDIA NIM / Cerebras', stage: '04', icon: Cpu, color: '#F59E0B' },
+        { name: 'State & Vectors', tech: 'PostgreSQL + Redis + ChromaDB', stage: '05', icon: Database, color: '#818CF8' },
       ],
     },
     metrics: [
-      { label: 'Latency', value: '~60%', detail: 'reduction (4 min → 60 sec)' },
-      { label: 'AI Agents', value: '4', detail: 'concurrent (DAG)' },
-      { label: 'Tests', value: '113', detail: 'automated' },
-      { label: 'Providers', value: '3', detail: 'with failover' },
+      { label: 'Latency Optimization', value: '~60%', detail: 'Speedup (4 min → 60 sec)' },
+      { label: 'Concurrent Agents', value: '4', detail: 'LangGraph Directed Acyclic Graph' },
+      { label: 'Automated Tests', value: '113', detail: 'Pytest test cases passing' },
+      { label: 'LLM Failover Providers', value: '3', detail: 'Automatic fallback resilience' },
     ],
     features: [
       'Multi-Agent Architecture — Designed and built the LangGraph multi-agent architecture connecting resume analysis, market intelligence, roadmap generation, and LinkedIn optimization.',
@@ -121,283 +123,248 @@ const projects = [
   },
 ];
 
-function ArchitectureDiagram({ layers }: { layers: { name: string; tech: string; icon: string }[] }) {
-  return (
-    <div className="relative">
-      {layers.map((layer, idx) => (
-        <div key={idx} className="flex items-stretch gap-0">
-          {/* Connector line */}
-          <div className="flex flex-col items-center w-8">
-            <div className="w-8 h-8 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-sm shrink-0 z-10">
-              {layer.icon}
-            </div>
-            {idx < layers.length - 1 && (
-              <div className="w-px flex-1 bg-gradient-to-b from-teal-500/30 to-teal-500/5" />
-            )}
-          </div>
-          {/* Content */}
-          <div className={`flex-1 py-2 ${idx < layers.length - 1 ? 'pb-4' : ''}`}>
-            <span className="font-mono text-xs text-teal-400 uppercase tracking-wider block">
-              {layer.name}
-            </span>
-            <span className="font-body text-sm text-text-secondary">
-              {layer.tech}
-            </span>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function MetricCard({ metric, index }: { metric: { label: string; value: string; detail: string }; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="relative group"
-    >
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <div className="relative p-4 rounded-xl bg-bg-primary/50 border border-border-primary group-hover:border-teal-500/30 transition-colors">
-        <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest block mb-2">
-          {metric.label}
-        </span>
-        <div className="flex items-baseline gap-2">
-          <span className="font-display text-3xl font-bold gradient-text">
-            {metric.value}
-          </span>
-        </div>
-        <span className="font-body text-xs text-text-muted mt-1 block">
-          {metric.detail}
-        </span>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function FeaturedWork() {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
-
   return (
     <section id="featured-work" className="section-padding w-full" aria-labelledby="featured-work-heading">
       <div className="container-custom">
         <SectionHeading
           id="featured-work-heading"
-          title="Technical Projects"
-          subtitle="Production-grade systems I've designed and built from the ground up."
+          eyebrow="Systems & Architecture"
+          title="Featured Projects"
+          subtitle="Production-grade AI architectures, multi-agent pipelines, and resilient backend services."
         />
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-14 mt-12">
           {projects.map((project, idx) => {
-            const isExpanded = expandedId === project.id;
             return (
               <motion.article
                 key={project.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative"
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative rounded-3xl border border-border-primary bg-bg-card p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:border-border-secondary shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
               >
-                {/* Outer glow on hover */}
-                <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-teal-500/20 via-transparent to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                <div className="relative rounded-2xl border border-border-primary bg-bg-card group-hover:border-teal-500/20 transition-all duration-500 overflow-hidden">
-                  {/* Top accent bar */}
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-teal-500/40 to-transparent" />
-
-                  <div className="p-6 md:p-8 lg:p-10">
-                    {/* Header row */}
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
-                      <div className="flex-1 min-w-0">
-                        {/* Project number + title */}
-                        <div className="flex items-center gap-4 mb-3">
-                          <span className="shrink-0 font-display text-sm font-bold text-teal-500/50 bg-teal-500/10 px-2.5 py-1 rounded-md border border-teal-500/20">
-                            {String(idx + 1).padStart(2, '0')}
-                          </span>
-                          <h3 className="heading-3 font-display text-text-primary">
-                            {project.title}
-                          </h3>
-                        </div>
-
-                        {/* Tagline */}
-                        <p className="font-mono text-xs text-teal-400/70 tracking-wider mb-4 ml-[3.75rem]">
-                          {project.tagline}
-                        </p>
-
-                        {/* Description */}
-                        <p className="body text-text-secondary max-w-3xl ml-[3.75rem]">
-                          {project.description}
-                        </p>
-                      </div>
-
-                      {/* Quick metrics strip */}
-                      <div className="flex gap-3 lg:flex-col lg:w-[200px] shrink-0">
-                        {project.metrics.slice(0, 2).map((metric, mIdx) => (
-                          <div
-                            key={mIdx}
-                            className="flex-1 lg:flex-none p-3 rounded-xl bg-bg-primary/50 border border-border-primary text-center"
-                          >
-                            <span className="font-display text-2xl font-bold gradient-text block">
-                              {metric.value}
-                            </span>
-                            <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest">
-                              {metric.label}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
+                {/* ── 1. Top Tier: Project Identity & Direct Action Links ── */}
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-border-primary">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <span className="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20 tracking-wider">
+                        PROJECT {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-display font-bold text-text-primary tracking-tight">
+                        {project.title}
+                      </h3>
                     </div>
+                    <p className="font-mono text-xs text-text-muted">
+                      {project.tagline}
+                    </p>
+                  </div>
 
-                    {/* Stack badges */}
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.stack.map((tech) => (
-                        <Badge key={tech} variant="subtle" size="sm">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    {/* Action bar */}
-                    <div className="flex items-center gap-1 flex-wrap">
+                  {/* Action Buttons & Tech Stack Summary */}
+                  <div className="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-3 shrink-0">
+                    <div className="flex items-center gap-2.5 flex-wrap">
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-teal-400 transition-colors font-mono px-3 py-2 rounded-lg hover:bg-teal-500/5"
+                        className="btn-secondary text-xs px-3.5 py-2 inline-flex items-center gap-2"
+                        aria-label={`View ${project.title} source code on GitHub`}
                       >
-                        GitHub
-                        <ArrowUpRight className="w-3.5 h-3.5" />
+                        <FaGithub className="w-3.5 h-3.5" />
+                        <span>Source Code</span>
+                        <ArrowUpRight className="w-3 h-3 text-text-muted" />
                       </a>
                       {project.liveUrl && (
                         <a
                           href={project.liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center gap-2 text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors font-mono px-3 py-2 rounded-lg hover:bg-teal-500/5"
+                          className="btn-primary text-xs px-4 py-2 inline-flex items-center gap-2"
+                          aria-label={`Open live demo for ${project.title}`}
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
-                          Live Demo
+                          <span>Live Demo</span>
                         </a>
                       )}
-                      <button
-                        suppressHydrationWarning
-                        onClick={() => setExpandedId(isExpanded ? null : project.id)}
-                        className="ml-auto flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-teal-400 transition-colors font-mono px-4 py-2 rounded-lg border border-border-primary hover:border-teal-500/30 hover:bg-teal-500/5 focus-ring"
-                        aria-expanded={isExpanded}
-                        aria-controls={`project-details-${project.id}`}
-                      >
-                        {isExpanded ? 'Collapse' : 'View Details'}
-                        <motion.span
-                          animate={{ rotate: isExpanded ? 180 : 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <ChevronDown className="w-4 h-4" />
-                        </motion.span>
-                      </button>
                     </div>
 
-                    {/* Expanded Details */}
-                    <AnimatePresence>
-                      {isExpanded && (
-                        <motion.div
-                          id={`project-details-${project.id}`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                          className="overflow-hidden"
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-1.5 lg:justify-end">
+                      {project.stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-text-secondary border border-white/[0.06]"
                         >
-                          <div className="pt-8 mt-8 border-t border-border-primary">
-                            {/* Challenge + Solution + Architecture */}
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
-                              {/* Challenge */}
-                              <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                  <div className="w-7 h-7 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                                    <Zap className="w-3.5 h-3.5 text-red-400" />
-                                  </div>
-                                  <h4 className="font-mono text-xs font-bold text-text-muted uppercase tracking-widest">
-                                    Challenge
-                                  </h4>
-                                </div>
-                                <p className="body-sm text-text-secondary leading-relaxed">
-                                  {project.challenge}
-                                </p>
-                              </div>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
-                              {/* Solution */}
-                              <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                  <div className="w-7 h-7 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
-                                    <Shield className="w-3.5 h-3.5 text-teal-400" />
-                                  </div>
-                                  <h4 className="font-mono text-xs font-bold text-text-muted uppercase tracking-widest">
-                                    Solution
-                                  </h4>
-                                </div>
-                                <p className="body-sm text-text-secondary leading-relaxed">
-                                  {project.solution}
-                                </p>
-                              </div>
+                {/* ── 2. Middle Tier: Split-Pane (Narrative/Impact + Visual Architecture Pipeline) ── */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pt-8">
+                  {/* Left Column: Narrative, Problem/Solution, and System Metrics */}
+                  <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+                    {/* Executive Description */}
+                    <p className="text-base sm:text-lg text-text-primary/90 leading-relaxed font-body">
+                      {project.description}
+                    </p>
 
-                              {/* Architecture */}
-                              <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                  <div className="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                                    <Layers className="w-3.5 h-3.5 text-blue-400" />
-                                  </div>
-                                  <h4 className="font-mono text-xs font-bold text-text-muted uppercase tracking-widest">
-                                    Architecture
-                                  </h4>
-                                </div>
-                                <ArchitectureDiagram layers={project.architecture.layers} />
-                              </div>
-                            </div>
+                    {/* Challenge vs Solution Editorial Blocks */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="border-l-2 border-rose-500/50 pl-4 py-1 space-y-1.5">
+                        <div className="flex items-center gap-1.5 text-rose-400 font-mono text-xs font-semibold uppercase tracking-wider">
+                          <Zap className="w-3.5 h-3.5" />
+                          <span>The Challenge</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                          {project.challenge}
+                        </p>
+                      </div>
 
-                            {/* All Metrics */}
-                            <div className="mb-10">
-                              <h4 className="font-mono text-xs font-bold text-text-muted uppercase tracking-widest mb-5">
-                                Key Metrics
-                              </h4>
-                              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                {project.metrics.map((metric, mIdx) => (
-                                  <MetricCard key={mIdx} metric={metric} index={mIdx} />
-                                ))}
-                              </div>
-                            </div>
+                      <div className="border-l-2 border-emerald-500/50 pl-4 py-1 space-y-1.5">
+                        <div className="flex items-center gap-1.5 text-emerald-400 font-mono text-xs font-semibold uppercase tracking-wider">
+                          <Shield className="w-3.5 h-3.5" />
+                          <span>The Solution</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                          {project.solution}
+                        </p>
+                      </div>
+                    </div>
 
-                            {/* All Features */}
-                            <div>
-                              <h4 className="font-mono text-xs font-bold text-text-muted uppercase tracking-widest mb-5">
-                                Key Contributions
-                              </h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {project.features.map((feature, fIdx) => (
-                                  <motion.div
-                                    key={fIdx}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: fIdx * 0.05 }}
-                                    className="flex items-start gap-3 p-3 rounded-lg bg-bg-primary/30 border border-border-primary/50 hover:border-teal-500/20 transition-colors"
-                                  >
-                                    <span className="text-teal-400 mt-0.5 flex-shrink-0 font-mono text-xs font-bold">
-                                      {String(fIdx + 1).padStart(2, '0')}
-                                    </span>
-                                    <span className="text-text-secondary body-sm leading-relaxed">
-                                      {feature}
-                                    </span>
-                                  </motion.div>
-                                ))}
-                              </div>
-                            </div>
+                    {/* System Performance Metrics */}
+                    <div className="pt-2">
+                      <span className="text-[11px] font-mono text-text-muted uppercase tracking-wider font-semibold block mb-3">
+                        System Performance &amp; Operational Metrics
+                      </span>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        {project.metrics.map((metric, mIdx) => (
+                          <div
+                            key={mIdx}
+                            className="p-3 rounded-xl bg-bg-secondary border border-border-primary hover:border-blue-500/30 transition-colors group/metric"
+                          >
+                            <span className="font-mono text-[10px] text-text-muted uppercase tracking-wider block mb-1">
+                              {metric.label}
+                            </span>
+                            <span className="font-display text-xl sm:text-2xl font-bold text-text-primary group-hover/metric:text-blue-400 transition-colors block">
+                              {metric.value}
+                            </span>
+                            <span className="text-[11px] text-text-muted block mt-0.5 leading-snug">
+                              {metric.detail}
+                            </span>
                           </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Visual System Architecture Pipeline */}
+                  <div className="lg:col-span-5 rounded-2xl bg-bg-secondary border border-border-primary p-5 sm:p-6 flex flex-col justify-between">
+                    <div className="flex items-center justify-between pb-3 mb-4 border-b border-border-primary">
+                      <span className="text-xs font-mono text-blue-400 font-semibold uppercase tracking-wider flex items-center gap-2">
+                        <Workflow className="w-3.5 h-3.5" />
+                        <span>System Pipeline Flow</span>
+                      </span>
+                      <span className="text-[11px] font-mono text-text-muted">
+                        {project.architecture.layers.length} Stages
+                      </span>
+                    </div>
+
+                    {/* Connected Sequential Stages Flow */}
+                    <div className="flex flex-col">
+                      {project.architecture.layers.map((layer, lIdx) => {
+                        const Icon = layer.icon;
+                        const isLast = lIdx === project.architecture.layers.length - 1;
+
+                        return (
+                          <div key={lIdx} className="flex flex-col">
+                            {/* Stage Item */}
+                            <div className="flex items-start gap-3.5 p-2.5 rounded-xl hover:bg-bg-card transition-colors group/stage">
+                              <div
+                                className="w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 mt-0.5 transition-transform group-hover/stage:scale-105"
+                                style={{
+                                  backgroundColor: `${layer.color}15`,
+                                  borderColor: `${layer.color}35`,
+                                  color: layer.color,
+                                }}
+                              >
+                                <Icon className="w-4 h-4" />
+                              </div>
+
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-xs font-display font-semibold text-text-primary group-hover/stage:text-blue-300 transition-colors">
+                                    {layer.name}
+                                  </span>
+                                  <span className="font-mono text-[10px] text-text-muted px-1.5 py-0.2 rounded bg-bg-primary">
+                                    Stage {layer.stage}
+                                  </span>
+                                </div>
+                                <p className="font-mono text-[11px] text-text-secondary truncate mt-0.5">
+                                  {layer.tech}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Downward Connector Line with Arrow */}
+                            {!isLast && (
+                              <div className="flex items-center justify-start pl-6 py-0.5" aria-hidden="true">
+                                <div className="w-px h-3 bg-gradient-to-b from-blue-500/40 to-blue-500/10" />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-border-primary flex items-center justify-between text-[11px] font-mono text-text-muted">
+                      <span>Execution Paradigm</span>
+                      <span className="text-blue-400 font-medium flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                        Autonomous &amp; Verified
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── 3. Bottom Tier: Core Engineering Deliverables & Ownership ── */}
+                <div className="mt-8 pt-6 border-t border-border-primary">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Terminal className="w-4 h-4 text-blue-400" />
+                    <span className="text-xs font-mono text-blue-400 font-semibold uppercase tracking-wider">
+                      Core Engineering Deliverables &amp; Technical Ownership
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3.5">
+                    {project.features.map((feature, fIdx) => {
+                      const [featureTitle, ...featureRest] = feature.split(' — ');
+                      const featureDesc = featureRest.join(' — ');
+
+                      return (
+                        <div key={fIdx} className="flex items-start gap-3 group/deliverable">
+                          <span className="font-mono text-xs font-semibold text-blue-400 shrink-0 mt-0.5">
+                            {String(fIdx + 1).padStart(2, '0')}.
+                          </span>
+                          <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                            {featureDesc ? (
+                              <>
+                                <strong className="text-text-primary font-medium group-hover/deliverable:text-blue-300 transition-colors">
+                                  {featureTitle}
+                                </strong>
+                                {' — '}
+                                {featureDesc}
+                              </>
+                            ) : (
+                              feature
+                            )}
+                          </p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </motion.article>

@@ -1,16 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
   { name: 'About', href: '#about' },
-  { name: 'Work', href: '#featured-work' },
+  { name: 'Projects', href: '#featured-work' },
   { name: 'Experience', href: '#experience' },
-  { name: 'Stack', href: '#tech-stack' },
+  { name: 'Skills', href: '#tech-stack' },
+  { name: 'Achievements', href: '#build-log' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -40,7 +41,7 @@ export default function Navbar() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible) setActiveSection(`#${visible.target.id}`);
       },
-      { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5] }
+      { rootMargin: '-30% 0px -50% 0px', threshold: [0, 0.25, 0.5] }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -48,130 +49,159 @@ export default function Navbar() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
+    <motion.header
+      initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-bg-primary/80 backdrop-blur-xl border-b border-border-primary shadow-lg'
+          ? 'bg-bg-primary/90 backdrop-blur-md border-b border-border-primary/80 shadow-[0_8px_30px_rgba(0,0,0,0.5)]'
           : 'bg-transparent'
       )}
-      role="navigation"
-      aria-label="Main navigation"
+      role="banner"
     >
       <div className="container-custom">
         <div className="flex h-16 md:h-20 items-center justify-between">
-          {/* Logo */}
+          {/* Brand Logo */}
           <Link
             href="#"
-            className="font-mono text-xl font-bold text-text-primary hover:text-teal-400 transition-colors focus-ring"
+            className="flex items-center gap-2 font-display text-lg md:text-xl font-bold tracking-tight text-text-primary hover:text-blue-400 transition-colors focus-ring rounded-lg px-1 py-0.5 group"
             aria-label="Anil Pradhan - Home"
           >
-            {'>'} AP_
+            <span className="w-2 h-2 rounded-full bg-blue-500 group-hover:scale-125 transition-transform" />
+            <span>Anil Pradhan</span>
+            <span className="text-xs font-mono font-medium text-text-muted hidden sm:inline-block">/ dev</span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <nav className="flex items-center gap-6" aria-label="Main">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  aria-current={activeSection === link.href ? 'true' : undefined}
-                  className={cn(
-                    'group font-body text-sm font-medium transition-colors relative py-2',
-                    activeSection === link.href
-                      ? 'text-teal-400'
-                      : 'text-text-secondary hover:text-teal-400'
-                  )}
-                >
-                  {link.name}
-                  <span
+          <div className="hidden lg:flex items-center gap-8">
+            <nav className="flex items-center gap-1 bg-bg-card/70 border border-border-primary/60 p-1.5 rounded-full" aria-label="Main Navigation">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    aria-current={isActive ? 'page' : undefined}
                     className={cn(
-                      'absolute bottom-0 left-0 h-[2px] bg-teal-400 transition-all duration-300',
-                      activeSection === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+                      'font-body text-xs tracking-wide font-medium px-3.5 py-1.5 rounded-full transition-all duration-200 relative',
+                      isActive
+                        ? 'text-text-primary bg-bg-card-hover border border-blue-500/30 shadow-[0_0_12px_rgba(59,130,246,0.15)]'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-white/[0.04]'
                     )}
-                    aria-hidden="true"
-                  />
-                </Link>
-              ))}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </nav>
-            <div className="flex items-center gap-3 ml-4 border-l border-border-primary pl-4">
-              <Link href="/Anil_Pradhan_resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm px-4 py-2 hidden sm:inline-flex" aria-label="Download Resume">
-                Resume
-              </Link>
-              <Link href="#contact" className="btn-primary text-sm px-4 py-2" aria-label="Hire me">
-                Hire Me
+
+            <div className="flex items-center gap-3">
+              <a
+                href="/Anil_Pradhan_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-xs px-3.5 py-1.5 inline-flex items-center gap-1.5"
+                aria-label="View Resume PDF"
+              >
+                <FileText className="w-3.5 h-3.5 text-text-muted" />
+                <span>Resume</span>
+                <ArrowUpRight className="w-3 h-3 text-text-muted" />
+              </a>
+              <Link href="#contact" className="btn-primary text-xs px-4 py-1.5" aria-label="Hire me or get in touch">
+                Get In Touch
               </Link>
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors focus-ring rounded-lg"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <motion.div
-        id="mobile-menu"
-        initial={false}
-        animate={{
-          maxHeight: isMobileMenuOpen ? '500px' : '0px',
-          opacity: isMobileMenuOpen ? 1 : 0,
-          paddingTop: isMobileMenuOpen ? '1rem' : 0,
-          paddingBottom: isMobileMenuOpen ? '1.5rem' : 0,
-        }}
-        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="md:hidden overflow-hidden bg-bg-primary/95 backdrop-blur-xl border-b border-border-primary"
-        role="navigation"
-        aria-label="Mobile navigation"
-      >
-        <div className="container-custom px-6">
-          <nav className="flex flex-col gap-2" aria-label="Mobile main">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                aria-current={activeSection === link.href ? 'true' : undefined}
-                className={cn(
-                  'font-body text-base font-medium transition-colors py-3 border-b border-border-primary/50',
-                  activeSection === link.href
-                    ? 'text-teal-400'
-                    : 'text-text-secondary hover:text-teal-400'
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border-primary">
-            <Link
+          {/* Mobile Actions & Menu Toggle */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <a
               href="/Anil_Pradhan_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="btn-secondary w-full justify-center"
-              aria-label="Download Resume"
+              className="btn-secondary text-xs px-2.5 py-1.5 inline-flex items-center gap-1"
+              aria-label="View Resume PDF"
             >
-              Download Resume
-            </Link>
-            <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="btn-primary w-full justify-center" aria-label="Hire me">
-              Hire Me
-            </Link>
+              <span>Resume</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
+            <button
+              className="p-2 text-text-secondary hover:text-text-primary transition-colors focus-ring rounded-lg border border-border-primary/50 bg-bg-card/60"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
-      </motion.div>
-    </motion.nav>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden overflow-hidden bg-bg-primary/95 border-b border-border-primary"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
+            <div className="container-custom px-6 py-5">
+              <nav className="flex flex-col gap-1" aria-label="Mobile Navigation Links">
+                {navLinks.map((link) => {
+                  const isActive = activeSection === link.href;
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={cn(
+                        'font-body text-sm font-medium px-4 py-2.5 rounded-lg transition-colors flex items-center justify-between',
+                        isActive
+                          ? 'text-blue-300 bg-blue-500/10 border border-blue-500/20'
+                          : 'text-text-secondary hover:text-text-primary hover:bg-white/[0.04]'
+                      )}
+                    >
+                      <span>{link.name}</span>
+                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />}
+                    </Link>
+                  );
+                })}
+              </nav>
+              <div className="flex flex-col gap-2.5 mt-5 pt-4 border-t border-border-primary/70">
+                <a
+                  href="/Anil_Pradhan_resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="btn-secondary w-full justify-center text-sm py-2.5 inline-flex items-center gap-2"
+                  aria-label="View Resume PDF"
+                >
+                  <FileText className="w-4 h-4 text-emerald-400" />
+                  <span>View Resume</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-text-muted" />
+                </a>
+                <Link
+                  href="#contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="btn-primary w-full justify-center text-sm py-2.5"
+                  aria-label="Get In Touch"
+                >
+                  Get In Touch
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
