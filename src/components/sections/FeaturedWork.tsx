@@ -292,7 +292,7 @@ export default function FeaturedWork() {
                                     Stage {layer.stage}
                                   </span>
                                 </div>
-                                <p className="font-mono text-[11px] text-text-secondary truncate mt-0.5">
+                                <p className="font-mono text-[11px] text-text-secondary mt-0.5 leading-relaxed">
                                   {layer.tech}
                                 </p>
                               </div>

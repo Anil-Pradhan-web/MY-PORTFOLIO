@@ -110,7 +110,7 @@ export default function Contact() {
           subtitle="Have an engineering opportunity, collaboration idea, or question? I'd love to connect."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-8 lg:gap-14">
           {/* Left Column: Direct Channels & Copy Action */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -170,13 +170,13 @@ export default function Contact() {
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-4 h-4 text-[#00e89d]" />
-                    <span>anilpradhan9644@gmail.com copied to clipboard!</span>
+                    <Check className="w-4 h-4 text-[#00e89d] shrink-0" />
+                    <span className="truncate">Email copied!</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-4 h-4 text-text-muted" />
-                    <span>Copy Email Address (anilpradhan9644@gmail.com)</span>
+                    <Copy className="w-4 h-4 text-text-muted shrink-0" />
+                    <span className="truncate">Copy Email</span>
                   </>
                 )}
               </button>

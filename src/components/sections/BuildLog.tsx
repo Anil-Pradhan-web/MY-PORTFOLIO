@@ -108,7 +108,7 @@ export default function BuildLog() {
               </h3>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#f5a623]/15 text-[#f5a623] border border-[#f5a623]/30 whitespace-nowrap">
                 2nd Runner-Up Overall
               </span>
