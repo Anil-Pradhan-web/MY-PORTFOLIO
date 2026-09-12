@@ -19,7 +19,7 @@ const competitiveMilestones = [
     detail:
       'Selected for Round 2 (Real-World Business Development) — FlowFinance × Techfest IIT Bombay Growth Challenge: Designed a comprehensive GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.',
     highlight: 'National Level Competition',
-    accentColor: '#38bdf8',
+    accentColor: '#00e89d',
   },
   {
     title: '4× AI Hackathon Builder',
@@ -28,7 +28,7 @@ const competitiveMilestones = [
     detail:
       'Built and shipped functional AI applications across 4 hackathons — Dell FutureMinds 2026, Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge, implementing agentic workflows and computer vision pipelines.',
     highlight: 'Rapid Prototyping & Systems',
-    accentColor: '#818cf8',
+    accentColor: '#f5a623',
   },
   {
     title: 'GeeksforGeeks 160 Days of Code',
@@ -81,7 +81,7 @@ export default function BuildLog() {
         <SectionHeading
           id="build-log-heading"
           eyebrow="Podium & Credentials"
-          title="Achievements &amp; Certifications"
+          title="Achievements & Certifications"
           subtitle="National hackathon recognitions, competitive milestones, and verified industry credentials."
         />
 
@@ -90,17 +90,17 @@ export default function BuildLog() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-3xl border border-amber-500/35 bg-gradient-to-br from-amber-500/[0.07] via-bg-card to-bg-card p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(245,158,11,0.07)] overflow-hidden"
+          transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] as const }}
+          className="relative rounded-3xl border border-[#f5a623]/35 bg-gradient-to-br from-[#f5a623]/[0.07] via-bg-card to-bg-card p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(245,166,35,0.07)] overflow-hidden"
         >
           {/* Subtle Ambient Radial Glow - GPU accelerated */}
-          <div className="absolute top-0 right-0 w-72 h-72 bg-amber-500/10 rounded-full blur-2xl pointer-events-none -mr-16 -mt-16 transform-gpu" />
+          <div className="absolute top-0 right-0 w-72 h-72 bg-[#f5a623]/10 rounded-full blur-2xl pointer-events-none -mr-16 -mt-16 transform-gpu" />
 
           {/* Header Row */}
           <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border-primary">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono text-xs font-semibold">
-                <Trophy className="w-3.5 h-3.5 text-amber-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f5a623]/15 border border-[#f5a623]/30 text-[#f5a623] font-mono text-xs font-semibold">
+                <Trophy className="w-3.5 h-3.5 text-[#f5a623]" />
                 <span>National Podium Finish · 3rd Place</span>
               </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-text-primary tracking-tight">
@@ -109,7 +109,7 @@ export default function BuildLog() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 whitespace-nowrap">
+              <span className="font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#f5a623]/15 text-[#f5a623] border border-[#f5a623]/30 whitespace-nowrap">
                 2nd Runner-Up Overall
               </span>
             </div>
@@ -118,7 +118,7 @@ export default function BuildLog() {
           {/* Narrative Story */}
           <div className="relative z-10 py-6">
             <p className="text-base sm:text-lg text-text-primary/90 leading-relaxed font-body max-w-4xl">
-              Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with <strong className="text-text-primary font-semibold">8,000+ participants</strong> attempting a rigorous HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, an executive Zoom pitch round, and finally into the <strong className="text-amber-300 font-semibold">Top 6 Grand Finalists</strong>. We flew to Dell&apos;s Bengaluru headquarters to pitch our hardware inspection solution live before Dell&apos;s senior leadership, engineering jury, and employees — securing <strong className="text-amber-300 font-semibold">3rd position (2nd Runner-Up)</strong> overall.
+              Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with <strong className="text-text-primary font-semibold">8,000+ participants</strong> attempting a rigorous HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, an executive Zoom pitch round, and finally into the <strong className="text-[#f5a623] font-semibold">Top 6 Grand Finalists</strong>. We flew to Dell&apos;s Bengaluru headquarters to pitch our hardware inspection solution live before Dell&apos;s senior leadership, engineering jury, and employees — securing <strong className="text-[#f5a623] font-semibold">3rd position (2nd Runner-Up)</strong> overall.
             </p>
           </div>
 
@@ -127,12 +127,12 @@ export default function BuildLog() {
             {dellMetrics.map((m, mIdx) => (
               <div
                 key={mIdx}
-                className="p-4 rounded-2xl bg-bg-secondary border border-border-primary hover:border-amber-500/40 transition-colors"
+                className="p-4 rounded-2xl bg-bg-secondary border border-border-primary hover:border-[#f5a623]/40 transition-colors"
               >
                 <span className="font-mono text-[10px] text-text-muted uppercase tracking-wider block mb-1">
                   {m.label}
                 </span>
-                <span className="font-display text-xl sm:text-2xl font-bold text-amber-300 block">
+                <span className="font-display text-xl sm:text-2xl font-bold text-[#f5a623] block animate-pulse">
                   {m.value}
                 </span>
                 <span className="text-xs text-text-secondary block mt-0.5 font-mono">
@@ -146,9 +146,9 @@ export default function BuildLog() {
         {/* ── 2. Competitive Track Record & Builder Milestones ── */}
         <div className="space-y-4">
           <div className="flex items-center gap-2 pb-1">
-            <Flame className="w-4 h-4 text-blue-400" />
-            <h3 className="font-mono text-xs font-semibold text-blue-400 uppercase tracking-wider">
-              Competitive Track Record &amp; Builder Milestones
+            <Flame className="w-4 h-4 text-[#00e89d]" />
+            <h3 className="font-mono text-xs font-semibold text-[#00e89d] uppercase tracking-wider">
+              Competitive Track Record & Builder Milestones
             </h3>
           </div>
 
@@ -159,8 +159,8 @@ export default function BuildLog() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="p-6 rounded-2xl border border-border-primary bg-bg-card hover:border-blue-500/30 transition-all flex flex-col justify-between group"
+                transition={{ duration: 0.45, delay: idx * 0.08, ease: [0.2, 0, 0, 1] as const }}
+                className="p-6 rounded-2xl border border-border-primary bg-bg-card hover:border-[#00e89d]/30 transition-all hover:-translate-y-0.5 duration-300 flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-3">
@@ -168,7 +168,7 @@ export default function BuildLog() {
                       <span className="font-mono text-[11px] text-text-muted block">
                         {item.category}
                       </span>
-                      <h4 className="font-display text-lg font-bold text-text-primary group-hover:text-blue-300 transition-colors mt-0.5">
+                      <h4 className="font-display text-lg font-bold text-text-primary group-hover:text-[#00e89d] transition-colors mt-0.5">
                         {item.title}
                       </h4>
                     </div>
@@ -201,9 +201,9 @@ export default function BuildLog() {
         {/* ── 3. Verified Industry Credentials Ledger ── */}
         <div className="space-y-4">
           <div className="flex items-center gap-2 pb-1">
-            <Award className="w-4 h-4 text-blue-400" />
-            <h3 className="font-mono text-xs font-semibold text-blue-400 uppercase tracking-wider">
-              Verified Industry Credentials &amp; Certifications
+            <Award className="w-4 h-4 text-[#00e89d]" />
+            <h3 className="font-mono text-xs font-semibold text-[#00e89d] uppercase tracking-wider">
+              Verified Industry Credentials & Certifications
             </h3>
           </div>
 
@@ -214,18 +214,18 @@ export default function BuildLog() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: 0.1 + gIdx * 0.08 }}
-                className="p-6 rounded-2xl border border-border-primary bg-bg-card flex flex-col justify-between hover:border-blue-500/30 transition-all"
+                transition={{ duration: 0.45, delay: 0.1 + gIdx * 0.08, ease: [0.2, 0, 0, 1] as const }}
+                className="p-6 rounded-2xl border border-border-primary bg-bg-card flex flex-col justify-between hover:border-[#00e89d]/30 transition-all"
               >
                 <div>
-                  <h4 className="font-mono text-xs font-semibold text-blue-400 uppercase tracking-wider mb-4 pb-3 border-b border-border-primary">
+                  <h4 className="font-mono text-xs font-semibold text-[#00e89d] uppercase tracking-wider mb-4 pb-3 border-b border-border-primary">
                     {group.group}
                   </h4>
                   <div className="space-y-4">
                     {group.items.map((cert, cIdx) => (
                       <div key={cIdx} className="group/cert">
                         <div className="flex items-start justify-between gap-2 mb-1">
-                          <span className="text-sm text-text-primary font-medium group-hover/cert:text-blue-300 transition-colors leading-snug">
+                          <span className="text-sm text-text-primary font-medium group-hover/cert:text-[#00e89d] transition-colors leading-snug">
                             {cert.name}
                           </span>
                           <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-bg-secondary border border-border-primary text-text-muted shrink-0">
@@ -233,7 +233,7 @@ export default function BuildLog() {
                           </span>
                         </div>
                         <p className="text-xs text-text-muted flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3 h-3 text-blue-400" />
+                          <CheckCircle2 className="w-3 h-3 text-[#00e89d]" />
                           <span>{cert.org}</span>
                         </p>
                       </div>

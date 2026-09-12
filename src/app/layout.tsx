@@ -71,9 +71,9 @@ export default function RootLayout({
               <span>B.Tech CSE · ITER, Siksha &apos;O&apos; Anusandhan University, Bhubaneswar, Odisha</span>
             </div>
             <div className="flex items-center gap-6 font-mono text-xs">
-              <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="text-text-muted hover:text-emerald-400 transition-colors" aria-label="GitHub">GitHub</a>
-              <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-muted hover:text-emerald-400 transition-colors" aria-label="LinkedIn">LinkedIn</a>
-              <a href="mailto:anilpradhan9644@gmail.com" className="text-text-muted hover:text-emerald-400 transition-colors" aria-label="Email">Email</a>
+              <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="GitHub">GitHub</a>
+              <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="LinkedIn">LinkedIn</a>
+              <a href="mailto:anilpradhan9644@gmail.com" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="Email">Email</a>
             </div>
           </div>
         </footer>

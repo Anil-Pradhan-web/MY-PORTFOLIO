@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Briefcase, Copy, Check, Send, ArrowUpRight } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -45,6 +45,8 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
+  const rippleIdRef = useRef(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -86,6 +88,18 @@ export default function Contact() {
     }
   };
 
+  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const id = rippleIdRef.current++;
+    setRipples((prev) => [
+      ...prev,
+      { id, x: e.clientX - rect.left, y: e.clientY - rect.top },
+    ]);
+    setTimeout(() => {
+      setRipples((prev) => prev.filter((r) => r.id !== id));
+    }, 600);
+  };
+
   return (
     <section id="contact" className="section-padding w-full" aria-labelledby="contact-heading">
       <div className="container-custom">
@@ -102,7 +116,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] as const }}
             className="space-y-6"
           >
             <div className="space-y-3.5">
@@ -111,9 +125,9 @@ export default function Contact() {
                 return (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl bg-bg-card border border-border-primary hover:border-blue-500/30 transition-all group flex items-start gap-4"
+                    className="p-4 rounded-xl bg-bg-card border border-border-primary hover:border-[#00e89d]/30 transition-all hover:-translate-y-0.5 duration-300 group flex items-start gap-4"
                   >
-                    <div className="p-2.5 rounded-lg bg-bg-secondary border border-border-primary text-text-muted group-hover:text-blue-400 transition-colors shrink-0 mt-0.5">
+                    <div className="p-2.5 rounded-lg bg-bg-secondary border border-border-primary text-text-muted group-hover:text-[#00e89d] transition-colors shrink-0 mt-0.5">
                       <Icon className="w-4 h-4" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -125,10 +139,10 @@ export default function Contact() {
                           href={info.href}
                           target="_blank"
                           rel="noreferrer"
-                          className="font-body text-sm text-text-primary hover:text-blue-300 transition-colors font-medium break-words inline-flex items-center gap-1.5"
+                          className="font-body text-sm text-text-primary hover:text-[#00e89d] transition-colors font-medium break-words inline-flex items-center gap-1.5"
                         >
                           <span>{info.text}</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-text-muted group-hover:text-blue-400 transition-colors" />
+                          <ArrowUpRight className="w-3.5 h-3.5 text-text-muted group-hover:text-[#00e89d] transition-colors" />
                         </a>
                       ) : (
                         <span className="font-body text-sm text-text-secondary font-medium">
@@ -149,14 +163,14 @@ export default function Contact() {
                 className={cn(
                   'w-full py-3 px-4 rounded-xl border transition-all duration-200 font-mono text-xs flex items-center justify-center gap-2',
                   copiedEmail
-                    ? 'bg-blue-500/15 border-blue-500/30 text-blue-300 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
-                    : 'bg-bg-card border-border-primary text-text-secondary hover:border-blue-500/30 hover:text-text-primary'
+                    ? 'bg-[#00e89d]/15 border-[#00e89d]/30 text-[#00e89d] shadow-[0_0_15px_rgba(0,232,157,0.15)]'
+                    : 'bg-bg-card border-border-primary text-text-secondary hover:border-[#00e89d]/30 hover:text-text-primary'
                 )}
                 aria-label={copiedEmail ? 'Email address copied to clipboard' : 'Copy email address'}
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-4 h-4 text-blue-400" />
+                    <Check className="w-4 h-4 text-[#00e89d]" />
                     <span>anilpradhan9644@gmail.com copied to clipboard!</span>
                   </>
                 ) : (
@@ -174,7 +188,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0, 0, 1] as const }}
           >
             <form
               onSubmit={handleSubmit}
@@ -237,8 +251,21 @@ export default function Contact() {
                 type="submit"
                 isLoading={isSubmitting}
                 disabled={isSubmitting}
-                className="w-full justify-center py-3.5 flex flex-row items-center gap-2"
+                className="w-full justify-center py-3.5 flex flex-row items-center gap-2 relative overflow-hidden"
+                onClick={handleButtonClick}
               >
+                {/* Ripple effects */}
+                {ripples.map((r) => (
+                  <span
+                    key={r.id}
+                    className="pointer-events-none absolute w-4 h-4 rounded-full bg-white/20"
+                    style={{
+                      left: r.x - 8,
+                      top: r.y - 8,
+                      animation: 'ripple 0.5s ease-out forwards',
+                    }}
+                  />
+                ))}
                 {!isSubmitting && <Send className="w-4 h-4 shrink-0 inline-block" />}
                 <span>{isSubmitting ? 'Sending Message...' : 'Send Message'}</span>
               </Button>
@@ -246,6 +273,14 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* Ripple keyframes injected via style tag */}
+      <style>{`
+        @keyframes ripple {
+          from { transform: scale(1); opacity: 1; }
+          to { transform: scale(6); opacity: 0; }
+        }
+      `}</style>
     </section>
   );
 }

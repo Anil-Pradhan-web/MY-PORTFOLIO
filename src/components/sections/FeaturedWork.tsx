@@ -1,10 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  ExternalLink, Zap, Shield, ArrowUpRight, Terminal,
-  Globe, Workflow, Eye, Bot, BrainCircuit, Database, Share2, Radio, Cpu
-} from 'lucide-react';
+import { ExternalLink, Zap, Shield, ArrowUpRight, Terminal, Globe, Workflow, Eye, Bot, BrainCircuit, Database, Share2, Radio, Cpu } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -109,14 +106,6 @@ const projects = [
       { label: 'Automated Tests', value: '113', detail: 'Pytest test cases passing' },
       { label: 'LLM Failover Providers', value: '3', detail: 'Automatic fallback resilience' },
     ],
-    features: [
-      'Multi-Agent Architecture — Designed and built the LangGraph multi-agent architecture connecting resume analysis, market intelligence, roadmap generation, and LinkedIn optimization.',
-      'Real-Time Interview Engine — Built a 7-phase technical interview FSM with WebSockets, Monaco Code Editor, role-based difficulty, and real-time AI feedback.',
-      'LLM Orchestration & Reliability — Implemented multi-provider LLM routing and failover across Groq, Gemini, and NVIDIA NIM with fallback handling and parallel execution.',
-      'RAG & Personalized AI — Developed ChromaDB-based RAG pipelines to generate personalized career roadmaps using candidate skill gaps and learning resources.',
-      'Backend & Data Infrastructure — Built the FastAPI backend with REST/SSE/WebSocket APIs, Pydantic validation, PostgreSQL, Redis caching, JWT authentication, and rate limiting.',
-      'Production Engineering — Set up Docker, GitHub Actions CI/CD, automated testing (113 Pytest tests), monitoring with Prometheus/Sentry, and cloud deployment across Vercel, Render, Neon, and Upstash.',
-    ],
     stack: ['FastAPI', 'LangGraph', 'Next.js', 'ChromaDB', 'Redis', 'Docker', 'ONNX'],
     githubUrl: 'https://github.com/Anil-Pradhan-web/ai-career-mentor',
     liveUrl: 'https://ai-career-mentor-anil.vercel.app',
@@ -142,14 +131,14 @@ export default function FeaturedWork() {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative rounded-3xl border border-border-primary bg-bg-card p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:border-border-secondary shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.2, 0, 0, 1] as const }}
+                className="group relative rounded-3xl border border-border-primary bg-bg-card p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:border-border-secondary hover:-translate-y-1 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
               >
                 {/* ── 1. Top Tier: Project Identity & Direct Action Links ── */}
                 <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-border-primary">
                   <div className="space-y-2">
                     <div className="flex items-center gap-3 flex-wrap">
-                      <span className="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20 tracking-wider">
+                      <span className="font-mono text-xs font-semibold px-2.5 py-0.5 rounded-md bg-[#00e89d]/10 text-[#00e89d] border border-[#00e89d]/20 tracking-wider">
                         PROJECT {String(idx + 1).padStart(2, '0')}
                       </span>
                       <h3 className="text-2xl sm:text-3xl font-display font-bold text-text-primary tracking-tight">
@@ -237,19 +226,19 @@ export default function FeaturedWork() {
 
                     {/* System Performance Metrics */}
                     <div className="pt-2">
-                      <span className="text-[11px] font-mono text-text-muted uppercase tracking-wider font-semibold block mb-3">
-                        System Performance &amp; Operational Metrics
+                      <span className="text-[11px] font-mono text-text-muted uppercase tracking-wider block mb-3">
+                        System Performance & Operational Metrics
                       </span>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         {project.metrics.map((metric, mIdx) => (
                           <div
                             key={mIdx}
-                            className="p-3 rounded-xl bg-bg-secondary border border-border-primary hover:border-blue-500/30 transition-colors group/metric"
+                            className="p-3 rounded-xl bg-bg-secondary border border-border-primary hover:border-[#00e89d]/30 transition-colors group/metric"
                           >
                             <span className="font-mono text-[10px] text-text-muted uppercase tracking-wider block mb-1">
                               {metric.label}
                             </span>
-                            <span className="font-display text-xl sm:text-2xl font-bold text-text-primary group-hover/metric:text-blue-400 transition-colors block">
+                            <span className="font-display text-xl sm:text-2xl font-bold text-text-primary group-hover/metric:text-[#00e89d] transition-colors block">
                               {metric.value}
                             </span>
                             <span className="text-[11px] text-text-muted block mt-0.5 leading-snug">
@@ -264,7 +253,7 @@ export default function FeaturedWork() {
                   {/* Right Column: Visual System Architecture Pipeline */}
                   <div className="lg:col-span-5 rounded-2xl bg-bg-secondary border border-border-primary p-5 sm:p-6 flex flex-col justify-between">
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-border-primary">
-                      <span className="text-xs font-mono text-blue-400 font-semibold uppercase tracking-wider flex items-center gap-2">
+                      <span className="text-xs font-mono text-[#00e89d] font-semibold uppercase tracking-wider flex items-center gap-2">
                         <Workflow className="w-3.5 h-3.5" />
                         <span>System Pipeline Flow</span>
                       </span>
@@ -296,7 +285,7 @@ export default function FeaturedWork() {
 
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between gap-2">
-                                  <span className="text-xs font-display font-semibold text-text-primary group-hover/stage:text-blue-300 transition-colors">
+                                  <span className="text-xs font-display font-semibold text-text-primary group-hover/stage:text-[#00e89d] transition-colors">
                                     {layer.name}
                                   </span>
                                   <span className="font-mono text-[10px] text-text-muted px-1.5 py-0.2 rounded bg-bg-primary">
@@ -309,10 +298,10 @@ export default function FeaturedWork() {
                               </div>
                             </div>
 
-                            {/* Downward Connector Line with Arrow */}
+                            {/* Downward Connector Line */}
                             {!isLast && (
                               <div className="flex items-center justify-start pl-6 py-0.5" aria-hidden="true">
-                                <div className="w-px h-3 bg-gradient-to-b from-blue-500/40 to-blue-500/10" />
+                                <div className="w-px h-3 bg-gradient-to-b from-[#00e89d]/40 to-[#00e89d]/10" />
                               </div>
                             )}
                           </div>
@@ -322,9 +311,9 @@ export default function FeaturedWork() {
 
                     <div className="mt-4 pt-3 border-t border-border-primary flex items-center justify-between text-[11px] font-mono text-text-muted">
                       <span>Execution Paradigm</span>
-                      <span className="text-blue-400 font-medium flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                        Autonomous &amp; Verified
+                      <span className="text-[#00e89d] font-medium flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00e89d] animate-pulse" />
+                        Autonomous & Verified
                       </span>
                     </div>
                   </div>
@@ -333,26 +322,26 @@ export default function FeaturedWork() {
                 {/* ── 3. Bottom Tier: Core Engineering Deliverables & Ownership ── */}
                 <div className="mt-8 pt-6 border-t border-border-primary">
                   <div className="flex items-center gap-2 mb-4">
-                    <Terminal className="w-4 h-4 text-blue-400" />
-                    <span className="text-xs font-mono text-blue-400 font-semibold uppercase tracking-wider">
-                      Core Engineering Deliverables &amp; Technical Ownership
+                    <Terminal className="w-4 h-4 text-[#00e89d]" />
+                    <span className="text-xs font-mono text-[#00e89d] font-semibold uppercase tracking-wider">
+                      Core Engineering Deliverables & Technical Ownership
                     </span>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3.5">
-                    {project.features.map((feature, fIdx) => {
+                    {project.features?.map((feature, fIdx) => {
                       const [featureTitle, ...featureRest] = feature.split(' — ');
                       const featureDesc = featureRest.join(' — ');
 
                       return (
                         <div key={fIdx} className="flex items-start gap-3 group/deliverable">
-                          <span className="font-mono text-xs font-semibold text-blue-400 shrink-0 mt-0.5">
+                          <span className="font-mono text-xs font-semibold text-[#00e89d] shrink-0 mt-0.5">
                             {String(fIdx + 1).padStart(2, '0')}.
                           </span>
                           <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
                             {featureDesc ? (
                               <>
-                                <strong className="text-text-primary font-medium group-hover/deliverable:text-blue-300 transition-colors">
+                                <strong className="text-text-primary font-medium group-hover/deliverable:text-[#00e89d] transition-colors">
                                   {featureTitle}
                                 </strong>
                                 {' — '}

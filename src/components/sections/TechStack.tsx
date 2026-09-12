@@ -20,7 +20,7 @@ const technicalDomains = [
   {
     domain: 'Agentic AI & LLM Systems',
     summary: 'Autonomous multi-agent workflows, tool orchestration, and resilient reasoning',
-    accentColor: '#34d399',
+    accentColor: '#00e89d',
     skills: [
       { name: 'LangGraph', icon: GitBranch, color: '#4ade80' },
       { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
@@ -79,7 +79,7 @@ const coreFoundations = [
   {
     title: 'Languages',
     skills: [
-      { name: 'Python', icon: FaPython, color: '#3776ab' },
+      { name: 'Python', icon: FaPython, color: '#f89820' },
       { name: 'Java', icon: FaJava, color: '#f89820' },
       { name: 'SQL', icon: Database, color: '#0ea5e9' },
     ],
@@ -132,8 +132,8 @@ export default function TechStack() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.45, delay: idx * 0.08 }}
-              className="p-6 md:p-7 rounded-2xl border border-border-primary bg-bg-card hover:border-border-secondary transition-all flex flex-col justify-between"
+              transition={{ duration: 0.45, delay: idx * 0.08, ease: [0.2, 0, 0, 1] as const }}
+              className="p-6 md:p-7 rounded-2xl border border-border-primary bg-bg-card hover:border-border-secondary transition-all hover:-translate-y-1 duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-start justify-between gap-4 mb-3 pb-3 border-b border-border-primary">
@@ -185,7 +185,7 @@ export default function TechStack() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 + gIdx * 0.06 }}
+              transition={{ duration: 0.4, delay: 0.2 + gIdx * 0.06, ease: [0.2, 0, 0, 1] as const }}
               className="p-5 rounded-xl border border-border-primary bg-bg-card flex flex-col"
             >
               <h4 className="font-mono text-xs font-semibold text-text-primary uppercase tracking-wider mb-3 pb-2 border-b border-border-primary/50">
