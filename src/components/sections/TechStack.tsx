@@ -12,7 +12,7 @@ import { VscVscode } from 'react-icons/vsc';
 import {
   BrainCircuit, Cpu, GitBranch, Box, ShieldCheck,
   Database, Radio, Sparkles, Clock, ScanText, Target,
-  ShieldAlert, Lock, Users
+  ShieldAlert, Lock, Users, Bot
 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -99,6 +99,7 @@ const coreFoundations = [
     skills: [
       { name: 'Git & GitHub', icon: SiGit, color: '#f05032' },
       { name: 'VS Code', icon: VscVscode, color: '#007acc' },
+      { name: 'Claude Code', icon: Bot, color: '#d97706' },
       { name: 'Antigravity', icon: Sparkles, color: '#a855f7' },
     ],
   },

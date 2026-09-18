@@ -33,13 +33,13 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.30in 0.36in;
+        margin: 0.24in 0.32in;
       }
     }
     .resume-container {
       max-width: 8.5in;
       margin: 0 auto;
-      padding: 0.30in 0.36in;
+      padding: 0.24in 0.32in;
     }
 
     /* ===== HEADER ===== */
@@ -81,7 +81,7 @@ def generate_resume(output_path):
 
     /* ===== SECTION ===== */
     .section {
-      margin-top: 5.5pt;
+      margin-top: 4.5pt;
     }
     .section-title {
       font-family: 'Source Serif 4', 'Georgia', serif;
@@ -97,7 +97,7 @@ def generate_resume(output_path):
 
     /* ===== ENTRY (Education / Experience) ===== */
     .entry {
-      margin-bottom: 3.5pt;
+      margin-bottom: 2.8pt;
     }
     .entry-header {
       display: flex;
@@ -181,8 +181,8 @@ def generate_resume(output_path):
     ul.bullets li {
       font-size: 8.65pt;
       color: #222;
-      margin-bottom: 1.4pt;
-      line-height: 1.25;
+      margin-bottom: 1.1pt;
+      line-height: 1.22;
       padding-left: 1pt;
     }
 
@@ -191,9 +191,9 @@ def generate_resume(output_path):
       display: block;
     }
     .skill-row {
-      margin-bottom: 1.4pt;
-      font-size: 8.65pt;
-      line-height: 1.28;
+      margin-bottom: 1.1pt;
+      font-size: 8.6pt;
+      line-height: 1.24;
     }
     .skill-row strong {
       color: #111;
@@ -211,8 +211,8 @@ def generate_resume(output_path):
     ul.achievements li {
       font-size: 8.65pt;
       color: #222;
-      margin-bottom: 1.5pt;
-      line-height: 1.24;
+      margin-bottom: 1.1pt;
+      line-height: 1.22;
       padding-left: 1pt;
     }
     ul.achievements li strong {
@@ -280,18 +280,18 @@ def generate_resume(output_path):
         <span class="project-name">VisionForge AI</span>
         <span class="entry-date">Aug 2026 – Present</span>
       </div>
-      <div style="margin-bottom: 2pt;">
+      <div style="margin-bottom: 1.5pt;">
         <span class="project-links">
-          <a href="https://github.com/IdeaForg-e/VeriVision-AI">GitHub</a>
+          <a href="https://github.com/Disha-1610/VisionForge">GitHub</a>
         </span>
-        <span class="project-role"> — AI/Backend Developer | Team IdeaForg-E</span>
+        <span class="project-role"> — AI/ML &amp; Pipeline Engineer | Team: Disha &amp; Anil</span>
       </div>
       <ul class="bullets">
-        <li>Built an AI inspection pipeline to <strong>detect counterfeit and tampered hardware parts</strong> using OpenCV embeddings and FAISS reference matching.</li>
-        <li>Developed <strong>ROI-based inspection agents</strong> using OCR, SSIM, YOLO, and Vision LLMs to detect missing, altered, or suspicious components.</li>
-        <li>Combined evidence from multiple checks to generate <strong>explainable fraud verdicts and recommended actions</strong> (Accept, Retake, Quarantine, or Verify).</li>
+        <li>Built an autonomous inspection pipeline using <strong>LangGraph state machines</strong> to run OCR, seal-matching, and YOLO11n detection in parallel, with <strong>Groq and Gemini Vision</strong> models giving the final pass/fail verdict in under 5s.</li>
+        <li>Trained and fine-tuned a custom <strong>YOLO11n object-detection model on 4,448 images</strong>, reaching <strong>98.4% mAP@50</strong> for identifying and locating hardware parts.</li>
+        <li>Designed a custom evidence-fusion scoring method (<strong>Anomaly Max-Pooling</strong>) combined with EasyOCR text verification and Gemini embeddings + FAISS similarity search for reference matching — so no defect gets diluted or missed — validated with <strong>203 automated tests</strong>.</li>
       </ul>
-      <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · LangGraph · OpenCV · CLIP · FAISS · YOLO · NVIDIA NIM</div>
+      <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · LangGraph · PyTorch · YOLO11n · OpenCV · CLIP · FAISS · Groq · Gemini</div>
     </div>
 
     <!-- Project 2 -->
@@ -361,10 +361,10 @@ def generate_resume(output_path):
     <div class="skills-grid">
       <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, SQL</span></div>
       <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, SQLAlchemy, Pydantic v2, JWT/RBAC, SSE, Alembic</span></div>
-      <div class="skill-row"><strong>Gen AI &amp; Agentic AI:</strong> <span>LangGraph, Multi-Agent Systems, Agent Orchestration, RAG, Semantic Search, Prompt Engineering, LLM Integration &amp; Failover Resilience</span></div>
+      <div class="skill-row"><strong>Gen AI &amp; Agentic AI:</strong> <span>LangGraph, Multi-Agent Systems, RAG, Semantic Search, Prompt Engineering, LLM Integration</span></div>
       <div class="skill-row"><strong>Computer Vision &amp; Embeddings:</strong> <span>PyTorch, OpenCV, YOLO11n, CLIP, FAISS, OCR, Anomaly Detection (SSIM)</span></div>
       <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, Redis, ChromaDB, SQLite</span></div>
-      <div class="skill-row"><strong>DevOps &amp; Tools:</strong> <span>Docker, GitHub Actions (CI/CD), Git/GitHub, VS Code, Antigravity, Linux/Bash</span></div>
+      <div class="skill-row"><strong>DevOps &amp; Tools:</strong> <span>Docker, GitHub Actions (CI/CD), Git/GitHub, VS Code, Claude Code, Antigravity, Linux/Bash</span></div>
       <div class="skill-row"><strong>Core CS:</strong> <span>DSA, OOP, OS, DBMS, CN</span></div>
       <div class="skill-row"><strong>Soft Skills:</strong> <span>Problem-Solving, Technical Communication, Teamwork, Time Management</span></div>
     </div>
