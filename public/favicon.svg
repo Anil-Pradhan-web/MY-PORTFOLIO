@@ -1,24 +1,106 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1329" />
-      <stop offset="100%" stop-color="#020617" />
+    <!-- Deep dark card gradient -->
+    <linearGradient id="apBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111625" />
+      <stop offset="50%" stop-color="#0a0d17" />
+      <stop offset="100%" stop-color="#05070c" />
     </linearGradient>
-    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2dd4bf" />
-      <stop offset="100%" stop-color="#00D4AA" />
+
+    <!-- Electric Mint Gradient -->
+    <linearGradient id="apMintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#00e89d" />
+      <stop offset="100%" stop-color="#05b16d" />
+    </linearGradient>
+
+    <!-- High-contrast White/Silver Gradient -->
+    <linearGradient id="apWhiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d1d5db" />
+    </linearGradient>
+
+    <!-- Warm Amber Accent Gradient -->
+    <linearGradient id="apAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d" />
+      <stop offset="100%" stop-color="#f5a623" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="apBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e89d" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#2a334b" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0.8" />
     </linearGradient>
   </defs>
 
-  <!-- Background rounded squircle (fills 100% canvas) -->
-  <rect width="100" height="100" rx="24" fill="url(#bgGrad)" stroke="#00D4AA" stroke-width="4" stroke-opacity="0.4" />
+  <!-- Squircle Badge Base with glowing outline -->
+  <rect
+    x="3"
+    y="3"
+    width="94"
+    height="94"
+    rx="24"
+    fill="url(#apBgGrad)"
+    stroke="url(#apBorderGrad)"
+    stroke-width="3.5"
+  />
 
-  <!-- Bold terminal prompt '>' -->
-  <path d="M 16 33 L 36 50 L 16 67" fill="none" stroke="url(#tealGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Subtle inner grid coordinate -->
+  <path
+    d="M20 50 H80 M50 20 V80"
+    stroke="#00e89d"
+    stroke-width="0.75"
+    stroke-dasharray="2 6"
+    stroke-opacity="0.15"
+  />
 
-  <!-- Bold 'AP' Monogram (large, high-contrast, fills canvas) -->
-  <text x="44" y="69" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-1.5">AP</text>
-  
-  <!-- Subtle glowing dot accent -->
-  <circle cx="89" cy="68" r="4.5" fill="#00D4AA" />
+  <!-- Monogram 'A' - Left Diagonal Stem -->
+  <path
+    d="M 18 73 L 37 25 L 47 25 L 28 73 Z"
+    fill="url(#apMintGrad)"
+  />
+
+  <!-- Monogram 'A' - Right Diagonal Stem & Apex Joint -->
+  <path
+    d="M 37 25 L 47 25 L 56 50 L 47 50 Z"
+    fill="url(#apMintGrad)"
+  />
+
+  <!-- Monogram 'A' - Crossbar Connection -->
+  <path
+    d="M 25 54 L 49 54 L 46 47 L 28 47 Z"
+    fill="#00e89d"
+  />
+
+  <!-- Monogram 'P' - Main Vertical Stem -->
+  <path
+    d="M 54 25 H 63 V 73 H 54 V 25 Z"
+    fill="url(#apWhiteGrad)"
+  />
+
+  <!-- Monogram 'P' - Outer & Inner Loop -->
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M 63 25 H 77 C 84.732 25 90 30.268 90 38.5 C 90 46.732 84.732 52 77 52 H 63 V 25 Z M 63 33.5 V 43.5 H 75.5 C 78.8137 43.5 81.5 41.2614 81.5 38.5 C 81.5 35.7386 78.8137 33.5 75.5 33.5 H 63 Z"
+    fill="url(#apWhiteGrad)"
+  />
+
+  <!-- Dynamic Glowing Cyber Node (Amber Accent) -->
+  <circle
+    cx="79"
+    cy="71"
+    r="5"
+    fill="url(#apAmberGrad)"
+  />
+  <circle
+    cx="79"
+    cy="71"
+    r="8"
+    fill="none"
+    stroke="#f5a623"
+    stroke-width="1.5"
+    stroke-opacity="0.4"
+  />
 </svg>

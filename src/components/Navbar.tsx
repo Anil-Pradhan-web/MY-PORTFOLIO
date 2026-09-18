@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
 import Link from 'next/link';
+import Logo from '@/components/ui/Logo';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -95,15 +96,7 @@ export default function Navbar() {
         <div className="container-custom">
           <div className="flex h-16 md:h-20 items-center justify-between">
             {/* Brand Logo */}
-            <Link
-              href="#"
-              className="flex items-center gap-2 font-display text-lg md:text-xl font-bold tracking-tight text-text-primary hover:text-[#00e89d] transition-colors focus-ring rounded-lg px-1 py-0.5 group"
-              aria-label="Anil Pradhan - Home"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#00e89d] group-hover:scale-125 transition-transform" />
-              <span>Anil Pradhan</span>
-              <span className="text-xs font-mono font-medium text-text-muted hidden sm:inline-block">/ dev</span>
-            </Link>
+            <Logo size="sm" showText href="#" />
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">

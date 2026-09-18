@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { spaceGrotesk, jetbrainsMono, inter } from './fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import { LogoIcon } from '@/components/ui/Logo';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://anilpradhan.dev'),
@@ -65,8 +66,9 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <footer className="border-t border-border-primary/80 py-10 bg-bg-secondary/70">
           <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6 text-text-muted text-xs font-body">
-            <div className="flex flex-col sm:flex-row items-center gap-2 text-center md:text-left">
-              <span className="font-semibold text-text-secondary">Anil Pradhan</span>
+            <div className="flex flex-col sm:flex-row items-center gap-3 text-center md:text-left">
+              <LogoIcon size="xs" animate={false} />
+              <span className="font-semibold text-text-primary">Anil Pradhan</span>
               <span className="hidden sm:inline text-border-secondary">|</span>
               <span>B.Tech CSE · ITER, Siksha &apos;O&apos; Anusandhan University, Bhubaneswar, Odisha</span>
             </div>
