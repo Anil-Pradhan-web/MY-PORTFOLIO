@@ -33,13 +33,16 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.24in 0.32in;
+        margin: 0.22in 0.30in;
+      }
+      .resume-container {
+        padding: 0 !important;
       }
     }
     .resume-container {
       max-width: 8.5in;
       margin: 0 auto;
-      padding: 0.24in 0.32in;
+      padding: 0.22in 0.30in;
     }
 
     /* ===== HEADER ===== */
@@ -227,7 +230,7 @@ def generate_resume(output_path):
   <div class="header">
     <h1>Anil Pradhan</h1>
     <div class="contact-line">
-      <a href="mailto:anilpradhan9644@gmail.com">anilpradhan9644@gmail.com</a>
+      <a href="mailto:ap2019039@gmail.com">ap2019039@gmail.com</a>
       <span class="sep">|</span>
       <span>+91 8917476908</span>
       <span class="sep">|</span>
@@ -277,14 +280,14 @@ def generate_resume(output_path):
     <!-- Project 1: Most Recent -->
     <div class="entry">
       <div class="project-header">
-        <span class="project-name">VisionForge AI</span>
-        <span class="entry-date">Aug 2026 – Present</span>
+        <span class="project-name">VisionForge AI — Hardware Inspection Engine</span>
+        <span class="entry-date">Dell FutureMinds Podium (2026)</span>
       </div>
       <div style="margin-bottom: 1.5pt;">
         <span class="project-links">
           <a href="https://github.com/Disha-1610/VisionForge">GitHub</a>
         </span>
-        <span class="project-role"> — AI/ML &amp; Pipeline Engineer | Team: Disha &amp; Anil</span>
+        <span class="project-role"> — AI/ML &amp; Pipeline Lead | Pitched at Dell Bengaluru HQ</span>
       </div>
       <ul class="bullets">
         <li>Built an autonomous inspection pipeline using <strong>LangGraph state machines</strong> to run OCR, seal-matching, and YOLO11n detection in parallel, with <strong>Groq and Gemini Vision</strong> models giving the final pass/fail verdict in under 5s.</li>
@@ -421,5 +424,23 @@ def generate_resume(output_path):
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    target_path = os.path.join(current_dir, "public", "Anil_Pradhan_resume.pdf")
-    generate_resume(target_path)
+    primary_target = os.path.join(current_dir, "public", "Anil_Pradhan_resume.pdf")
+    generate_resume(primary_target)
+    
+    # Exact Dean filename requested by Raj Hota Sir
+    dean_filename_exact = "Anil Pradhan_ SOA_ 2028 batch.pdf"
+    dean_filename_clean = "Anil_Pradhan_SOA_2028_batch.pdf"
+    
+    destinations = [
+        os.path.join(current_dir, dean_filename_exact),
+        os.path.join(current_dir, dean_filename_clean),
+        os.path.join(current_dir, "public", dean_filename_exact),
+        os.path.join(current_dir, "public", dean_filename_clean),
+        os.path.join(current_dir, "public", "resume.pdf"),
+    ]
+    for dest in destinations:
+        try:
+            shutil.copyfile(primary_target, dest)
+            print(f"Copied to: {dest}")
+        except Exception as e:
+            print(f"Failed to copy to {dest}: {e}")

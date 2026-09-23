@@ -225,7 +225,7 @@ export default function Hero() {
                   <FaLinkedin className="w-4 h-4" />
                 </a>
                 <a
-                  href="mailto:anilpradhan9644@gmail.com"
+                  href="mailto:ap2019039@gmail.com"
                   className="p-2.5 rounded-lg border border-border-primary bg-bg-card/70 text-text-secondary hover:text-[#00e89d] hover:border-[#00e89d]/30 hover:bg-bg-card transition-all focus-ring"
                   aria-label="Email Anil"
                 >
@@ -239,9 +239,9 @@ export default function Hero() {
               variants={item}
               className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-text-muted font-body"
             >
-              <a href="mailto:anilpradhan9644@gmail.com" className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors">
+              <a href="mailto:ap2019039@gmail.com" className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors">
                 <Mail className="w-3.5 h-3.5 text-[#00e89d]" />
-                anilpradhan9644@gmail.com
+                ap2019039@gmail.com
               </a>
               <a href="tel:+918917476908" className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#00e89d]" />

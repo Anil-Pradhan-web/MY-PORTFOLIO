@@ -12,8 +12,8 @@ import { cn } from '@/lib/utils';
 const contactInfo = [
   {
     icon: Mail,
-    text: 'anilpradhan9644@gmail.com',
-    href: 'mailto:anilpradhan9644@gmail.com',
+    text: 'ap2019039@gmail.com',
+    href: 'mailto:ap2019039@gmail.com',
     label: 'Direct Email',
   },
   {
@@ -80,11 +80,11 @@ export default function Contact() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('anilpradhan9644@gmail.com');
+      await navigator.clipboard.writeText('ap2019039@gmail.com');
       setCopiedEmail(true);
       setTimeout(() => setCopiedEmail(false), 2000);
     } catch {
-      window.location.href = 'mailto:anilpradhan9644@gmail.com';
+      window.location.href = 'mailto:ap2019039@gmail.com';
     }
   };
 
@@ -243,7 +243,7 @@ export default function Contact() {
               )}
               {submitStatus === 'error' && (
                 <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-body" role="alert">
-                  Failed to send message. Please reach out directly to anilpradhan9644@gmail.com.
+                  Failed to send message. Please reach out directly to ap2019039@gmail.com.
                 </div>
               )}
 
