@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import { LogoIcon } from '@/components/ui/Logo';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://anilpradhan.dev'),
+  metadataBase: new URL('https://my-portfolio-anil.vercel.app'),
   title: 'Anil Pradhan — Software Engineer | Backend & AI',
   description: 'Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG. CGPA 8.93. Open to internships in Bangalore, Hyderabad, Bhubaneswar.',
   keywords: ['Backend Engineer', 'AI Engineer', 'FastAPI', 'LangGraph', 'Distributed Systems', 'RAG', 'Python', 'Java', 'Anil Pradhan'],
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://anilpradhan.dev',
+    url: 'https://my-portfolio-anil.vercel.app',
     title: 'Anil Pradhan — Software Engineer | Backend & AI',
     description: 'Backend-focused Computer Science undergraduate specializing in AI-powered applications, scalable backend systems, and intelligent software using FastAPI, LangGraph, and RAG.',
     siteName: 'Anil Pradhan Portfolio',
