@@ -22,6 +22,14 @@ const education = [
     score: '85%',
     status: 'Completed',
   },
+  {
+    degree: 'Class X (CBSE Board)',
+    institution: 'Odisha Adarsha Vidyalaya (OAV)',
+    university: 'Digapahandi, Ganjam, Odisha',
+    period: '2020 – 2022',
+    score: '78.8%',
+    status: 'Completed',
+  },
 ];
 
 const experiences = [
@@ -132,7 +140,7 @@ export default function Experience() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {education.map((edu, idx) => (
               <motion.div
                 key={idx}

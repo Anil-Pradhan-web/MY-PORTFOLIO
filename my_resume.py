@@ -242,7 +242,7 @@ def generate_resume(output_path):
       <span class="sep">|</span>
       <a href="https://anil-portfolio-web.vercel.app">Portfolio</a>
     </div>
-    <div class="tagline">AI &amp; Backend Engineer specializing in autonomous multi-agent architectures, computer vision pipelines, and resilient backend systems with Python, FastAPI, LangGraph, and PyTorch.</div>
+    <div class="tagline">AI &amp; Backend Engineer specializing in autonomous multi-agent architectures, computer vision pipelines, and resilient backend systems with Python, FastAPI, LangGraph, OpenCV, and YOLO11n.</div>
     <div style="font-size: 8.4pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds National Grand Finalist (Top 6 / 8,000+) · 4× AI Hackathon Builder (Dell, MSFT, AWS, Google)</div>
   </div>
 
@@ -271,6 +271,17 @@ def generate_resume(output_path):
         <span class="score">Score: 85%</span>
       </div>
     </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Odisha Adarsha Vidyalaya (OAV), Digapahandi, Ganjam, Odisha</span>
+        <span class="entry-date">2020 – 2022</span>
+      </div>
+      <div class="entry-subtitle">
+        <span>Class X (CBSE Board)</span>
+        <span class="score">Score: 78.8%</span>
+      </div>
+    </div>
   </div>
 
   <!-- ===== PROJECTS (moved above Leadership) ===== -->
@@ -291,10 +302,11 @@ def generate_resume(output_path):
       </div>
       <ul class="bullets">
         <li>Built an autonomous inspection pipeline using <strong>LangGraph state machines</strong> to run OCR, seal-matching, and YOLO11n detection in parallel, with <strong>Groq and Gemini Vision</strong> models giving the final pass/fail verdict in under 5s.</li>
-        <li>Trained and fine-tuned a custom <strong>YOLO11n object-detection model on 4,448 images</strong>, reaching <strong>98.4% mAP@50</strong> for identifying and locating hardware parts.</li>
+        <li>Trained and fine-tuned a custom <strong>YOLO11n object-detection model on 4,448 images</strong>, reaching <strong>98.4% mAP@50</strong> for identifying and locating hardware parts down to 12×12px.</li>
         <li>Designed a custom evidence-fusion scoring method (<strong>Anomaly Max-Pooling</strong>) combined with EasyOCR text verification and Gemini embeddings + FAISS similarity search for reference matching — so no defect gets diluted or missed — validated with <strong>203 automated tests</strong>.</li>
+        <li>Architected <strong>sub-30ms defensive fast-fail gates</strong> using Laplacian blur variance and Error Level Analysis (ELA) to eliminate wasted compute on blurred or manipulated uploads prior to neural inference.</li>
       </ul>
-      <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · LangGraph · PyTorch · YOLO11n · OpenCV · CLIP · FAISS · Groq · Gemini</div>
+      <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · LangGraph · YOLO11n · OpenCV · FAISS · Groq LPU · Gemini 3.5 Flash</div>
     </div>
 
     <!-- Project 2 -->
@@ -316,7 +328,7 @@ def generate_resume(output_path):
         <li>Developed <strong>smart deduplication and a 7-factor priority engine</strong> (severity, deadline, outage risk, customer impact) with a 7-point quality checker to rank tasks with clear explanations.</li>
         <li>Implemented a <strong>reliable LLM client with circuit breaker</strong> (Groq + local fallback rules) and an AI chat assistant for <strong>instant P1 bug injection</strong> and calendar-aware daily scheduling.</li>
       </ul>
-      <div class="project-tech"><strong>Tech:</strong> FastAPI · React · SQLite · Groq/NVIDIA NIM</div>
+      <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · Multi-Agent Systems · SQLAlchemy · SQLite (WAL) · Groq · React 18</div>
     </div>
 
     <!-- Project 3 -->
@@ -334,9 +346,9 @@ def generate_resume(output_path):
         <span class="project-role"> — Solo Developer</span>
       </div>
       <ul class="bullets">
-        <li>Built a multi-agent AI system using LangGraph to orchestrate 4 parallel agents (Resume, Market, Roadmap, LinkedIn) with shared state, reducing analysis latency by ~60%.</li>
-        <li>Developed a real-time mock interview engine with a 7-phase FSM over WebSockets, featuring a live code editor and resume-personalized questions.</li>
-        <li>Designed a fault-tolerant backend (FastAPI, PostgreSQL, Redis) with RAG-powered roadmap generation via ChromaDB, multi-provider LLM failover, and a 113-test CI/CD pipeline.</li>
+        <li>Built a multi-agent AI system using <strong>LangGraph</strong> to orchestrate 4 parallel agents (Resume, Market, Roadmap, LinkedIn) with shared state, reducing analysis latency by <strong>~60%</strong>.</li>
+        <li>Developed a real-time mock interview engine with a <strong>7-phase FSM over WebSockets</strong>, featuring a live code editor and resume-personalized questions.</li>
+        <li>Designed a fault-tolerant backend (<strong>FastAPI, PostgreSQL, Redis</strong>) with <strong>RAG-powered roadmap generation via ChromaDB</strong>, multi-provider LLM failover, and a <strong>113-test CI/CD pipeline</strong>.</li>
       </ul>
       <div class="project-tech"><strong>Tech:</strong> FastAPI · LangGraph · Next.js · ChromaDB · Redis · Docker · ONNX</div>
     </div>
@@ -352,8 +364,8 @@ def generate_resume(output_path):
         <span class="entry-date">2026 – Present</span>
       </div>
       <ul class="bullets">
-        <li>Hands-on training in Agentic AI, LLMs, prompt engineering, RAG, tool calling, MCP, and multi-agent orchestration.</li>
-        <li>Built and experimented with agents using OpenClaw, Multica, AnythingLLM, OpenRouter, Claude Code, OpenCode, and MCP servers, including agent squads and tool integrations.</li>
+        <li>Hands-on training in <strong>Agentic AI, LLMs, prompt engineering, RAG, tool calling, MCP</strong>, and multi-agent orchestration.</li>
+        <li>Built and experimented with autonomous agents using <strong>OpenClaw, Multica, AnythingLLM, OpenRouter, Claude Code</strong>, and custom MCP servers.</li>
       </ul>
     </div>
   </div>
@@ -363,13 +375,10 @@ def generate_resume(output_path):
     <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
       <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, SQL</span></div>
-      <div class="skill-row"><strong>Backend &amp; APIs:</strong> <span>FastAPI, REST APIs, SQLAlchemy, Pydantic v2, JWT/RBAC, SSE, Alembic</span></div>
-      <div class="skill-row"><strong>Gen AI &amp; Agentic AI:</strong> <span>LangGraph, Multi-Agent Systems, RAG, Semantic Search, Prompt Engineering, LLM Integration</span></div>
-      <div class="skill-row"><strong>Computer Vision &amp; Embeddings:</strong> <span>PyTorch, OpenCV, YOLO11n, CLIP, FAISS, OCR, Anomaly Detection (SSIM)</span></div>
-      <div class="skill-row"><strong>Databases:</strong> <span>PostgreSQL, Redis, ChromaDB, SQLite</span></div>
-      <div class="skill-row"><strong>DevOps &amp; Tools:</strong> <span>Docker, GitHub Actions (CI/CD), Git/GitHub, VS Code, Claude Code, Antigravity, Linux/Bash</span></div>
-      <div class="skill-row"><strong>Core CS:</strong> <span>DSA, OOP, OS, DBMS, CN</span></div>
-      <div class="skill-row"><strong>Soft Skills:</strong> <span>Problem-Solving, Technical Communication, Teamwork, Time Management</span></div>
+      <div class="skill-row"><strong>AI &amp; Computer Vision:</strong> <span>LangGraph, Multi-Agent Systems, RAG, Prompt Engineering, LLM Integration, OpenCV, YOLO11n, OCR, Anomaly Detection (SSIM)</span></div>
+      <div class="skill-row"><strong>Backend &amp; Databases:</strong> <span>FastAPI, REST APIs, SQLAlchemy, JWT/RBAC, PostgreSQL, Redis, ChromaDB, SQLite</span></div>
+      <div class="skill-row"><strong>Core CS Concepts:</strong> <span>Data Structures &amp; Algorithms, OOP, Operating Systems, DBMS, Computer Networks</span></div>
+      <div class="skill-row"><strong>Developer Tools:</strong> <span>Git/GitHub, Docker, Linux Commands, Postman</span></div>
     </div>
   </div>
 
@@ -429,14 +438,10 @@ if __name__ == "__main__":
     
     # Exact Dean filename requested by Raj Hota Sir
     dean_filename_exact = "Anil Pradhan_ SOA_ 2028 batch.pdf"
-    dean_filename_clean = "Anil_Pradhan_SOA_2028_batch.pdf"
     
     destinations = [
         os.path.join(current_dir, dean_filename_exact),
-        os.path.join(current_dir, dean_filename_clean),
         os.path.join(current_dir, "public", dean_filename_exact),
-        os.path.join(current_dir, "public", dean_filename_clean),
-        os.path.join(current_dir, "public", "resume.pdf"),
     ]
     for dest in destinations:
         try:
@@ -444,3 +449,16 @@ if __name__ == "__main__":
             print(f"Copied to: {dest}")
         except Exception as e:
             print(f"Failed to copy to {dest}: {e}")
+            
+    # Clean up any leftover redundant PDFs
+    redundant_files = [
+        os.path.join(current_dir, "Anil_Pradhan_SOA_2028_batch.pdf"),
+        os.path.join(current_dir, "public", "Anil_Pradhan_SOA_2028_batch.pdf"),
+        os.path.join(current_dir, "public", "resume.pdf"),
+    ]
+    for rf in redundant_files:
+        if os.path.exists(rf):
+            try:
+                os.remove(rf)
+            except Exception:
+                pass

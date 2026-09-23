@@ -157,7 +157,7 @@ export default function Hero() {
               <p className="text-base text-text-secondary leading-relaxed">
                 My work focuses on <strong className="text-text-primary font-semibold">backend engineering, multi-agent systems, computer vision, and reliable AI pipelines</strong> using{' '}
                 <span className="font-mono text-xs text-[#62e08a] bg-bg-card/80 px-2 py-0.5 rounded border border-border-primary">
-                  Python · FastAPI · LangGraph · OpenCV · PyTorch
+                  Python · FastAPI · LangGraph · OpenCV · YOLO11n
                 </span>.
               </p>
             </motion.div>
