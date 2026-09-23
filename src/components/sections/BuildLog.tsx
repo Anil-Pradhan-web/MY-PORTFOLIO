@@ -5,7 +5,7 @@ import { Trophy, Award, Flame, CheckCircle2 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const dellMetrics = [
-  { label: 'Final Placement', value: 'Top 3 National', detail: '2nd Runner-Up Podium' },
+  { label: 'Final Placement', value: 'Top 6 National', detail: 'National Grand Finalists' },
   { label: 'Screening Pool', value: '8,000+', detail: 'HackerRank National Round' },
   { label: 'Final Selection', value: 'Top 6 Finalists', detail: 'Selected for Grand Finale' },
   { label: 'Executive Stage', value: 'Dell HQ, BLR', detail: 'Live Jury & Leadership Pitch' },
@@ -110,7 +110,7 @@ export default function BuildLog() {
 
             <div className="flex flex-wrap items-center gap-2">
               <span className="font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#f5a623]/15 text-[#f5a623] border border-[#f5a623]/30 whitespace-nowrap">
-                2nd Runner-Up Overall
+                National Grand Finalist · Certificate of Excellence
               </span>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function BuildLog() {
           {/* Narrative Story */}
           <div className="relative z-10 py-6">
             <p className="text-base sm:text-lg text-text-primary/90 leading-relaxed font-body max-w-4xl">
-              Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with <strong className="text-text-primary font-semibold">8,000+ participants</strong> attempting a rigorous HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, an executive Zoom pitch round, and finally into the <strong className="text-[#f5a623] font-semibold">Top 6 Grand Finalists</strong>. We flew to Dell&apos;s Bengaluru headquarters to pitch our hardware inspection solution live before Dell&apos;s senior leadership, engineering jury, and employees — securing <strong className="text-[#f5a623] font-semibold">3rd position (2nd Runner-Up)</strong> overall.
+              Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with <strong className="text-text-primary font-semibold">8,000+ participants</strong> attempting a rigorous HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, an executive Zoom pitch round, and finally into the <strong className="text-[#f5a623] font-semibold">Top 6 Grand Finalists</strong>. We flew to Dell&apos;s Bengaluru headquarters to pitch our hardware inspection solution live before Dell&apos;s senior leadership, engineering jury, and employees — honored with the <strong className="text-[#f5a623] font-semibold">Certificate of Excellence</strong>.
             </p>
           </div>
 

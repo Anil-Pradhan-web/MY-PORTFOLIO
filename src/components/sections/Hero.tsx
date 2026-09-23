@@ -171,7 +171,7 @@ export default function Hero() {
                 <Trophy className="w-4 h-4" />
               </div>
               <div className="text-xs sm:text-sm text-text-secondary">
-                <span className="font-semibold text-text-primary">Dell FutureMinds 2nd Runner-Up</span>{' '}
+                <span className="font-semibold text-text-primary">Dell FutureMinds National Grand Finalist</span>{' '}
                 <span className="text-[#f5a623]/90 font-mono text-xs">(Top 6 / 8,000+)</span>
                 <span className="text-text-muted mx-1.5 hidden sm:inline">·</span>
                 <span className="block sm:inline text-text-muted mt-0.5 sm:mt-0">
