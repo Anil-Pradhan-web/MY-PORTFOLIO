@@ -81,7 +81,7 @@ const projects = [
     ],
     stack: ['Python', 'FastAPI', 'Multi-Agent Systems', 'SQLAlchemy', 'SQLite (WAL)', 'Groq', 'React 18'],
     githubUrl: 'https://github.com/IdeaForg-e/TaskPilot-AI',
-    liveUrl: 'https://taskpilot-ai-app.onrender.com/',
+    liveUrl: 'https://task-pilot-ai-two.vercel.app/',
   },
   {
     id: 'ai-career-mentor',

@@ -318,7 +318,7 @@ def generate_resume(output_path):
       </div>
       <div style="margin-bottom: 2pt;">
         <span class="project-links">
-          <a href="https://taskpilot-ai-app.onrender.com/">Live Demo</a>
+          <a href="https://task-pilot-ai-two.vercel.app/">Live Demo</a>
           <span class="sep">|</span>
           <a href="https://github.com/IdeaForg-e/TaskPilot-AI">GitHub</a>
         </span>
