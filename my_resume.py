@@ -19,8 +19,8 @@ def generate_resume(output_path):
     body {
       font-family: 'Source Sans 3', 'Calibri', 'Arial', sans-serif;
       color: #111;
-      font-size: 9pt;
-      line-height: 1.2;
+      font-size: 9.2pt;
+      line-height: 1.32;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -33,7 +33,7 @@ def generate_resume(output_path):
       }
       @page {
         size: letter;
-        margin: 0.22in 0.30in;
+        margin: 0.32in 0.35in;
       }
       .resume-container {
         padding: 0 !important;
@@ -42,25 +42,25 @@ def generate_resume(output_path):
     .resume-container {
       max-width: 8.5in;
       margin: 0 auto;
-      padding: 0.22in 0.30in;
+      padding: 0.32in 0.35in;
     }
 
     /* ===== HEADER ===== */
     .header {
       text-align: center;
-      margin-bottom: 3.5pt;
+      margin-bottom: 6pt;
     }
     .header h1 {
       font-family: 'Source Serif 4', 'Georgia', serif;
-      font-size: 17pt;
+      font-size: 18pt;
       font-weight: 700;
       letter-spacing: 0.5pt;
       color: #111;
-      margin-bottom: 1.5pt;
+      margin-bottom: 2pt;
       text-transform: uppercase;
     }
     .header .contact-line {
-      font-size: 8.65pt;
+      font-size: 8.8pt;
       color: #333;
       word-spacing: 0.5pt;
     }
@@ -76,31 +76,32 @@ def generate_resume(output_path):
       color: #999;
     }
     .header .tagline {
-      font-size: 8.65pt;
+      font-size: 8.85pt;
       color: #333;
-      margin-top: 2pt;
+      margin-top: 2.5pt;
+      line-height: 1.3;
       font-style: normal;
     }
 
     /* ===== SECTION ===== */
     .section {
-      margin-top: 4.5pt;
+      margin-top: 7pt;
     }
     .section-title {
       font-family: 'Source Serif 4', 'Georgia', serif;
-      font-size: 10pt;
+      font-size: 10.5pt;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.4pt;
       color: #111;
       border-bottom: 1pt solid #111;
-      padding-bottom: 1.2pt;
-      margin-bottom: 3pt;
+      padding-bottom: 1.5pt;
+      margin-bottom: 4pt;
     }
 
     /* ===== ENTRY (Education / Experience) ===== */
     .entry {
-      margin-bottom: 2.8pt;
+      margin-bottom: 4pt;
     }
     .entry-header {
       display: flex;
@@ -108,12 +109,12 @@ def generate_resume(output_path):
       align-items: baseline;
     }
     .entry-title {
-      font-size: 9.25pt;
+      font-size: 9.5pt;
       font-weight: 700;
       color: #111;
     }
     .entry-date {
-      font-size: 8.5pt;
+      font-size: 8.6pt;
       color: #555;
       white-space: nowrap;
       font-style: italic;
@@ -122,10 +123,10 @@ def generate_resume(output_path):
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.65pt;
+      font-size: 8.8pt;
       color: #333;
       font-style: italic;
-      margin-top: 0pt;
+      margin-top: 0.5pt;
     }
     .entry-subtitle .score {
       font-style: normal;
@@ -141,12 +142,12 @@ def generate_resume(output_path):
       margin-bottom: 0pt;
     }
     .project-name {
-      font-size: 9.35pt;
+      font-size: 9.6pt;
       font-weight: 700;
       color: #111;
     }
     .project-links {
-      font-size: 8.25pt;
+      font-size: 8.4pt;
     }
     .project-links a {
       color: #1a5276;
@@ -161,15 +162,15 @@ def generate_resume(output_path):
       margin: 0 2pt;
     }
     .project-role {
-      font-size: 8.5pt;
+      font-size: 8.65pt;
       color: #555;
       font-style: italic;
       margin-bottom: 0pt;
     }
     .project-tech {
-      font-size: 8.25pt;
+      font-size: 8.45pt;
       color: #444;
-      margin-top: 1pt;
+      margin-top: 1.5pt;
     }
     .project-tech strong {
       color: #222;
@@ -182,10 +183,10 @@ def generate_resume(output_path):
       padding: 0;
     }
     ul.bullets li {
-      font-size: 8.65pt;
+      font-size: 8.85pt;
       color: #222;
-      margin-bottom: 1.1pt;
-      line-height: 1.22;
+      margin-bottom: 2pt;
+      line-height: 1.3;
       padding-left: 1pt;
     }
 
@@ -194,9 +195,9 @@ def generate_resume(output_path):
       display: block;
     }
     .skill-row {
-      margin-bottom: 1.1pt;
-      font-size: 8.6pt;
-      line-height: 1.24;
+      margin-bottom: 2.2pt;
+      font-size: 8.85pt;
+      line-height: 1.32;
     }
     .skill-row strong {
       color: #111;
@@ -212,10 +213,10 @@ def generate_resume(output_path):
       padding: 0;
     }
     ul.achievements li {
-      font-size: 8.65pt;
+      font-size: 8.85pt;
       color: #222;
-      margin-bottom: 1.1pt;
-      line-height: 1.22;
+      margin-bottom: 2pt;
+      line-height: 1.3;
       padding-left: 1pt;
     }
     ul.achievements li strong {
@@ -240,7 +241,7 @@ def generate_resume(output_path):
       <span class="sep">|</span>
       <a href="https://github.com/Anil-Pradhan-web">GitHub</a>
       <span class="sep">|</span>
-      <a href="https://anil-portfolio-web.vercel.app">Portfolio</a>
+      <a href="https://my-portfolio-anil.vercel.app/">Portfolio</a>
     </div>
     <div class="tagline">AI &amp; Backend Engineer specializing in autonomous multi-agent architectures, computer vision pipelines, and resilient backend systems with Python, FastAPI, LangGraph, OpenCV, and YOLO11n.</div>
     <div style="font-size: 8.4pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds National Grand Finalist (Top 6 / 8,000+) · 4× AI Hackathon Builder (Dell, MSFT, AWS, Google)</div>
@@ -302,9 +303,9 @@ def generate_resume(output_path):
       </div>
       <ul class="bullets">
         <li>Built an autonomous inspection pipeline using <strong>LangGraph state machines</strong> to run OCR, seal-matching, and YOLO11n detection in parallel, with <strong>Groq and Gemini Vision</strong> models giving the final pass/fail verdict in under 5s.</li>
-        <li>Trained and fine-tuned a custom <strong>YOLO11n object-detection model on 4,448 images</strong>, reaching <strong>98.4% mAP@50</strong> for identifying and locating hardware parts down to 12×12px.</li>
-        <li>Designed a custom evidence-fusion scoring method (<strong>Anomaly Max-Pooling</strong>) combined with EasyOCR text verification and Gemini embeddings + FAISS similarity search for reference matching — so no defect gets diluted or missed — validated with <strong>203 automated tests</strong>.</li>
-        <li>Architected <strong>sub-30ms defensive fast-fail gates</strong> using Laplacian blur variance and Error Level Analysis (ELA) to eliminate wasted compute on blurred or manipulated uploads prior to neural inference.</li>
+        <li>Trained and fine-tuned a custom <strong>YOLO11n model on 4,448 hardware images</strong> to accurately detect and locate electronic components as small as <strong>12×12 px</strong>.</li>
+        <li>Developed an anomaly detection approach (<strong>Anomaly Max-Pooling</strong>) using <strong>OCR and FAISS</strong> to improve detection of critical hardware defects, with <strong>203 automated tests</strong>.</li>
+        <li>Implemented <strong>real-time inspection updates using Server-Sent Events (SSE)</strong>, allowing operators to track pipeline progress and receive inspection results instantly.</li>
       </ul>
       <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · LangGraph · YOLO11n · OpenCV · FAISS · Groq LPU · Gemini 3.5 Flash</div>
     </div>
@@ -324,9 +325,10 @@ def generate_resume(output_path):
         <span class="project-role"> — Integration Lead | Team IdeaForg-E</span>
       </div>
       <ul class="bullets">
-        <li>Built a <strong>6-stage multi-agent pipeline</strong> (Agent 0 Orchestrator) in Python &amp; FastAPI to collect, extract, clean, and schedule tasks from 5 tools in <strong>~20 seconds</strong>.</li>
-        <li>Developed <strong>smart deduplication and a 7-factor priority engine</strong> (severity, deadline, outage risk, customer impact) with a 7-point quality checker to rank tasks with clear explanations.</li>
-        <li>Implemented a <strong>reliable LLM client with circuit breaker</strong> (Groq + local fallback rules) and an AI chat assistant for <strong>instant P1 bug injection</strong> and calendar-aware daily scheduling.</li>
+        <li>Built the <strong>orchestrator</strong> for a 6-stage AI pipeline, coordinating task collection, extraction, deduplication, quality checks, prioritization, and scheduling across <strong>5 data sources</strong>.</li>
+        <li>Implemented the <strong>pipeline lifecycle and state management</strong> to handle stage execution and recovery, completing the full workflow in around <strong>14–18 seconds</strong>.</li>
+        <li>Built a <strong>reliable LLM integration</strong> with fallback mechanisms, allowing the system to continue working during API failures and rate limits.</li>
+        <li>Implemented <strong>real-time P1 task injection</strong> through the AI copilot, automatically triggering a pipeline re-run and moving urgent incidents to the <strong>#1 priority</strong>.</li>
       </ul>
       <div class="project-tech"><strong>Tech:</strong> Python · FastAPI · Multi-Agent Systems · SQLAlchemy · SQLite (WAL) · Groq · React 18</div>
     </div>
@@ -386,11 +388,11 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Achievements &amp; Certifications</div>
     <ul class="achievements">
-      <li><strong>Dell FutureMinds AI Hackathon 2026 — National Grand Finalist &amp; Certificate of Excellence:</strong> Selected among Top 6 Grand Finalist teams nationwide out of 8,000+ participants across 4 competitive stages (Screening → Top 370 Hackathon → Top 10 → Top 6). Flew to Dell Bengaluru Headquarters to present our autonomous hardware inspection solution live before Dell's senior engineering leadership and jury.</li>
-      <li><strong>FlowFinance × Techfest IIT Bombay — Round 2 Qualifier:</strong> Designed a GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.</li>
-      <li><strong>4× AI Hackathon Builder:</strong> Built and deployed AI solutions across 4 hackathons, including Microsoft AI Dev Days, Amazon Nova Challenge, and Google Solution Challenge.</li>
-      <li><strong>100+ Day DSA Streak:</strong> Maintained a 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving DSA problems daily — recognized with GFG consistency reward.</li>
-      <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python Essentials 2 · Wells Fargo SWE (Forage) · HackerRank (Problem Solving, SQL, Java, Python).</li>
+      <li><strong>Dell FutureMinds AI Hackathon 2026 — National Grand Finalist:</strong> Top 6 nationwide out of 6,000+ participants; pitched our live solution at Dell Bengaluru Office.</li>
+      <li><strong>FlowFinance × Techfest IIT Bombay — Round 2:</strong> Developed GTM strategy and acquisition framework for AI fintech platform.</li>
+      <li><strong>4× AI Hackathon Builder:</strong> Deployed AI applications in Microsoft AI Dev Days, Amazon Nova, and Google Solution Challenge.</li>
+      <li><strong>100+ Day DSA Streak:</strong> Continuous daily problem solving on GeeksforGeeks 160 Days of Code.</li>
+      <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE · HackerRank (DSA, SQL, Java, Python).</li>
     </ul>
   </div>
 
