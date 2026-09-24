@@ -367,11 +367,11 @@ def generate_resume(output_path):
         <span class="project-role">Solo Developer</span>
       </div>
       <ul class="bullets">
-        <li>Built a multi-agent AI system using <strong>LangGraph</strong> to orchestrate 4 parallel agents (Resume, Market, Roadmap, LinkedIn) with shared state, reducing analysis latency by <strong>~60%</strong>.</li>
-        <li>Developed a real-time mock interview engine with a <strong>7-phase FSM over WebSockets</strong>, featuring a live code editor and resume-personalized questions.</li>
-        <li>Designed a fault-tolerant backend (<strong>FastAPI, PostgreSQL, Redis</strong>) with <strong>RAG-powered roadmap generation via ChromaDB</strong>, multi-provider LLM failover, and a <strong>113-test CI/CD pipeline</strong>.</li>
+        <li>Built a <strong>production-grade FastAPI backend</strong> with REST APIs, JWT authentication, request validation, and rate limiting for a full-stack career platform.</li>
+        <li>Designed the <strong>PostgreSQL + Redis data layer</strong> for persistent user data, caching, session management, and feature usage limits.</li>
+        <li>Set up <strong>Docker-based deployment and GitHub Actions CI/CD</strong> with <strong>113 automated tests</strong>, Prometheus metrics, and Sentry monitoring for reliable production operation.</li>
       </ul>
-      <div class="project-tech"><strong>Tech:</strong> FastAPI · LangGraph · Next.js · ChromaDB · Redis · Docker · ONNX</div>
+      <div class="project-tech"><strong>Tech:</strong> FastAPI · PostgreSQL · Redis · WebSockets · Docker · GitHub Actions · SQLAlchemy</div>
     </div>
   </div>
 

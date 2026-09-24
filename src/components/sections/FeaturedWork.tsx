@@ -116,7 +116,7 @@ const projects = [
       'High-Throughput Backend & Session Persistence — Built an asynchronous FastAPI backend backed by PostgreSQL (SQLAlchemy 2.0) and Redis session caching for low-latency profile ingestion and interview state isolation.',
       'Automated Testing & Containerized CI/CD (113 Tests) — Authored a comprehensive 113-test Pytest test suite with Docker containerization, ONNX runtime optimization, and automated GitHub Actions deployment pipelines.',
     ],
-    stack: ['FastAPI', 'LangGraph', 'Next.js', 'ChromaDB', 'Redis', 'Docker', 'ONNX'],
+    stack: ['FastAPI', 'PostgreSQL', 'Redis', 'WebSockets', 'Docker', 'GitHub Actions', 'SQLAlchemy'],
     githubUrl: 'https://github.com/Anil-Pradhan-web/ai-career-mentor',
     liveUrl: 'https://ai-career-mentor-anil.vercel.app',
   },
