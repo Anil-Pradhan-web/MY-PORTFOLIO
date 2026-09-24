@@ -406,11 +406,11 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Achievements &amp; Certifications</div>
     <ul class="achievements">
-      <li><strong>Dell FutureMinds AI Hackathon 2026 — National Grand Finalist:</strong> Top 6 nationwide out of 6,000+ participants; pitched our live solution at Dell Bengaluru Office.</li>
+      <li><strong>Dell FutureMinds AI Hackathon 2026 — National Grand Finalist:</strong> Top 6 nationwide out of 8,000+ participants; awarded Certificate of Excellence &amp; pitched live at Dell Bengaluru HQ.</li>
       <li><strong>FlowFinance × Techfest IIT Bombay — Round 2:</strong> Developed GTM strategy and acquisition framework for AI fintech platform.</li>
       <li><strong>4× AI Hackathon Builder:</strong> Deployed AI applications in Microsoft AI Dev Days, Amazon Nova, and Google Solution Challenge.</li>
       <li><strong>100+ Day DSA Streak:</strong> Continuous daily problem solving on GeeksforGeeks 160 Days of Code.</li>
-      <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE · HackerRank (DSA, SQL, Java, Python).</li>
+      <li><strong>Certifications:</strong> Dell FutureMinds Certificate of Excellence · IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE · HackerRank (DSA, SQL, Java, Python).</li>
     </ul>
   </div>
 
