@@ -251,7 +251,6 @@ def generate_resume(output_path):
       <a href="https://my-portfolio-anil.vercel.app/">Portfolio</a>
     </div>
     <div class="tagline">AI &amp; Backend Engineer specializing in autonomous multi-agent architectures, computer vision pipelines, and resilient backend systems with Python, FastAPI, LangGraph, OpenCV, and YOLO11n.</div>
-    <div style="font-size: 8.4pt; color: #111; margin-top: 2pt; font-weight: 600;">Dell FutureMinds National Grand Finalist (Top 6 / 8,000+) · 4× AI Hackathon Builder (Dell, MSFT, AWS, Google)</div>
   </div>
 
   <!-- ===== EDUCATION ===== -->
