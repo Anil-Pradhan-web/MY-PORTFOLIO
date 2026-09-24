@@ -384,8 +384,8 @@ def generate_resume(output_path):
         <span class="entry-date">2026 – Present</span>
       </div>
       <ul class="bullets">
-        <li>Hands-on training in <strong>Agentic AI, LLMs, prompt engineering, RAG, tool calling, MCP</strong>, and multi-agent orchestration.</li>
-        <li>Built and experimented with autonomous agents using <strong>OpenClaw, Multica, AnythingLLM, OpenRouter, Claude Code</strong>, and custom MCP servers.</li>
+        <li>Hands-on training in <strong>Agentic AI, LLMs, tokenization, prompt engineering, RAG, tool calling, MCP</strong>, and multi-agent orchestration.</li>
+        <li>Built autonomous agents using <strong>OpenCode, Multica, AnythingLLM, Claude Code, MCP</strong>; integrated multi-cloud LLM APIs across <strong>Groq, OpenRouter, Google AI Studio, and NVIDIA Build</strong>.</li>
       </ul>
     </div>
   </div>
@@ -410,7 +410,7 @@ def generate_resume(output_path):
       <li><strong>FlowFinance × Techfest IIT Bombay — Round 2:</strong> Developed GTM strategy and acquisition framework for AI fintech platform.</li>
       <li><strong>4× AI Hackathon Builder:</strong> Deployed AI applications in Microsoft AI Dev Days, Amazon Nova, and Google Solution Challenge.</li>
       <li><strong>100+ Day DSA Streak:</strong> Continuous daily problem solving on GeeksforGeeks 160 Days of Code.</li>
-      <li><strong>Certifications:</strong> Dell FutureMinds Certificate of Excellence · IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE · HackerRank (DSA, SQL, Java, Python).</li>
+      <li><strong>Certifications:</strong> IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE (Forage) · HackerRank (DSA, SQL, Java, Python).</li>
     </ul>
   </div>
 

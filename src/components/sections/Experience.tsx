@@ -40,10 +40,10 @@ const experiences = [
     location: 'Bhubaneswar, India',
     type: 'Intensive Training Program',
     bullets: [
-      'Hands-on training in Agentic AI, LLMs, prompt engineering, RAG, tool calling, MCP, and multi-agent orchestration.',
-      'Built and experimented with agents using OpenClaw, Multica, AnythingLLM, OpenRouter, Claude Code, OpenCode, and MCP servers, including agent squads and tool integrations.',
+      'Hands-on training in Agentic AI, LLMs, tokenization, prompt engineering, RAG, tool calling, MCP, and multi-agent orchestration.',
+      'Built autonomous agents using OpenCode, Multica, AnythingLLM, Claude Code, and MCP; deployed inference across Groq, OpenRouter, Google AI Studio, and NVIDIA Build.',
     ],
-    skills: ['Agentic AI', 'LLMs', 'Prompt Engineering', 'RAG', 'Tool Calling', 'MCP', 'Multi-Agent Orchestration', 'Claude Code', 'OpenClaw'],
+    skills: ['Agentic AI', 'LLMs', 'Tokenization', 'Prompt Engineering', 'RAG', 'Tool Calling', 'MCP', 'Claude Code', 'OpenCode', 'Groq', 'OpenRouter', 'Google AI Studio', 'NVIDIA Build'],
     metrics: [
       { label: 'Domain', value: 'Agentic AI' },
       { label: 'Partnership', value: 'CogniForce × ITER' },
