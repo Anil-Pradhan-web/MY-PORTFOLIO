@@ -282,7 +282,7 @@ def generate_resume(output_path):
     <div class="entry">
       <div class="entry-header">
         <span class="entry-title">Odisha Adarsha Vidyalaya (OAV), Digapahandi, Ganjam, Odisha</span>
-        <span class="entry-date">2020 – 2022</span>
+        <span class="entry-date">2017 – 2022</span>
       </div>
       <div class="entry-subtitle">
         <span>Class X (CBSE Board)</span>

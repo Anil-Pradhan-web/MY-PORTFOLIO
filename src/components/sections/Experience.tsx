@@ -26,7 +26,7 @@ const education = [
     degree: 'Class X (CBSE Board)',
     institution: 'Odisha Adarsha Vidyalaya (OAV)',
     university: 'Digapahandi, Ganjam, Odisha',
-    period: '2020 – 2022',
+    period: '2017 – 2022',
     score: '78.8%',
     status: 'Completed',
   },
