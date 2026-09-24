@@ -238,7 +238,7 @@ def generate_resume(output_path):
   <div class="header">
     <h1>Anil Pradhan</h1>
     <div class="contact-line">
-      <a href="mailto:ap2019039@gmail.com">ap2019039@gmail.com</a>
+      <a href="mailto:anilpradhan.dev@gmail.com">anilpradhan.dev@gmail.com</a>
       <span class="sep">|</span>
       <span>+91 8917476908</span>
       <span class="sep">|</span>
