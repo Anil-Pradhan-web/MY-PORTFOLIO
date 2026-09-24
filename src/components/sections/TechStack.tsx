@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaJava, FaPython, FaDocker } from 'react-icons/fa';
 import {
   SiFastapi, SiSqlite,
-  SiRedis, SiPostgresql, SiOpencv,
+  SiPostgresql, SiOpencv,
   SiGit, SiLinux, SiPostman, SiJavascript,
 } from 'react-icons/si';
 import {
@@ -41,8 +41,6 @@ const technicalDomains = [
       { name: 'SQLAlchemy', icon: Cpu, color: '#d71f00' },
       { name: 'JWT/RBAC', icon: Lock, color: '#f43f5e' },
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791' },
-      { name: 'Redis', icon: SiRedis, color: '#dc382d' },
-      { name: 'ChromaDB', icon: Box, color: '#f97316' },
       { name: 'SQLite', icon: SiSqlite, color: '#64b5f6' },
     ],
   },
@@ -63,9 +61,6 @@ const coreFoundations = [
     skills: [
       { name: 'Data Structures & Algorithms', icon: Cpu, color: '#0ea5e9' },
       { name: 'OOP (Object-Oriented Programming)', icon: Box, color: '#ec4899' },
-      { name: 'Operating Systems', icon: Cpu, color: '#f59e0b' },
-      { name: 'DBMS (Database Management)', icon: Database, color: '#8b5cf6' },
-      { name: 'Computer Networks', icon: GitBranch, color: '#4ade80' },
     ],
   },
   {

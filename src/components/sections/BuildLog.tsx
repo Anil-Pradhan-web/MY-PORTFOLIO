@@ -61,7 +61,6 @@ const certificationGroups = [
   {
     group: 'AI, LLMs & Applied Machine Learning',
     items: [
-      { name: 'Claude 101 & AI Fluency', org: 'Anthropic', badge: 'LLM Systems' },
       { name: 'AI Fundamentals', org: 'IBM', badge: 'AI & GenAI' },
     ],
   },

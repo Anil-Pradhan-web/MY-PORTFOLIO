@@ -36,12 +36,12 @@ const experiences = [
   {
     role: 'Agentic AI Trainee',
     org: 'CogniForce.AI & ITER, SOA University',
-    period: '2026 – Present',
+    period: 'Jul 2026 – Present',
     location: 'Bhubaneswar, India',
     type: 'Intensive Training Program',
     bullets: [
       'Hands-on training in Agentic AI, LLMs, tokenization, prompt engineering, RAG, tool calling, MCP, and multi-agent orchestration.',
-      'Built autonomous agents using OpenCode, Multica, AnythingLLM, Claude Code, and MCP; deployed inference across Groq, OpenRouter, Google AI Studio, and NVIDIA Build.',
+      'Built autonomous agents using OpenCode, Multica, AnythingLLM, Claude Code, and MCP; integrated multi-cloud LLM APIs across Groq, OpenRouter, Google AI Studio, and NVIDIA Build.',
     ],
     skills: ['Agentic AI', 'LLMs', 'Tokenization', 'Prompt Engineering', 'RAG', 'Tool Calling', 'MCP', 'Claude Code', 'OpenCode', 'Groq', 'OpenRouter', 'Google AI Studio', 'NVIDIA Build'],
     metrics: [

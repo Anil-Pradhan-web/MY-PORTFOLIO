@@ -92,14 +92,14 @@ const projects = [
     challenge:
       'Developer career transitions are fragmented across dozens of disconnected tools — resume builders, job boards, interview prep platforms — with no unified intelligence layer to orchestrate the process.',
     solution:
-      'Created a robust FastAPI and SQL database backend to manage user profiles and logs, and integrated a RAG system using ChromaDB to retrieve study links matching candidate skill gaps. Leveraged advanced AI agents to build a production-grade startup MVP containing parallel multi-agent workflows, WebSocket mock interviews, Monaco editor sandboxing, multi-LLM failovers, and Docker deployment.',
+      'Created a robust FastAPI and SQL database backend to manage user profiles and logs, and integrated a RAG retrieval system to deliver study links matching candidate skill gaps. Leveraged advanced AI agents to build a production-grade startup MVP containing parallel multi-agent workflows, WebSocket mock interviews, Monaco editor sandboxing, multi-LLM failovers, and Docker deployment.',
     architecture: {
       layers: [
         { name: 'Web Interface', tech: 'Next.js + TypeScript', stage: '01', icon: Globe, color: '#38BDF8' },
         { name: 'Gateway & Live Sockets', tech: 'FastAPI + WebSocket FSM', stage: '02', icon: Radio, color: '#009688' },
         { name: 'DAG Orchestration', tech: 'LangGraph (4 Concurrent Agents)', stage: '03', icon: Workflow, color: '#34D399' },
         { name: 'LLM Routing & Failover', tech: 'Groq / NVIDIA NIM / Cerebras', stage: '04', icon: Cpu, color: '#F59E0B' },
-        { name: 'State & Vectors', tech: 'PostgreSQL + Redis + ChromaDB', stage: '05', icon: Database, color: '#818CF8' },
+        { name: 'Persistence & Vector State', tech: 'PostgreSQL + SQLAlchemy', stage: '05', icon: Database, color: '#818CF8' },
       ],
     },
     metrics: [
@@ -111,12 +111,12 @@ const projects = [
     features: [
       'LangGraph Multi-Agent Orchestration (~60% Speedup) — Engineered a compiled LangGraph DAG coordinating 4 concurrent agents (Resume Auditor, Market Scraper, Roadmap Generator, LinkedIn Optimizer) with shared state, cutting analysis latency from 4 minutes to ~60 seconds.',
       'WebSocket 7-Phase FSM Mock Interview Engine — Developed a real-time interactive technical interview engine over WebSockets with stateful FSM transitions, Monaco code editor integration, and resume-personalized dynamic questioning.',
-      'RAG Skill-Gap Curriculum Engine (ChromaDB) — Implemented vector similarity search with ChromaDB to index learning resources and generate personalized, step-by-step career transition roadmaps tailored to identified skill deficits.',
+      'RAG Skill-Gap Curriculum Engine — Implemented vector similarity search to index learning resources and generate personalized, step-by-step career transition roadmaps tailored to identified skill deficits.',
       'Resilient Multi-Provider LLM Failover Layer — Architected a zero-downtime routing gateway with automatic fallback across Groq, NVIDIA NIM, and Cerebras, ensuring continuous uptime during rate limits and API outages.',
-      'High-Throughput Backend & Session Persistence — Built an asynchronous FastAPI backend backed by PostgreSQL (SQLAlchemy 2.0) and Redis session caching for low-latency profile ingestion and interview state isolation.',
+      'High-Throughput Backend & Session Persistence — Built an asynchronous FastAPI backend backed by PostgreSQL (SQLAlchemy 2.0) for low-latency profile ingestion and interview state isolation.',
       'Automated Testing & Containerized CI/CD (113 Tests) — Authored a comprehensive 113-test Pytest test suite with Docker containerization, ONNX runtime optimization, and automated GitHub Actions deployment pipelines.',
     ],
-    stack: ['FastAPI', 'PostgreSQL', 'Redis', 'WebSockets', 'Docker', 'GitHub Actions', 'SQLAlchemy'],
+    stack: ['FastAPI', 'PostgreSQL', 'WebSockets', 'Docker', 'GitHub Actions', 'SQLAlchemy'],
     githubUrl: 'https://github.com/Anil-Pradhan-web/ai-career-mentor',
     liveUrl: 'https://ai-career-mentor-anil.vercel.app',
   },
