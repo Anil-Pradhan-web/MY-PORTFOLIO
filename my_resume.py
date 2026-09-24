@@ -146,23 +146,30 @@ def generate_resume(output_path):
       font-weight: 700;
       color: #111;
     }
+    .project-tagline {
+      font-size: 9.1pt;
+      font-weight: 400;
+      color: #333;
+    }
     .project-links {
-      font-size: 8.4pt;
+      font-size: 8.5pt;
+      display: inline-block;
     }
     .project-links a {
       color: #1a5276;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
+      font-style: italic;
     }
     .project-links a:hover {
       text-decoration: underline;
     }
     .project-links .sep {
-      color: #999;
-      margin: 0 2pt;
+      color: #888;
+      margin: 0 2.5pt;
     }
     .project-role {
-      font-size: 8.65pt;
+      font-size: 8.5pt;
       color: #555;
       font-style: italic;
       margin-bottom: 0pt;
@@ -292,14 +299,18 @@ def generate_resume(output_path):
     <!-- Project 1: Most Recent -->
     <div class="entry">
       <div class="project-header">
-        <span class="project-name">VisionForge AI</span>
+        <div>
+          <span class="project-name">VisionForge AI</span>
+          <span class="project-tagline"> — AI Hardware Forensic Inspector for Electronics QA</span>
+          <span class="project-links">
+            <span class="sep">|</span>
+            <a href="https://github.com/Disha-1610/VisionForge">GitHub</a>
+          </span>
+        </div>
         <span class="entry-date">Aug 2026 – Present</span>
       </div>
       <div style="margin-bottom: 1.5pt;">
-        <span class="project-links">
-          <a href="https://github.com/Disha-1610/VisionForge">GitHub</a>
-        </span>
-        <span class="project-role"> — AI/ML &amp; Pipeline Engineer | Team: Disha &amp; Anil</span>
+        <span class="project-role">AI/ML &amp; Pipeline Engineer | Team: Disha &amp; Anil</span>
       </div>
       <ul class="bullets">
         <li>Built an autonomous inspection pipeline using <strong>LangGraph state machines</strong> to run OCR, seal-matching, and YOLO11n detection in parallel, with <strong>Groq and Gemini Vision</strong> models giving the final pass/fail verdict in under 5s.</li>
@@ -313,16 +324,20 @@ def generate_resume(output_path):
     <!-- Project 2 -->
     <div class="entry">
       <div class="project-header">
-        <span class="project-name">TaskPilot AI</span>
+        <div>
+          <span class="project-name">TaskPilot AI</span>
+          <span class="project-tagline"> — AI Chief of Staff for Software Engineers</span>
+          <span class="project-links">
+            <span class="sep">|</span>
+            <a href="https://github.com/IdeaForg-e/TaskPilot-AI">GitHub</a>
+            <span class="sep">|</span>
+            <a href="https://task-pilot-ai-two.vercel.app/">Live Demo</a>
+          </span>
+        </div>
         <span class="entry-date">Jul 2026 – Present</span>
       </div>
       <div style="margin-bottom: 2pt;">
-        <span class="project-links">
-          <a href="https://task-pilot-ai-two.vercel.app/">Live Demo</a>
-          <span class="sep">|</span>
-          <a href="https://github.com/IdeaForg-e/TaskPilot-AI">GitHub</a>
-        </span>
-        <span class="project-role"> — Integration Lead | Team IdeaForg-E</span>
+        <span class="project-role">Integration Lead | Team IdeaForg-E</span>
       </div>
       <ul class="bullets">
         <li>Built the <strong>orchestrator</strong> for a 6-stage AI pipeline, coordinating task collection, extraction, deduplication, quality checks, prioritization, and scheduling across <strong>5 data sources</strong>.</li>
@@ -336,16 +351,20 @@ def generate_resume(output_path):
     <!-- Project 3 -->
     <div class="entry">
       <div class="project-header">
-        <span class="project-name">AI Career Mentor</span>
+        <div>
+          <span class="project-name">AI Career Mentor</span>
+          <span class="project-tagline"> — AI Career Coach &amp; Mock Interviewer for Developers</span>
+          <span class="project-links">
+            <span class="sep">|</span>
+            <a href="https://github.com/Anil-Pradhan-web/ai-career-mentor">GitHub</a>
+            <span class="sep">|</span>
+            <a href="https://ai-career-mentor-anil.vercel.app/">Live Demo</a>
+          </span>
+        </div>
         <span class="entry-date">Feb 2026 – Aug 2026</span>
       </div>
       <div style="margin-bottom: 2pt;">
-        <span class="project-links">
-          <a href="https://ai-career-mentor-anil.vercel.app/">Live Demo</a>
-          <span class="sep">|</span>
-          <a href="https://github.com/Anil-Pradhan-web/ai-career-mentor">GitHub</a>
-        </span>
-        <span class="project-role"> — Solo Developer</span>
+        <span class="project-role">Solo Developer</span>
       </div>
       <ul class="bullets">
         <li>Built a multi-agent AI system using <strong>LangGraph</strong> to orchestrate 4 parallel agents (Resume, Market, Roadmap, LinkedIn) with shared state, reducing analysis latency by <strong>~60%</strong>.</li>
@@ -376,7 +395,7 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
-      <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, SQL</span></div>
+      <div class="skill-row"><strong>Languages:</strong> <span>Python, Java, JavaScript, SQL</span></div>
       <div class="skill-row"><strong>AI &amp; Computer Vision:</strong> <span>LangGraph, Multi-Agent Systems, RAG, Prompt Engineering, LLM Integration, OpenCV, YOLO11n, OCR, Anomaly Detection (SSIM)</span></div>
       <div class="skill-row"><strong>Backend &amp; Databases:</strong> <span>FastAPI, REST APIs, SQLAlchemy, JWT/RBAC, PostgreSQL, Redis, ChromaDB, SQLite</span></div>
       <div class="skill-row"><strong>Core CS Concepts:</strong> <span>Data Structures &amp; Algorithms, OOP, Operating Systems, DBMS, Computer Networks</span></div>

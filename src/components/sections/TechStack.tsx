@@ -5,7 +5,7 @@ import { FaJava, FaPython, FaDocker } from 'react-icons/fa';
 import {
   SiFastapi, SiSqlite,
   SiRedis, SiPostgresql, SiOpencv,
-  SiGit, SiLinux, SiPostman,
+  SiGit, SiLinux, SiPostman, SiJavascript,
 } from 'react-icons/si';
 import {
   BrainCircuit, Cpu, GitBranch, Box, ShieldCheck,
@@ -54,6 +54,7 @@ const coreFoundations = [
     skills: [
       { name: 'Python', icon: FaPython, color: '#f89820' },
       { name: 'Java', icon: FaJava, color: '#f89820' },
+      { name: 'JavaScript', icon: SiJavascript, color: '#f7df1e' },
       { name: 'SQL', icon: Database, color: '#0ea5e9' },
     ],
   },
