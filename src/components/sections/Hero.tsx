@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { ArrowRight, Mail, Phone, MapPin, Trophy, FileText, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin, Trophy, FileText, ArrowUpRight, BookOpen, Sparkles } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiLeetcode, SiGeeksforgeeks, SiHackerrank } from 'react-icons/si';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -19,10 +20,10 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.2, 0, 0, 1] as const } },
 };
 
-/* ── Animated flow connector between hero columns ── */
+/* ── Animated flow connector between hero columns (wide desktop only) ── */
 function HeroConnector() {
   return (
-    <div className="hidden lg:flex absolute top-1/2 left-[52%] w-16 h-16 -translate-y-1/2 z-20 pointer-events-none">
+    <div className="hidden xl:flex absolute top-1/2 left-[54%] w-16 h-16 -translate-y-1/2 z-20 pointer-events-none">
       <svg className="w-full h-full overflow-visible" viewBox="0 0 64 64" aria-hidden="true">
         <circle cx="4" cy="32" r="4" fill="#00e89d" opacity="0.9">
           <animate
@@ -200,12 +201,38 @@ export default function Hero() {
                 <span>Resume</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
-              <Link href="#contact" className="btn-secondary" aria-label="Get in touch with Anil">
-                Get In Touch
+              <Link
+                href="/blog"
+                className="relative group inline-flex items-center focus-ring rounded-xl"
+                aria-label="Explore My Blogs"
+              >
+                {/* Ambient breathing multi-tone aura glow */}
+                <span className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#00e89d] via-[#38bdf8] to-[#f5a623] opacity-60 blur-[6px] group-hover:opacity-100 group-hover:blur-md transition-all duration-500 animate-pulse" />
+
+                {/* Main button surface */}
+                <span className="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-bg-card via-bg-secondary to-bg-card border border-[#00e89d]/70 group-hover:border-[#00e89d] text-text-primary text-sm font-semibold shadow-[0_4px_20px_rgba(0,232,157,0.22)] transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_6px_28px_rgba(0,232,157,0.45)]">
+                  {/* Live pulsing activity beacon */}
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00e89d] opacity-80" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00e89d]" />
+                  </span>
+
+                  <BookOpen className="w-4 h-4 text-[#00e89d] group-hover:rotate-6 transition-transform duration-300" />
+
+                  <span className="tracking-tight text-white group-hover:text-[#00e89d] transition-colors">
+                    Explore My Blogs
+                  </span>
+
+                  <span className="px-1.5 py-0.5 text-[10px] font-mono font-bold uppercase rounded bg-[#00e89d]/20 text-[#00e89d] border border-[#00e89d]/40 shadow-[0_0_8px_rgba(0,232,157,0.3)]">
+                    4 Topics
+                  </span>
+
+                  <ArrowRight className="w-3.5 h-3.5 text-[#00e89d] transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
               </Link>
 
-              {/* Social */}
-              <div className="flex items-center gap-2 sm:ml-2 border-l border-border-primary/80 pl-4">
+              {/* Social & Coding Profiles */}
+              <div className="flex flex-wrap items-center gap-2 sm:ml-2 border-l border-border-primary/80 pl-4">
                 <a
                   href="https://github.com/Anil-Pradhan-web"
                   target="_blank"
@@ -225,7 +252,34 @@ export default function Hero() {
                   <FaLinkedin className="w-4 h-4" />
                 </a>
                 <a
-                  href="mailto:anilpradhan.dev@gmail.com"
+                  href="https://leetcode.com/u/Anil_Pradhan/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-lg border border-border-primary bg-bg-card/70 text-text-secondary hover:text-[#FFA116] hover:border-[#FFA116]/30 hover:bg-bg-card transition-all focus-ring"
+                  aria-label="LeetCode Profile"
+                >
+                  <SiLeetcode className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.geeksforgeeks.org/user/anilpradhan543/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-lg border border-border-primary bg-bg-card/70 text-text-secondary hover:text-[#2F8D46] hover:border-[#2F8D46]/30 hover:bg-bg-card transition-all focus-ring"
+                  aria-label="GeeksforGeeks Profile"
+                >
+                  <SiGeeksforgeeks className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.hackerrank.com/profile/anilpradhan9644"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-lg border border-border-primary bg-bg-card/70 text-text-secondary hover:text-[#00EA64] hover:border-[#00EA64]/30 hover:bg-bg-card transition-all focus-ring"
+                  aria-label="HackerRank Profile"
+                >
+                  <SiHackerrank className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:anilpradhan9644@gmail.com"
                   className="p-2.5 rounded-lg border border-border-primary bg-bg-card/70 text-text-secondary hover:text-[#00e89d] hover:border-[#00e89d]/30 hover:bg-bg-card transition-all focus-ring"
                   aria-label="Email Anil"
                 >
@@ -239,9 +293,9 @@ export default function Hero() {
               variants={item}
               className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-text-muted font-body"
             >
-              <a href="mailto:anilpradhan.dev@gmail.com" className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors">
+              <a href="mailto:anilpradhan9644@gmail.com" className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors">
                 <Mail className="w-3.5 h-3.5 text-[#00e89d]" />
-                anilpradhan.dev@gmail.com
+                anilpradhan9644@gmail.com
               </a>
               <a href="tel:+918917476908" className="inline-flex items-center gap-1.5 hover:text-text-primary transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#00e89d]" />
@@ -254,7 +308,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ── Right Column: Portrait — Static Frame ── */}
+          {/* ── Right Column: Portrait — Animated Colourful Frame ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -262,25 +316,27 @@ export default function Hero() {
             className="flex flex-col items-center lg:items-end justify-center"
           >
             <div className="relative w-full max-w-sm group">
-              {/* Animated gradient border ring */}
-              <div className="absolute -inset-[3px] rounded-[18px] overflow-hidden z-[-1] pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#00e89d] via-[#f5a623] to-[#00e89d] opacity-60 animate-[spin_4s_linear_infinite]" />
+              {/* Outer soft ambient colourful glowing aura */}
+              <div className="absolute -inset-3 rounded-3xl overflow-hidden opacity-50 blur-xl group-hover:opacity-85 group-hover:blur-2xl transition-all duration-700 pointer-events-none transform-gpu">
+                <div className="absolute -inset-[150%] animate-border-rotate bg-[conic-gradient(from_0deg,#00e89d,#38bdf8,#818cf8,#c084fc,#f43f5e,#f5a623,#00e89d)]" />
               </div>
 
-              {/* Subtle ambient glow */}
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-[#00e89d]/10 via-transparent to-[#f5a623]/10 blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none transform-gpu" />
+              {/* Crisp spinning colourful border frame */}
+              <div className="relative p-[2.5px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.7)] bg-bg-card">
+                {/* The spinning colourful conic gradient ribbon */}
+                <div className="absolute -inset-[150%] animate-border-rotate bg-[conic-gradient(from_0deg,#00e89d,#38bdf8,#818cf8,#c084fc,#f43f5e,#f5a623,#00e89d)] pointer-events-none" />
 
-              {/* Static frame — no spinning border */}
-              <div className="relative p-[2.5px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-bg-card">
-                <div className="relative rounded-[14px] overflow-hidden bg-bg-card">
+                {/* Inner portrait content */}
+                <div className="relative rounded-[13.5px] overflow-hidden bg-bg-card">
                   <Image
                     src="/anil.png"
                     alt="Anil Pradhan"
                     width={384}
                     height={480}
+                    quality={95}
                     priority
                     className="w-full h-auto object-cover block transition-transform duration-500 group-hover:scale-[1.02]"
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 384px"
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 400px"
                   />
 
                   {/* Telemetry ribbon */}

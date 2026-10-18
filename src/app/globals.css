@@ -601,3 +601,17 @@
   }
 }
 }
+
+/* ── Colourful Rotating Border Animation ── */
+@keyframes borderRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-rotate {
+  animation: borderRotate 5s linear infinite;
+}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { spaceGrotesk, jetbrainsMono, inter } from './fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -72,10 +73,14 @@ export default function RootLayout({
               <span className="hidden sm:inline text-border-secondary">|</span>
               <span>B.Tech CSE · ITER, Siksha &apos;O&apos; Anusandhan University, Bhubaneswar, Odisha</span>
             </div>
-            <div className="flex items-center gap-6 font-mono text-xs">
+            <div className="flex flex-wrap items-center gap-5 font-mono text-xs justify-center md:justify-end">
+              <Link href="/blog" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="Blog">Writing</Link>
               <a href="https://github.com/Anil-Pradhan-web" target="_blank" rel="noreferrer" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="GitHub">GitHub</a>
               <a href="https://linkedin.com/in/anil-pradhan543" target="_blank" rel="noreferrer" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="LinkedIn">LinkedIn</a>
-              <a href="mailto:anilpradhan.dev@gmail.com" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="Email">Email</a>
+              <a href="https://leetcode.com/u/Anil_Pradhan/" target="_blank" rel="noreferrer" className="text-text-muted hover:text-[#FFA116] transition-colors" aria-label="LeetCode">LeetCode</a>
+              <a href="https://www.geeksforgeeks.org/user/anilpradhan543/" target="_blank" rel="noreferrer" className="text-text-muted hover:text-[#2F8D46] transition-colors" aria-label="GeeksforGeeks">GeeksforGeeks</a>
+              <a href="https://www.hackerrank.com/profile/anilpradhan9644" target="_blank" rel="noreferrer" className="text-text-muted hover:text-[#00EA64] transition-colors" aria-label="HackerRank">HackerRank</a>
+              <a href="mailto:anilpradhan9644@gmail.com" className="text-text-muted hover:text-[#00e89d] transition-colors" aria-label="Email">Email</a>
             </div>
           </div>
         </footer>

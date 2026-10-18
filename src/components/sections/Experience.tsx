@@ -65,7 +65,7 @@ export default function Experience() {
         {/* ── Experience Showcase ── */}
         <div className="mb-14">
           <div className="flex items-center gap-2 mb-6">
-            <Briefcase className="w-4 h-4 text-blue-400" />
+            <Briefcase className="w-4 h-4 text-[#00e89d]" />
             <h3 className="font-display text-base font-semibold text-text-primary">
               Engineering &amp; Agentic Training
             </h3>
@@ -79,7 +79,7 @@ export default function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45 }}
-                className="p-6 md:p-8 rounded-2xl border border-border-primary bg-bg-card hover:border-blue-500/30 transition-all duration-300"
+                className="p-6 md:p-8 rounded-2xl border border-border-primary bg-bg-card hover:border-[#00e89d]/30 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5 pb-5 border-b border-border-primary">
                   <div>
@@ -87,22 +87,22 @@ export default function Experience() {
                       <h4 className="font-display text-xl font-semibold text-text-primary">
                         {exp.role}
                       </h4>
-                      <Badge variant="blue" size="sm">
+                      <Badge variant="mint" size="sm">
                         {exp.type}
                       </Badge>
                     </div>
-                    <p className="font-body text-sm font-medium text-blue-400">
+                    <p className="font-body text-sm font-medium text-[#00e89d]">
                       {exp.org}
                     </p>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-2.5 text-xs font-mono text-text-muted">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-bg-secondary border border-border-primary">
-                      <Calendar className="w-3 h-3 text-blue-400" />
+                      <Calendar className="w-3 h-3 text-[#00e89d]" />
                       {exp.period}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-bg-secondary border border-border-primary">
-                      <MapPin className="w-3 h-3 text-blue-400" />
+                      <MapPin className="w-3 h-3 text-[#00e89d]" />
                       {exp.location}
                     </span>
                   </div>
@@ -112,7 +112,7 @@ export default function Experience() {
                 <ul className="space-y-3 mb-6" role="list">
                   {exp.bullets.map((bullet, bIdx) => (
                     <li key={bIdx} className="flex items-start gap-3 body-sm text-text-secondary">
-                      <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <CheckCircle2 className="w-4 h-4 text-[#00e89d] mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span className="leading-relaxed">{bullet}</span>
                     </li>
                   ))}
@@ -134,7 +134,7 @@ export default function Experience() {
         {/* ── Education Grid ── */}
         <div>
           <div className="flex items-center gap-2 mb-6">
-            <GraduationCap className="w-4 h-4 text-blue-400" />
+            <GraduationCap className="w-4 h-4 text-[#f5a623]" />
             <h3 className="font-display text-base font-semibold text-text-primary">
               Academic Foundations
             </h3>
@@ -148,15 +148,15 @@ export default function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="p-6 rounded-2xl border border-border-primary bg-bg-card hover:border-blue-500/30 transition-all flex flex-col justify-between"
+                className="p-6 rounded-2xl border border-border-primary bg-bg-card hover:border-[#00e89d]/30 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <span className="font-mono text-xs text-text-muted flex items-center gap-1">
-                      <Calendar className="w-3 h-3 text-blue-400" />
+                      <Calendar className="w-3 h-3 text-[#00e89d]" />
                       {edu.period}
                     </span>
-                    <Badge variant={edu.score.includes('8.93') ? 'blue' : 'outline'} size="sm">
+                    <Badge variant={edu.score.includes('8.93') ? 'mint' : 'outline'} size="sm">
                       {edu.score}
                     </Badge>
                   </div>

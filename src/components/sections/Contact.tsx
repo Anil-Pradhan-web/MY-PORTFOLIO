@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Briefcase, Copy, Check, Send, ArrowUpRight } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiLeetcode, SiGeeksforgeeks, SiHackerrank } from 'react-icons/si';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { Input, Textarea } from '@/components/ui/Input';
@@ -12,8 +13,8 @@ import { cn } from '@/lib/utils';
 const contactInfo = [
   {
     icon: Mail,
-    text: 'anilpradhan.dev@gmail.com',
-    href: 'mailto:anilpradhan.dev@gmail.com',
+    text: 'anilpradhan9644@gmail.com',
+    href: 'mailto:anilpradhan9644@gmail.com',
     label: 'Direct Email',
   },
   {
@@ -27,6 +28,24 @@ const contactInfo = [
     text: 'github.com/Anil-Pradhan-web',
     href: 'https://github.com/Anil-Pradhan-web',
     label: 'GitHub Codebase',
+  },
+  {
+    icon: SiLeetcode,
+    text: 'leetcode.com/u/Anil_Pradhan',
+    href: 'https://leetcode.com/u/Anil_Pradhan/',
+    label: 'LeetCode Algorithm Practice',
+  },
+  {
+    icon: SiGeeksforgeeks,
+    text: 'geeksforgeeks.org/user/anilpradhan543',
+    href: 'https://www.geeksforgeeks.org/user/anilpradhan543/',
+    label: 'GeeksforGeeks 100+ Day Streak',
+  },
+  {
+    icon: SiHackerrank,
+    text: 'hackerrank.com/profile/anilpradhan9644',
+    href: 'https://www.hackerrank.com/profile/anilpradhan9644',
+    label: 'HackerRank Problem Solving & SQL',
   },
   {
     icon: MapPin,
@@ -80,11 +99,11 @@ export default function Contact() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('anilpradhan.dev@gmail.com');
+      await navigator.clipboard.writeText('anilpradhan9644@gmail.com');
       setCopiedEmail(true);
       setTimeout(() => setCopiedEmail(false), 2000);
     } catch {
-      window.location.href = 'mailto:anilpradhan.dev@gmail.com';
+      window.location.href = 'mailto:anilpradhan9644@gmail.com';
     }
   };
 
@@ -242,8 +261,15 @@ export default function Contact() {
                 </div>
               )}
               {submitStatus === 'error' && (
-                <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-body" role="alert">
-                  Failed to send message. Please reach out directly to anilpradhan.dev@gmail.com.
+                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs font-body space-y-2.5" role="alert">
+                  <p>Message delivery could not complete. You can email me directly with your draft:</p>
+                  <a
+                    href={`mailto:anilpradhan9644@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(formData.name || 'Visitor')}&body=${encodeURIComponent(formData.message)}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#00e89d]/15 text-[#00e89d] border border-[#00e89d]/30 font-mono text-[11px] font-semibold hover:bg-[#00e89d]/25 transition-colors"
+                  >
+                    <span>Open in Email Client</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
                 </div>
               )}
 

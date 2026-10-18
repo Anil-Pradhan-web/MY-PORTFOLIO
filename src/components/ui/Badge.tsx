@@ -4,7 +4,7 @@ import { forwardRef, type HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: 'outline' | 'solid' | 'subtle' | 'emerald' | 'amber' | 'cyan' | 'indigo' | 'blue';
+  variant?: 'outline' | 'solid' | 'subtle' | 'mint' | 'emerald' | 'amber' | 'cyan' | 'indigo' | 'blue';
   size?: 'sm' | 'md';
 }
 
@@ -12,8 +12,9 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   ({ className, variant = 'subtle', size = 'md', children, ...props }, ref) => {
     const variantStyles = {
       outline: 'border border-border-primary bg-bg-primary/50 text-text-secondary hover:border-border-secondary hover:text-text-primary',
-      solid: 'border border-blue-500/30 bg-blue-500/15 text-blue-300 font-medium',
-      subtle: 'border border-border-primary/80 bg-bg-secondary text-text-secondary hover:border-blue-500/30 hover:text-text-primary',
+      solid: 'border border-[#00e89d]/30 bg-[#00e89d]/15 text-[#00e89d] font-medium',
+      subtle: 'border border-border-primary/80 bg-bg-secondary text-text-secondary hover:border-[#00e89d]/30 hover:text-text-primary',
+      mint: 'border border-[#00e89d]/30 bg-[#00e89d]/10 text-[#00e89d] font-medium',
       emerald: 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 font-medium',
       amber: 'border border-amber-500/30 bg-amber-500/10 text-amber-300 font-medium',
       cyan: 'border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 font-medium',

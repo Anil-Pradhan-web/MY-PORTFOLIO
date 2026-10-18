@@ -1,17 +1,45 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Trophy, Award, Flame, CheckCircle2 } from 'lucide-react';
+import { Trophy, Award, Flame, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
-const dellMetrics = [
+interface Metric {
+  label: string;
+  value: string;
+  detail: string;
+}
+
+interface Milestone {
+  title: string;
+  category: string;
+  badge: string;
+  detail: string;
+  highlight: string;
+  accentColor: string;
+  url?: string;
+}
+
+interface CertificationItem {
+  name: string;
+  org: string;
+  badge: string;
+  url?: string;
+}
+
+interface CertificationGroup {
+  group: string;
+  items: CertificationItem[];
+}
+
+const dellMetrics: Metric[] = [
   { label: 'Final Placement', value: 'Top 6 National', detail: 'National Grand Finalists' },
   { label: 'Screening Pool', value: '8,000+', detail: 'HackerRank National Round' },
   { label: 'Final Selection', value: 'Top 6 Finalists', detail: 'Selected for Grand Finale' },
   { label: 'Executive Stage', value: 'Dell HQ, BLR', detail: 'Live Jury & Leadership Pitch' },
 ];
 
-const competitiveMilestones = [
+const competitiveMilestones: Milestone[] = [
   {
     title: 'FlowFinance × Techfest IIT Bombay',
     category: 'Growth & Real-World Fintech',
@@ -34,10 +62,21 @@ const competitiveMilestones = [
     title: 'GeeksforGeeks 160 Days of Code',
     category: 'Algorithms & Problem Solving',
     badge: '100+ Day Daily Streak',
+    url: 'https://www.geeksforgeeks.org/user/anilpradhan543/',
     detail:
       "Maintained a continuous 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving data structures and algorithm problems daily — recognized with an official GFG reward for engineering consistency.",
     highlight: 'DSA Consistency & Streak',
     accentColor: '#34d399',
+  },
+  {
+    title: 'LeetCode Problem Solving',
+    category: 'Data Structures & Algorithms',
+    badge: 'Active Profile',
+    url: 'https://leetcode.com/u/Anil_Pradhan/',
+    detail:
+      'Regularly solving algorithmic challenges across graph theory, dynamic programming, trees, and system design optimizations with continuous practice and problem discussions.',
+    highlight: 'LeetCode / Anil_Pradhan',
+    accentColor: '#FFA116',
   },
   {
     title: 'Google Cloud Arcade Labs',
@@ -50,7 +89,7 @@ const competitiveMilestones = [
   },
 ];
 
-const certificationGroups = [
+const certificationGroups: CertificationGroup[] = [
   {
     group: 'Industry Simulations & Engineering',
     items: [
@@ -67,8 +106,18 @@ const certificationGroups = [
   {
     group: 'Problem Solving & Core CS',
     items: [
-      { name: 'Problem Solving (Basic) & SQL (Basic)', org: 'HackerRank', badge: 'DSA & SQL' },
-      { name: 'Python (Basic) & Java (Basic)', org: 'HackerRank', badge: 'Languages' },
+      {
+        name: 'Problem Solving (Basic) & SQL (Basic)',
+        org: 'HackerRank',
+        badge: 'DSA & SQL',
+        url: 'https://www.hackerrank.com/profile/anilpradhan9644',
+      },
+      {
+        name: 'Python (Basic) & Java (Basic)',
+        org: 'HackerRank',
+        badge: 'Languages',
+        url: 'https://www.hackerrank.com/profile/anilpradhan9644',
+      },
     ],
   },
 ];
@@ -80,7 +129,7 @@ export default function BuildLog() {
         <SectionHeading
           id="build-log-heading"
           eyebrow="Podium & Credentials"
-          title="Achievements & Certifications"
+          title="Achievements &amp; Certifications"
           subtitle="National hackathon recognitions, competitive milestones, and verified industry credentials."
         />
 
@@ -147,7 +196,7 @@ export default function BuildLog() {
           <div className="flex items-center gap-2 pb-1">
             <Flame className="w-4 h-4 text-[#00e89d]" />
             <h3 className="font-mono text-xs font-semibold text-[#00e89d] uppercase tracking-wider">
-              Competitive Track Record & Builder Milestones
+              Competitive Track Record &amp; Builder Milestones
             </h3>
           </div>
 
@@ -167,9 +216,21 @@ export default function BuildLog() {
                       <span className="font-mono text-[11px] text-text-muted block">
                         {item.category}
                       </span>
-                      <h4 className="font-display text-lg font-bold text-text-primary group-hover:text-[#00e89d] transition-colors mt-0.5">
-                        {item.title}
-                      </h4>
+                      {item.url ? (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-display text-lg font-bold text-text-primary hover:text-[#00e89d] transition-colors mt-0.5 inline-flex items-center gap-1.5"
+                        >
+                          <span>{item.title}</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-text-muted" />
+                        </a>
+                      ) : (
+                        <h4 className="font-display text-lg font-bold text-text-primary group-hover:text-[#00e89d] transition-colors mt-0.5">
+                          {item.title}
+                        </h4>
+                      )}
                     </div>
                     <span
                       className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded border shrink-0"
@@ -202,7 +263,7 @@ export default function BuildLog() {
           <div className="flex items-center gap-2 pb-1">
             <Award className="w-4 h-4 text-[#00e89d]" />
             <h3 className="font-mono text-xs font-semibold text-[#00e89d] uppercase tracking-wider">
-              Verified Industry Credentials & Certifications
+              Verified Industry Credentials &amp; Certifications
             </h3>
           </div>
 
@@ -224,9 +285,21 @@ export default function BuildLog() {
                     {group.items.map((cert, cIdx) => (
                       <div key={cIdx} className="group/cert">
                         <div className="flex items-start justify-between gap-2 mb-1">
-                          <span className="text-sm text-text-primary font-medium group-hover/cert:text-[#00e89d] transition-colors leading-snug">
-                            {cert.name}
-                          </span>
+                          {cert.url ? (
+                            <a
+                              href={cert.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-sm text-text-primary font-medium hover:text-[#00e89d] transition-colors leading-snug inline-flex items-center gap-1.5"
+                            >
+                              <span>{cert.name}</span>
+                              <ArrowUpRight className="w-3 h-3 text-text-muted" />
+                            </a>
+                          ) : (
+                            <span className="text-sm text-text-primary font-medium group-hover/cert:text-[#00e89d] transition-colors leading-snug">
+                              {cert.name}
+                            </span>
+                          )}
                           <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-bg-secondary border border-border-primary text-text-muted shrink-0">
                             {cert.badge}
                           </span>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
 import Link from 'next/link';
@@ -13,10 +14,13 @@ const navLinks = [
   { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#tech-stack' },
   { name: 'Achievements', href: '#build-log' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isBlogPage = pathname?.startsWith('/blog');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
@@ -72,6 +76,20 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
 
+  const resolveHref = (href: string) => {
+    if (href.startsWith('#')) {
+      return isBlogPage ? `/${href}` : href;
+    }
+    return href;
+  };
+
+  const isLinkActive = (href: string) => {
+    if (isBlogPage) {
+      return href === '/blog';
+    }
+    return activeSection === href;
+  };
+
   return (
     <>
       {/* Scroll Progress Bar */}
@@ -96,17 +114,17 @@ export default function Navbar() {
         <div className="container-custom">
           <div className="flex h-16 md:h-20 items-center justify-between">
             {/* Brand Logo */}
-            <Logo size="sm" showText href="#" />
+            <Logo size="sm" showText href="/" />
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">
               <nav className="flex items-center gap-1 bg-bg-card/70 border border-border-primary/60 p-1.5 rounded-full" aria-label="Main Navigation">
                 {navLinks.map((link) => {
-                  const isActive = activeSection === link.href;
+                  const isActive = isLinkActive(link.href);
                   return (
                     <Link
                       key={link.name}
-                      href={link.href}
+                      href={resolveHref(link.href)}
                       aria-current={isActive ? 'page' : undefined}
                       className={cn(
                         'font-body text-xs tracking-wide font-medium px-3.5 py-1.5 rounded-full transition-all duration-200 relative',
@@ -133,7 +151,11 @@ export default function Navbar() {
                   <span>Resume</span>
                   <ArrowUpRight className="w-3 h-3 text-text-muted" />
                 </a>
-                <Link href="#contact" className="btn-primary text-xs px-4 py-1.5" aria-label="Hire me or get in touch">
+                <Link
+                  href={isBlogPage ? '/#contact' : '#contact'}
+                  className="btn-primary text-xs px-4 py-1.5"
+                  aria-label="Hire me or get in touch"
+                >
                   Get In Touch
                 </Link>
               </div>
@@ -198,11 +220,11 @@ export default function Navbar() {
               <div className="container-custom px-6 pb-8">
                 <nav className="flex flex-col gap-1 mb-6" aria-label="Mobile Navigation Links">
                   {navLinks.map((link, idx) => {
-                    const isActive = activeSection === link.href;
+                    const isActive = isLinkActive(link.href);
                     return (
                       <Link
                         key={link.name}
-                        href={link.href}
+                        href={resolveHref(link.href)}
                         onClick={closeMobileMenu}
                         aria-current={isActive ? 'page' : undefined}
                         className={cn(
@@ -233,7 +255,7 @@ export default function Navbar() {
                     <ArrowUpRight className="w-3.5 h-3.5 text-text-muted" />
                   </a>
                   <Link
-                    href="#contact"
+                    href={isBlogPage ? '/#contact' : '#contact'}
                     onClick={closeMobileMenu}
                     className="btn-primary w-full justify-center text-sm py-3"
                     aria-label="Get In Touch"
