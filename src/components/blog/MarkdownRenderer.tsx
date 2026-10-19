@@ -64,7 +64,8 @@ type Block =
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
   | { type: 'hr' }
-  | { type: 'image'; alt: string; src: string };
+  | { type: 'image'; alt: string; src: string }
+  | { type: 'table'; headers: string[]; alignments: ('left' | 'center' | 'right' | null)[]; rows: string[][] };
 
 function parseMarkdownToBlocks(raw: string): Block[] {
   const lines = raw.split(/\r?\n/);
@@ -133,6 +134,50 @@ function parseMarkdownToBlocks(raw: string): Block[] {
     if (inCodeBlock) {
       codeBuffer.push(line);
       continue;
+    }
+
+    // Table detection: a line starting with | that contains at least one more |
+    // and the next line is the separator row (| --- | --- |)
+    if (!inCodeBlock && line.trim().startsWith('|') && line.trim().endsWith('|')) {
+      // Check if we are starting a new table or continuing one
+      // Look ahead for separator row to confirm this is a table header
+      const nextLine = i + 1 < lines.length ? lines[i + 1].trim() : '';
+      const isSeparatorRow = /^\|[\s:|-]+\|$/.test(nextLine);
+
+      if (isSeparatorRow) {
+        flushAll();
+        // Parse header row
+        const headers = line.trim().slice(1, -1).split('|').map(c => c.trim());
+
+        // Parse alignment row
+        const sepCells = nextLine.slice(1, -1).split('|').map(c => c.trim());
+        const alignments: ('left' | 'center' | 'right' | null)[] = sepCells.map(cell => {
+          const leftColon = cell.startsWith(':');
+          const rightColon = cell.endsWith(':');
+          if (leftColon && rightColon) return 'center';
+          if (rightColon) return 'right';
+          if (leftColon) return 'left';
+          return null;
+        });
+
+        // Skip separator line
+        i += 1;
+
+        // Collect body rows
+        const tableRows: string[][] = [];
+        while (i + 1 < lines.length) {
+          const bodyLine = lines[i + 1].trim();
+          if (bodyLine.startsWith('|') && bodyLine.endsWith('|')) {
+            tableRows.push(bodyLine.slice(1, -1).split('|').map(c => c.trim()));
+            i += 1;
+          } else {
+            break;
+          }
+        }
+
+        blocks.push({ type: 'table', headers, alignments, rows: tableRows });
+        continue;
+      }
     }
 
     // Blank line indicates block boundary
@@ -337,6 +382,50 @@ function BlockComponent({ block }: { block: Block }) {
               {block.alt}
             </p>
           )}
+        </div>
+      );
+    case 'table':
+      return (
+        <div className="my-8 rounded-xl border border-border-primary overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-bg-secondary border-b border-border-primary">
+                  {block.headers.map((header, hIdx) => (
+                    <th
+                      key={hIdx}
+                      className="px-4 py-3 text-left font-mono text-xs font-semibold text-text-primary uppercase tracking-wider whitespace-nowrap"
+                      style={{
+                        textAlign: block.alignments[hIdx] || 'left',
+                      }}
+                    >
+                      {renderInline(header)}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border-primary/60">
+                {block.rows.map((row, rIdx) => (
+                  <tr
+                    key={rIdx}
+                    className="bg-bg-card/30 hover:bg-bg-card/70 transition-colors"
+                  >
+                    {row.map((cell, cIdx) => (
+                      <td
+                        key={cIdx}
+                        className="px-4 py-3 text-text-secondary leading-relaxed"
+                        style={{
+                          textAlign: block.alignments[cIdx] || 'left',
+                        }}
+                      >
+                        {renderInline(cell)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       );
   }

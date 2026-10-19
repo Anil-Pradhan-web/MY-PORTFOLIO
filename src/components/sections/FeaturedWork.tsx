@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   ExternalLink,
@@ -15,14 +14,10 @@ import {
   Share2,
   Radio,
   Cpu,
-  Activity,
-  CheckCircle2,
-  AlertCircle,
   LucideIcon,
 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import SectionHeading from '@/components/ui/SectionHeading';
-import { cn } from '@/lib/utils';
 
 interface Layer {
   name: string;
@@ -30,13 +25,6 @@ interface Layer {
   stage: string;
   icon: LucideIcon;
   color: string;
-}
-
-interface TelemetryItem {
-  name: string;
-  detail: string;
-  status: string;
-  isDefect?: boolean;
 }
 
 interface Project {
@@ -48,14 +36,6 @@ interface Project {
   solution: string;
   architecture: {
     layers: Layer[];
-  };
-  telemetry: {
-    title: string;
-    target: string;
-    badge: string;
-    badgeColor: string;
-    items: TelemetryItem[];
-    meta: string;
   };
   metrics: {
     label: string;
@@ -87,19 +67,6 @@ const projects: Project[] = [
         { name: 'Vector & Data Store', tech: 'FAISS Vector Index (Reference Blueprints) · Relational DB', stage: '04', icon: Database, color: '#818CF8' },
         { name: 'Policy & Report Engine', tech: 'Automated Audit Verification · Cryptographic Reports (ReportLab)', stage: '05', icon: Terminal, color: '#A855F7' },
       ],
-    },
-    telemetry: {
-      title: 'YOLO11n & Vector Inspection HUD',
-      target: 'TARGET: PCB-REV-4.2 // SN: #VF-9021-AX',
-      badge: '1 Defect Identified',
-      badgeColor: '#f5a623',
-      items: [
-        { name: 'YOLO11n: IC_CHIP_U1', detail: 'Orientation & Solder Valid [99.2% Conf]', status: 'PASS', isDefect: false },
-        { name: 'FAISS: Blueprint Alignment', detail: 'Golden Spec Matched [99.4% Sim]', status: 'PASS', isDefect: false },
-        { name: 'OCR: Tamper Verification', detail: 'Laser Mark Authenticated [SHA-256]', status: 'PASS', isDefect: false },
-        { name: 'SSIM: Passive Component C14', detail: 'Anomaly / Desoldered Bridge', status: 'FLAGGED', isDefect: true },
-      ],
-      meta: 'Latency: 3.42s · SSIM: 0.982 · Model: YOLO11n · 203 Pytest passing',
     },
     metrics: [
       { label: 'Detection Accuracy', value: '98.4%', detail: 'mAP@50 on custom dataset' },
@@ -138,19 +105,6 @@ const projects: Project[] = [
         { name: 'Persistence', tech: 'SQLite (SQLAlchemy Models)', stage: '05', icon: Database, color: '#34D399' },
       ],
     },
-    telemetry: {
-      title: 'Agent Orchestration Pipeline',
-      target: 'ORCHESTRATOR: 8 AGENTS // 5 CHANNELS',
-      badge: '8 Agents Synchronized',
-      badgeColor: '#00e89d',
-      items: [
-        { name: 'Agent-0 Ingestion Stream', detail: '10 items across GitHub, Slack, Email', status: 'SYNCED', isDefect: false },
-        { name: 'Agent-2 Deduplication Hash', detail: '4 cross-tool duplicate tasks merged (~3s)', status: 'MERGED', isDefect: false },
-        { name: 'Agent-5 Multi-Factor Ranker', detail: '7-factor priority matrix calculated', status: 'SCORED', isDefect: false },
-        { name: 'Agent-7 Calendar Scheduler', detail: '3 focus blocks protected around meetings', status: 'BOOKED', isDefect: false },
-      ],
-      meta: 'Cycle: 14.8s · Recovery: Instant P1 Injection · SQLite WAL',
-    },
     metrics: [
       { label: 'Autonomous Agents', value: '8', detail: 'Specialized pipeline agents' },
       { label: 'Ingestion Sources', value: '5', detail: 'Integrated developer tools' },
@@ -188,19 +142,6 @@ const projects: Project[] = [
         { name: 'Persistence & Vector State', tech: 'PostgreSQL + SQLAlchemy', stage: '05', icon: Database, color: '#818CF8' },
       ],
     },
-    telemetry: {
-      title: 'LangGraph DAG & Sockets Telemetry',
-      target: 'COMPILED DAG // 4 PARALLEL AGENTS',
-      badge: '~60% Speedup (60s)',
-      badgeColor: '#00e89d',
-      items: [
-        { name: 'Resume Auditor Node', detail: 'Skill matrix & gap weights calculated (12s)', status: 'PASS', isDefect: false },
-        { name: 'Market Scraper Node', detail: 'Real-time job vacancy delta indexed (18s)', status: 'PASS', isDefect: false },
-        { name: 'Roadmap Generator Node', detail: 'Vector RAG learning path assembled (15s)', status: 'PASS', isDefect: false },
-        { name: 'WebSocket FSM Engine', detail: 'Mock interview stage 4 active with Monaco editor', status: 'LIVE', isDefect: false },
-      ],
-      meta: 'Failover: Groq / NVIDIA NIM / Cerebras · Pytest: 113 Passing',
-    },
     metrics: [
       { label: 'Latency Optimization', value: '~60%', detail: 'Speedup (4 min → 60 sec)' },
       { label: 'Concurrent Agents', value: '4', detail: 'LangGraph Directed Acyclic Graph' },
@@ -222,8 +163,6 @@ const projects: Project[] = [
 ];
 
 function ProjectCard({ project, idx }: { project: Project; idx: number }) {
-  const [activeTab, setActiveTab] = useState<'flow' | 'telemetry'>('flow');
-
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -353,152 +292,73 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
           </div>
         </div>
 
-        {/* Right Column: Visual System Architecture Pipeline or Live Telemetry HUD */}
+        {/* Right Column: Visual System Architecture Pipeline */}
         <div className="lg:col-span-5 rounded-2xl bg-bg-secondary border border-border-primary p-5 sm:p-6 flex flex-col justify-between">
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-border-primary gap-2">
-            <div className="flex items-center gap-1 bg-bg-primary/80 p-1 rounded-lg border border-border-primary/80">
-              <button
-                type="button"
-                onClick={() => setActiveTab('flow')}
-                className={cn(
-                  'text-[11px] font-mono px-2.5 py-1 rounded transition-colors flex items-center gap-1.5 cursor-pointer',
-                  activeTab === 'flow'
-                    ? 'bg-[#00e89d]/15 text-[#00e89d] font-semibold border border-[#00e89d]/30 shadow-sm'
-                    : 'text-text-muted hover:text-text-primary'
-                )}
-              >
-                <Workflow className="w-3.5 h-3.5" />
-                <span>Pipeline Flow</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab('telemetry')}
-                className={cn(
-                  'text-[11px] font-mono px-2.5 py-1 rounded transition-colors flex items-center gap-1.5 cursor-pointer',
-                  activeTab === 'telemetry'
-                    ? 'bg-[#00e89d]/15 text-[#00e89d] font-semibold border border-[#00e89d]/30 shadow-sm'
-                    : 'text-text-muted hover:text-text-primary'
-                )}
-              >
-                <Activity className="w-3.5 h-3.5" />
-                <span>Live Trace</span>
-              </button>
+            <div className="flex items-center gap-2">
+              <Workflow className="w-4 h-4 text-[#00e89d]" />
+              <span className="text-xs font-mono font-semibold text-text-primary tracking-wide uppercase">
+                Pipeline Flow
+              </span>
             </div>
 
-            <span className="text-[11px] font-mono text-text-muted hidden sm:inline">
-              {activeTab === 'flow' ? `${project.architecture.layers.length} Stages` : 'Live Telemetry'}
+            <span className="text-[11px] font-mono text-[#00e89d] px-2 py-0.5 rounded-md bg-[#00e89d]/10 border border-[#00e89d]/20">
+              {project.architecture.layers.length} Stages
             </span>
           </div>
 
-          {activeTab === 'flow' ? (
-            /* Connected Sequential Stages Flow */
-            <div className="flex flex-col">
-              {project.architecture.layers.map((layer, lIdx) => {
-                const Icon = layer.icon;
-                const isLast = lIdx === project.architecture.layers.length - 1;
+          {/* Connected Sequential Stages Flow */}
+          <div className="flex flex-col">
+            {project.architecture.layers.map((layer, lIdx) => {
+              const Icon = layer.icon;
+              const isLast = lIdx === project.architecture.layers.length - 1;
 
-                return (
-                  <div key={lIdx} className="flex flex-col">
-                    {/* Stage Item */}
-                    <div className="flex items-start gap-3.5 p-2.5 rounded-xl hover:bg-bg-card transition-colors group/stage">
-                      <div
-                        className="w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 mt-0.5 transition-transform group-hover/stage:scale-105"
-                        style={{
-                          backgroundColor: `${layer.color}15`,
-                          borderColor: `${layer.color}35`,
-                          color: layer.color,
-                        }}
-                      >
-                        <Icon className="w-4 h-4" />
-                      </div>
-
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="text-xs font-display font-semibold text-text-primary group-hover/stage:text-[#00e89d] transition-colors">
-                            {layer.name}
-                          </span>
-                          <span className="font-mono text-[10px] text-text-muted px-1.5 py-0.2 rounded bg-bg-primary">
-                            Stage {layer.stage}
-                          </span>
-                        </div>
-                        <p className="font-mono text-[11px] text-text-secondary mt-0.5 leading-relaxed">
-                          {layer.tech}
-                        </p>
-                      </div>
+              return (
+                <div key={lIdx} className="flex flex-col">
+                  {/* Stage Item */}
+                  <div className="flex items-start gap-3.5 p-2.5 rounded-xl hover:bg-bg-card transition-colors group/stage">
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 mt-0.5 transition-transform group-hover/stage:scale-105"
+                      style={{
+                        backgroundColor: `${layer.color}15`,
+                        borderColor: `${layer.color}35`,
+                        color: layer.color,
+                      }}
+                    >
+                      <Icon className="w-4 h-4" />
                     </div>
 
-                    {/* Downward Connector Line */}
-                    {!isLast && (
-                      <div className="flex items-center justify-start pl-6 py-0.5" aria-hidden="true">
-                        <div className="w-px h-3 bg-gradient-to-b from-[#00e89d]/40 to-[#00e89d]/10" />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-xs font-display font-semibold text-text-primary group-hover/stage:text-[#00e89d] transition-colors">
+                          {layer.name}
+                        </span>
+                        <span className="font-mono text-[10px] text-text-muted px-1.5 py-0.2 rounded bg-bg-primary">
+                          Stage {layer.stage}
+                        </span>
                       </div>
-                    )}
+                      <p className="font-mono text-[11px] text-text-secondary mt-0.5 leading-relaxed">
+                        {layer.tech}
+                      </p>
+                    </div>
                   </div>
-                );
-              })}
-            </div>
-          ) : (
-            /* Interactive Cyber Telemetry HUD */
-            <div className="flex flex-col justify-between h-full space-y-3">
-              <div className="p-3.5 rounded-xl bg-bg-primary/90 border border-border-primary/80 font-mono shadow-inner">
-                <div className="flex items-center justify-between text-[11px] mb-3 pb-2 border-b border-border-primary/50">
-                  <span className="text-text-muted font-mono">{project.telemetry.target}</span>
-                  <span
-                    className="px-2 py-0.5 rounded text-[10px] font-semibold"
-                    style={{
-                      backgroundColor: `${project.telemetry.badgeColor}15`,
-                      color: project.telemetry.badgeColor,
-                      border: `1px solid ${project.telemetry.badgeColor}35`,
-                    }}
-                  >
-                    {project.telemetry.badge}
-                  </span>
-                </div>
 
-                <div className="space-y-2.5">
-                  {project.telemetry.items.map((item, tIdx) => (
-                    <div key={tIdx} className="flex items-start justify-between gap-2 text-xs">
-                      <div className="flex items-start gap-2 min-w-0">
-                        {item.isDefect ? (
-                          <AlertCircle className="w-3.5 h-3.5 text-[#f5a623] shrink-0 mt-0.5" />
-                        ) : (
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#00e89d] shrink-0 mt-0.5" />
-                        )}
-                        <div>
-                          <p className="font-medium text-text-primary text-[11px] truncate">
-                            {item.name}
-                          </p>
-                          <p className="text-[10px] text-text-muted">
-                            {item.detail}
-                          </p>
-                        </div>
-                      </div>
-                      <span
-                        className={cn(
-                          'text-[9px] px-1.5 py-0.5 rounded font-mono font-bold shrink-0',
-                          item.isDefect
-                            ? 'bg-[#f5a623]/15 text-[#f5a623] border border-[#f5a623]/30'
-                            : 'bg-[#00e89d]/15 text-[#00e89d] border border-[#00e89d]/30'
-                        )}
-                      >
-                        {item.status}
-                      </span>
+                  {/* Downward Connector Line */}
+                  {!isLast && (
+                    <div className="flex items-center justify-start pl-6 py-0.5" aria-hidden="true">
+                      <div className="w-px h-3 bg-gradient-to-b from-[#00e89d]/40 to-[#00e89d]/10" />
                     </div>
-                  ))}
+                  )}
                 </div>
-
-                <div className="mt-3 pt-2 border-t border-border-primary/40 text-[10px] text-text-muted">
-                  {project.telemetry.meta}
-                </div>
-              </div>
-            </div>
-          )}
+              );
+            })}
+          </div>
 
           <div className="mt-4 pt-3 border-t border-border-primary flex items-center justify-between text-[11px] font-mono text-text-muted">
             <span>Execution Paradigm</span>
             <span className="text-[#00e89d] font-medium flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00e89d] animate-pulse" />
-              {activeTab === 'flow' ? 'Autonomous & Verified' : 'Live Runtime Stream'}
+              Autonomous &amp; Verified
             </span>
           </div>
         </div>
