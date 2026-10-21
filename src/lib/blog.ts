@@ -203,3 +203,60 @@ export function getArticleSlugs(): string[] {
   const articles = getAllArticles();
   return articles.map((article) => article.slug);
 }
+
+export interface TocHeading {
+  id: string;
+  text: string;
+  level: number;
+}
+
+/**
+ * Extracts H2 and H3 headings for the sticky Table of Contents.
+ */
+export function extractTableOfContents(markdownContent: string): TocHeading[] {
+  const headings: TocHeading[] = [];
+  const lines = markdownContent.split(/\r?\n/);
+  let inCodeBlock = false;
+
+  for (const line of lines) {
+    if (line.trim().startsWith('```')) {
+      inCodeBlock = !inCodeBlock;
+      continue;
+    }
+    if (inCodeBlock) continue;
+
+    const match = line.match(/^(#{2,3})\s+(.*)$/);
+    if (match) {
+      const level = match[1].length;
+      const text = match[2].trim().replace(/\*\*/g, '').replace(/`/g, '');
+      const id = text
+        .toLowerCase()
+        .replace(/<[^>]*>/g, '')
+        .replace(/[^\w\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-');
+
+      if (id && text) {
+        headings.push({ id, text, level });
+      }
+    }
+  }
+
+  return headings;
+}
+
+/**
+ * Returns previous and next articles relative to current article slug.
+ */
+export function getAdjacentArticles(slug: string): { prev: Article | null; next: Article | null } {
+  const articles = getAllArticles();
+  const currentIndex = articles.findIndex((article) => article.slug === slug);
+  if (currentIndex === -1) {
+    return { prev: null, next: null };
+  }
+  // articles are sorted date descending (0 is newest)
+  const next = currentIndex > 0 ? articles[currentIndex - 1] : null;
+  const prev = currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
+  return { prev, next };
+}
+

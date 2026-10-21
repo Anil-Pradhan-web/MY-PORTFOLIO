@@ -1,7 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, Copy, ExternalLink, Bookmark } from 'lucide-react';
+import {
+  Check,
+  Copy,
+  ExternalLink,
+  Bookmark,
+  ShieldCheck,
+  Info,
+  AlertTriangle,
+  Quote,
+} from 'lucide-react';
 import type { ArticleReference } from '@/lib/blog-types';
 
 interface MarkdownRendererProps {
@@ -13,36 +22,47 @@ export default function MarkdownRenderer({ content, references }: MarkdownRender
   // Parse markdown content line-by-line / block-by-block into React elements
   const blocks = parseMarkdownToBlocks(content);
 
+  // If the very first block is an H1, suppress it since [slug]/page.tsx already renders the page H1
+  const renderableBlocks = blocks[0]?.type === 'h1' ? blocks.slice(1) : blocks;
+
   return (
     <div className="article-body max-w-none text-text-secondary font-body">
-      {blocks.map((block, index) => (
+      {renderableBlocks.map((block, index) => (
         <BlockComponent key={index} block={block} />
       ))}
 
       {/* References Section */}
       {references && references.length > 0 && (
-        <section className="mt-14 pt-8 border-t border-border-primary/80" aria-labelledby="references-heading">
-          <div className="flex items-center gap-2 mb-4 text-text-primary">
-            <Bookmark className="w-4 h-4 text-[#00e89d]" />
-            <h3 id="references-heading" className="font-display text-lg font-semibold tracking-tight">
-              References &amp; Outbound Sources
+        <section
+          id="references"
+          className="mt-16 pt-10 border-t border-border-primary/80 scroll-mt-28"
+          aria-labelledby="references-heading"
+        >
+          <div className="flex items-center gap-2 mb-6 text-text-primary">
+            <span className="p-1.5 rounded-lg bg-[#00e89d]/10 border border-[#00e89d]/30 text-[#00e89d]">
+              <Bookmark className="w-4 h-4" />
+            </span>
+            <h3 id="references-heading" className="font-display text-xl font-bold tracking-tight">
+              Verified Outbound Sources &amp; Research
             </h3>
           </div>
-          <ul className="space-y-2.5">
+          <ul className="space-y-3">
             {references.map((ref, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-2.5 p-3 rounded-lg bg-bg-card border border-border-primary text-sm transition-colors hover:border-[#00e89d]/30"
+                className="flex items-start gap-3 p-4 rounded-xl bg-bg-card/70 border border-border-primary text-sm transition-all hover:border-[#00e89d]/40 hover:bg-bg-card hover:shadow-md"
               >
-                <span className="font-mono text-xs text-[#00e89d] mt-0.5">[{idx + 1}]</span>
+                <span className="font-mono text-xs font-semibold text-[#00e89d] mt-0.5 px-2 py-0.5 rounded bg-[#00e89d]/10 border border-[#00e89d]/20">
+                  [{idx + 1}]
+                </span>
                 <a
                   href={ref.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-primary hover:text-[#00e89d] transition-colors inline-flex items-center gap-1.5 flex-wrap"
+                  className="text-text-primary hover:text-[#00e89d] transition-colors inline-flex items-center gap-2 flex-wrap font-medium"
                 >
                   <span>{ref.title}</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-text-muted inline" />
+                  <ExternalLink className="w-3.5 h-3.5 text-text-muted inline flex-shrink-0" />
                 </a>
               </li>
             ))}
@@ -53,13 +73,24 @@ export default function MarkdownRenderer({ content, references }: MarkdownRender
   );
 }
 
+export function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/<[^>]*>/g, '')
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+}
+
+type CalloutType = 'fact' | 'note' | 'warning' | 'quote';
+
 type Block =
   | { type: 'h1'; text: string }
-  | { type: 'h2'; text: string }
-  | { type: 'h3'; text: string }
-  | { type: 'h4'; text: string }
+  | { type: 'h2'; text: string; id: string }
+  | { type: 'h3'; text: string; id: string }
+  | { type: 'h4'; text: string; id: string }
   | { type: 'paragraph'; text: string }
-  | { type: 'blockquote'; text: string }
+  | { type: 'blockquote'; text: string; calloutType: CalloutType }
   | { type: 'code'; language: string; code: string }
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
@@ -97,7 +128,42 @@ function parseMarkdownToBlocks(raw: string): Block[] {
 
   const flushBlockquote = () => {
     if (blockquoteBuffer.length > 0) {
-      blocks.push({ type: 'blockquote', text: blockquoteBuffer.join(' ') });
+      const fullText = blockquoteBuffer.join(' ');
+      let calloutType: CalloutType = 'quote';
+
+      const lower = fullText.toLowerCase();
+      if (
+        lower.startsWith('[!tip]') ||
+        lower.startsWith('[!fact]') ||
+        lower.includes('**verified') ||
+        lower.includes('**fact:') ||
+        lower.includes('**key takeaway')
+      ) {
+        calloutType = 'fact';
+      } else if (
+        lower.startsWith('[!warning]') ||
+        lower.startsWith('[!caution]') ||
+        lower.includes('**warning:') ||
+        lower.includes('**caution:') ||
+        lower.includes('⚠️')
+      ) {
+        calloutType = 'warning';
+      } else if (
+        lower.startsWith('[!note]') ||
+        lower.includes('**note:') ||
+        lower.includes('**context:') ||
+        lower.startsWith('**aqi') ||
+        lower.startsWith('**annual pm2.5')
+      ) {
+        calloutType = 'note';
+      }
+
+      // Clean marker tags if present (e.g. [!NOTE])
+      const cleanedText = fullText
+        .replace(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION|FACT)\]\s*/i, '')
+        .trim();
+
+      blocks.push({ type: 'blockquote', text: cleanedText, calloutType });
       blockquoteBuffer = [];
     }
   };
@@ -139,19 +205,15 @@ function parseMarkdownToBlocks(raw: string): Block[] {
     // Table detection: a line starting with | that contains at least one more |
     // and the next line is the separator row (| --- | --- |)
     if (!inCodeBlock && line.trim().startsWith('|') && line.trim().endsWith('|')) {
-      // Check if we are starting a new table or continuing one
-      // Look ahead for separator row to confirm this is a table header
       const nextLine = i + 1 < lines.length ? lines[i + 1].trim() : '';
       const isSeparatorRow = /^\|[\s:|-]+\|$/.test(nextLine);
 
       if (isSeparatorRow) {
         flushAll();
-        // Parse header row
-        const headers = line.trim().slice(1, -1).split('|').map(c => c.trim());
+        const headers = line.trim().slice(1, -1).split('|').map((c) => c.trim());
 
-        // Parse alignment row
-        const sepCells = nextLine.slice(1, -1).split('|').map(c => c.trim());
-        const alignments: ('left' | 'center' | 'right' | null)[] = sepCells.map(cell => {
+        const sepCells = nextLine.slice(1, -1).split('|').map((c) => c.trim());
+        const alignments: ('left' | 'center' | 'right' | null)[] = sepCells.map((cell) => {
           const leftColon = cell.startsWith(':');
           const rightColon = cell.endsWith(':');
           if (leftColon && rightColon) return 'center';
@@ -160,15 +222,13 @@ function parseMarkdownToBlocks(raw: string): Block[] {
           return null;
         });
 
-        // Skip separator line
         i += 1;
 
-        // Collect body rows
         const tableRows: string[][] = [];
         while (i + 1 < lines.length) {
           const bodyLine = lines[i + 1].trim();
           if (bodyLine.startsWith('|') && bodyLine.endsWith('|')) {
-            tableRows.push(bodyLine.slice(1, -1).split('|').map(c => c.trim()));
+            tableRows.push(bodyLine.slice(1, -1).split('|').map((c) => c.trim()));
             i += 1;
           } else {
             break;
@@ -209,17 +269,20 @@ function parseMarkdownToBlocks(raw: string): Block[] {
     }
     if (line.startsWith('## ')) {
       flushAll();
-      blocks.push({ type: 'h2', text: line.slice(3).trim() });
+      const text = line.slice(3).trim();
+      blocks.push({ type: 'h2', text, id: slugifyHeading(text) });
       continue;
     }
     if (line.startsWith('### ')) {
       flushAll();
-      blocks.push({ type: 'h3', text: line.slice(4).trim() });
+      const text = line.slice(4).trim();
+      blocks.push({ type: 'h3', text, id: slugifyHeading(text) });
       continue;
     }
     if (line.startsWith('#### ')) {
       flushAll();
-      blocks.push({ type: 'h4', text: line.slice(5).trim() });
+      const text = line.slice(5).trim();
+      blocks.push({ type: 'h4', text, id: slugifyHeading(text) });
       continue;
     }
 
@@ -233,7 +296,7 @@ function parseMarkdownToBlocks(raw: string): Block[] {
       flushBlockquote();
     }
 
-    // List item continuation (indented line following previous list item)
+    // List item continuation
     if (inList && listItems.length > 0 && (line.startsWith('    ') || line.startsWith('\t') || line.startsWith('  '))) {
       listItems[listItems.length - 1] += ' ' + line.trim();
       continue;
@@ -259,7 +322,7 @@ function parseMarkdownToBlocks(raw: string): Block[] {
       continue;
     }
 
-    // Normal paragraph line: accumulate consecutive lines into single paragraph block
+    // Normal paragraph line
     flushList();
     paragraphBuffer.push(line.trim());
   }
@@ -295,42 +358,107 @@ function BlockComponent({ block }: { block: Block }) {
       );
     case 'h2':
       return (
-        <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary tracking-tight mt-10 mb-4 text-[#00e89d]">
-          {renderInline(block.text)}
+        <h2
+          id={block.id}
+          className="font-display text-2xl sm:text-3xl font-bold text-text-primary tracking-tight mt-14 mb-5 pt-6 border-t border-border-primary/60 flex items-center justify-between group scroll-mt-28"
+        >
+          <span>{renderInline(block.text)}</span>
+          <a
+            href={`#${block.id}`}
+            className="text-text-muted hover:text-[#00e89d] opacity-0 group-hover:opacity-100 transition-opacity text-base font-mono font-normal ml-3 select-none"
+            aria-label={`Link to section ${block.text}`}
+          >
+            #
+          </a>
         </h2>
       );
     case 'h3':
       return (
-        <h3 className="font-display text-lg sm:text-xl font-semibold text-text-primary tracking-tight mt-7 mb-3">
-          {renderInline(block.text)}
+        <h3
+          id={block.id}
+          className="font-display text-xl sm:text-2xl font-bold text-text-primary tracking-tight mt-9 mb-3.5 flex items-center justify-between group scroll-mt-28 text-[#00e89d]"
+        >
+          <span>{renderInline(block.text)}</span>
+          <a
+            href={`#${block.id}`}
+            className="text-text-muted hover:text-[#00e89d] opacity-0 group-hover:opacity-100 transition-opacity text-sm font-mono font-normal ml-2 select-none"
+            aria-label={`Link to subsection ${block.text}`}
+          >
+            #
+          </a>
         </h3>
       );
     case 'h4':
       return (
-        <h4 className="font-display text-base sm:text-lg font-medium text-text-primary tracking-tight mt-5 mb-2">
+        <h4
+          id={block.id}
+          className="font-display text-base sm:text-lg font-semibold text-text-primary tracking-tight mt-6 mb-2.5 scroll-mt-28"
+        >
           {renderInline(block.text)}
         </h4>
       );
     case 'paragraph':
       return (
-        <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-5 font-body">
+        <p className="text-base sm:text-lg text-text-secondary leading-[1.85] mb-6 font-body">
           {renderInline(block.text)}
         </p>
       );
-    case 'blockquote':
+    case 'blockquote': {
+      if (block.calloutType === 'fact') {
+        return (
+          <aside className="my-8 rounded-2xl border border-[#00e89d]/35 bg-[#00e89d]/[0.05] p-5 sm:p-6 shadow-sm">
+            <div className="flex items-center gap-2 mb-2.5 text-xs font-mono font-semibold text-[#00e89d] uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#00e89d]" />
+              <span>Verified Finding / Key Takeaway</span>
+            </div>
+            <div className="text-text-primary text-base sm:text-lg leading-relaxed font-body">
+              {renderInline(block.text)}
+            </div>
+          </aside>
+        );
+      }
+      if (block.calloutType === 'note') {
+        return (
+          <aside className="my-8 rounded-2xl border border-[#38bdf8]/35 bg-[#38bdf8]/[0.05] p-5 sm:p-6 shadow-sm">
+            <div className="flex items-center gap-2 mb-2.5 text-xs font-mono font-semibold text-[#38bdf8] uppercase tracking-wider">
+              <Info className="w-4 h-4 text-[#38bdf8]" />
+              <span>Context &amp; Analysis</span>
+            </div>
+            <div className="text-text-primary text-base sm:text-lg leading-relaxed font-body">
+              {renderInline(block.text)}
+            </div>
+          </aside>
+        );
+      }
+      if (block.calloutType === 'warning') {
+        return (
+          <aside className="my-8 rounded-2xl border border-[#f5a623]/35 bg-[#f5a623]/[0.05] p-5 sm:p-6 shadow-sm">
+            <div className="flex items-center gap-2 mb-2.5 text-xs font-mono font-semibold text-[#f5a623] uppercase tracking-wider">
+              <AlertTriangle className="w-4 h-4 text-[#f5a623]" />
+              <span>Critical Reality / Alert</span>
+            </div>
+            <div className="text-text-primary text-base sm:text-lg leading-relaxed font-body">
+              {renderInline(block.text)}
+            </div>
+          </aside>
+        );
+      }
+      // Standard editorial pull quote
       return (
-        <blockquote className="border-l-4 border-[#00e89d] bg-bg-card/40 pl-4 pr-3 py-2.5 my-6 italic text-text-primary rounded-r-lg">
-          {renderInline(block.text)}
+        <blockquote className="my-8 pl-6 sm:pl-8 border-l-2 border-[#00e89d] py-2 italic font-display text-lg sm:text-xl text-text-primary leading-relaxed relative bg-gradient-to-r from-bg-card/40 to-transparent rounded-r-xl">
+          <Quote className="w-5 h-5 text-[#00e89d]/50 mb-2 not-italic" />
+          <div>{renderInline(block.text)}</div>
         </blockquote>
       );
+    }
     case 'code':
       return (
-        <div className="relative my-6 rounded-xl border border-border-primary bg-bg-card overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-2 border-b border-border-primary bg-bg-secondary text-xs font-mono text-text-muted">
-            <span>{block.language || 'code'}</span>
+        <div className="relative my-7 rounded-2xl border border-border-primary bg-bg-card overflow-hidden shadow-md">
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-border-primary bg-bg-secondary text-xs font-mono text-text-muted">
+            <span className="font-semibold">{block.language || 'code'}</span>
             <button
               onClick={() => handleCopy(block.code)}
-              className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-bg-card hover:text-text-primary transition-colors text-text-muted"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-bg-card border border-border-primary hover:text-text-primary transition-colors text-text-muted text-xs"
               aria-label="Copy code to clipboard"
             >
               {copied ? (
@@ -346,39 +474,51 @@ function BlockComponent({ block }: { block: Block }) {
               )}
             </button>
           </div>
-          <pre className="p-4 overflow-x-auto text-xs sm:text-sm font-mono text-[#00e89d] leading-relaxed">
+          <pre className="p-4 sm:p-5 overflow-x-auto text-xs sm:text-sm font-mono text-[#00e89d] leading-relaxed">
             <code>{block.code}</code>
           </pre>
         </div>
       );
     case 'ul':
       return (
-        <ul className="list-disc pl-6 mb-6 space-y-2 text-text-secondary text-base sm:text-lg">
+        <ul className="list-disc pl-6 mb-7 space-y-2.5 text-text-secondary text-base sm:text-lg">
           {block.items.map((item, idx) => (
-            <li key={idx} className="leading-relaxed">{renderInline(item)}</li>
+            <li key={idx} className="leading-relaxed pl-1">
+              {renderInline(item)}
+            </li>
           ))}
         </ul>
       );
     case 'ol':
       return (
-        <ol className="list-decimal pl-6 mb-6 space-y-2 text-text-secondary text-base sm:text-lg">
+        <ol className="list-decimal pl-6 mb-7 space-y-2.5 text-text-secondary text-base sm:text-lg">
           {block.items.map((item, idx) => (
-            <li key={idx} className="leading-relaxed">{renderInline(item)}</li>
+            <li key={idx} className="leading-relaxed pl-1 font-mono text-sm sm:text-base">
+              <span className="font-body text-base sm:text-lg text-text-secondary">
+                {renderInline(item)}
+              </span>
+            </li>
           ))}
         </ol>
       );
     case 'hr':
-      return <hr className="border-border-primary/80 my-10" />;
+      return (
+        <div className="my-12 flex items-center justify-center gap-2 text-border-primary">
+          <span className="w-1.5 h-1.5 rounded-full bg-border-primary" />
+          <span className="w-2 h-2 rounded-full bg-[#00e89d]/50" />
+          <span className="w-1.5 h-1.5 rounded-full bg-border-primary" />
+        </div>
+      );
     case 'image':
       return (
         <div className="my-8">
           <img
             src={block.src}
             alt={block.alt}
-            className="rounded-xl border border-border-primary w-full object-cover max-h-[500px]"
+            className="rounded-2xl border border-border-primary w-full object-cover max-h-[520px] shadow-lg"
           />
           {block.alt && (
-            <p className="text-center text-xs text-text-muted mt-2 font-mono">
+            <p className="text-center text-xs text-text-muted mt-2.5 font-mono">
               {block.alt}
             </p>
           )}
@@ -386,15 +526,15 @@ function BlockComponent({ block }: { block: Block }) {
       );
     case 'table':
       return (
-        <div className="my-8 rounded-xl border border-border-primary overflow-hidden">
+        <div className="my-9 rounded-2xl border border-border-primary/80 overflow-hidden shadow-lg bg-bg-card/40">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-bg-secondary border-b border-border-primary">
+                <tr className="bg-bg-secondary/90 border-b border-border-primary">
                   {block.headers.map((header, hIdx) => (
                     <th
                       key={hIdx}
-                      className="px-4 py-3 text-left font-mono text-xs font-semibold text-text-primary uppercase tracking-wider whitespace-nowrap"
+                      className="px-4 py-3.5 text-left font-mono text-xs font-semibold text-text-primary uppercase tracking-wider whitespace-nowrap"
                       style={{
                         textAlign: block.alignments[hIdx] || 'left',
                       }}
@@ -404,16 +544,16 @@ function BlockComponent({ block }: { block: Block }) {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border-primary/60">
+              <tbody className="divide-y divide-border-primary/50">
                 {block.rows.map((row, rIdx) => (
                   <tr
                     key={rIdx}
-                    className="bg-bg-card/30 hover:bg-bg-card/70 transition-colors"
+                    className="bg-bg-card/20 hover:bg-bg-card/80 transition-colors"
                   >
                     {row.map((cell, cIdx) => (
                       <td
                         key={cIdx}
-                        className="px-4 py-3 text-text-secondary leading-relaxed"
+                        className="px-4 py-3.5 text-text-secondary leading-relaxed"
                         style={{
                           textAlign: block.alignments[cIdx] || 'left',
                         }}
@@ -446,7 +586,7 @@ function renderInline(text: string): React.ReactNode[] {
       tokens.push(
         <code
           key={keyIndex++}
-          className="font-mono text-xs sm:text-sm px-1.5 py-0.5 rounded bg-bg-card border border-border-primary text-[#00e89d]"
+          className="font-mono text-xs sm:text-sm px-1.5 py-0.5 rounded-md bg-bg-card border border-border-primary text-[#00e89d]"
         >
           {codeMatch[1]}
         </code>
@@ -489,9 +629,10 @@ function renderInline(text: string): React.ReactNode[] {
           href={linkMatch[2]}
           target={isExternal ? '_blank' : undefined}
           rel={isExternal ? 'noopener noreferrer' : undefined}
-          className="text-[#00e89d] hover:underline underline-offset-4 transition-colors font-medium"
+          className="text-[#00e89d] hover:underline underline-offset-4 transition-colors font-medium inline-flex items-center gap-1"
         >
-          {linkMatch[1]}
+          <span>{linkMatch[1]}</span>
+          {isExternal && <ExternalLink className="w-3 h-3 text-text-muted inline" />}
         </a>
       );
       remaining = remaining.slice(linkMatch[0].length);
@@ -513,3 +654,4 @@ function renderInline(text: string): React.ReactNode[] {
 
   return tokens;
 }
+
