@@ -453,11 +453,11 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Achievements &amp; Certifications</div>
     <ul class="achievements">
-      <li><span class="achieve-title">Dell FutureMinds AI Hackathon 2026 — National Grand Finalist:</span> Top 6 nationwide out of 8,000+ participants; awarded Certificate of Excellence &amp; pitched live at Dell Bengaluru HQ.</li>
-      <li><span class="achieve-title">FlowFinance × Techfest IIT Bombay — Round 2:</span> Developed GTM strategy and acquisition framework for AI fintech platform.</li>
-      <li><span class="achieve-title">4× AI Hackathon Builder:</span> Deployed AI applications in Microsoft AI Dev Days, Amazon Nova, and Google Solution Challenge.</li>
-      <li><span class="achieve-title">100+ Day DSA Streak:</span> Continuous daily problem solving on GeeksforGeeks 160 Days of Code.</li>
-      <li><span class="achieve-title">Certifications:</span> IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE (Forage) · HackerRank (DSA, SQL, Java, Python).</li>
+      <li><span class="achieve-title">Dell FutureMinds Hackathon 2026 — Top 3 Nationwide (3rd Place):</span> Ranked 3rd out of 8,000+ participants nationwide; awarded Certificate of Excellence &amp; pitched live at Dell Bengaluru HQ.</li>
+      <li><span class="achieve-title">Naukri Campus Young Turks 2026 — Certificate of Merit:</span> Achieved <strong>96.57 percentile</strong> in India's largest skill contest, demonstrating strong problem-solving and analytical abilities.</li>
+      <li><span class="achieve-title">5× Hackathon Builder:</span> Competed and built solutions across Dell, Microsoft, Google, iQOO, and Amazon hackathons.</li>
+      <li><span class="achieve-title">Problem Solving &amp; DSA:</span> 218+ LeetCode &bull; 111+ GeeksforGeeks problems (100+ day streak) &bull; HackerRank: 4★ Java, 1★ Python, 1★ SQL, 1★ Problem Solving.</li>
+      <li><span class="achieve-title">Certifications:</span> Infosys Springboard (Gen AI &amp; AI for Software Engineering) · IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE (Forage).</li>
     </ul>
   </div>
 

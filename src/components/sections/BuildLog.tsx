@@ -33,49 +33,49 @@ interface CertificationGroup {
 }
 
 const dellMetrics: Metric[] = [
-  { label: 'Final Placement', value: 'Top 6 National', detail: 'National Grand Finalists' },
+  { label: 'Final Placement', value: '3rd Place', detail: 'Top 3 National Podium' },
   { label: 'Screening Pool', value: '8,000+', detail: 'HackerRank National Round' },
-  { label: 'Final Selection', value: 'Top 6 Finalists', detail: 'Selected for Grand Finale' },
+  { label: 'Final Selection', value: 'Top 3 Finalists', detail: 'Selected for Grand Finale' },
   { label: 'Executive Stage', value: 'Dell HQ, BLR', detail: 'Live Jury & Leadership Pitch' },
 ];
 
 const competitiveMilestones: Milestone[] = [
   {
-    title: 'FlowFinance × Techfest IIT Bombay',
-    category: 'Growth & Real-World Fintech',
-    badge: 'Round 2 / 3 Qualifier',
+    title: 'Naukri Campus Young Turks 2026',
+    category: 'Problem Solving & Analytics',
+    badge: '96.57 Percentile',
     detail:
-      'Selected for Round 2 (Real-World Business Development) — FlowFinance × Techfest IIT Bombay Growth Challenge: Designed a comprehensive GTM strategy deck (platform analysis, customer personas, acquisition/retention framework) for FlowFinance (AI SMB fintech platform) with real customer outreach.',
-    highlight: 'National Level Competition',
+      "Achieved 96.57 percentile in India's largest skill contest, demonstrating strong problem-solving and analytical abilities — honored with the official Certificate of Merit.",
+    highlight: 'Certificate of Merit',
     accentColor: '#00e89d',
   },
   {
-    title: '4× AI Hackathon Builder',
+    title: '5× Hackathon Builder',
     category: 'End-to-End Applications',
-    badge: '4 Applications Shipped',
+    badge: '5 Hackathons Competed',
     detail:
-      'Built and shipped functional AI applications across 4 hackathons — Dell FutureMinds 2026, Microsoft AI Dev Days, Amazon Nova AI Challenge, and Google Solution Challenge, implementing agentic workflows and computer vision pipelines.',
+      'Built and shipped functional applications across 5 hackathons — Dell FutureMinds, Microsoft AI Dev Days, Google Solution Challenge, iQOO, and Amazon Nova.',
     highlight: 'Rapid Prototyping & Systems',
     accentColor: '#f5a623',
   },
   {
     title: 'GeeksforGeeks 160 Days of Code',
     category: 'Algorithms & Problem Solving',
-    badge: '100+ Day Daily Streak',
+    badge: '111+ Solved · 100+ Day Streak',
     url: 'https://www.geeksforgeeks.org/user/anilpradhan543/',
     detail:
-      "Maintained a continuous 100+ day coding streak on GeeksforGeeks' 160 Days of Code Challenge, solving data structures and algorithm problems daily — recognized with an official GFG reward for engineering consistency.",
-    highlight: 'DSA Consistency & Streak',
+      "Maintained a continuous 100+ day coding streak with 111+ problems solved on GeeksforGeeks' 160 Days of Code Challenge, solving data structures and algorithm problems daily — recognized with an official GFG reward for engineering consistency.",
+    highlight: '111+ Problems · Daily Streak',
     accentColor: '#34d399',
   },
   {
     title: 'LeetCode Problem Solving',
     category: 'Data Structures & Algorithms',
-    badge: 'Active Profile',
+    badge: '218+ Solved',
     url: 'https://leetcode.com/u/Anil_Pradhan/',
     detail:
-      'Regularly solving algorithmic challenges across graph theory, dynamic programming, trees, and system design optimizations with continuous practice and problem discussions.',
-    highlight: 'LeetCode / Anil_Pradhan',
+      '218+ algorithmic challenges solved across graph theory, dynamic programming, trees, and system design optimizations with continuous practice and problem discussions.',
+    highlight: '218+ Problems Solved',
     accentColor: '#FFA116',
   },
   {
@@ -100,6 +100,11 @@ const certificationGroups: CertificationGroup[] = [
   {
     group: 'AI, LLMs & Applied Machine Learning',
     items: [
+      {
+        name: 'Gen AI (OpenAI GPT Models & AI for Software Engineering)',
+        org: 'Infosys Springboard',
+        badge: 'GenAI & SWE',
+      },
       { name: 'AI Fundamentals', org: 'IBM', badge: 'AI & GenAI' },
     ],
   },
@@ -107,15 +112,15 @@ const certificationGroups: CertificationGroup[] = [
     group: 'Problem Solving & Core CS',
     items: [
       {
-        name: 'Problem Solving (Basic) & SQL (Basic)',
+        name: 'Java (4-Star) & Problem Solving (1-Star)',
         org: 'HackerRank',
-        badge: 'DSA & SQL',
+        badge: '4★ Java',
         url: 'https://www.hackerrank.com/profile/anilpradhan9644',
       },
       {
-        name: 'Python (Basic) & Java (Basic)',
+        name: 'Python (1-Star) & SQL (1-Star)',
         org: 'HackerRank',
-        badge: 'Languages',
+        badge: 'Python & SQL',
         url: 'https://www.hackerrank.com/profile/anilpradhan9644',
       },
     ],
@@ -166,7 +171,7 @@ export default function BuildLog() {
           {/* Narrative Story */}
           <div className="relative z-10 py-6">
             <p className="text-base sm:text-lg text-text-primary/90 leading-relaxed font-body max-w-4xl">
-              Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with <strong className="text-text-primary font-semibold">8,000+ participants</strong> attempting a rigorous HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, an executive Zoom pitch round, and finally into the <strong className="text-[#f5a623] font-semibold">Top 6 Grand Finalists</strong>. We flew to Dell&apos;s Bengaluru headquarters to pitch our hardware inspection solution live before Dell&apos;s senior leadership, engineering jury, and employees — honored with the <strong className="text-[#f5a623] font-semibold">Certificate of Excellence</strong>.
+              Competed in Dell FutureMinds AI Hackathon 2026, a national competition that began with <strong className="text-text-primary font-semibold">8,000+ participants</strong> attempting a rigorous HackerRank screening round. Selected among the top 370 for an internal hackathon, our 5-member team advanced through a Top 10 shortlist, an executive Zoom pitch round, and finally into the <strong className="text-[#f5a623] font-semibold">Top 3 National Podium (3rd Place)</strong>. We flew to Dell&apos;s Bengaluru headquarters to pitch our hardware inspection solution live before Dell&apos;s senior leadership, engineering jury, and employees — honored with the <strong className="text-[#f5a623] font-semibold">Certificate of Excellence</strong>.
             </p>
           </div>
 

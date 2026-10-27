@@ -81,10 +81,10 @@ const milestones: Milestone[] = [
     period: 'Summer 2026',
     title: 'Dell FutureMinds National Grand Podium',
     icon: Trophy,
-    badge: 'Top 6 / 8,000+',
+    badge: 'Top 3 Podium',
     accentColor: '#f5a623',
     story:
-      'Shortlisted from 8,000+ national candidates into the Top 6 Grand Finalists. Pitching our inspection architecture live before senior engineering juries in Bengaluru showed me how production systems survive scrutiny.',
+      'Shortlisted from 8,000+ national candidates into the Top 3 National Podium (3rd Place). Pitching our inspection architecture live before senior engineering juries in Bengaluru showed me how production systems survive scrutiny.',
     breakthrough: 'Demos are easy—production engineering is about handling edge cases and zero downtime.',
     stack: ['Live Defense', 'System Design', 'Benchmarking', 'Edge Testing'],
   },
