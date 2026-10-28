@@ -24,12 +24,12 @@ def generate_resume(output_path):
       color: #000000;
       background: #ffffff;
       -webkit-font-smoothing: antialiased;
-      line-height: 1.34;
+      line-height: 1.32;
     }
     .page {
       width: 210mm;
       min-height: 297mm;
-      padding: 24pt 34pt 24pt 34pt;
+      padding: 23pt 34pt 22pt 34pt;
       margin: 0 auto;
       background: #fff;
     }
@@ -94,22 +94,22 @@ def generate_resume(output_path):
 
     /* ===== SECTION HEADINGS ===== */
     .section {
-      margin-top: 9.5pt;
+      margin-top: 8.8pt;
     }
     .section-title {
-      font-size: 10.3pt;
+      font-size: 10.2pt;
       font-weight: 800;
       color: #000;
       letter-spacing: 0.6px;
       text-transform: uppercase;
       padding-bottom: 1.5pt;
       border-bottom: 1.5px solid #000;
-      margin-bottom: 4pt;
+      margin-bottom: 3.5pt;
     }
 
     /* ===== ENTRIES ===== */
     .entry {
-      margin-bottom: 4.2pt;
+      margin-bottom: 3.8pt;
     }
     .entry-header {
       display: flex;
@@ -215,8 +215,8 @@ def generate_resume(output_path):
     ul.bullets li {
       font-size: 8.5pt;
       color: #000;
-      line-height: 1.30;
-      margin-bottom: 1.8pt;
+      line-height: 1.28;
+      margin-bottom: 1.5pt;
     }
     ul.bullets li strong {
       font-weight: 700;
@@ -230,8 +230,8 @@ def generate_resume(output_path):
     }
     .skill-row {
       font-size: 8.5pt;
-      line-height: 1.30;
-      margin-bottom: 2.2pt;
+      line-height: 1.28;
+      margin-bottom: 2.0pt;
     }
     .skill-cat {
       font-weight: 700;
@@ -250,8 +250,8 @@ def generate_resume(output_path):
     ul.achievements li {
       font-size: 8.5pt;
       color: #111;
-      line-height: 1.30;
-      margin-bottom: 2pt;
+      line-height: 1.28;
+      margin-bottom: 1.6pt;
     }
     .achieve-title {
       font-weight: 700;
@@ -455,6 +455,7 @@ def generate_resume(output_path):
     <ul class="achievements">
       <li><span class="achieve-title">Dell FutureMinds Hackathon 2026 — Top 3 Nationwide (3rd Place):</span> Ranked 3rd out of 8,000+ participants nationwide; awarded Certificate of Excellence &amp; pitched live at Dell Bengaluru HQ.</li>
       <li><span class="achieve-title">Naukri Campus Young Turks 2026 — Certificate of Merit:</span> Achieved <strong>96.57 percentile</strong> in India's largest skill contest, demonstrating strong problem-solving and analytical abilities.</li>
+      <li><span class="achieve-title">Hacktoberfest 2026 — Completionist:</span> Earned Completionist recognition across 15 milestone tracks focused on open-source AI and experimenting with open-weight models.</li>
       <li><span class="achieve-title">5× Hackathon Builder:</span> Competed and built solutions across Dell, Microsoft, Google, iQOO, and Amazon hackathons.</li>
       <li><span class="achieve-title">Problem Solving &amp; DSA:</span> 218+ LeetCode &bull; 111+ GeeksforGeeks problems (100+ day streak) &bull; HackerRank: 4★ Java, 1★ Python, 1★ SQL, 1★ Problem Solving.</li>
       <li><span class="achieve-title">Certifications:</span> Infosys Springboard (Gen AI &amp; AI for Software Engineering) · IBM AI Fundamentals · Cisco Python 2 · Wells Fargo SWE (Forage).</li>

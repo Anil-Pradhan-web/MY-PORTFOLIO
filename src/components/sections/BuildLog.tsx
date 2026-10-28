@@ -87,6 +87,15 @@ const competitiveMilestones: Milestone[] = [
     highlight: 'GCP Services Hands-on',
     accentColor: '#fbbf24',
   },
+  {
+    title: 'Hacktoberfest 2026 — Completionist',
+    category: 'Open-Source AI & Community',
+    badge: 'Completionist Award',
+    detail:
+      'Earned Hacktoberfest 2026 Completionist recognition by completing 15 event milestones focused on hands-on building, experimenting with open-source AI, and deploying open-weight models.',
+    highlight: 'Open-Source AI & Open-Weight Models',
+    accentColor: '#ff7849',
+  },
 ];
 
 const certificationGroups: CertificationGroup[] = [
@@ -265,11 +274,23 @@ export default function BuildLog() {
 
         {/* ── 3. Verified Industry Credentials Ledger ── */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2 pb-1">
-            <Award className="w-4 h-4 text-[#00e89d]" />
-            <h3 className="font-mono text-xs font-semibold text-[#00e89d] uppercase tracking-wider">
-              Verified Industry Credentials &amp; Certifications
-            </h3>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-1">
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4 text-[#00e89d]" />
+              <h3 className="font-mono text-xs font-semibold text-[#00e89d] uppercase tracking-wider">
+                Verified Industry Credentials &amp; Certifications
+              </h3>
+            </div>
+            <a
+              href="https://www.linkedin.com/in/anil-pradhan543/details/certifications/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-bg-card border border-border-primary hover:border-[#00e89d]/50 hover:bg-[#00e89d]/5 text-xs font-mono text-text-secondary hover:text-[#00e89d] transition-all group shrink-0"
+              aria-label="View all certificates on LinkedIn"
+            >
+              <span>View All Certificates on LinkedIn</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-text-muted group-hover:text-[#00e89d] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
