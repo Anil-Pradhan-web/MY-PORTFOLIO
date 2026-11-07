@@ -441,11 +441,12 @@ def generate_resume(output_path):
   <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-table">
-      <div class="skill-row"><span class="skill-cat">Languages:</span> <span>Python, Java, JavaScript, SQL</span></div>
-      <div class="skill-row"><span class="skill-cat">AI &amp; Computer Vision:</span> <span>LangGraph, Multi-Agent Systems, RAG, Prompt Engineering, LLM Integration, OpenCV, YOLO11n, OCR, Anomaly Detection (SSIM)</span></div>
-      <div class="skill-row"><span class="skill-cat">Backend &amp; Databases:</span> <span>FastAPI, REST APIs, SQLAlchemy, JWT/RBAC, PostgreSQL, SQLite</span></div>
-      <div class="skill-row"><span class="skill-cat">Core CS Concepts:</span> <span>Data Structures &amp; Algorithms, Object-Oriented Programming (OOP)</span></div>
-      <div class="skill-row"><span class="skill-cat">Developer Tools:</span> <span>Git/GitHub, Docker, Linux Commands, Postman</span></div>
+      <div class="skill-row"><span class="skill-cat">Programming Languages:</span> <span>Python, Java, JavaScript, SQL</span></div>
+      <div class="skill-row"><span class="skill-cat">AI &amp; Agentic Systems:</span> <span>LangGraph, Multi-Agent Systems, RAG, LLM Integration, Prompt Engineering</span></div>
+      <div class="skill-row"><span class="skill-cat">Machine Learning &amp; Computer Vision:</span> <span>PyTorch, YOLO11n, OpenCV, Object Detection, Anomaly Detection, Model Fine-Tuning</span></div>
+      <div class="skill-row"><span class="skill-cat">Backend &amp; Databases:</span> <span>FastAPI, REST APIs, SQLAlchemy, JWT Authentication, PostgreSQL, SQLite, FAISS</span></div>
+      <div class="skill-row"><span class="skill-cat">Core Concepts:</span> <span>Data Structures &amp; Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks</span></div>
+      <div class="skill-row"><span class="skill-cat">Developer Tools &amp; Platforms:</span> <span>Git, GitHub, Docker, Linux Commands, Postman, Pytest, Jupyter Notebook, Google Colab</span></div>
     </div>
   </div>
 

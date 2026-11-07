@@ -5,50 +5,61 @@ import { FaJava, FaPython, FaDocker } from 'react-icons/fa';
 import {
   SiFastapi, SiSqlite,
   SiPostgresql, SiOpencv,
-  SiGit, SiLinux, SiPostman, SiJavascript,
+  SiGit, SiGithub, SiLinux, SiPostman, SiJavascript,
+  SiPytorch, SiPytest, SiJupyter, SiGooglecolab,
 } from 'react-icons/si';
 import {
   BrainCircuit, Cpu, GitBranch, Box, ShieldCheck,
   Database, Sparkles, ScanText, Target,
-  ShieldAlert, Lock
+  ShieldAlert, Lock, Network, Layers, Terminal
 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const technicalDomains = [
   {
-    domain: 'AI & Computer Vision',
-    summary: 'Autonomous multi-agent workflows, prompt engineering, RAG, and industrial computer vision',
+    domain: 'AI & Agentic Systems',
+    summary: 'Autonomous multi-agent workflows, prompt engineering, RAG, and resilient LLM integrations',
     accentColor: '#00e89d',
     skills: [
       { name: 'LangGraph', icon: GitBranch, color: '#4ade80' },
       { name: 'Multi-Agent Systems', icon: BrainCircuit, color: '#f97316' },
-      { name: 'RAG Architecture', icon: BrainCircuit, color: '#38bdf8' },
-      { name: 'Prompt Engineering', icon: Sparkles, color: '#a855f7' },
+      { name: 'RAG', icon: Layers, color: '#38bdf8' },
       { name: 'LLM Integration', icon: ShieldCheck, color: '#0ea5e9' },
-      { name: 'OpenCV', icon: SiOpencv, color: '#5c3ee8' },
+      { name: 'Prompt Engineering', icon: Sparkles, color: '#a855f7' },
+    ],
+  },
+  {
+    domain: 'Machine Learning & Computer Vision',
+    summary: 'Deep learning models, computer vision pipelines, anomaly detection, and custom model fine-tuning',
+    accentColor: '#f5a623',
+    skills: [
+      { name: 'PyTorch', icon: SiPytorch, color: '#ee4c2c' },
       { name: 'YOLO11n', icon: Target, color: '#f59e0b' },
-      { name: 'OCR', icon: ScanText, color: '#10b981' },
-      { name: 'Anomaly Detection (SSIM)', icon: ShieldAlert, color: '#ef4444' },
+      { name: 'OpenCV', icon: SiOpencv, color: '#5c3ee8' },
+      { name: 'Object Detection', icon: ScanText, color: '#10b981' },
+      { name: 'Anomaly Detection', icon: ShieldAlert, color: '#ef4444' },
+      { name: 'Model Fine-Tuning', icon: Cpu, color: '#38bdf8' },
     ],
   },
   {
     domain: 'Backend & Databases',
-    summary: 'High-throughput async APIs, data contracts, JWT security, and multi-database persistence',
+    summary: 'High-throughput async APIs, data contracts, JWT authentication, and multi-database persistence',
     accentColor: '#38bdf8',
     skills: [
       { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
       { name: 'REST APIs', icon: GitBranch, color: '#0ea5e9' },
       { name: 'SQLAlchemy', icon: Cpu, color: '#d71f00' },
-      { name: 'JWT/RBAC', icon: Lock, color: '#f43f5e' },
+      { name: 'JWT Authentication', icon: Lock, color: '#f43f5e' },
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791' },
       { name: 'SQLite', icon: SiSqlite, color: '#64b5f6' },
+      { name: 'FAISS', icon: Database, color: '#818cf8' },
     ],
   },
 ];
 
 const coreFoundations = [
   {
-    title: 'Languages',
+    title: 'Programming Languages',
     skills: [
       { name: 'Python', icon: FaPython, color: '#f89820' },
       { name: 'Java', icon: FaJava, color: '#f89820' },
@@ -57,19 +68,25 @@ const coreFoundations = [
     ],
   },
   {
-    title: 'Core CS Concepts',
+    title: 'Core Concepts',
     skills: [
       { name: 'Data Structures & Algorithms', icon: Cpu, color: '#0ea5e9' },
-      { name: 'OOP (Object-Oriented Programming)', icon: Box, color: '#ec4899' },
+      { name: 'Object-Oriented Programming', icon: Box, color: '#ec4899' },
+      { name: 'Operating Systems', icon: Terminal, color: '#34d399' },
+      { name: 'Computer Networks', icon: Network, color: '#38bdf8' },
     ],
   },
   {
-    title: 'Developer Tools',
+    title: 'Developer Tools & Platforms',
     skills: [
-      { name: 'Git & GitHub', icon: SiGit, color: '#f05032' },
+      { name: 'Git', icon: SiGit, color: '#f05032' },
+      { name: 'GitHub', icon: SiGithub, color: '#ffffff' },
       { name: 'Docker', icon: FaDocker, color: '#2496ed' },
       { name: 'Linux Commands', icon: SiLinux, color: '#facc15' },
       { name: 'Postman', icon: SiPostman, color: '#ff6c37' },
+      { name: 'Pytest', icon: SiPytest, color: '#0a9edc' },
+      { name: 'Jupyter Notebook', icon: SiJupyter, color: '#f37626' },
+      { name: 'Google Colab', icon: SiGooglecolab, color: '#f9ab00' },
     ],
   },
 ];
@@ -85,8 +102,8 @@ export default function TechStack() {
           subtitle="A domain-driven overview of the technologies, frameworks, and system practices I leverage."
         />
 
-        {/* ── Domain Architecture Clusters (2 Main Deep Domains) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {/* ── Domain Architecture Clusters (3 Core Deep Domains) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
           {technicalDomains.map((domain, idx) => (
             <motion.div
               key={domain.domain}
